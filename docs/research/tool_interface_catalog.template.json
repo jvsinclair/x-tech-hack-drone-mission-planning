@@ -1,0 +1,53 @@
+{
+  "catalog_version": 1,
+  "description": "Template machine-readable catalog for public tools, validator stages, and workflow actions in [PROJECT_NAME].",
+  "entries": [
+    {
+      "tool_id": "[tool_or_stage_id]",
+      "display_name": "[Human Readable Name]",
+      "category": "validation",
+      "stage_order": 1,
+      "purpose": "[what this stage does]",
+      "when_to_call": "[conditions where this stage should run]",
+      "when_not_to_call": "[conditions where this stage should be skipped]",
+      "input_type": "[type, schema, or file path]",
+      "output_type": "[type, schema, or artifact set]",
+      "supported_use_cases": [
+        "[use_case]"
+      ],
+      "status_values": [
+        "passed",
+        "failed",
+        "skipped"
+      ],
+      "hard_fail_vs_warning": "[what blocks progress and what only warns]",
+      "formula_or_rule_groups": [
+        "[rule_id]"
+      ],
+      "support_level": "todo",
+      "platform_support": {},
+      "required_binaries_or_services": [],
+      "headless_expectations": "not_applicable",
+      "degraded_modes": [],
+      "source_module": "[module_path]",
+      "kernel_id": "[kernel_boundary_id]",
+      "kernel_boundary": "[deterministic or portable boundary description]",
+      "pure_function_expected": "mixed",
+      "required_fields": [
+        {
+          "name": "[field_name]",
+          "type": "[type]",
+          "description": "[description]",
+          "units": "[unit or enum]"
+        }
+      ],
+      "optional_fields": [],
+      "derived_fields": [],
+      "example_input": {},
+      "example_output_summary": {},
+      "current_gaps": [
+        "[known limitation]"
+      ]
+    }
+  ]
+}

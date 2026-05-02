@@ -1,0 +1,18 @@
+"""Module Context
+Purpose:
+- [What this module is responsible for.]
+Why This Exists:
+- [Why the project needs this module instead of placing the behavior elsewhere.]
+Primary Inputs/Outputs:
+- Inputs: [primary inputs, schemas, or artifacts].
+- Outputs: [primary outputs, side effects, or artifacts].
+Research / Source Links:
+- docs/PROJECT_CONTEXT.md
+- [docs/RESEARCH_note.md]
+Validated:
+- [validated/provisional/todo status and supporting evidence.]
+Current Limits / TODO:
+- [known gap or deferred work.]
+Agent Maintenance Rule:
+- If this module changes in any way, or a finding affects its contracts, update this header in the same change.
+"""

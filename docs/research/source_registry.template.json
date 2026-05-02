@@ -1,0 +1,21 @@
+{
+  "registry_version": 1,
+  "description": "Template source registry for evidence used by [PROJECT_NAME].",
+  "sources": [
+    {
+      "id": "[source_id]",
+      "title": "[source title]",
+      "type": "paper_or_doc_or_dataset_or_runtime_artifact",
+      "location": "[citation, URL, local relative path, or artifact id]",
+      "accessed_or_created": "[YYYY-MM-DD]",
+      "supports": [
+        "[claim, rule id, tool id, or validation stage]"
+      ],
+      "limits": [
+        "[known limitation]"
+      ],
+      "validation_status": "todo",
+      "notes": "[short review notes]"
+    }
+  ]
+}

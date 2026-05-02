@@ -1,0 +1,35 @@
+# Local environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.crt
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+.next/
+.vite/
+
+# Local/editor/system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs and generated artifacts
+*.log
+artifacts/
+outputs/
+tmp/
+temp/

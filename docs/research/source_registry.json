@@ -1,0 +1,291 @@
+{
+  "registry_version": 1,
+  "description": "Project-specific source registry for evidence and resources used by x-tech-hackathon.",
+  "sources": [
+    {
+      "id": "hackathon_brief_problem_statement_3_2026_05_02",
+      "title": "3rd Annual National Security Hackathon hacker resource brief excerpt",
+      "type": "event_brief",
+      "location": "User-provided chat context on 2026-05-02; public event page: https://cerebralvalley.ai/e/3rd-annual-natsec-hackathon",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "Problem Statement 3 framing",
+        "judging criteria",
+        "partner resource list",
+        "OSINT resource list"
+      ],
+      "limits": [
+        "Pasted text includes omitted embedded links.",
+        "Event-only credentials and private access details are intentionally not stored in this registry.",
+        "External details have not been independently verified."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use for initial PRD alignment only; verify partner access and source availability before implementation depends on it."
+    },
+    {
+      "id": "project_scaffold_docs_2026_05_02",
+      "title": "Local project scaffold documentation",
+      "type": "local_doc_set",
+      "location": "docs/ and templates/",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "repo governance",
+        "validation status vocabulary",
+        "tool interface catalog maintenance",
+        "formula registry policy",
+        "module context header rule"
+      ],
+      "limits": [
+        "Scaffold does not include runnable source code.",
+        "Most project-specific fields were placeholders before the Problem Statement 3 context update."
+      ],
+      "validation_status": "validated",
+      "notes": "Read locally before creating the Problem Statement 3 resource map."
+    },
+    {
+      "id": "palantir_foundry_signup_natsec",
+      "title": "Palantir Foundry developer tier signup for NATSEC Hackathon",
+      "type": "platform_resource",
+      "location": "https://signup.palantirfoundry.com/signup?signupPermitCode=NAT_SEC_HACKATHON",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate platform-backed data integration",
+        "candidate operational workflow or ontology layer"
+      ],
+      "limits": [
+        "Access not verified locally.",
+        "Available datasets, APIs, and export patterns are unknown."
+      ],
+      "validation_status": "todo",
+      "notes": "Only use after account access and implementation path are confirmed."
+    },
+    {
+      "id": "danti_geospatial_platform",
+      "title": "Danti geospatial intelligence platform",
+      "type": "platform_resource",
+      "location": "https://danti.ai",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate geospatial enrichment",
+        "candidate OSINT-backed map context"
+      ],
+      "limits": [
+        "Account access not verified locally.",
+        "Available hackathon data and API surfaces are unknown."
+      ],
+      "validation_status": "todo",
+      "notes": "Evaluate after PRD selects a geospatial scenario."
+    },
+    {
+      "id": "openai_codex",
+      "title": "OpenAI Codex",
+      "type": "platform_resource",
+      "location": "https://developers.openai.com/codex",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "code generation and agent workflows",
+        "candidate natural-language query, extraction, summarization, and explanation support"
+      ],
+      "limits": [
+        "Hackathon access and API credits not verified locally.",
+        "Exact product/API use must be chosen after the PRD lands."
+      ],
+      "validation_status": "todo",
+      "notes": "Use official OpenAI documentation before implementing OpenAI-specific features."
+    },
+    {
+      "id": "osint_framework",
+      "title": "OSINT Framework",
+      "type": "osint_index",
+      "location": "https://osintframework.com/",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "source discovery",
+        "OSINT tooling inventory"
+      ],
+      "limits": [
+        "Index quality varies by linked source.",
+        "Specific sources must be separately cited before use."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use as a discovery index, not as evidence by itself."
+    },
+    {
+      "id": "exa_ai_search",
+      "title": "Exa AI search",
+      "type": "search_tool",
+      "location": "https://exa.ai",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "AI-assisted source discovery",
+        "OSINT search workflow"
+      ],
+      "limits": [
+        "Search outputs must be verified against primary sources.",
+        "API access and terms not verified."
+      ],
+      "validation_status": "provisional",
+      "notes": "Candidate discovery tool only."
+    },
+    {
+      "id": "shodan_search",
+      "title": "Shodan internet monitoring search",
+      "type": "search_tool",
+      "location": "https://shodan.io",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "network infrastructure context",
+        "candidate cyber-adjacent operational data"
+      ],
+      "limits": [
+        "May be more relevant to Problem Statement 4 than Problem Statement 3.",
+        "Account access, terms, and query limits not verified."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use only if PRD includes infrastructure or communications context."
+    },
+    {
+      "id": "ais_hub",
+      "title": "AIS Hub shipping data",
+      "type": "dataset_or_api",
+      "location": "https://www.aishub.net",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate maritime track feed",
+        "entity and location correlation scenario"
+      ],
+      "limits": [
+        "Access, licensing, and API constraints not verified."
+      ],
+      "validation_status": "todo",
+      "notes": "Potential source for a maritime command dashboard demo."
+    },
+    {
+      "id": "barentswatch_historic_ais_api",
+      "title": "BarentsWatch historic AIS API",
+      "type": "dataset_or_api",
+      "location": "https://developer.barentswatch.no/docs/AIS/historic-ais-api/",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate historic maritime track data",
+        "fixture-backed replay"
+      ],
+      "limits": [
+        "Access, coverage, and usage terms not verified."
+      ],
+      "validation_status": "todo",
+      "notes": "Evaluate if PRD chooses maritime track replay."
+    },
+    {
+      "id": "marinecadastre_vessel_traffic",
+      "title": "MarineCadastre vessel traffic data",
+      "type": "dataset",
+      "location": "https://hub.marinecadastre.gov/pages/vesseltraffic",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate public vessel traffic dataset",
+        "fixture-backed geospatial track demo"
+      ],
+      "limits": [
+        "Dataset size, coverage, and processing requirements not verified."
+      ],
+      "validation_status": "todo",
+      "notes": "Likely useful if the PRD needs public maritime data."
+    },
+    {
+      "id": "kaggle_ais_dataset",
+      "title": "Kaggle AIS dataset",
+      "type": "dataset",
+      "location": "https://www.kaggle.com/datasets/eminserkanerdonmez/ais-dataset/data",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate sample AIS dataset",
+        "offline fixture creation"
+      ],
+      "limits": [
+        "Kaggle access, licensing, and dataset quality not verified."
+      ],
+      "validation_status": "todo",
+      "notes": "Potential fallback if direct APIs are too slow to integrate."
+    },
+    {
+      "id": "flightradar24",
+      "title": "FlightRadar24",
+      "type": "data_platform",
+      "location": "https://www.flightradar24.com",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate flight tracking context",
+        "air track visualization inspiration"
+      ],
+      "limits": [
+        "API access, data rights, and hackathon suitability not verified."
+      ],
+      "validation_status": "todo",
+      "notes": "Use only after confirming data access and license constraints."
+    },
+    {
+      "id": "kepler_gl",
+      "title": "Kepler.gl",
+      "type": "visualization_tool",
+      "location": "https://kepler.gl",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "geospatial visualization",
+        "map layer prototyping"
+      ],
+      "limits": [
+        "Fit with chosen app stack not yet evaluated."
+      ],
+      "validation_status": "provisional",
+      "notes": "Candidate visualization tool for rapid geospatial demos."
+    },
+    {
+      "id": "deck_gl",
+      "title": "Deck.gl",
+      "type": "visualization_library",
+      "location": "https://deck.gl",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "web map visualization",
+        "track layers and spatial overlays"
+      ],
+      "limits": [
+        "Fit with chosen frontend stack not yet evaluated."
+      ],
+      "validation_status": "provisional",
+      "notes": "Candidate library for a custom map-first dashboard."
+    },
+    {
+      "id": "wokwi_simulated_hardware",
+      "title": "Wokwi simulated hardware environment",
+      "type": "simulation_tool",
+      "location": "https://wokwi.com",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "simulated hardware or telemetry source"
+      ],
+      "limits": [
+        "Likely secondary for Problem Statement 3 unless PRD includes sensor simulation."
+      ],
+      "validation_status": "provisional",
+      "notes": "Consider only if simulated feeds are part of the PRD."
+    },
+    {
+      "id": "defcon_inspiration_scrape_2025",
+      "title": "Sample DEFCON projects scrape",
+      "type": "inspiration_dataset",
+      "location": "https://defcon-inspiration.cerebralvalley.ai/",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "project inspiration",
+        "possible implementation patterns"
+      ],
+      "limits": [
+        "Inspiration only; not a product requirement or evidence source by itself."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use for brainstorming, not validation."
+    }
+  ]
+}

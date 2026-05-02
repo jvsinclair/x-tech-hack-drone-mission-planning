@@ -1,0 +1,29 @@
+{
+  "registry_version": 1,
+  "description": "Template registry for formulas, thresholds, scoring rules, heuristics, and constants used by [PROJECT_NAME].",
+  "entries": [
+    {
+      "id": "[rule_id]",
+      "kind": "formula",
+      "expression": "[human-readable equation or rule]",
+      "variables": {
+        "[input_name]": "[meaning]"
+      },
+      "units": {
+        "[input_name]": "[unit or enum]",
+        "[output_name]": "[unit or enum]"
+      },
+      "source_ref": "TODO(validate+cite)",
+      "applicability": [
+        "[VALIDATOR_STAGE]"
+      ],
+      "confidence": "unknown",
+      "chosen_for": [
+        "[why selected]"
+      ],
+      "rejected_for": [],
+      "notes": "[limits, assumptions, and review notes]",
+      "status": "todo"
+    }
+  ]
+}

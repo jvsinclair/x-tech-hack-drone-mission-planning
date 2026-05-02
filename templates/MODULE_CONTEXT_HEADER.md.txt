@@ -1,0 +1,19 @@
+<!--
+Module Context
+Purpose:
+- [What this document or module is responsible for.]
+Why This Exists:
+- [Why this exists and what decision or workflow it supports.]
+Primary Inputs/Outputs:
+- Inputs: [primary inputs, sources, or upstream artifacts].
+- Outputs: [primary outputs, decisions, or downstream artifacts].
+Research / Source Links:
+- docs/PROJECT_CONTEXT.md
+- [docs/RESEARCH_note.md]
+Validated:
+- [validated/provisional/todo status and supporting evidence.]
+Current Limits / TODO:
+- [known gap or deferred work.]
+Agent Maintenance Rule:
+- If this file changes in any way, or a finding affects its contract, update this header in the same change.
+-->

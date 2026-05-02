@@ -113,6 +113,24 @@
       "notes": "Registered as a provisional heuristic in docs/research/formula_registry.json."
     },
     {
+      "id": "user_clarification_pps_drone_commands_2026_05_02",
+      "title": "User clarification: map PPS observations to drone commands",
+      "type": "project_direction",
+      "location": "User-provided chat context on 2026-05-02",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "PPS observations should map to drone commands in the demo",
+        "demo_optical_cue_pps_command_mapping_v1",
+        "pps_drone_command_mapping_plan"
+      ],
+      "limits": [
+        "Treat as simulation and fixture-backed demo logic only.",
+        "Does not establish authenticated friendly identification, real PEQ-15 integration, or operational drone control."
+      ],
+      "validation_status": "validated",
+      "notes": "Use with docs/research/pps_drone_command_mapping_plan.md and formula registry rule demo_optical_cue_pps_command_mapping_v1."
+    },
+    {
       "id": "atpial_public_manual_ir_pulse_rates",
       "title": "Public ATPIAL manual page: IR illuminator pulse rates",
       "type": "public_manual_page",
@@ -386,6 +404,40 @@
       ],
       "validation_status": "provisional",
       "notes": "Candidate library for a custom map-first dashboard."
+    },
+    {
+      "id": "maplibre_gl_js",
+      "title": "MapLibre GL JS",
+      "type": "visualization_library",
+      "location": "https://maplibre.org/maplibre-gl-js/docs",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "open-source web map basemap",
+        "markers, popups, sources, and layers for the mission planning UI"
+      ],
+      "limits": [
+        "Map styles and tiles still need to be selected for the demo.",
+        "Offline or restricted-network behavior is not yet validated."
+      ],
+      "validation_status": "provisional",
+      "notes": "Recommended basemap layer for the custom drone route-planning UI."
+    },
+    {
+      "id": "xstate_state_machines",
+      "title": "XState",
+      "type": "state_machine_library",
+      "location": "https://stately.ai/docs",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "mission state-machine modeling",
+        "explicit state transitions for route selection, hold, cue interpretation, and RTB"
+      ],
+      "limits": [
+        "May be more library than needed for a tiny demo state graph.",
+        "Use a small typed reducer instead if the PRD requires only a few transitions."
+      ],
+      "validation_status": "provisional",
+      "notes": "Recommended only for mission logic, not general UI state."
     },
     {
       "id": "wokwi_simulated_hardware",

@@ -14,9 +14,13 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 - `user_clarification_secure_army_unit_2026_05_02`: User clarified that the demo scenario is a simple maneuver to secure an Army unit with drone coverage.
 - `user_clarification_peq15_optical_cue_2026_05_02`: User clarified that the concept uses a PEQ-15-style optical cue to tell the drone which preplanned flight path to choose so radio communications are not required.
 - `user_clarification_pps_route_mapping_2026_05_02`: User clarified the demo cue grammar: 2 PPS selects Route A, 4 PPS selects Route B, and 8 PPS requests return to base.
+- `user_clarification_pps_drone_commands_2026_05_02`: User confirmed planning should map PPS observations to drone commands.
 - `atpial_public_manual_ir_pulse_rates`: Public ATPIAL manual page describing IR illuminator pulse-rate options.
 - `ruleset_and_state_machine_2026_05_02`: Teammate-provided local repo note describing squad-leader planning, route/ruleset checks, drone capability checks, and state-machine conversion.
 - `state_planning_for_flight_path_2026_05_02`: Teammate-provided local repo note expanding the tail-end operator workflow, ATP ruleset concept, drone capability checks, and state-machine branches.
+- `maplibre_gl_js`: Candidate open-source basemap layer for the route-planning UI.
+- `deck_gl`: Candidate geospatial visualization layer for routes, coverage, paths, and animated overlays.
+- `xstate_state_machines`: Candidate state-machine library for mission state transitions.
 - `project_scaffold_docs_2026_05_02`: Local repo docs under `docs/` and `templates/`. Supports governance, validation vocabulary, tool catalog, formula registry, and module header rules.
 - `docs/research/source_registry.json`: Project-specific source registry created from the current resource map.
 
@@ -29,6 +33,7 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 | Secure Army unit maneuver scenario | Gives the demo a concrete mission: plan and monitor a simple maneuver to secure an Army unit under drone coverage. | Focus the demo on route planning, drone overwatch, unit status, threat/constraint overlays, and human approval. | `validated` as user-provided scenario direction. |
 | PEQ-15-style optical cue concept | Provides a low/no-radio command concept: a simulated optical cue selects which preplanned flight path a drone should follow. | Demo as route-option selection from a camera/video/fixture event, with confidence and human confirmation. | `provisional`; keep implementation simulation-only and avoid real hardware control or covert signaling details. |
 | PPS route-selection grammar | Gives the demo a tiny, memorable command grammar: 2 PPS -> Route A, 4 PPS -> Route B, 8 PPS -> return to base. | Drive the mission state machine from a simulated pulse observation, while checking route validity and cue context. | `provisional`; registered as `demo_optical_cue_pps_route_mapping_v1` and not treated as authentication. |
+| PPS drone command grammar | Extends the route grammar into v1 drone state commands: 1 PPS -> hold/loiter, 2 PPS -> Route A, 4 PPS -> Route B, 8 PPS -> RTB. | Drive command preview and state-machine transitions for the demo. | `provisional`; registered as `demo_optical_cue_pps_command_mapping_v1`; cue observations are intent hints, not authenticated commands. |
 | Ruleset and state machine note | Adds squad-leader planning flow: designate hold patterns, no-go zones, signaling zones, objectives, drone type, doctrine, drone capability checks, and state-machine decision trees. | Use as the bridge between PRD and implementation modules: mission-plan editor -> validator -> state-machine route options -> operator choice. | `provisional`; references and rules need validation before hard-coding. |
 | StatePlanningForFlightPath note | Expands the workflow into METT-TC planning, route/no-go/hold/signaling zones, ATP-inspired validation, drone capability checks, and state-machine branches. | Use for UI flow, validation backlog, and state-machine schema. | `provisional`; narrow implementation to ISR/recon, route safety, cue interpretation, overwatch, and RTB unless the PRD defines safer non-kinetic scope. |
 | Judging criteria | Technical demo 35%, military impact 30%, creativity 25%, pitch 10%. | Optimize for a working end-to-end demo with clear operational impact and visible provenance, not a slide-heavy concept. | `provisional`; pasted event brief not independently verified. |
@@ -41,6 +46,16 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 | Flight tracking sources | FlightRadar24 and related public aviation feeds. | Candidate for air-track visualization, but licensing/API access may be harder for a hackathon demo. | `todo`; verify before committing. |
 | Visualization tooling | Kepler.gl and deck.gl. | Map-first operational picture, track playback, spatial layers, and event timelines. | `provisional`; stack choice pending PRD. |
 | Simulation tooling | Wokwi and local fixture generation. | Useful if the PRD needs simulated sensors, edge devices, or streaming telemetry without external dependencies. | `provisional`; likely secondary for Problem Statement 3. |
+
+## Recommended UI Layer
+Use a custom web app rather than a generic dashboard builder:
+- React + TypeScript + Vite for the app shell and fast hackathon iteration.
+- MapLibre GL JS for the basemap, map camera, markers, popups, and local/open map style support.
+- deck.gl for mission-specific overlays: drone paths, route alternatives, no-go zones, coverage cones/areas, unit movement, cue locations, and animated track playback.
+- XState or a small typed reducer for the mission state machine. Use XState if the state graph becomes visible in the demo; otherwise keep the interpreter pure and small.
+- Zustand or local React state for UI-only panel state, selected route, selected drone, and drawer visibility.
+
+Avoid making Palantir, Danti, or Kepler.gl the primary UI shell unless the PRD or available accounts make that obviously faster. Palantir and Danti are better as data/enrichment sources for this demo; Kepler.gl is useful for quick geospatial exploration but gives less control over route-planning interactions than a custom MapLibre/deck.gl UI.
 
 ## Recommended Tool Leverage
 Use partner resources in this order unless the PRD strongly says otherwise:
@@ -58,7 +73,7 @@ The most demoable and governable direction is a drone mission planning workspace
 - normalize mission objects into shared schemas
 - generate or compare route options with visible constraints, assumptions, and confidence
 - simulate a PEQ-15-style optical cue that selects between prevalidated route options without relying on radio messaging in the demo narrative
-- use the provisional demo grammar from `docs/research/formula_registry.json`: 2 PPS selects Route A, 4 PPS selects Route B, and 8 PPS requests return to base
+- use the provisional demo grammar from `docs/research/formula_registry.json`: 1 PPS previews hold/loiter, 2 PPS previews Route A, 4 PPS previews Route B, and 8 PPS previews or requests return to base
 - convert the selected plan into a simple state machine with decision points for obstacles, no-go zones, hold patterns, and operator multiple-choice inputs
 - show a map/timeline/interface with drone routes, coverage areas, unit movement, no-fly areas, risks, and source evidence
 - allow natural-language questions whose answers cite the exact observations and constraints used
@@ -85,7 +100,7 @@ The most demoable and governable direction is a drone mission planning workspace
 - What operational scenario should the demo use: maritime, air, base security, disaster response, convoy support, or another mission context?
 - What drone mission planning action should the demo center on: route generation, route comparison, replanning, ISR tasking, or preflight validation?
 - Should the PEQ-15-style cue be represented as a video/camera detection, a map click replay, a scripted fixture event, or a UI control for the hackathon demo?
-- What should 1 PPS or continuous illumination mean in the demo, if anything, or should those remain rejected/ignored?
+- Should continuous illumination or no pulse mean "no command," or should either be used for an explicit cancel/clear preview action?
 - Should Route A/B/RTB transitions auto-preview only, or can any of them advance the state machine without a confirmation click?
 - Which data sources are guaranteed available during the hackathon?
 - Is the primary technical bet a map dashboard, a knowledge graph, natural-language querying, workflow automation, or a partner-platform integration?

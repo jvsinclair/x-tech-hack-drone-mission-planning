@@ -52,6 +52,7 @@ The PRD will arrive in a separate document from a teammate and is expected to be
 - `provisional`: teammate-provided `RulesetAndStateMachine` note exists in the repo and frames squad-leader mission planning, doctrine/ruleset checks, drone capability checks, and state-machine conversion.
 - `provisional`: teammate-provided `docs/StatePlanningForFlightPath` note expands the planning workflow, ATP ruleset concept, drone capability checks, and state-machine design.
 - `provisional`: demo optical cue grammar is 2 PPS -> Route A, 4 PPS -> Route B, and 8 PPS -> return to base; registered as `demo_optical_cue_pps_route_mapping_v1`.
+- `provisional`: broader v1 drone command grammar is 1 PPS -> hold/loiter, 2 PPS -> Route A, 4 PPS -> Route B, and 8 PPS -> return to base; registered as `demo_optical_cue_pps_command_mapping_v1`.
 
 ## What Is Still Provisional
 - `provisional`: exact drone mission planning product scope, maneuver details, data sources, constraints, and demo path are pending the separate PRD.

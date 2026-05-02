@@ -40,6 +40,47 @@
       ],
       "notes": "Pulse-rate mapping is not authentication and can be spoofed or misread. Treat cue observations as intent hints that must be checked against expected sector, time window, state-machine transition, and route safety constraints.",
       "status": "active"
+    },
+    {
+      "id": "demo_optical_cue_pps_command_mapping_v1",
+      "kind": "heuristic",
+      "expression": "For simulation and fixture-backed demos only: 1 PPS previews hold_or_loiter, 2 PPS previews route_a, 4 PPS previews route_b, and 8 PPS previews or requests return_to_base. Continuous illumination, no pulse, unmatched rates, ambiguous rates, stale observations, or out-of-context observations are rejected or routed to human review.",
+      "variables": {
+        "observed_pulse_rate_pps": "Observed optical cue pulse rate in pulses per second.",
+        "allowed_commands": "Commands permitted in the current mission state.",
+        "mission_state": "Current state-machine state and allowed transitions.",
+        "cue_context": "Observed cue location, timestamp, source, confidence, and expected sector/window.",
+        "operator_confirmation": "Whether a human operator confirmed the previewed command."
+      },
+      "units": {
+        "observed_pulse_rate_pps": "pulses_per_second",
+        "allowed_commands": "set(enum(hold_or_loiter, select_route_a, select_route_b, return_to_base))",
+        "mission_state": "enum",
+        "cue_context": "structured_observation",
+        "operator_confirmation": "boolean",
+        "output_action": "enum(preview_hold_or_loiter, preview_route_a, preview_route_b, preview_return_to_base, reject_or_review)"
+      },
+      "source_ref": "user_clarification_pps_drone_commands_2026_05_02; user_clarification_pps_route_mapping_2026_05_02; atpial_public_manual_ir_pulse_rates",
+      "applicability": [
+        "optical_cue_interpretation",
+        "mission_state_machine_demo",
+        "drone_command_preview_demo"
+      ],
+      "confidence": "medium",
+      "chosen_for": [
+        "Extends the user-provided route mapping into a compact drone command grammar.",
+        "Keeps commands limited to ISR/recon planning, route choice, hold/loiter, and RTB.",
+        "Separates cue observation from command execution by requiring state validation and operator review."
+      ],
+      "rejected_for": [
+        "Real hardware integration.",
+        "Authenticated friendly identification.",
+        "Covert signaling protocol design.",
+        "Autonomous targeting or engagement.",
+        "Operational drone command without human-approved safety gates."
+      ],
+      "notes": "Use this as the preferred v1 command grammar for the hackathon demo. The cue is an intent hint, not proof of friendly identity. All non-RTB commands should be previewed before state-machine advancement; RTB may be visually prioritized but should still be logged and explainable.",
+      "status": "active"
     }
   ]
 }

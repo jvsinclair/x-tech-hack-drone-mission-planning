@@ -93,6 +93,27 @@
       "notes": "Use for demo framing: optical cue selects among preplanned route options, then human operator confirms."
     },
     {
+      "id": "ruleset_and_state_machine_2026_05_02",
+      "title": "RulesetAndStateMachine local planning note",
+      "type": "local_doc",
+      "location": "RulesetAndStateMachine",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "squad leader mission planning flow",
+        "route and ruleset validation concept",
+        "drone capability check concept",
+        "state-machine conversion concept",
+        "operator multiple-choice decision points"
+      ],
+      "limits": [
+        "Doctrine reference ATP 3-21.8 is not yet reviewed or converted into implementable rules.",
+        "Skydio X10D and Neros Archer capability references are not yet verified.",
+        "Local note is not a full PRD or acceptance-test source."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use as product input for mission planning workflow; route rules, capabilities, and thresholds need formula/source registry backing before implementation depends on them."
+    },
+    {
       "id": "palantir_foundry_signup_natsec",
       "title": "Palantir Foundry developer tier signup for NATSEC Hackathon",
       "type": "platform_resource",

@@ -22,7 +22,7 @@ The PRD will arrive in a separate document from a teammate and is expected to be
 - Source adapter layer:
   fixture loaders, simulated optical cue events, simulated feeds, partner platform exports, OSINT datasets, and future live integrations
 - Domain model and enrichment layer:
-  mission plan schema, drone asset model, optical cue event model, observation normalization, entity/event/location extraction, route constraint enrichment, correlation, deduplication, and confidence annotation
+  mission plan schema, drone asset model, optical cue event model, mission state machine, observation normalization, entity/event/location extraction, route constraint enrichment, correlation, deduplication, and confidence annotation
 - Validator and provenance layer:
   staged checks, source evidence, optical cue confidence checks, route/safety constraints, hard blockers, warning surfaces, and accepted human overrides
 - Runtime or workflow layer:
@@ -35,6 +35,7 @@ The PRD will arrive in a separate document from a teammate and is expected to be
 ## Current Critical Modules
 - `todo`: PRD-specific app entrypoint
 - `todo`: mission plan, drone asset, optical cue, waypoint, route constraint, and observation schemas
+- `todo`: ruleset-backed mission state machine and decision tree module
 - `todo`: feed and geospatial context normalization module
 - `todo`: entity/event/location extraction, optical cue interpretation, and route constraint correlation module
 - `todo`: validator pipeline for provenance, cue confidence, route safety, and workflow readiness
@@ -48,9 +49,11 @@ The PRD will arrive in a separate document from a teammate and is expected to be
 - `validated`: working scenario direction is a simple maneuver to secure an Army unit with drone coverage, based on user clarification on 2026-05-02.
 - `validated`: intended low/no-radio interaction concept is PEQ-15-style optical cueing to choose among drone flight paths, based on user clarification on 2026-05-02.
 - `validated`: current documentation rules require tool catalog entries, formula registry entries, source registry entries, and module context headers as the implementation grows.
+- `provisional`: teammate-provided `RulesetAndStateMachine` note exists in the repo and frames squad-leader mission planning, doctrine/ruleset checks, drone capability checks, and state-machine conversion.
 
 ## What Is Still Provisional
 - `provisional`: exact drone mission planning product scope, maneuver details, data sources, constraints, and demo path are pending the separate PRD.
+- `provisional`: ATP 3-21.8, Skydio X10D, and Neros Archer references from `RulesetAndStateMachine` are not yet verified or converted into registry-backed rules.
 - `provisional`: candidate partner resources and OSINT sources are mapped in `docs/research/problem_statement_3_resource_map.md`, but account access and dataset/API availability are not yet verified.
 - `todo`: no runnable app, fixtures, tests, generated artifacts, or public workflow actions exist yet.
 
@@ -63,7 +66,7 @@ The PRD will arrive in a separate document from a teammate and is expected to be
 
 ## Current Debug Track
 - Main active investigation:
-  Problem Statement 3 resource mapping and PRD readiness.
+  Drone mission planning resource mapping, optical cue demo framing, and PRD readiness.
 - Key reference note:
   `docs/research/problem_statement_3_resource_map.md`
 - Latest relevant handoff:

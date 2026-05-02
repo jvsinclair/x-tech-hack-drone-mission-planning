@@ -78,6 +78,8 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath`. Prepare
   `todo`: create a handoff after the PRD is ingested or implementation begins.
 
 ## Key Source-Of-Truth Docs
+- Current roundtable demo requirements:
+  `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
 - Tool catalog:
   `docs/TOOL_INTERFACE_CATALOG.md`
 - Formula and threshold governance:

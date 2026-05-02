@@ -117,15 +117,15 @@ The most demoable and governable direction is a drone mission planning workspace
 - What should the one-minute demo video prove end to end?
 - What actions are allowed in scope, and which must remain advisory or out of scope?
 - What stack should be used for speed: local web app, Palantir-backed app, or hybrid?
-- Which references from `RulesetAndStateMachine` are authoritative enough to implement: ATP 3-21.8 rules, Skydio X10D capabilities, Neros Archer capabilities, or local demo assumptions?
+- Which references from `docs/RulesetAndStateMachine.md` are authoritative enough to implement: ATP 3-21.8 rules, Skydio X10D capabilities, Neros Archer capabilities, or local demo assumptions?
 
 ## Limits
 - The hackathon brief was pasted into chat and has not been independently verified.
 - Embedded links in the event brief were omitted, and private/event-only access details are intentionally not copied here.
 - PEQ-15-style cueing must remain a demo abstraction unless reviewed and approved as safe simulation-only behavior; this note does not specify real hardware integration, signaling protocols, or operational drone control.
 - The PPS grammar is not friendly authentication and should be treated as spoofable, ambiguous, and context-dependent.
-- The teammate-provided `RulesetAndStateMachine` note is useful product input, but its doctrine and drone capability references are not yet verified.
-- The teammate-provided `docs/StatePlanningForFlightPath` note is useful product input, but kinetic/strike examples should not become implementation requirements for this project without separate review and safe reframing.
+- The teammate-provided `docs/RulesetAndStateMachine.md` note is useful product input, but its doctrine and drone capability references are not yet verified.
+- The teammate-provided `docs/StatePlanningForFlightPath.md` note is useful product input, but kinetic/strike examples should not become implementation requirements for this project without separate review and safe reframing.
 - Partner resource availability depends on accounts and event provisioning.
 - No fixtures, app code, tests, or runtime evidence exist yet.
 

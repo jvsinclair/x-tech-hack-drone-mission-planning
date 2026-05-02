@@ -118,7 +118,7 @@ This document narrows the project toward a working, judge-facing route-security 
 
 ## ISR Constants And Validation Posture
 - X10D ISR is the v1 platform profile.
-- Safe demo constants can include the source-backed company specs from `docs/ISR_DRONE_TECHNICAL_ SPECS`, including:
+- Safe demo constants can include the source-backed company specs from `docs/ISR_DRONE_TECHNICAL_SPECS.md`, including:
   - 40 minute max flight time
   - 35 minute max hover time
   - 16 m/s transit speed with obstacle avoidance

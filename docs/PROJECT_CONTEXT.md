@@ -6,7 +6,7 @@ It is the best single entrypoint for understanding current goals, architecture, 
 
 ## Current Goal
 Build a hackathon solution for Problem Statement 3: Mission Command and Control, focused on drone mission planning for a simple maneuver to secure an Army unit.
-The initial PRD-like planning note is `docs/StatePlanningForFlightPath`. Prepare the repo for a human-in-the-loop drone mission planning prototype that can:
+The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prepare the repo for a human-in-the-loop drone mission planning prototype that can:
 - ingest live, simulated, or fixture-backed feeds such as drone coverage, simulated PEQ-15-style optical cue events, sensor tracks, unit positions, vehicle locations, communications, intelligence reports, and geospatial sources
 - normalize mission context into consistent schemas for drone assets, objectives, no-fly areas, waypoints, route constraints, observations, confidence, timestamp, and provenance
 - link assets, objectives, reports, locations, threats, constraints, and route options into a unified operational picture or knowledge graph
@@ -49,17 +49,17 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath`. Prepare
 - `validated`: working scenario direction is a simple maneuver to secure an Army unit with drone coverage, based on user clarification on 2026-05-02.
 - `validated`: intended low/no-radio interaction concept is PEQ-15-style optical cueing to choose among drone flight paths, based on user clarification on 2026-05-02.
 - `validated`: current documentation rules require tool catalog entries, formula registry entries, source registry entries, and module context headers as the implementation grows.
-- `provisional`: teammate-provided `RulesetAndStateMachine` note exists in the repo and frames squad-leader mission planning, doctrine/ruleset checks, drone capability checks, and state-machine conversion.
-- `provisional`: teammate-provided `docs/StatePlanningForFlightPath` note expands the planning workflow, ATP ruleset concept, drone capability checks, and state-machine design.
+- `provisional`: teammate-provided `docs/RulesetAndStateMachine.md` note exists in the repo and frames squad-leader mission planning, doctrine/ruleset checks, drone capability checks, and state-machine conversion.
+- `provisional`: teammate-provided `docs/StatePlanningForFlightPath.md` note expands the planning workflow, ATP ruleset concept, drone capability checks, and state-machine design.
 - `provisional`: demo optical cue grammar is 2 PPS -> Route A, 4 PPS -> Route B, and 8 PPS -> return to base; registered as `demo_optical_cue_pps_route_mapping_v1`.
 - `provisional`: broader v1 drone command grammar is 1 PPS -> hold/loiter, 2 PPS -> Route A, 4 PPS -> Route B, and 8 PPS -> return to base; registered as `demo_optical_cue_pps_command_mapping_v1`.
 - `provisional`: moving-unit mission planning approach is mapped in `docs/research/moving_unit_drone_mission_planning.md`.
 
 ## What Is Still Provisional
 - `provisional`: exact drone mission planning product scope, maneuver details, data sources, constraints, and demo path still need final acceptance criteria.
-- `provisional`: ATP 3-21.8, Skydio X10D, and Neros Archer references from `RulesetAndStateMachine` are not yet verified or converted into registry-backed rules.
+- `provisional`: ATP 3-21.8, Skydio X10D, and Neros Archer references from `docs/RulesetAndStateMachine.md` are not yet verified or converted into registry-backed rules.
 - `provisional`: PPS route-selection mapping is a simulation rule, not authenticated friendly identification or an operational command protocol.
-- `provisional`: `docs/StatePlanningForFlightPath` includes FPV/kinetic examples; implementation should narrow to ISR, route planning, cue interpretation, overwatch, RTB, and human-reviewed decisions unless the PRD explicitly defines safer non-kinetic scope.
+- `provisional`: `docs/StatePlanningForFlightPath.md` includes FPV/kinetic examples; implementation should narrow to ISR, route planning, cue interpretation, overwatch, RTB, and human-reviewed decisions unless the PRD explicitly defines safer non-kinetic scope.
 - `provisional`: candidate partner resources and OSINT sources are mapped in `docs/research/problem_statement_3_resource_map.md`, but account access and dataset/API availability are not yet verified.
 - `todo`: no runnable app, fixtures, tests, generated artifacts, or public workflow actions exist yet.
 

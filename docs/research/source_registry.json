@@ -152,7 +152,7 @@
       "id": "ruleset_and_state_machine_2026_05_02",
       "title": "RulesetAndStateMachine local planning note",
       "type": "local_doc",
-      "location": "RulesetAndStateMachine",
+      "location": "docs/RulesetAndStateMachine.md",
       "accessed_or_created": "2026-05-02",
       "supports": [
         "squad leader mission planning flow",
@@ -173,7 +173,7 @@
       "id": "state_planning_for_flight_path_2026_05_02",
       "title": "StatePlanningForFlightPath local planning note",
       "type": "local_doc",
-      "location": "docs/StatePlanningForFlightPath",
+      "location": "docs/StatePlanningForFlightPath.md",
       "accessed_or_created": "2026-05-02",
       "supports": [
         "tail-end squad leader planning workflow",

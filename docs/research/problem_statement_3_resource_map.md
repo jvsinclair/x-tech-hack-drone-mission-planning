@@ -1,7 +1,7 @@
 # Research Note: Problem Statement 3 Resource Map
 
 ## Purpose
-Map the hackathon brief and repo scaffold into a practical starting picture for a Mission Command and Control solution. The PRD will define the actual product; this note keeps current resources and constraints visible until then.
+Map the hackathon brief and repo scaffold into a practical starting picture for a Mission Command and Control solution focused on drone mission planning. The PRD will define the exact product; this note keeps current resources and constraints visible until then.
 
 ## Status
 - Validation status: `provisional`
@@ -10,6 +10,7 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 
 ## Sources
 - `hackathon_brief_problem_statement_3_2026_05_02`: User-provided hackathon resource brief in chat. Supports problem statement framing, judging criteria, partner resources, and OSINT links.
+- `user_clarification_drone_mission_planning_2026_05_02`: User clarified that the tool direction is drone mission planning and that a teammate will push the PRD later.
 - `project_scaffold_docs_2026_05_02`: Local repo docs under `docs/` and `templates/`. Supports governance, validation vocabulary, tool catalog, formula registry, and module header rules.
 - `docs/research/source_registry.json`: Project-specific source registry created from the current resource map.
 
@@ -17,7 +18,8 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 
 | Resource family | What it gives us | Best use for Problem Statement 3 | Current status |
 | --- | --- | --- | --- |
-| Problem Statement 3 brief | Mission command and control framing: unified operational picture, live feeds, intelligence reports, unit positions, natural-language querying, entity linking, and human oversight. | Anchor the PRD and demo around faster comprehension, provenance, and human-reviewed decision support. | `validated` as user-provided project direction; exact scope still `todo`. |
+| Problem Statement 3 brief | Mission command and control framing: unified operational picture, live feeds, intelligence reports, unit positions, natural-language querying, entity linking, and human oversight. | Anchor the PRD and demo around faster mission planning, provenance, and human-reviewed decision support. | `validated` as user-provided project direction; exact scope still `todo`. |
+| Drone mission planning clarification | Focuses the project on plans, drone assets, waypoints, route constraints, terrain/geospatial context, and explainable human approval. | Convert generic C2 scaffolding into mission planning schemas, validators, and UI flows. | `validated` as user-provided direction; detailed PRD still `todo`. |
 | Judging criteria | Technical demo 35%, military impact 30%, creativity 25%, pitch 10%. | Optimize for a working end-to-end demo with clear operational impact and visible provenance, not a slide-heavy concept. | `provisional`; pasted event brief not independently verified. |
 | Repo scaffold | Research-first docs, tool catalog, formula registry policy, source registry shape, validation vocabulary, module header rule, and templates. | Keep implementation explainable and auditable as features are added. | `validated` locally. |
 | Palantir AIP / Foundry | Potential ontology, operational workflow, data integration, and natural-language application layer. | Useful if team receives access and chooses a platform-backed demo path. | `todo`; access and export patterns not verified. |
@@ -29,21 +31,30 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 | Visualization tooling | Kepler.gl and deck.gl. | Map-first operational picture, track playback, spatial layers, and event timelines. | `provisional`; stack choice pending PRD. |
 | Simulation tooling | Wokwi and local fixture generation. | Useful if the PRD needs simulated sensors, edge devices, or streaming telemetry without external dependencies. | `provisional`; likely secondary for Problem Statement 3. |
 
+## Recommended Tool Leverage
+Use partner resources in this order unless the PRD strongly says otherwise:
+- OpenAI Codex for implementation velocity, repo maintenance, test generation, and PRD-to-code iteration.
+- OpenAI API for a mission planning copilot that extracts structured intent from commander text, summarizes intelligence reports, explains route tradeoffs, and answers questions with citations to mission data.
+- Danti for geospatial intelligence, terrain/place context, and map-enrichment material that makes the mission plan feel grounded in the real world.
+- Palantir AIP / Foundry if team access is active and a teammate can move quickly there; use it as a data/ontology/workflow backbone, or as an integration source, rather than letting platform setup consume the whole demo window.
+- Deck.gl or Kepler.gl for map-first visualization of routes, no-fly areas, drone positions, sensor footprints, and timeline playback.
+- Local fixtures and simulators as the default reliability layer so the demo works even if partner APIs, accounts, or networks are slow.
+
 ## Suggested Safe Demo Lane
-The most demoable and governable direction is a unified operational picture with provenance:
-- ingest a small fixture-backed stream of tracks, reports, and unit positions
-- normalize observations into shared schemas
-- resolve entities and link events, locations, and sources into a graph
-- show a map/timeline/interface with confidence and source evidence
-- allow natural-language questions whose answers cite the exact observations used
+The most demoable and governable direction is a drone mission planning workspace with provenance:
+- ingest a small fixture-backed scenario with drone assets, objectives, route constraints, map context, reports, and unit positions
+- normalize mission objects into shared schemas
+- generate or compare route options with visible constraints, assumptions, and confidence
+- show a map/timeline/interface with drone routes, no-fly areas, risks, and source evidence
+- allow natural-language questions whose answers cite the exact observations and constraints used
 - keep humans in control of workflow decisions and avoid automated engagement or target-selection recommendations
 
 ## Candidate Product Artifacts For The PRD
-- Observation schema for tracks, reports, entities, locations, timestamps, confidence, and provenance.
+- Mission plan schema for drone assets, objectives, waypoints, route options, constraints, reports, entities, locations, timestamps, confidence, and provenance.
 - Source adapter stubs for fixtures first, then partner/OSINT sources if access is available.
 - Entity/event/location graph model.
-- Validation pipeline for schema quality, stale data, contradictory reports, confidence, and missing provenance.
-- Dashboard with map, timeline, feed panel, entity detail, and cited natural-language query.
+- Validation pipeline for schema quality, stale data, contradictory reports, route/safety constraints, confidence, and missing provenance.
+- Dashboard with map, timeline, route plan panel, feed panel, entity detail, and cited natural-language query.
 - Review artifacts such as run manifests, source manifests, unresolved-conflict lists, and human-decision logs.
 
 ## Governance Implications
@@ -55,6 +66,7 @@ The most demoable and governable direction is a unified operational picture with
 
 ## Open Questions For The PRD
 - What operational scenario should the demo use: maritime, air, base security, disaster response, convoy support, or another mission context?
+- What drone mission planning action should the demo center on: route generation, route comparison, replanning, ISR tasking, or preflight validation?
 - Which data sources are guaranteed available during the hackathon?
 - Is the primary technical bet a map dashboard, a knowledge graph, natural-language querying, workflow automation, or a partner-platform integration?
 - What should the one-minute demo video prove end to end?

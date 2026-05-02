@@ -152,6 +152,28 @@
       "notes": "Use as product input for mission planning workflow; route rules, capabilities, and thresholds need formula/source registry backing before implementation depends on them."
     },
     {
+      "id": "state_planning_for_flight_path_2026_05_02",
+      "title": "StatePlanningForFlightPath local planning note",
+      "type": "local_doc",
+      "location": "docs/StatePlanningForFlightPath",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "tail-end squad leader planning workflow",
+        "METT-TC and route planning concept",
+        "ATP-inspired validation backlog",
+        "drone capability check concept",
+        "state-machine branch design",
+        "operator decision prompt concept"
+      ],
+      "limits": [
+        "Doctrine references and drone capability claims are not yet independently verified.",
+        "Contains FPV/kinetic examples that should not become implementation requirements without separate review and safe reframing.",
+        "Local note is not a finalized PRD or acceptance-test source."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use for ISR/recon planning, route safety, cue interpretation, overwatch, RTB, and human-reviewed state transitions."
+    },
+    {
       "id": "palantir_foundry_signup_natsec",
       "title": "Palantir Foundry developer tier signup for NATSEC Hackathon",
       "type": "platform_resource",

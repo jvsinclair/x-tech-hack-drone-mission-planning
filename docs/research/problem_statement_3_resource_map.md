@@ -16,6 +16,7 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 - `user_clarification_pps_route_mapping_2026_05_02`: User clarified the demo cue grammar: 2 PPS selects Route A, 4 PPS selects Route B, and 8 PPS requests return to base.
 - `atpial_public_manual_ir_pulse_rates`: Public ATPIAL manual page describing IR illuminator pulse-rate options.
 - `ruleset_and_state_machine_2026_05_02`: Teammate-provided local repo note describing squad-leader planning, route/ruleset checks, drone capability checks, and state-machine conversion.
+- `state_planning_for_flight_path_2026_05_02`: Teammate-provided local repo note expanding the tail-end operator workflow, ATP ruleset concept, drone capability checks, and state-machine branches.
 - `project_scaffold_docs_2026_05_02`: Local repo docs under `docs/` and `templates/`. Supports governance, validation vocabulary, tool catalog, formula registry, and module header rules.
 - `docs/research/source_registry.json`: Project-specific source registry created from the current resource map.
 
@@ -29,6 +30,7 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 | PEQ-15-style optical cue concept | Provides a low/no-radio command concept: a simulated optical cue selects which preplanned flight path a drone should follow. | Demo as route-option selection from a camera/video/fixture event, with confidence and human confirmation. | `provisional`; keep implementation simulation-only and avoid real hardware control or covert signaling details. |
 | PPS route-selection grammar | Gives the demo a tiny, memorable command grammar: 2 PPS -> Route A, 4 PPS -> Route B, 8 PPS -> return to base. | Drive the mission state machine from a simulated pulse observation, while checking route validity and cue context. | `provisional`; registered as `demo_optical_cue_pps_route_mapping_v1` and not treated as authentication. |
 | Ruleset and state machine note | Adds squad-leader planning flow: designate hold patterns, no-go zones, signaling zones, objectives, drone type, doctrine, drone capability checks, and state-machine decision trees. | Use as the bridge between PRD and implementation modules: mission-plan editor -> validator -> state-machine route options -> operator choice. | `provisional`; references and rules need validation before hard-coding. |
+| StatePlanningForFlightPath note | Expands the workflow into METT-TC planning, route/no-go/hold/signaling zones, ATP-inspired validation, drone capability checks, and state-machine branches. | Use for UI flow, validation backlog, and state-machine schema. | `provisional`; narrow implementation to ISR/recon, route safety, cue interpretation, overwatch, and RTB unless the PRD defines safer non-kinetic scope. |
 | Judging criteria | Technical demo 35%, military impact 30%, creativity 25%, pitch 10%. | Optimize for a working end-to-end demo with clear operational impact and visible provenance, not a slide-heavy concept. | `provisional`; pasted event brief not independently verified. |
 | Repo scaffold | Research-first docs, tool catalog, formula registry policy, source registry shape, validation vocabulary, module header rule, and templates. | Keep implementation explainable and auditable as features are added. | `validated` locally. |
 | Palantir AIP / Foundry | Potential ontology, operational workflow, data integration, and natural-language application layer. | Useful if team receives access and chooses a platform-backed demo path. | `todo`; access and export patterns not verified. |
@@ -98,6 +100,7 @@ The most demoable and governable direction is a drone mission planning workspace
 - PEQ-15-style cueing must remain a demo abstraction unless reviewed and approved as safe simulation-only behavior; this note does not specify real hardware integration, signaling protocols, or operational drone control.
 - The PPS grammar is not friendly authentication and should be treated as spoofable, ambiguous, and context-dependent.
 - The teammate-provided `RulesetAndStateMachine` note is useful product input, but its doctrine and drone capability references are not yet verified.
+- The teammate-provided `docs/StatePlanningForFlightPath` note is useful product input, but kinetic/strike examples should not become implementation requirements for this project without separate review and safe reframing.
 - Partner resource availability depends on accounts and event provisioning.
 - No PRD, fixtures, app code, tests, or runtime evidence exist yet.
 

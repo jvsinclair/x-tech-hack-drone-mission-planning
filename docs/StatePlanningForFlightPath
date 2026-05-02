@@ -1,0 +1,109 @@
+- Mission Planning
+	- Squad leader creates plan
+	- Squad leader creates recon/flight path for drone
+	- Squad leader designates:
+		- Hold pattern relative to squad
+		- No go zones
+		- Signaling pattern/zones
+		- Key targets to search for
+		- Key Objectives
+		- Drone type ISR/FPV
+		- General Doctrine
+	- Check plan/flight path against ATP 3-21.8 for Rulesets.
+		- Confirm consolidate into a list of rules appropriate for a dev
+	- Check plan against Drone capabilities
+		- ISR Skydio x10d
+			- https://www.skydio.com/x10d
+		- FPV Neros Archer drone
+			- https://www.neros.tech/#Products
+	- Flight plan is converted into state machine with decision trees
+		- Main flight path should be dynamic
+		- Should include decision pathing for obstacles, such as power lines 
+			- example: 
+				- Go high
+				- Go Low
+				- New route 
+					- A
+					- B
+		- Should include opportunities for operators input in the form of multiple choice like Claude does for questions
+		- Should Include decisions for specific key Objectives/Targets
+		- Should include future inject ports for operator control/feedback
+	- 
+**Tail-End Operator Workflow for Squad-Level Drone Mission Planning (ISR/FPV Integration)**
+
+This workflow focuses strictly on the **squad leader's field planning phase** (tail-end of TLP per ATP 3-21.8), converting a tentative plan into an executable, doctrine-compliant flight plan. It then turns that plan into a **state machine with decision trees** for real-time execution. No new project or system is proposed — this builds directly on existing doctrine (ATP 3-21.8 TLP, recon/patrol TTPs, control measures, movement techniques, risk management) and the technical limits of the **Skydio X10D (ISR)** and **Neros Archer (FPV)**. The goal is a repeatable "how" for the operator: quick map-based input in the field → validation → state machine generation → dynamic execution with human-in-the-loop ports.
+
+### Step 1: Squad Leader Creates/Refines Plan (TLP Integration)
+- Use **METT-TC** (Mission, Enemy, Terrain & Weather, Troops & Support, Time, Civil Considerations) to frame the drone annex.
+- Designate on a digital map/tool (e.g., integrated with Skydio Flight Deck app or compatible C2 like MAVLINK-enabled tablet):
+  - Recon/flight path (route/zone/area recon type per ATP 3-21.8 Chapter 6/7).
+  - Hold pattern relative to squad (e.g., offset orbit, overwatch vantage point, or mobile Scout mode).
+  - No-go zones (geofenced restricted areas, aligned with friendly positions, danger areas, or ROE).
+  - Signaling pattern/zones (e.g., visual/IR markers, specific light/flash patterns, or payload drops for comms with squad).
+  - Key targets to search for + key objectives (PIRs/CCIRs; positive ID required).
+  - Drone type (ISR Skydio X10D for autonomous persistent recon/mapping/tracking or FPV Neros Archer for high-speed tactical recon/strike).
+  - General doctrine (reference specific ATP control measures, ROE/fratricide prevention).
+
+**Drone Capability Check (Automated Validation Layer)**:
+- **Skydio X10D (ISR)**: ~40 min endurance (35 min hover), 45 mph max, 10-12 km LOS range, 360° AI vision-based obstacle avoidance, GNSS-denied VIO navigation, IP55 (wind ≤28.6 mph, -20°C to 45°C), thermal/visual/ NightSense sensors, onboard mapping/Scout overwatch, modular payloads. Strong for autonomous dynamic pathing, hold patterns, target tracking. Limitations: Battery/time-based RTB triggers; no kinetic payload.
+- **Neros Archer (FPV)**: 160 km/h, 20+ km range, 2 kg modular payload (recon or kinetic), jamming-resistant comms (Crossbow/Longbow GCS), BlueUAS/attritable. More operator-in-loop, high-speed/low-altitude FPV. Limitations: Less onboard autonomy; endurance likely 10-20+ min (profile-dependent); requires strong pilot control for decision-heavy ops.
+
+If plan violates capabilities (e.g., path exceeds endurance/range, wind > limits, no obstacle avoidance margin), flag for operator revision with suggested alternatives.
+
+### Step 2: Check Plan/Flight Path Against ATP 3-21.8 Rulesets
+ATP 3-21.8 provides the doctrinal guardrails (primarily via TLP, recon/patrol chapters, movement techniques, danger areas, control measures, and air-ground integration). No hyper-specific "drone flight manual" exists yet — UAS are treated as squad enablers for reconnaissance, security, observation posts (OPs), and target acquisition. Rules are consolidated below into a developer-friendly list for automated validation (e.g., as constraints in path generation or decision nodes).
+
+**Consolidated ATP 3-21.8 Rulesets for Dev (Drone Flight Path & Mission Planning)**:
+- **TLP/METT-TC Compliance**: All drone plans must derive from squad METT-TC; include recon guidance (specific info requirements, focus on key terrain/enemy avenues).
+- **Recon/Patrol Integration**: Path must support area/zone/route recon; prioritize OAKOC terrain analysis (observation/fields of fire, avenues of approach, key terrain, obstacles, cover/concealment). Drone supports leader recon or OP/vantage points without exposing squad.
+- **Control Measures as Constraints**: Use checkpoints/phase lines/rally points as waypoints; no-go zones = restricted areas/NFAs; hold patterns = overwatch or ORP positions; enforce deconfliction with friendly fires/positions (fratricide prevention via positive ID and coordination).
+- **Movement Techniques/Formations**: Drone path must support squad formations (wedge, column, line) and techniques (traveling, bounding overwatch, traveling overwatch). Avoid premature exposure; use terrain masking.
+- **Danger Areas**: Automated handling required — linear/open danger areas trigger decision trees (bypass, bound, or cross per doctrine); power lines/obstacles treated analogously to doctrinal obstacles.
+- **ROE & Risk Management**: Enforce positive identification, ROE compliance (search/engage rules), and fratricide avoidance. Human oversight mandatory at key decision points.
+- **Signaling & Coordination**: Support signaling zones/patterns; integrate with indirect fires/CAS/air-ground control measures.
+- **Security & Protection**: Drone ops contribute to local security/counter-recon; account for enemy UAS threats (dispersion, hide sites). Plan includes abort/RTB for comms loss or threats.
+- **Operator/Squad Oversight**: All plans require squad leader approval; include inject ports for real-time adjustments during execution.
+
+These rules are enforced as hard/soft constraints in the state machine (e.g., geofence no-go zones, block paths violating ROE or exposing squad).
+
+### Step 3: Convert Validated Plan into State Machine with Decision Trees
+The flight plan becomes a **dynamic state machine** (implemented via onboard AI for Skydio or GCS software for Archer, with MAVLINK/open protocol hooks). Main path is **not static** — it uses drone autonomy (Skydio AI vision or Archer smart software) for real-time adjustments while staying within doctrinal bounds.
+
+**Core States** (common to both drone types, with type-specific behaviors):
+- Pre-flight / Idle
+- Launch
+- Transit (dynamic route following)
+- Loiter / Hold (relative to squad position)
+- Search / ISR (key targets/objectives)
+- Objective Engagement (report, track, or strike for FPV)
+- RTB / Recover
+- Abort / Emergency
+
+**Decision Trees & Branches** (event-driven, with operator inject ports):
+- **Obstacle Handling** (e.g., power lines, per ATP danger area TTPs):  
+  Options → Go high (if service ceiling/weather allows), Go low (if cover/concealment ok), New route (A: bypass via terrain masking; B: alternate per METT-TC).  
+  Operator prompt (Claude-style multiple choice): "Obstacle detected — [A] Go high / [B] Go low / [C] Reroute via checkpoint X / [D] Abort & RTB". Timeout defaults to safest ATP-aligned choice.
+- **Key Objective/Target Decisions**: Detected target? → Confirm positive ID (per ROE) → [A] Track/Report coords (ISR) / [B] Engage (FPV if authorized) / [C] Loiter for squad decision / [D] Ignore & continue.
+- **Dynamic Hold/Relative Positioning**: Continuous squad position feed (if available) → Adjust orbit/offset autonomously while respecting no-go zones and overwatch doctrine.
+- **Comms/Signaling Events**: Loss of link → Autonomous RTB (Skydio vision return) or hold per plan. Signaling pattern match → Transition state (e.g., to objective engagement).
+- **Battery/Time/Threat Triggers**: Endurance threshold (e.g., 30% on Skydio) → Forced RTB. Enemy threat detected → Abort or evasive per ROE.
+- **Future Inject Ports**: At every major transition or on operator command → Pause for multiple-choice input or full manual override (especially critical for FPV Archer). Supports disconnected/edge ops.
+
+**Differences by Drone Type**:
+- **Skydio X10D (ISR)**: Heavily autonomous execution (AI handles most decisions/obstacle avoidance/mapping). State machine runs onboard with light GCS supervision.
+- **Neros Archer (FPV)**: More operator-in-loop (high-speed manual segments). State machine provides suggested paths/decisions but defaults to pilot control with safety guardrails.
+
+This produces a verifiable, auditable plan that the operator can execute in the field with minimal cognitive load — doctrine + drone physics enforced automatically, with human veto at critical nodes.
+
+**Next Steps for Refinement**  
+This is the complete "how" for the operator workflow and state machine conversion, grounded in the referenced doctrine and drone specs. To close remaining gaps and make it field-ready:
+
+**Specific Roundtable Questions**:
+1. Which exact ATP 3-21.8 control measures or ROE examples (from unit SOPs or specific chapters) should be prioritized as hard-coded rules in the decision trees (e.g., particular danger area crossing sequences)?
+2. For dynamic relative hold patterns: Do we assume real-time squad position sharing (via radio/GPS link), or fallback to pre-planned offsets only?
+3. Preferred format for operator decision prompts in the field (text multiple-choice on tablet, voice, map clicks, or controller buttons)?
+4. Examples of signaling patterns/zones the squad actually uses (visual/IR, smoke, specific light sequences) so we can define exact trigger logic?
+5. For FPV Archer kinetic missions: Any specific ROE or objective engagement rules (e.g., authorization chain) that differ from pure ISR?
+6. Edge device constraints for the planning tool (e.g., Android tablet, no-cloud, offline-only)?
+
+Provide answers or additional details on any of these, and we can iterate the state machine pseudocode, exact validation logic, or UI flow next. This is ready to implement as the operator-facing tail-end process.

@@ -21,6 +21,9 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 - `moving_unit_drone_mission_planning`: Local planning note for drone coverage around a moving unit and terrain attention-point generation.
 - `usgs_3dep`: Candidate U.S. elevation source for terrain-derived planning aids.
 - `opentopography_developers`: Candidate DEM API for clipped terrain data.
+- `palantir_map_core_concepts`: Palantir Map supports base, object, link, overlay, annotation, and time-aware layers.
+- `palantir_map_add_to_map`: Palantir Map can add geospatial Ontology objects and map overlays.
+- `palantir_aip_features`: Palantir AIP can work with Ontology data, logic, and actions through developer tools.
 - `maplibre_gl_js`: Candidate open-source basemap layer for the route-planning UI.
 - `deck_gl`: Candidate geospatial visualization layer for routes, coverage, paths, and animated overlays.
 - `xstate_state_machines`: Candidate state-machine library for mission state transitions.
@@ -42,7 +45,7 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 | Moving unit mission planning note | Defines the MVP path for unit route corridor, terrain attention points, drone route options, validation, and PPS state-machine preview. | Use as the immediate implementation map. | `provisional`; fixture-first and demo-only. |
 | Judging criteria | Technical demo 35%, military impact 30%, creativity 25%, pitch 10%. | Optimize for a working end-to-end demo with clear operational impact and visible provenance, not a slide-heavy concept. | `provisional`; pasted event brief not independently verified. |
 | Repo scaffold | Research-first docs, tool catalog, formula registry policy, source registry shape, validation vocabulary, module header rule, and templates. | Keep implementation explainable and auditable as features are added. | `validated` locally. |
-| Palantir AIP / Foundry | Potential ontology, operational workflow, data integration, and natural-language application layer. | Useful if team receives access and chooses a platform-backed demo path. | `todo`; access and export patterns not verified. |
+| Palantir AIP / Foundry | Ontology, geospatial objects, map overlays, workflow actions, and AIP-backed logic over mission data. | Useful as a data/ontology/workflow backbone for units, drones, routes, cue events, terrain attention points, and state transitions. | `provisional`; use if team access is ready, but keep fixture-backed local UI as fallback. |
 | OpenAI Codex / API | Code generation, agent workflows, natural-language query, summarization, extraction, and explanation support. | Useful for PRD-to-code work, report extraction, entity linking, and cited operational answers. | `todo`; exact API/product use pending PRD. |
 | Danti | Geospatial intelligence search and context. | Possible geospatial enrichment source for places, imagery context, or OSINT-backed map layers. | `todo`; account access and available data not verified. |
 | OSINT search tools | OSINT Framework, Exa, Shodan, DEFCON project scrape. | Source discovery, cyber/network context if the scenario includes infrastructure, and inspiration for demo data. | `provisional`; use only with cited sources. |
@@ -124,7 +127,7 @@ The most demoable and governable direction is a drone mission planning workspace
 - The teammate-provided `RulesetAndStateMachine` note is useful product input, but its doctrine and drone capability references are not yet verified.
 - The teammate-provided `docs/StatePlanningForFlightPath` note is useful product input, but kinetic/strike examples should not become implementation requirements for this project without separate review and safe reframing.
 - Partner resource availability depends on accounts and event provisioning.
-- No PRD, fixtures, app code, tests, or runtime evidence exist yet.
+- No fixtures, app code, tests, or runtime evidence exist yet.
 
 ## Follow-Up
 1. Ingest the PRD when available and update `docs/PROJECT_CONTEXT.md`.

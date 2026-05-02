@@ -14,6 +14,9 @@ Map the MVP approach for planning drone coverage around a moving Army unit, incl
 - `user_clarification_pps_drone_commands_2026_05_02`: User confirmed PPS observations should map to drone commands.
 - `usgs_3dep`: Candidate U.S. elevation source.
 - `opentopography_developers`: Candidate DEM API for clipped terrain data.
+- `palantir_map_core_concepts`: Palantir Map supports base, object, link, overlay, annotation, and time-aware layers.
+- `palantir_map_add_to_map`: Palantir Map can add geospatial Ontology objects and map overlays.
+- `palantir_aip_features`: Palantir AIP can work with Ontology data, logic, and actions through developer tools.
 - `maplibre_gl_js`: Candidate map UI layer.
 - `deck_gl`: Candidate geospatial overlay and terrain visualization layer.
 
@@ -72,6 +75,17 @@ These heuristics should be shown as "planning aids" rather than authoritative te
   - no-go zone
 - Right panel: selected route rationale, validation warnings, PPS cue mapping, and confirm button.
 - Bottom timeline: unit movement segments, cue events, state transitions, and operator confirmations.
+
+## Palantir Use
+Yes, use Palantir if team access is ready. The best role is data/ontology/workflow support, not blocking the whole demo on Palantir UI build-out.
+
+Good Palantir fit:
+- Model mission objects in an Ontology: unit, drone, route, route segment, waypoint, no-go zone, terrain attention point, cue event, command preview, and state transition.
+- Use Palantir Map to view geospatial Ontology objects and reusable overlays.
+- Use AIP or Ontology-backed functions to summarize route rationale, retrieve related mission objects, and prepare human-reviewed actions.
+- Export or mirror Palantir-backed mission objects into the local MapLibre/deck.gl UI if that is faster for the final demo.
+
+Avoid making Palantir a hard dependency unless a teammate can build there quickly. Fixture-backed local UI should remain the fallback demo path.
 
 ## PPS Command Integration
 Use `demo_optical_cue_pps_command_mapping_v1`:

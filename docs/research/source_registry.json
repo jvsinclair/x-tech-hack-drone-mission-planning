@@ -228,6 +228,58 @@
       "notes": "Only use after account access and implementation path are confirmed."
     },
     {
+      "id": "palantir_map_core_concepts",
+      "title": "Palantir Map core concepts",
+      "type": "official_doc",
+      "location": "https://www.palantir.com/docs/foundry/map/core-concepts/",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "Palantir Map layer model",
+        "geospatial object, link, overlay, annotation, and time-aware map layers"
+      ],
+      "limits": [
+        "Does not confirm hackathon instance configuration or available datasets.",
+        "Does not replace fixture-backed local demo path."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use to decide whether Palantir Map can host or support mission planning overlays."
+    },
+    {
+      "id": "palantir_map_add_to_map",
+      "title": "Palantir Map add data to a map",
+      "type": "official_doc",
+      "location": "https://www.palantir.com/docs/foundry/map/add-to-map",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "adding geospatial Ontology objects to maps",
+        "adding map overlays to Palantir maps",
+        "searching around related geospatial objects"
+      ],
+      "limits": [
+        "Does not confirm which object types or overlays exist in the hackathon instance.",
+        "Use local fixtures if setup takes too long."
+      ],
+      "validation_status": "provisional",
+      "notes": "Useful for unit/drone/route/attention-point map workflows if Palantir access is ready."
+    },
+    {
+      "id": "palantir_aip_features",
+      "title": "Palantir AIP features",
+      "type": "official_doc",
+      "location": "https://www.palantir.com/docs/foundry/aip/aip-features",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "AIP-backed workflows and applications",
+        "developer tools over Ontology data, logic, and actions"
+      ],
+      "limits": [
+        "Does not confirm model access, AIP configuration, or available Ontology in the hackathon instance.",
+        "Keep app-side deterministic route and PPS logic as fallback."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use for route rationale, mission object querying, and human-reviewed action workflows if available."
+    },
+    {
       "id": "danti_geospatial_platform",
       "title": "Danti geospatial intelligence platform",
       "type": "platform_resource",

@@ -1,0 +1,106 @@
+**Skydio X10D – All Technical Specifications (MVP Terms)**  
+**Assumption applied**: Max wireless/comms range set to **5 km** (5k) for both Connect SL and Connect MH variants (original was 10–12 km). All other specs unchanged from official page.
+
+### Aircraft
+- **Startup time**: Under 40 seconds
+- **Dimensions (unfolded, with propellers)**: 31.1” x 25.6” x 5.7” / 79.0 cm × 65.0 cm × 14.5 cm
+- **Dimensions (folded, without battery)**: 13.8” x 6.5” x 4.7” / 35.05 cm × 16.51 cm × 11.94 cm
+- **Weight (incl. batteries)**:
+  - Connect SL: 4.65 lbs / 2.11 kg
+  - Connect MH: 4.72 lbs / 2.14 kg
+- **Max takeoff weight**: 5.49 lbs / 2.49 kg
+- **Max hover time**: 35 minutes
+- **Max flight time**: 40 minutes
+- **Max horizontal speed (sea level)**: 45 mph / 20 m/s
+- **Max horizontal speed with obstacle avoidance**: 36 mph / 16 m/s
+- **Max ascent speed**: 13.4 mph / 6 m/s
+- **Max descent speed**: 9.0 mph / 4 m/s
+- **Max non-vertical descent speed**: 13.4 mph / 6 m/s
+- **Max tilt angle**: 40°
+- **Max angular velocity**:
+  - Yaw: 100°/s
+  - Roll / Pitch: 225°/s
+- **Max gust handling**: ≤ 28 mph / 12.8 m/s
+- **Max service ceiling above sea level**: 15,000 ft / 4,572 m (density altitude, no extra payload)
+- **Hovering accuracy** (windless/breezy):
+  - VIO: ±10 cm
+  - GNSS: ±1 m
+- **Ingress protection**: IP55
+- **Operational temperature range**: -4°F to 113°F / -20°C to +45°C
+- **Wireless range** (no interference, line-of-sight): **5 km / 3.1 miles** *(assumed per your request)*
+- **Operation frequency**:
+  - Connect SL: 5180–5825 MHz
+  - Connect MH: 1790–1850 MHz, 2040–2110 MHz, 2200–2300 MHz, 2300–2390 MHz, 2400–2500 MHz
+- **Transmitter power (EIRP)**:
+  - Connect SL: 34.3 dBm (2.4 GHz)
+  - Connect MH: 38 dBm
+- **Processors**: NVIDIA Jetson Orin SoC + Qualcomm QRB5165 SoC
+- **GNSS**: GPS + Galileo + GLONASS + BeiDou
+- **Geofence limitations**: None
+
+### Flight Battery
+- Capacity: 8419 mAh
+- Voltage: 18.55 V
+- Energy: 156.17 Wh
+- Chemistry: LiPo
+
+### Controller (Connect SL & Connect MH)
+- **Dimensions**: 10.5” x 5” x 3” / 26.67 cm × 12.70 cm × 7.62 cm
+- **Weight**: 2.5 lbs / 1.135 kg
+- **Screen**: 6.6” Dynamic AMOLED touchscreen, 120 Hz adaptive refresh rate, 2340 × 1080 resolution, 1750 nits peak brightness, 392 ppi
+- **Ingress protection**: IP54
+- **Operating time**: ~5 hours
+- **Battery**: 9600 mAh
+- **Operating frequencies**:
+  - Connect SL: 2400–2483.5 MHz, 5150–5850 MHz
+  - Connect MH: 1625–1725 MHz, 1790–1850 MHz, 2040–2110 MHz, 2200–2300 MHz, 2300–2390 MHz, 2400–2500 MHz
+- **Transmitter power (EIRP)**:
+  - Connect SL: 34.7 dBm (2.4 GHz), 35.9 dBm (5 GHz)
+  - Connect MH: 38 dBm
+- **Wired outputs**: HDMI + USB-C
+- **Operational temperature range**: -4°F to 113°F / -20°C to +45°C
+- **GNSS**: GPS + Galileo + GLONASS + BeiDou
+
+### Payloads / Cameras (modular gimbal)
+**Common gimbal specs**:
+- Angular vibration range: ±0.01°
+- User controllable range: ±90° pitch
+- Mechanical range: ±140° pitch, ±90° yaw, +75° to -230° roll
+
+**VT300-Z payload**:
+- Narrow camera: 64 MP (1/1.7” CMOS), 46 mm eq. focal length, 50° FOV, f/1.8, hybrid PDAF (1 m–∞)
+- Telephoto camera: 48 MP (0.5” CMOS), 190 mm eq. focal length, 13° FOV, f/2.2, hybrid PDAF (5 m–∞)
+- Radiometric thermal: FLIR Boson+ uncooled VOx microbolometer, 640 × 512, 60 mm eq., 41° FOV, f/1.0, <30 mK NEDT
+
+**VT300-L payload**:
+- Narrow camera: 64 MP (1/1.7” CMOS), 46 mm eq., 50° FOV, f/1.8
+- 1” Wide camera: 50.3 MP (1” CMOS), 20 mm eq. focal length, 93° FOV, f/1.95, 100% focus pixels (1 m–∞)
+- Radiometric thermal: same FLIR Boson+ as above
+
+**Camera performance (all RGB cameras)**:
+- Max video resolution: 3840 × 2880
+- Max photo size:
+  - Narrow: 9248 × 6944
+  - Telephoto: 8000 × 6000
+  - Wide: 8192 × 6144
+- Electronic shutter: 1/30–1/8000 s
+- ISO range: 100–16,000
+- Exposure compensation: ±3
+
+**Thermal camera details**:
+- Thermal sensitivity: <30 mK NEDT
+- Temperature measurement accuracy: larger of ±5°C or 5%
+- Temperature measurement range: -40°F to 302°F / -40°C to +150°C (high gain); up to -40°F to 662°F / -40°C to +350°C (low gain)
+- Photo formats: JPEG, RJPEG
+- Temperature methods: Spot meter, area measurement
+- Image processing: Adreno 650 GPU accelerated ISP
+
+**Additional notes**:
+- Blue UAS Cleared
+- NDAA compliant / EW resilient options
+- NightSense autonomy
+- Modular high-res visual + radiometric thermal payloads
+
+All other specs pulled directly from the official Skydio X10D page. The 5 km range assumption is applied only to the wireless section for your MVP/analysis use case.  
+
+Need a comparison table, range-based calculations (e.g. coverage area at 5 km), or any other tweaks? Just say the word!

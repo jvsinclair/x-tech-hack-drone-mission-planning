@@ -59,6 +59,40 @@
       "notes": "Use to orient pre-PRD scaffolding and partner-tool recommendations."
     },
     {
+      "id": "user_clarification_secure_army_unit_2026_05_02",
+      "title": "User clarification: simple maneuver to secure Army unit with drone coverage",
+      "type": "project_direction",
+      "location": "User-provided chat context on 2026-05-02",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "secure Army unit maneuver as working demo scenario",
+        "drone coverage as core mission planning input"
+      ],
+      "limits": [
+        "Detailed scenario requirements and acceptance criteria are still pending the PRD."
+      ],
+      "validation_status": "validated",
+      "notes": "Use to orient pre-PRD scenario scaffolding."
+    },
+    {
+      "id": "user_clarification_peq15_optical_cue_2026_05_02",
+      "title": "User clarification: PEQ-15-style optical cue for drone flight path selection",
+      "type": "project_direction",
+      "location": "User-provided chat context on 2026-05-02",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "simulated optical cue as a low/no-radio route selection input",
+        "prevalidated drone flight path selection workflow"
+      ],
+      "limits": [
+        "Treat as a simulation or fixture-backed demo abstraction.",
+        "Does not authorize real PEQ-15 hardware integration, covert signaling protocol design, autonomous targeting, or operational drone control.",
+        "Detailed requirements and acceptance criteria are still pending the PRD."
+      ],
+      "validation_status": "validated",
+      "notes": "Use for demo framing: optical cue selects among preplanned route options, then human operator confirms."
+    },
+    {
       "id": "palantir_foundry_signup_natsec",
       "title": "Palantir Foundry developer tier signup for NATSEC Hackathon",
       "type": "platform_resource",

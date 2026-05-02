@@ -5,25 +5,26 @@ This is the human-readable homepage for `x-tech-hackathon`.
 It is the best single entrypoint for understanding current goals, architecture, validation status, and where deeper context lives.
 
 ## Current Goal
-Build a hackathon solution for Problem Statement 3: Mission Command and Control, focused on drone mission planning.
+Build a hackathon solution for Problem Statement 3: Mission Command and Control, focused on drone mission planning for a simple maneuver to secure an Army unit.
 The PRD will arrive in a separate document from a teammate and is expected to be pushed to the repo. Until then, prepare the repo for a human-in-the-loop drone mission planning prototype that can:
-- ingest live, simulated, or fixture-backed feeds such as sensor tracks, unit positions, vehicle locations, communications, intelligence reports, and geospatial sources
+- ingest live, simulated, or fixture-backed feeds such as drone coverage, simulated PEQ-15-style optical cue events, sensor tracks, unit positions, vehicle locations, communications, intelligence reports, and geospatial sources
 - normalize mission context into consistent schemas for drone assets, objectives, no-fly areas, waypoints, route constraints, observations, confidence, timestamp, and provenance
 - link assets, objectives, reports, locations, threats, constraints, and route options into a unified operational picture or knowledge graph
-- validate data quality, source provenance, airspace or safety constraints, and workflow readiness before surfacing plans or runtime-backed actions
+- validate data quality, source provenance, optical cue interpretation, airspace or safety constraints, and workflow readiness before surfacing plans or runtime-backed actions
 - support a dashboard and natural-language query layer that cites the underlying observations and constraints used in any answer or route recommendation
 - produce reviewable artifacts that preserve assumptions, sources, warnings, and human decisions
 - avoid automated weapon-release, target-selection, or engagement decisions; mission planning workflows must preserve human oversight and explainable rationale
+- treat PEQ-15-related behavior as a non-operational demo abstraction: an optical intent cue can select among prevalidated route options, but the project should not implement real hardware control, covert signaling protocols, or autonomous engagement
 
 ## Current Architecture
 - PRD intake and config layer:
   scenario definition, user intent preservation, mission objective capture, data-source selection, defaults, and demo constraints
 - Source adapter layer:
-  fixture loaders, simulated feeds, partner platform exports, OSINT datasets, and future live integrations
+  fixture loaders, simulated optical cue events, simulated feeds, partner platform exports, OSINT datasets, and future live integrations
 - Domain model and enrichment layer:
-  mission plan schema, drone asset model, observation normalization, entity/event/location extraction, route constraint enrichment, correlation, deduplication, and confidence annotation
+  mission plan schema, drone asset model, optical cue event model, observation normalization, entity/event/location extraction, route constraint enrichment, correlation, deduplication, and confidence annotation
 - Validator and provenance layer:
-  staged checks, source evidence, route/safety constraints, hard blockers, warning surfaces, and accepted human overrides
+  staged checks, source evidence, optical cue confidence checks, route/safety constraints, hard blockers, warning surfaces, and accepted human overrides
 - Runtime or workflow layer:
   external tools, long-running enrichment jobs, generated artifacts, dashboard state, and progress reporting
 - Review and interface layer:
@@ -33,10 +34,10 @@ The PRD will arrive in a separate document from a teammate and is expected to be
 
 ## Current Critical Modules
 - `todo`: PRD-specific app entrypoint
-- `todo`: mission plan, drone asset, waypoint, route constraint, and observation schemas
+- `todo`: mission plan, drone asset, optical cue, waypoint, route constraint, and observation schemas
 - `todo`: feed and geospatial context normalization module
-- `todo`: entity/event/location extraction and route constraint correlation module
-- `todo`: validator pipeline for provenance, confidence, route safety, and workflow readiness
+- `todo`: entity/event/location extraction, optical cue interpretation, and route constraint correlation module
+- `todo`: validator pipeline for provenance, cue confidence, route safety, and workflow readiness
 - `todo`: drone mission planning dashboard or operational-picture interface
 - `todo`: review artifact and registry loader modules
 
@@ -44,16 +45,19 @@ The PRD will arrive in a separate document from a teammate and is expected to be
 - `validated`: repo is currently a research-first scaffold with no application source code.
 - `validated`: project domain is Problem Statement 3, Mission Command and Control, based on user-provided hackathon context on 2026-05-02.
 - `validated`: working product direction is drone mission planning, based on user clarification on 2026-05-02.
+- `validated`: working scenario direction is a simple maneuver to secure an Army unit with drone coverage, based on user clarification on 2026-05-02.
+- `validated`: intended low/no-radio interaction concept is PEQ-15-style optical cueing to choose among drone flight paths, based on user clarification on 2026-05-02.
 - `validated`: current documentation rules require tool catalog entries, formula registry entries, source registry entries, and module context headers as the implementation grows.
 
 ## What Is Still Provisional
-- `provisional`: exact drone mission planning product scope, scenario, data sources, constraints, and demo path are pending the separate PRD.
+- `provisional`: exact drone mission planning product scope, maneuver details, data sources, constraints, and demo path are pending the separate PRD.
 - `provisional`: candidate partner resources and OSINT sources are mapped in `docs/research/problem_statement_3_resource_map.md`, but account access and dataset/API availability are not yet verified.
 - `todo`: no runnable app, fixtures, tests, generated artifacts, or public workflow actions exist yet.
 
 ## Current Active Blockers
 - PRD is not yet in the repo; teammate is expected to push it later.
 - No application stack, runtime, source modules, or tests have been chosen.
+- Real hardware integration and operational low-probability-of-intercept signaling are out of scope for this repo unless the PRD explicitly reframes them as safe simulation-only requirements.
 - No partner platform accounts, source datasets, or demo fixtures have been verified locally.
 - No project-specific schemas, validation stages, formulas, thresholds, or workflow actions have been registered.
 

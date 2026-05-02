@@ -11,6 +11,8 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 ## Sources
 - `hackathon_brief_problem_statement_3_2026_05_02`: User-provided hackathon resource brief in chat. Supports problem statement framing, judging criteria, partner resources, and OSINT links.
 - `user_clarification_drone_mission_planning_2026_05_02`: User clarified that the tool direction is drone mission planning and that a teammate will push the PRD later.
+- `user_clarification_secure_army_unit_2026_05_02`: User clarified that the demo scenario is a simple maneuver to secure an Army unit with drone coverage.
+- `user_clarification_peq15_optical_cue_2026_05_02`: User clarified that the concept uses a PEQ-15-style optical cue to tell the drone which preplanned flight path to choose so radio communications are not required.
 - `project_scaffold_docs_2026_05_02`: Local repo docs under `docs/` and `templates/`. Supports governance, validation vocabulary, tool catalog, formula registry, and module header rules.
 - `docs/research/source_registry.json`: Project-specific source registry created from the current resource map.
 
@@ -20,6 +22,8 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 | --- | --- | --- | --- |
 | Problem Statement 3 brief | Mission command and control framing: unified operational picture, live feeds, intelligence reports, unit positions, natural-language querying, entity linking, and human oversight. | Anchor the PRD and demo around faster mission planning, provenance, and human-reviewed decision support. | `validated` as user-provided project direction; exact scope still `todo`. |
 | Drone mission planning clarification | Focuses the project on plans, drone assets, waypoints, route constraints, terrain/geospatial context, and explainable human approval. | Convert generic C2 scaffolding into mission planning schemas, validators, and UI flows. | `validated` as user-provided direction; detailed PRD still `todo`. |
+| Secure Army unit maneuver scenario | Gives the demo a concrete mission: plan and monitor a simple maneuver to secure an Army unit under drone coverage. | Focus the demo on route planning, drone overwatch, unit status, threat/constraint overlays, and human approval. | `validated` as user-provided scenario direction. |
+| PEQ-15-style optical cue concept | Provides a low/no-radio command concept: a simulated optical cue selects which preplanned flight path a drone should follow. | Demo as route-option selection from a camera/video/fixture event, with confidence and human confirmation. | `provisional`; keep implementation simulation-only and avoid real hardware control or covert signaling details. |
 | Judging criteria | Technical demo 35%, military impact 30%, creativity 25%, pitch 10%. | Optimize for a working end-to-end demo with clear operational impact and visible provenance, not a slide-heavy concept. | `provisional`; pasted event brief not independently verified. |
 | Repo scaffold | Research-first docs, tool catalog, formula registry policy, source registry shape, validation vocabulary, module header rule, and templates. | Keep implementation explainable and auditable as features are added. | `validated` locally. |
 | Palantir AIP / Foundry | Potential ontology, operational workflow, data integration, and natural-language application layer. | Useful if team receives access and chooses a platform-backed demo path. | `todo`; access and export patterns not verified. |
@@ -38,22 +42,24 @@ Use partner resources in this order unless the PRD strongly says otherwise:
 - Danti for geospatial intelligence, terrain/place context, and map-enrichment material that makes the mission plan feel grounded in the real world.
 - Palantir AIP / Foundry if team access is active and a teammate can move quickly there; use it as a data/ontology/workflow backbone, or as an integration source, rather than letting platform setup consume the whole demo window.
 - Deck.gl or Kepler.gl for map-first visualization of routes, no-fly areas, drone positions, sensor footprints, and timeline playback.
+- A local computer-vision or fixture event layer for the PEQ-15-style optical cue: in the demo, detect or replay a benign "cue observed at sector/route marker" event and map it to prevalidated route options.
 - Local fixtures and simulators as the default reliability layer so the demo works even if partner APIs, accounts, or networks are slow.
 
 ## Suggested Safe Demo Lane
 The most demoable and governable direction is a drone mission planning workspace with provenance:
-- ingest a small fixture-backed scenario with drone assets, objectives, route constraints, map context, reports, and unit positions
+- ingest a small fixture-backed scenario with an Army unit to secure, drone assets providing coverage, maneuver objectives, route constraints, map context, reports, and unit positions
 - normalize mission objects into shared schemas
 - generate or compare route options with visible constraints, assumptions, and confidence
-- show a map/timeline/interface with drone routes, no-fly areas, risks, and source evidence
+- simulate a PEQ-15-style optical cue that selects between prevalidated route options without relying on radio messaging in the demo narrative
+- show a map/timeline/interface with drone routes, coverage areas, unit movement, no-fly areas, risks, and source evidence
 - allow natural-language questions whose answers cite the exact observations and constraints used
 - keep humans in control of workflow decisions and avoid automated engagement or target-selection recommendations
 
 ## Candidate Product Artifacts For The PRD
-- Mission plan schema for drone assets, objectives, waypoints, route options, constraints, reports, entities, locations, timestamps, confidence, and provenance.
+- Mission plan schema for drone assets, objectives, optical cue events, waypoints, route options, constraints, reports, entities, locations, timestamps, confidence, and provenance.
 - Source adapter stubs for fixtures first, then partner/OSINT sources if access is available.
 - Entity/event/location graph model.
-- Validation pipeline for schema quality, stale data, contradictory reports, route/safety constraints, confidence, and missing provenance.
+- Validation pipeline for schema quality, stale data, contradictory reports, optical cue confidence, route/safety constraints, confidence, and missing provenance.
 - Dashboard with map, timeline, route plan panel, feed panel, entity detail, and cited natural-language query.
 - Review artifacts such as run manifests, source manifests, unresolved-conflict lists, and human-decision logs.
 
@@ -67,6 +73,7 @@ The most demoable and governable direction is a drone mission planning workspace
 ## Open Questions For The PRD
 - What operational scenario should the demo use: maritime, air, base security, disaster response, convoy support, or another mission context?
 - What drone mission planning action should the demo center on: route generation, route comparison, replanning, ISR tasking, or preflight validation?
+- Should the PEQ-15-style cue be represented as a video/camera detection, a map click replay, a scripted fixture event, or a UI control for the hackathon demo?
 - Which data sources are guaranteed available during the hackathon?
 - Is the primary technical bet a map dashboard, a knowledge graph, natural-language querying, workflow automation, or a partner-platform integration?
 - What should the one-minute demo video prove end to end?
@@ -76,6 +83,7 @@ The most demoable and governable direction is a drone mission planning workspace
 ## Limits
 - The hackathon brief was pasted into chat and has not been independently verified.
 - Embedded links in the event brief were omitted, and private/event-only access details are intentionally not copied here.
+- PEQ-15-style cueing must remain a demo abstraction unless reviewed and approved as safe simulation-only behavior; this note does not specify real hardware integration, signaling protocols, or operational drone control.
 - Partner resource availability depends on accounts and event provisioning.
 - No PRD, fixtures, app code, tests, or runtime evidence exist yet.
 

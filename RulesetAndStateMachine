@@ -1,0 +1,31 @@
+- Mission Planning
+	- Squad leader creates plan
+	- Squad leader creates recon/flight path for drone
+	- Squad leader designates:
+		- Hold pattern relative to squad
+		- No go zones
+		- Signaling pattern/zones
+		- Key targets to search for
+		- Key Objectives
+		- Drone type ISR/FPV
+		- General Doctrine
+	- Check plan/flight path against ATP 3-21.8 for Rulesets.
+		- Confirm consolidate into a list of rules appropriate for a dev
+	- Check plan against Drone capabilities
+		- ISR Skydio x10d
+			- https://www.skydio.com/x10d
+		- FPV Neros Archer drone
+			- https://www.neros.tech/#Products
+	- Flight plan is converted into state machine with decision trees
+		- Main flight path should be dynamic
+		- Should include decision pathing for obstacles, such as power lines 
+			- example: 
+				- Go high
+				- Go Low
+				- New route 
+					- A
+					- B
+		- Should include opportunities for operators input in the form of multiple choice like Claude does for questions
+		- Should Include decisions for specific key Objectives/Targets
+		- Should include future inject ports for operator control/feedback
+	- 

@@ -18,6 +18,9 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 - `atpial_public_manual_ir_pulse_rates`: Public ATPIAL manual page describing IR illuminator pulse-rate options.
 - `ruleset_and_state_machine_2026_05_02`: Teammate-provided local repo note describing squad-leader planning, route/ruleset checks, drone capability checks, and state-machine conversion.
 - `state_planning_for_flight_path_2026_05_02`: Teammate-provided local repo note expanding the tail-end operator workflow, ATP ruleset concept, drone capability checks, and state-machine branches.
+- `moving_unit_drone_mission_planning`: Local planning note for drone coverage around a moving unit and terrain attention-point generation.
+- `usgs_3dep`: Candidate U.S. elevation source for terrain-derived planning aids.
+- `opentopography_developers`: Candidate DEM API for clipped terrain data.
 - `maplibre_gl_js`: Candidate open-source basemap layer for the route-planning UI.
 - `deck_gl`: Candidate geospatial visualization layer for routes, coverage, paths, and animated overlays.
 - `xstate_state_machines`: Candidate state-machine library for mission state transitions.
@@ -36,6 +39,7 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 | PPS drone command grammar | Extends the route grammar into v1 drone state commands: 1 PPS -> hold/loiter, 2 PPS -> Route A, 4 PPS -> Route B, 8 PPS -> RTB. | Drive command preview and state-machine transitions for the demo. | `provisional`; registered as `demo_optical_cue_pps_command_mapping_v1`; cue observations are intent hints, not authenticated commands. |
 | Ruleset and state machine note | Adds squad-leader planning flow: designate hold patterns, no-go zones, signaling zones, objectives, drone type, doctrine, drone capability checks, and state-machine decision trees. | Use as the bridge between PRD and implementation modules: mission-plan editor -> validator -> state-machine route options -> operator choice. | `provisional`; references and rules need validation before hard-coding. |
 | StatePlanningForFlightPath note | Expands the workflow into METT-TC planning, route/no-go/hold/signaling zones, ATP-inspired validation, drone capability checks, and state-machine branches. | Use for UI flow, validation backlog, and state-machine schema. | `provisional`; narrow implementation to ISR/recon, route safety, cue interpretation, overwatch, and RTB unless the PRD defines safer non-kinetic scope. |
+| Moving unit mission planning note | Defines the MVP path for unit route corridor, terrain attention points, drone route options, validation, and PPS state-machine preview. | Use as the immediate implementation map. | `provisional`; fixture-first and demo-only. |
 | Judging criteria | Technical demo 35%, military impact 30%, creativity 25%, pitch 10%. | Optimize for a working end-to-end demo with clear operational impact and visible provenance, not a slide-heavy concept. | `provisional`; pasted event brief not independently verified. |
 | Repo scaffold | Research-first docs, tool catalog, formula registry policy, source registry shape, validation vocabulary, module header rule, and templates. | Keep implementation explainable and auditable as features are added. | `validated` locally. |
 | Palantir AIP / Foundry | Potential ontology, operational workflow, data integration, and natural-language application layer. | Useful if team receives access and chooses a platform-backed demo path. | `todo`; access and export patterns not verified. |
@@ -45,6 +49,7 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 | Maritime AIS sources | AIS Hub, BarentsWatch historic AIS API, MarineCadastre vessel traffic, Kaggle AIS data. | Strong candidate for a public, demoable C2 scenario with moving tracks, locations, identity uncertainty, and entity correlation. | `provisional`; availability, licensing, and sample size need checking. |
 | Flight tracking sources | FlightRadar24 and related public aviation feeds. | Candidate for air-track visualization, but licensing/API access may be harder for a hackathon demo. | `todo`; verify before committing. |
 | Visualization tooling | Kepler.gl and deck.gl. | Map-first operational picture, track playback, spatial layers, and event timelines. | `provisional`; stack choice pending PRD. |
+| Terrain data | USGS 3DEP for U.S. elevation data; OpenTopography for DEM API access if needed. | Derive provisional terrain attention points such as obstacles, high ground, and coverage gaps. | `provisional`; use fixtures first for demo reliability. |
 | Simulation tooling | Wokwi and local fixture generation. | Useful if the PRD needs simulated sensors, edge devices, or streaming telemetry without external dependencies. | `provisional`; likely secondary for Problem Statement 3. |
 
 ## Recommended UI Layer
@@ -74,6 +79,7 @@ The most demoable and governable direction is a drone mission planning workspace
 - generate or compare route options with visible constraints, assumptions, and confidence
 - simulate a PEQ-15-style optical cue that selects between prevalidated route options without relying on radio messaging in the demo narrative
 - use the provisional demo grammar from `docs/research/formula_registry.json`: 1 PPS previews hold/loiter, 2 PPS previews Route A, 4 PPS previews Route B, and 8 PPS previews or requests return to base
+- identify terrain attention points along the moving unit corridor: obstacle candidates, high-ground scout candidates, and coverage gaps
 - convert the selected plan into a simple state machine with decision points for obstacles, no-go zones, hold patterns, and operator multiple-choice inputs
 - show a map/timeline/interface with drone routes, coverage areas, unit movement, no-fly areas, risks, and source evidence
 - allow natural-language questions whose answers cite the exact observations and constraints used
@@ -83,6 +89,7 @@ The most demoable and governable direction is a drone mission planning workspace
 - Mission plan schema for drone assets, objectives, optical cue events, waypoints, route options, constraints, reports, entities, locations, timestamps, confidence, and provenance.
 - Ruleset/state-machine schema for planned states, transitions, decision points, operator prompts, injected events, and route alternatives.
 - Cue interpreter output schema for observed pulse rate, matched command, confidence, expected sector/window, rejection reason, and required human review state.
+- Terrain attention-point schema for type, location, source, confidence, related route segment, and recommended drone task.
 - Source adapter stubs for fixtures first, then partner/OSINT sources if access is available.
 - Entity/event/location graph model.
 - Validation pipeline for schema quality, stale data, contradictory reports, optical cue confidence, route/safety constraints, confidence, and missing provenance.

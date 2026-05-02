@@ -192,6 +192,25 @@
       "notes": "Use for ISR/recon planning, route safety, cue interpretation, overwatch, RTB, and human-reviewed state transitions."
     },
     {
+      "id": "moving_unit_drone_mission_planning",
+      "title": "Moving Unit Drone Mission Planning research note",
+      "type": "local_doc",
+      "location": "docs/research/moving_unit_drone_mission_planning.md",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "moving unit route corridor planning",
+        "terrain attention-point generation",
+        "drone route option generation",
+        "PPS cue integration with mission state machine"
+      ],
+      "limits": [
+        "Fixture-first demo plan, not operational doctrine.",
+        "Terrain heuristics are provisional and should be visibly labeled in the UI."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use as the immediate implementation map for the moving-unit demo."
+    },
+    {
       "id": "palantir_foundry_signup_natsec",
       "title": "Palantir Foundry developer tier signup for NATSEC Hackathon",
       "type": "platform_resource",
@@ -404,6 +423,40 @@
       ],
       "validation_status": "provisional",
       "notes": "Candidate library for a custom map-first dashboard."
+    },
+    {
+      "id": "usgs_3dep",
+      "title": "USGS 3D Elevation Program",
+      "type": "dataset_or_api",
+      "location": "https://www.usgs.gov/3DEP",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate U.S. elevation data for terrain-derived planning aids",
+        "terrain attention-point generation"
+      ],
+      "limits": [
+        "Integration path and data access are not yet implemented.",
+        "Use fixture data first for hackathon demo reliability."
+      ],
+      "validation_status": "provisional",
+      "notes": "USGS states 3DEP products are available free of charge and without use restrictions; verify specific service endpoint before implementation."
+    },
+    {
+      "id": "opentopography_developers",
+      "title": "OpenTopography for Developers",
+      "type": "dataset_or_api",
+      "location": "https://opentopography.org/developers",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate DEM API for clipped terrain data",
+        "global elevation fallback for terrain attention-point generation"
+      ],
+      "limits": [
+        "API access, key requirements, rate limits, and terms are not yet validated.",
+        "Use fixture data first for hackathon demo reliability."
+      ],
+      "validation_status": "provisional",
+      "notes": "OpenTopography documents REST APIs for DEM datasets; useful if the demo needs a simple AOI elevation pull."
     },
     {
       "id": "maplibre_gl_js",

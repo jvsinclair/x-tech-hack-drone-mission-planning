@@ -6,7 +6,7 @@ It is the best single entrypoint for understanding current goals, architecture, 
 
 ## Current Goal
 Build a hackathon solution for Problem Statement 3: Mission Command and Control, focused on drone mission planning for a simple maneuver to secure an Army unit.
-The PRD will arrive in a separate document from a teammate and is expected to be pushed to the repo. Until then, prepare the repo for a human-in-the-loop drone mission planning prototype that can:
+The initial PRD-like planning note is `docs/StatePlanningForFlightPath`. Prepare the repo for a human-in-the-loop drone mission planning prototype that can:
 - ingest live, simulated, or fixture-backed feeds such as drone coverage, simulated PEQ-15-style optical cue events, sensor tracks, unit positions, vehicle locations, communications, intelligence reports, and geospatial sources
 - normalize mission context into consistent schemas for drone assets, objectives, no-fly areas, waypoints, route constraints, observations, confidence, timestamp, and provenance
 - link assets, objectives, reports, locations, threats, constraints, and route options into a unified operational picture or knowledge graph
@@ -53,9 +53,10 @@ The PRD will arrive in a separate document from a teammate and is expected to be
 - `provisional`: teammate-provided `docs/StatePlanningForFlightPath` note expands the planning workflow, ATP ruleset concept, drone capability checks, and state-machine design.
 - `provisional`: demo optical cue grammar is 2 PPS -> Route A, 4 PPS -> Route B, and 8 PPS -> return to base; registered as `demo_optical_cue_pps_route_mapping_v1`.
 - `provisional`: broader v1 drone command grammar is 1 PPS -> hold/loiter, 2 PPS -> Route A, 4 PPS -> Route B, and 8 PPS -> return to base; registered as `demo_optical_cue_pps_command_mapping_v1`.
+- `provisional`: moving-unit mission planning approach is mapped in `docs/research/moving_unit_drone_mission_planning.md`.
 
 ## What Is Still Provisional
-- `provisional`: exact drone mission planning product scope, maneuver details, data sources, constraints, and demo path are pending the separate PRD.
+- `provisional`: exact drone mission planning product scope, maneuver details, data sources, constraints, and demo path still need final acceptance criteria.
 - `provisional`: ATP 3-21.8, Skydio X10D, and Neros Archer references from `RulesetAndStateMachine` are not yet verified or converted into registry-backed rules.
 - `provisional`: PPS route-selection mapping is a simulation rule, not authenticated friendly identification or an operational command protocol.
 - `provisional`: `docs/StatePlanningForFlightPath` includes FPV/kinetic examples; implementation should narrow to ISR, route planning, cue interpretation, overwatch, RTB, and human-reviewed decisions unless the PRD explicitly defines safer non-kinetic scope.
@@ -63,7 +64,6 @@ The PRD will arrive in a separate document from a teammate and is expected to be
 - `todo`: no runnable app, fixtures, tests, generated artifacts, or public workflow actions exist yet.
 
 ## Current Active Blockers
-- PRD is not yet in the repo; teammate is expected to push it later.
 - No application stack, runtime, source modules, or tests have been chosen.
 - Real hardware integration and operational low-probability-of-intercept signaling are out of scope for this repo unless the PRD explicitly reframes them as safe simulation-only requirements.
 - No partner platform accounts, source datasets, or demo fixtures have been verified locally.

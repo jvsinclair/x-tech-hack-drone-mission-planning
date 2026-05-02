@@ -3,7 +3,7 @@
 This is the review guide for the current `x-tech-hackathon` tool, validator, and workflow surface.
 Every public stage should be documented here before agents depend on it.
 
-Current state: no implemented public tools, validator stages, workflow actions, or runtime-backed operations exist yet. `optical_cue_interpreter_demo` is a planned provisional stage for the first implementation slice.
+Current state: no implemented public tools, validator stages, workflow actions, or runtime-backed operations exist yet. `optical_cue_interpreter_demo` and `terrain_attention_point_generator_demo` are planned provisional stages for the first implementation slice.
 
 ## Field Glossary
 - `[field_name]`: `[description]` Units: `[units or enum or not_applicable]`.
@@ -69,6 +69,72 @@ Current state: no implemented public tools, validator stages, workflow actions, 
 - Current gaps / TODO notes:
   - PRD must confirm RTB confirmation behavior and continuous/no-pulse handling.
   - No source module or tests exist yet.
+
+## `terrain_attention_point_generator_demo`
+- Display name: Terrain Attention Point Generator Demo
+- Category: `selection`
+- Stage order: `2`
+- Purpose: Generate fixture-backed planning aids for obstacles, scout-worthy terrain, no-go zones, and coverage gaps along a moving unit route.
+- When to call: After the mission route, planning corridor, drone profile, and terrain/context fixtures are loaded.
+- When not to call: Do not call for operational terrain certification, autonomous obstacle avoidance, targeting, or real drone flight safety.
+- Input type: Mission route, corridor, terrain/context fixtures, manual map features, and drone profile.
+- Output type: GeoJSON-like terrain attention points with rationale, confidence, and source refs.
+- Supported use cases: Moving-unit drone overwatch planning; route option explanation; map overlay generation.
+- Supported data or source families: Fixture terrain; manually drawn map features; future DEM-derived terrain samples.
+- Status values: `passed | failed | skipped | warning | blocked`
+- Hard-fail vs warning behavior: Missing route or corridor blocks generation; missing terrain data degrades to manual features and fixture defaults.
+- Formula or rule groups: `demo_terrain_attention_points_v1`
+- Support level: `provisional`
+- Platform support: `not_applicable`
+- Required binaries or services: `none` for fixture mode.
+- Headless expectations: Pure generator should run headlessly against fixtures.
+- Degraded modes: Manual-only attention points when terrain fixtures are absent.
+- Source module: `todo`
+- Kernel id: `terrain_attention_point_kernel`
+- Kernel boundary: Deterministic mapping from route/corridor/context fixtures to attention-point overlays.
+- Pure function expected: `yes`
+- Required input fields:
+  - `unit_route` (`GeoJSON LineString`): Planned unit movement route. Units: `WGS84 coordinates`.
+  - `planning_corridor` (`GeoJSON Polygon`): Buffered route corridor. Units: `WGS84 coordinates`.
+  - `drone_profile` (`object`): Demo drone speed, endurance, sensor radius, and hold defaults. Units: `mixed`.
+- Optional input fields:
+  - `terrain_cells` (`array`): DEM-derived or fixture terrain samples. Units: `structured_grid_or_fixture`.
+  - `manual_features` (`GeoJSON FeatureCollection`): Operator-drawn obstacles, no-go zones, or scout candidates. Units: `WGS84 coordinates`.
+  - `planned_drone_routes` (`GeoJSON FeatureCollection`): Candidate drone routes and holds. Units: `WGS84 coordinates`.
+- Derived fields: `attention_type`, `rationale`, `related_route_segment`, `recommended_drone_task`, `confidence`, `evidence_refs`
+- Minimal valid example input:
+```json
+{
+  "unit_route": {
+    "type": "LineString",
+    "coordinates": [[-122.4, 37.8], [-122.39, 37.81]]
+  },
+  "planning_corridor": {
+    "type": "Polygon",
+    "coordinates": [[[-122.401, 37.799], [-122.389, 37.809], [-122.391, 37.811], [-122.403, 37.801], [-122.401, 37.799]]]
+  },
+  "drone_profile": {
+    "sensor_radius_m": 300,
+    "endurance_minutes": 30
+  }
+}
+```
+- Example output summary:
+```json
+{
+  "status": "passed",
+  "attention_points": [
+    {
+      "attention_type": "scout_high_ground",
+      "recommended_drone_task": "preview_route_b",
+      "evidence_refs": ["demo_terrain_attention_points_v1"]
+    }
+  ]
+}
+```
+- Current gaps / TODO notes:
+  - Fixture thresholds and route-corridor geometry still need implementation.
+  - External DEM ingestion is optional and should come after the fixture demo works.
 
 ## Entry Template
 

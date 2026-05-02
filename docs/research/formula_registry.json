@@ -81,6 +81,48 @@
       ],
       "notes": "Use this as the preferred v1 command grammar for the hackathon demo. The cue is an intent hint, not proof of friendly identity. All non-RTB commands should be previewed before state-machine advancement; RTB may be visually prioritized but should still be logged and explainable.",
       "status": "active"
+    },
+    {
+      "id": "demo_terrain_attention_points_v1",
+      "kind": "heuristic",
+      "expression": "For fixture-backed demos, generate terrain attention points inside the buffered unit movement corridor. Mark obstacle_candidate when terrain/context intersects the route corridor or a manual obstacle is present. Mark scout_high_ground when a local high point or ridge candidate is within drone range and can observe an upcoming route segment. Mark coverage_gap when a route segment is outside the planned drone sensor/coverage area. All generated points are planning aids, not authoritative terrain truth.",
+      "variables": {
+        "unit_route": "Planned unit movement path.",
+        "planning_corridor": "Buffered area around the unit route.",
+        "terrain_cells": "DEM-derived or fixture terrain samples.",
+        "manual_features": "Operator-drawn obstacles, no-go zones, or scout candidates.",
+        "drone_profile": "Demo drone endurance, speed band, sensor radius, and hold defaults.",
+        "planned_drone_routes": "Candidate drone route, hold, and RTB paths."
+      },
+      "units": {
+        "unit_route": "polyline",
+        "planning_corridor": "polygon",
+        "terrain_cells": "structured_grid_or_fixture",
+        "manual_features": "geojson",
+        "drone_profile": "structured_config",
+        "planned_drone_routes": "geojson",
+        "output_attention_points": "list(enum(obstacle_candidate, scout_high_ground, coverage_gap, no_go_zone))"
+      },
+      "source_ref": "moving_unit_drone_mission_planning; usgs_3dep; opentopography_developers",
+      "applicability": [
+        "terrain_attention_point_generation_demo",
+        "moving_unit_route_planning_demo",
+        "drone_route_option_generation_demo"
+      ],
+      "confidence": "medium",
+      "chosen_for": [
+        "Keeps terrain analysis explainable and demoable.",
+        "Works from deterministic fixtures before external terrain APIs are connected.",
+        "Supports the moving-unit drone planning scenario without pretending to be authoritative doctrine."
+      ],
+      "rejected_for": [
+        "Operational terrain validation.",
+        "Autonomous targeting or engagement.",
+        "Real-time flight safety certification.",
+        "Unreviewed obstacle avoidance for real drone control."
+      ],
+      "notes": "Use fixture thresholds and manually curated terrain examples for the hackathon. If external DEM data is added, cite the exact source and record any thresholds separately before relying on them.",
+      "status": "active"
     }
   ]
 }

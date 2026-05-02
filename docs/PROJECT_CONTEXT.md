@@ -50,10 +50,12 @@ The PRD will arrive in a separate document from a teammate and is expected to be
 - `validated`: intended low/no-radio interaction concept is PEQ-15-style optical cueing to choose among drone flight paths, based on user clarification on 2026-05-02.
 - `validated`: current documentation rules require tool catalog entries, formula registry entries, source registry entries, and module context headers as the implementation grows.
 - `provisional`: teammate-provided `RulesetAndStateMachine` note exists in the repo and frames squad-leader mission planning, doctrine/ruleset checks, drone capability checks, and state-machine conversion.
+- `provisional`: demo optical cue grammar is 2 PPS -> Route A, 4 PPS -> Route B, and 8 PPS -> return to base; registered as `demo_optical_cue_pps_route_mapping_v1`.
 
 ## What Is Still Provisional
 - `provisional`: exact drone mission planning product scope, maneuver details, data sources, constraints, and demo path are pending the separate PRD.
 - `provisional`: ATP 3-21.8, Skydio X10D, and Neros Archer references from `RulesetAndStateMachine` are not yet verified or converted into registry-backed rules.
+- `provisional`: PPS route-selection mapping is a simulation rule, not authenticated friendly identification or an operational command protocol.
 - `provisional`: candidate partner resources and OSINT sources are mapped in `docs/research/problem_statement_3_resource_map.md`, but account access and dataset/API availability are not yet verified.
 - `todo`: no runnable app, fixtures, tests, generated artifacts, or public workflow actions exist yet.
 

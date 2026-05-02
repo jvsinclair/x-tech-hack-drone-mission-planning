@@ -13,6 +13,8 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 - `user_clarification_drone_mission_planning_2026_05_02`: User clarified that the tool direction is drone mission planning and that a teammate will push the PRD later.
 - `user_clarification_secure_army_unit_2026_05_02`: User clarified that the demo scenario is a simple maneuver to secure an Army unit with drone coverage.
 - `user_clarification_peq15_optical_cue_2026_05_02`: User clarified that the concept uses a PEQ-15-style optical cue to tell the drone which preplanned flight path to choose so radio communications are not required.
+- `user_clarification_pps_route_mapping_2026_05_02`: User clarified the demo cue grammar: 2 PPS selects Route A, 4 PPS selects Route B, and 8 PPS requests return to base.
+- `atpial_public_manual_ir_pulse_rates`: Public ATPIAL manual page describing IR illuminator pulse-rate options.
 - `ruleset_and_state_machine_2026_05_02`: Teammate-provided local repo note describing squad-leader planning, route/ruleset checks, drone capability checks, and state-machine conversion.
 - `project_scaffold_docs_2026_05_02`: Local repo docs under `docs/` and `templates/`. Supports governance, validation vocabulary, tool catalog, formula registry, and module header rules.
 - `docs/research/source_registry.json`: Project-specific source registry created from the current resource map.
@@ -25,6 +27,7 @@ Map the hackathon brief and repo scaffold into a practical starting picture for 
 | Drone mission planning clarification | Focuses the project on plans, drone assets, waypoints, route constraints, terrain/geospatial context, and explainable human approval. | Convert generic C2 scaffolding into mission planning schemas, validators, and UI flows. | `validated` as user-provided direction; detailed PRD still `todo`. |
 | Secure Army unit maneuver scenario | Gives the demo a concrete mission: plan and monitor a simple maneuver to secure an Army unit under drone coverage. | Focus the demo on route planning, drone overwatch, unit status, threat/constraint overlays, and human approval. | `validated` as user-provided scenario direction. |
 | PEQ-15-style optical cue concept | Provides a low/no-radio command concept: a simulated optical cue selects which preplanned flight path a drone should follow. | Demo as route-option selection from a camera/video/fixture event, with confidence and human confirmation. | `provisional`; keep implementation simulation-only and avoid real hardware control or covert signaling details. |
+| PPS route-selection grammar | Gives the demo a tiny, memorable command grammar: 2 PPS -> Route A, 4 PPS -> Route B, 8 PPS -> return to base. | Drive the mission state machine from a simulated pulse observation, while checking route validity and cue context. | `provisional`; registered as `demo_optical_cue_pps_route_mapping_v1` and not treated as authentication. |
 | Ruleset and state machine note | Adds squad-leader planning flow: designate hold patterns, no-go zones, signaling zones, objectives, drone type, doctrine, drone capability checks, and state-machine decision trees. | Use as the bridge between PRD and implementation modules: mission-plan editor -> validator -> state-machine route options -> operator choice. | `provisional`; references and rules need validation before hard-coding. |
 | Judging criteria | Technical demo 35%, military impact 30%, creativity 25%, pitch 10%. | Optimize for a working end-to-end demo with clear operational impact and visible provenance, not a slide-heavy concept. | `provisional`; pasted event brief not independently verified. |
 | Repo scaffold | Research-first docs, tool catalog, formula registry policy, source registry shape, validation vocabulary, module header rule, and templates. | Keep implementation explainable and auditable as features are added. | `validated` locally. |
@@ -53,6 +56,7 @@ The most demoable and governable direction is a drone mission planning workspace
 - normalize mission objects into shared schemas
 - generate or compare route options with visible constraints, assumptions, and confidence
 - simulate a PEQ-15-style optical cue that selects between prevalidated route options without relying on radio messaging in the demo narrative
+- use the provisional demo grammar from `docs/research/formula_registry.json`: 2 PPS selects Route A, 4 PPS selects Route B, and 8 PPS requests return to base
 - convert the selected plan into a simple state machine with decision points for obstacles, no-go zones, hold patterns, and operator multiple-choice inputs
 - show a map/timeline/interface with drone routes, coverage areas, unit movement, no-fly areas, risks, and source evidence
 - allow natural-language questions whose answers cite the exact observations and constraints used
@@ -61,6 +65,7 @@ The most demoable and governable direction is a drone mission planning workspace
 ## Candidate Product Artifacts For The PRD
 - Mission plan schema for drone assets, objectives, optical cue events, waypoints, route options, constraints, reports, entities, locations, timestamps, confidence, and provenance.
 - Ruleset/state-machine schema for planned states, transitions, decision points, operator prompts, injected events, and route alternatives.
+- Cue interpreter output schema for observed pulse rate, matched command, confidence, expected sector/window, rejection reason, and required human review state.
 - Source adapter stubs for fixtures first, then partner/OSINT sources if access is available.
 - Entity/event/location graph model.
 - Validation pipeline for schema quality, stale data, contradictory reports, optical cue confidence, route/safety constraints, confidence, and missing provenance.
@@ -78,6 +83,8 @@ The most demoable and governable direction is a drone mission planning workspace
 - What operational scenario should the demo use: maritime, air, base security, disaster response, convoy support, or another mission context?
 - What drone mission planning action should the demo center on: route generation, route comparison, replanning, ISR tasking, or preflight validation?
 - Should the PEQ-15-style cue be represented as a video/camera detection, a map click replay, a scripted fixture event, or a UI control for the hackathon demo?
+- What should 1 PPS or continuous illumination mean in the demo, if anything, or should those remain rejected/ignored?
+- Should Route A/B/RTB transitions auto-preview only, or can any of them advance the state machine without a confirmation click?
 - Which data sources are guaranteed available during the hackathon?
 - Is the primary technical bet a map dashboard, a knowledge graph, natural-language querying, workflow automation, or a partner-platform integration?
 - What should the one-minute demo video prove end to end?
@@ -89,6 +96,7 @@ The most demoable and governable direction is a drone mission planning workspace
 - The hackathon brief was pasted into chat and has not been independently verified.
 - Embedded links in the event brief were omitted, and private/event-only access details are intentionally not copied here.
 - PEQ-15-style cueing must remain a demo abstraction unless reviewed and approved as safe simulation-only behavior; this note does not specify real hardware integration, signaling protocols, or operational drone control.
+- The PPS grammar is not friendly authentication and should be treated as spoofable, ambiguous, and context-dependent.
 - The teammate-provided `RulesetAndStateMachine` note is useful product input, but its doctrine and drone capability references are not yet verified.
 - Partner resource availability depends on accounts and event provisioning.
 - No PRD, fixtures, app code, tests, or runtime evidence exist yet.

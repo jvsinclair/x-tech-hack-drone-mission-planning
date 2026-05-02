@@ -1,0 +1,45 @@
+{
+  "registry_version": 1,
+  "description": "Project-specific registry for formulas, thresholds, scoring rules, heuristics, and constants used by x-tech-hackathon.",
+  "entries": [
+    {
+      "id": "demo_optical_cue_pps_route_mapping_v1",
+      "kind": "heuristic",
+      "expression": "For simulation and fixture-backed demos only: 2 PPS selects route_a, 4 PPS selects route_b, and 8 PPS requests return_to_base. Any unmatched, ambiguous, stale, or out-of-context pulse observation is rejected or routed to human review.",
+      "variables": {
+        "observed_pulse_rate_pps": "Observed optical cue pulse rate in pulses per second.",
+        "route_options": "Prevalidated route options available in the current mission state.",
+        "mission_state": "Current state-machine state and allowed transitions.",
+        "cue_context": "Observed cue location, timestamp, source, confidence, and expected sector/window."
+      },
+      "units": {
+        "observed_pulse_rate_pps": "pulses_per_second",
+        "route_options": "enum(route_a, route_b, return_to_base)",
+        "mission_state": "enum",
+        "cue_context": "structured_observation",
+        "output_action": "enum(select_route_a, select_route_b, request_return_to_base, reject_or_review)"
+      },
+      "source_ref": "user_clarification_pps_route_mapping_2026_05_02; atpial_public_manual_ir_pulse_rates",
+      "applicability": [
+        "optical_cue_interpretation",
+        "mission_state_machine_demo",
+        "route_option_selection_demo"
+      ],
+      "confidence": "medium",
+      "chosen_for": [
+        "Matches user-provided demo concept.",
+        "Keeps the hackathon route-selection interaction simple and easy to explain.",
+        "Uses only prevalidated route options and preserves human review for unsafe or ambiguous cases."
+      ],
+      "rejected_for": [
+        "Real hardware integration.",
+        "Authenticated friendly identification.",
+        "Covert signaling protocol design.",
+        "Autonomous targeting or engagement.",
+        "Operational drone command without human-approved safety gates."
+      ],
+      "notes": "Pulse-rate mapping is not authentication and can be spoofed or misread. Treat cue observations as intent hints that must be checked against expected sector, time window, state-machine transition, and route safety constraints.",
+      "status": "active"
+    }
+  ]
+}

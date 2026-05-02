@@ -38,6 +38,7 @@ x-tech-hackathon/
 │   └── MODULE_CONTEXT_HEADER_RULE.md
 ├── docs/research/
 │   ├── formula_registry.template.json
+│   ├── formula_registry.json
 │   ├── problem_statement_3_resource_map.md
 │   ├── source_registry.json
 │   ├── tool_interface_catalog.template.json

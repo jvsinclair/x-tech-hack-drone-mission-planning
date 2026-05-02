@@ -93,6 +93,44 @@
       "notes": "Use for demo framing: optical cue selects among preplanned route options, then human operator confirms."
     },
     {
+      "id": "user_clarification_pps_route_mapping_2026_05_02",
+      "title": "User clarification: PPS route-selection grammar",
+      "type": "project_direction",
+      "location": "User-provided chat context on 2026-05-02",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "2 PPS selects Route A in the demo",
+        "4 PPS selects Route B in the demo",
+        "8 PPS requests return to base in the demo",
+        "demo_optical_cue_pps_route_mapping_v1"
+      ],
+      "limits": [
+        "Treat as simulation and fixture-backed demo logic only.",
+        "Pulse-rate cues are not authenticated friendly identification and may be spoofed or misread.",
+        "Detailed requirements and acceptance criteria are still pending the PRD."
+      ],
+      "validation_status": "validated",
+      "notes": "Registered as a provisional heuristic in docs/research/formula_registry.json."
+    },
+    {
+      "id": "atpial_public_manual_ir_pulse_rates",
+      "title": "Public ATPIAL manual page: IR illuminator pulse rates",
+      "type": "public_manual_page",
+      "location": "https://www.manualsdir.com/manuals/402173/eotech-atpial-an_peq-15-advanced-target-pointer-illuminator-aiming-light.html?page=48",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "Public evidence that ATPIAL IR illuminator pulse mode includes fixed pulse-rate options",
+        "demo_optical_cue_pps_route_mapping_v1"
+      ],
+      "limits": [
+        "Public manual mirror, not an official current operational source.",
+        "Does not establish authentication, IFF, drone integration, or operational command safety.",
+        "Use only to justify a simulated demo abstraction."
+      ],
+      "validation_status": "provisional",
+      "notes": "The project should avoid real hardware integration or operational signaling details."
+    },
+    {
       "id": "ruleset_and_state_machine_2026_05_02",
       "title": "RulesetAndStateMachine local planning note",
       "type": "local_doc",

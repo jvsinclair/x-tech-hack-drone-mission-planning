@@ -77,6 +77,60 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - Latest relevant handoff:
   `todo`: create a handoff after the PRD is ingested or implementation begins.
 
+## Documentation Map (Where Clarifications Live)
+
+| Topic | Primary doc | Notes |
+| --- | --- | --- |
+| **Demo guardrails, waypoint mapper, judge path, Palantir posture** | `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md` | MVP promise; **resolved Plan/Run decisions** (*Decisions* table); remaining **open questions**; **workflow-first** principle (demo derivative). |
+| **Visual contract: route vs scan vs camera, R1–R7, behaviors, PPS table** | `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` | Single UX/engineering handoff for map symbology and preview-vs-commit (**R7**). |
+| **Topology vs events vs runtime (“recompile” on edit)** | `docs/STATE_DECISION_GRAPH.md` | Planning draft; align with roundtable before freezing. |
+| **Codex implementation queue (ordered goals)** | `docs/goals/README.md` | Queue rules; goals `0001`–`0006` are the durable task list. |
+| **Plan Mode + Run Mission Mode + from-scratch authoring + mode-roundtable prompts** | `docs/goals/0003-plan-mode-run-mission-mode.md` | Authoritative **implementation** spec for modes; **Roundtable Questions** subsection is copied/summarized in roundtable doc for one-stop review. |
+| **PPS cue zones, branch preview UI, demo PPS mapping** | `docs/goals/0005-pps-cue-zones-and-route-preview.md` | **Runtime** cueing over **preplanned** Route A/B — not mission authoring from scratch. |
+| **Waypoint glyphs, legend, ISR map symbology in app** | `docs/goals/0006-isr-map-symbology-waypoint-glyphs-and-legend.md` | Implements iconography §6–§8 in code (often after `0002`/`0003`). |
+| **App scaffold, layers, toggles** | `docs/goals/0002-local-vite-cesium-planner-scaffold.md` | Local Vite + Cesium baseline. |
+
+If a teammate asks **“where did we write that down?”** — start here, then open the linked file.
+
+---
+
+## Clarified Product And Scope Contract
+
+These points consolidate **recent clarification** (chat and doc passes, 2026-05) so the repo does not split “demo path” vs “real planner” across incompatible assumptions.
+
+### Mission authoring vs preplanned branches
+
+- **Building a mission from scratch** is a **Plan Mode** responsibility: ordered waypoints, segments, behaviors, branches **authored** before or during rehearsal — consistent with **`docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`** (Waypoint Mapper) and **`docs/goals/0003-plan-mode-run-mission-mode.md`**.
+- **Route A / Route B** are **alternate preplanned branches** attached to a **waypoint or route segment**, not global magic commands (roundtable, **`STATE_DECISION_GRAPH.md`**, iconography §8 **Decision point**).
+- **Simulated PPS / optical cues** do **not** author new geometry; they **select among prevalidated previews** (hold, Route A, Route B, RTB) with human confirmation — **`docs/goals/0005-pps-cue-zones-and-route-preview.md`**, iconography §10, **`PROJECT_CONTEXT`** Purpose bullet on PEQ-15-as-demo.
+
+### Plan Mode vs Run Mission Mode (behavioral)
+
+- **Plan:** editing enabled; live **recompile** of outline, distances, warnings, timeline placeholders when the plan changes ( **`ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md`** §5, **`STATE_DECISION_GRAPH.md`** §1).
+- **Run:** **snapshot** of the plan for **app-side simulation/rehearsal** (not real drone control); reduce or block direct geometry edits; log transitions and confirmations; route display follows **R1/R2** (untread vs tread) where implemented.
+- **Preview vs committed:** branch/hold/RTB visuals stay **provisional** until operator confirm — **R7**; data should carry a **`preview`** flag (or equivalent) so **`0005`**/**`0006`** styling attaches cleanly (**iconography** §12).
+
+### Codex goal slices (what each goal is / is not)
+
+| Goal | Delivers | Explicitly not |
+| --- | --- | --- |
+| **0002** | Local planner scaffold, map layers, toggles | Full mission UX |
+| **0003** | Mode switch, plan vs run state, **from-scratch + fixture** authoring path, queue/outline shell, timeline shell, audit hooks, **preview flag contract** | Live drone, Palantir SDK, full PPS cue zones (**0005**), full glyph pack (**0006**) |
+| **0004** | MGRS/LatLon display rules | Modes |
+| **0005** | Cue zones, simulated PPS preview mapping, Route A/B **preview** in run context | Authorship of branches (branches come from the plan); real PEQ-15 hardware |
+| **0006** | Waypoint glyphs, legend, symbology module in UI | Replacing mode logic in **0003** |
+
+### Demo vs interactive expectations
+
+- **Product principle:** Implement the **planner workflow** first; any **recorded demo** or **one-minute script** is **derivative** (saved mission, time jumps, narration)—**no** parallel demo-only code paths. See **`docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`** (*Purpose*, *Decisions* row 4 and 8, *One-Minute Video Path*).
+- **Interactive** use (author, edit, recompute, Run rehearsal) is the **primary** acceptance path; a short video may use a **preloaded** mission for pacing only.
+
+### Single-story summary for stakeholders
+
+> Operators **author** topology and branch options in **Plan**; **Run** rehearses execution with **logging** and **preview-then-confirm** cue flow; **PPS** only **chooses** among those **preplanned** options; **iconography** defines how route, scan, and camera read at a glance (**R1–R7**). Demos **reuse** that pipeline—they do not define a second product.
+
+---
+
 ## Key Source-Of-Truth Docs
 - Operator planning, iconography, map symbology (consolidated UX + implementation handoff):
   `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md`

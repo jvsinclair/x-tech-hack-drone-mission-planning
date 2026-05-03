@@ -1,9 +1,41 @@
 # Roundtable Demo Requirements
 
 ## Purpose
-Capture the current roundtable decisions for the hackathon MVP so teammates can review the demo direction before implementation.
+Capture the current roundtable decisions for the hackathon MVP so teammates can review product direction before implementation.
 
-This document narrows the project toward a working, judge-facing route-security ISR planner. It should guide the first app slice, fixture design, Palantir integration decisions, and demo script.
+**Product principle (authoritative):** Build the **planner workflow** end-to-end (Plan, validation, Run/rehearsal, logging, export hooks). A **recorded demo or judge walkthrough** is a **derivative** of that workflow—e.g. a preloaded mission, time jumps, and a short script. **Do not** add parallel “demo-only” code paths, special modes, or one-off behavior that the real product would not use. If the one-minute video needs a tight story, that story should be achievable by **using** the same UI and data model (fixtures, bookmarks, Run timeline), not by forking the app.
+
+**Where comprehensive clarifications live:** High-level **documentation map**, **goal slice boundaries**, and the **single-story stakeholder summary** are in **`docs/PROJECT_CONTEXT.md`** (sections *Documentation Map* and *Clarified Product And Scope Contract*). Resolved **Plan/Run** decisions are in *Decisions: Plan Mode, Run Mission Mode, And Product Shape* below; still-unresolved items are under *Open Questions*. Implementation checklists: **`docs/goals/0003-plan-mode-run-mission-mode.md`** and related goals.
+
+---
+
+## Mission Authoring Vs Cue-Driven Branch Preview
+
+These are **different layers** of the product; both appear in the MVP, but they answer different questions:
+
+| Layer | Question it answers | Primary docs |
+| --- | --- | --- |
+| **Mission authoring (Plan Mode)** | Where does the drone go, what behaviors attach at each step, where can the plan **branch**, and what are Route A / Route B **as designed**? | This file (Waypoint Mapper, state machine), **`docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md`** §5 / §8, **`docs/STATE_DECISION_GRAPH.md`**, goal **`0003`** |
+| **Simulated cueing (Run / rehearsal)** | When a **simulated** PPS (or UI equivalent) fires, which **preplanned** option do we **preview** (hold, A, B, RTB) and when does the operator **commit**? | **`docs/goals/0005-pps-cue-zones-and-route-preview.md`**, iconography §10, *Cue And Command Preview* below |
+
+**Clarified rule:** PPS and simulated optical cues are **intent hints** for **command preview** — not mission design tools, not IFF, not an operational command protocol. They **select among** branch/hold/RTB options that the plan already defines. A **one-minute recording** may use a **preloaded** mission and fast-forward (same app); **full interactive** use (author, edit, recompute) remains the **primary** acceptance path—see *Decisions* and *Interactive Judge Path*.
+
+---
+
+## Codex Goal Slices (Reference)
+
+Use this table when scoping work or explaining the repo to judges. Full queue order: **`docs/goals/README.md`**.
+
+| ID | Title | Role |
+| --- | --- | --- |
+| **0001** | Palantir offline upload bundle | Partner export / import path (not the local Vite core) |
+| **0002** | Local Vite Cesium planner scaffold | App shell, map, layers, toggles |
+| **0003** | Plan Mode and Run Mission Mode | Modes, **from-scratch + fixture** authoring, queue, timeline shell, snapshot + logging hooks, **preview** data contract for later goals |
+| **0004** | MGRS / LatLon display | Coordinate readout rules |
+| **0005** | PPS cue zones and route preview | Cue **zones**, **simulated** PPS mapping, branch **preview** in run — **not** authoring branches from cues |
+| **0006** | ISR map symbology, glyphs, legend | In-app implementation of iconography **R6–R8** and legend |
+
+---
 
 ## MVP Guardrails
 - V1 is X10D ISR/recon only.
@@ -138,11 +170,13 @@ This document narrows the project toward a working, judge-facing route-security 
   - `2 PPS`: Route A preview
   - `4 PPS`: Route B preview
   - `8 PPS`: RTB preview
-- RTB should require confirmation or explicit acknowledgement in the demo.
+- RTB should require confirmation or explicit acknowledgement in the product (and in any recorded walkthrough).
 - Unknown, no-pulse, or ambiguous cue behavior still needs final product language. Candidate behavior is to reject automatic transition, clear or leave the current preview unchanged, and log a warning for review.
 
-## One-Minute Video Path
-Target scripted path:
+## One-Minute Video Path (Example Script — Derivative)
+
+**Normative product behavior** is defined by the Waypoint Mapper, state/decision model, Plan/Run split, and *Decisions* in this file. The list below is an **optional narrative** for a short recording: same app, same workflow, typically a **saved mission** and **time/scene jumps** so the video fits one minute. It is **not** a separate product specification.
+
 1. Load the mission.
 2. Show launch point and SC2-style waypoint queue.
 3. Show relevant terrain attention point or route-context layer.
@@ -153,7 +187,7 @@ Target scripted path:
 8. Show map zone, rationale, warnings, and confirmation.
 9. Confirm.
 10. Animate drone scout-ahead behavior.
-11. Log state transition and show the updated outline or Palantir layer.
+11. Log state transition and show the updated outline or partner layer (e.g. Palantir) if available.
 
 ## Interactive Judge Path
 - A judge should be able to change live:
@@ -190,12 +224,38 @@ These should be treated as candidate implementation objects, not finalized schem
 
 The same model should ideally power the local app and Palantir integration, but exact Palantir object constraints are still unknown.
 
+## Decisions: Plan Mode, Run Mission Mode, And Product Shape
+
+Resolved team decisions (**2026-05**). Align **`docs/goals/0003-plan-mode-run-mission-mode.md`**, **`docs/STATE_DECISION_GRAPH.md`**, and validators with these unless superseded by a later roundtable note.
+
+| # | Topic | Decision |
+| --- | --- | --- |
+| 1 | **From-scratch minimum** | The product must support **authoring from empty**: **add launch + N waypoints** (and full Waypoint Mapper flow). Loading a fixture and editing is allowed but **not** a substitute for from-scratch acceptance. |
+| 2 | **Exiting Run → Plan (snapshot / rollback)** | **Do not** roll back the **authored plan** when leaving Run. Discard **rehearsal / simulation** state (position along route, sim clock, pending preview) only. The **mission** is the durable artifact; operational intent is a plan that can be **carried and executed offline** (not a second, mutable “run buffer” that reverts the plan on exit). |
+| 3 | **Edit lock in Run** | **Hard lock** on mission topology and geometry while Run is active. Return to Plan to edit (no silent in-Run editing). |
+| 4 | **Timeline vs state graph; “seven beats”** | **No second product** for “demo” vs “interactive.” The **primary** specification is the full **interactive** planner: outline, decision graph, Run timeline/rehearsal driven by **mission +** `docs/STATE_DECISION_GRAPH.md` (expand the graph/timeline for real use). The **seven named beats** in goal **`0003`** are a **convenient label set** for a **short example script** (e.g. one-minute video) and optional bookmarks—not a hardcoded alternate state machine. A **preloaded mission + jumps** is a **recording convenience**, not a different workflow (see *Purpose → Product principle*). |
+| 5 | **R1/R2 in 2D vs 3D** | **2D is authoritative** for tread vs untread semantics (**R1/R2**). **3D must match**—implement **guardrails** (shared derived state for “executed vs remaining” legs) so operators never see conflicting yellow-line grammar between views. |
+| 6 | **Blocking Run start** | **Block** starting Run when: **invalid or incomplete parameters**, **unfinished waypoint** configuration, **no land/recover waypoint** where required by ruleset, or **debilitating damage / unusable unit state** (mission-invalid). (Refine exact rules in validator/registry passes.) |
+| 7 | **Symbology sequencing** | **Goal `0006` is the visual completion gate**—do **not** ship “placeholder” symbology for long; **`0003`** + **`0006`** must align so stem/behavior glyphs (**R6**) and legend do not drift. |
+| 8 | **Interactive vs recorded walkthrough** | **Primary:** build the **full interactive** workflow (Plan edits, recompute, timeline, export hooks in one session). A **pre-saved mission** is fine for **filming** a short video; the **recording is derivative** of the same workflow—no demo-specific fork. |
+| 9 | **Undo** | **Delete + per-waypoint edit** is sufficient for MVP; full undo/redo stack not required. |
+| 10 | **PPS on Run timeline** | **Not** a fake “placeholder beat.” **PPS interaction attaches to real decision points** in the plan (waypoint/segment with branch/hold/RTB semantics). Simulated pulses **trigger** preview at those nodes per **`0005`** mapping—same model for UI clicks and PPS. |
+
+### Review notes (consistency)
+
+- **Decision 4 + product principle:** The example one-minute script does **not** define a narrower engine. Expand **`STATE_DECISION_GRAPH.md`** and Run UX for **interactive** use; reuse labels/time-jumps only as **script aids** where helpful.
+- **Decision 6:** “Debilitating damage” should be defined in mission/actor schema and validators when those exist—until then, treat as **explicit mission-invalid flag** or placeholder rule with clear UI copy.
+
+---
+
 ## Open Questions
+
+### Product, Palantir, and packaging
 - What Palantir access is available during the event?
 - What Palantir integration counts as the minimum win if GeoJSON/CSV import alone is not enough?
 - Can the team create custom Palantir ontology objects for mission entities?
 - Should PPS/IR remain only a simulated intent hint, or should the product language describe it differently after validation?
-- Should unknown observations appear in the one-minute video or only the interactive judge mode?
+- Should unknown observations appear in the one-minute video or only the interactive session?
 - What exact real-terrain AOI should be used?
 - Which data exports matter most: GeoJSON layers, CSV tables, JSON state machine, briefing/checklist, or Palantir-specific import bundle?
 - Which waypoint objective types are mandatory beyond launch, land/recover, transit, scout, scan area, fly-by, observe, hold, decision, RTB, and abort?

@@ -78,6 +78,8 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
   `todo`: create a handoff after the PRD is ingested or implementation begins.
 
 ## Key Source-Of-Truth Docs
+- Operator planning, iconography, map symbology (consolidated UX + implementation handoff):
+  `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md`
 - Current roundtable demo requirements:
   `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
 - Tool catalog:

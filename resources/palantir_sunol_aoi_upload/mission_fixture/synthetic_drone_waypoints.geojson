@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.86,
+          37.52
+        ]
+      },
+      "properties": {
+        "seq": 1,
+        "source_name": "Synthetic mission fixture",
+        "source_url": "local",
+        "retrieved_at": "2026-05-03T01:52:09.210Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8,
+          37.57
+        ]
+      },
+      "properties": {
+        "seq": 2,
+        "source_name": "Synthetic mission fixture",
+        "source_url": "local",
+        "retrieved_at": "2026-05-03T01:52:09.210Z",
+        "provisional": true
+      }
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 ---
 goal_id: "0001"
 title: "Palantir Offline Upload Bundle"
-status: "todo"
+status: "done"
 created_at: "2026-05-03T00:18:56Z"
-started_at: null
-completed_at: null
+started_at: "2026-05-03T01:51:11Z"
+completed_at: "2026-05-03T01:53:30Z"
 owner: "codex-cli"
-commit_sha: null
+commit_sha: "cb9eb1792218227b42f607b4ba801070e2069d34"
 ---
 
 # Goal

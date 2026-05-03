@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.9,
+              37.48
+            ],
+            [
+              -121.74,
+              37.48
+            ],
+            [
+              -121.74,
+              37.6
+            ],
+            [
+              -121.9,
+              37.6
+            ],
+            [
+              -121.9,
+              37.48
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Sunol Ridge Training Area",
+        "source_name": "Synthetic AOI",
+        "source_url": "local",
+        "retrieved_at": "2026-05-03T01:52:09.210Z",
+        "provisional": true
+      }
+    }
+  ]
+}

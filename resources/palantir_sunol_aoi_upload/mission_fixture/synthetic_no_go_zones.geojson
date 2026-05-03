@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.81,
+              37.535
+            ],
+            [
+              -121.8,
+              37.535
+            ],
+            [
+              -121.8,
+              37.545
+            ],
+            [
+              -121.81,
+              37.545
+            ],
+            [
+              -121.81,
+              37.535
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "reason": "powerline_buffer",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "local",
+        "retrieved_at": "2026-05-03T01:52:09.210Z",
+        "provisional": true
+      }
+    }
+  ]
+}

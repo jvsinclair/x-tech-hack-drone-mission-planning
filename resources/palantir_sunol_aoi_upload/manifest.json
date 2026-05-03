@@ -1,0 +1,59 @@
+{
+  "bundle": "palantir_sunol_aoi_upload",
+  "created_at": "2026-05-03T01:52:09.210Z",
+  "aoi": {
+    "name": "Sunol Ridge Training Area",
+    "bbox": {
+      "west": -121.9,
+      "south": 37.48,
+      "east": -121.74,
+      "north": 37.6
+    }
+  },
+  "files": [
+    "README.md",
+    "PALANTIR_UPLOAD_PROMPT.md",
+    "manifest.json",
+    "aoi/sunol_training_area_aoi.geojson",
+    "osm/osm_power_lines.geojson",
+    "osm/osm_power_towers_poles.geojson",
+    "osm/osm_roads_tracks_paths.geojson",
+    "osm/osm_buildings.geojson",
+    "osm/osm_natural_features.geojson",
+    "osm/osm_waterways_barriers.geojson",
+    "official_power/cec_transmission_lines.geojson",
+    "official_power/hifld_transmission_lines.geojson",
+    "terrain/elevation_samples_500m.csv",
+    "terrain/terrain_attention_points.geojson",
+    "mission_fixture/synthetic_unit_route.geojson",
+    "mission_fixture/synthetic_drone_waypoints.geojson",
+    "mission_fixture/synthetic_route_branches.geojson",
+    "mission_fixture/synthetic_cue_zones.geojson",
+    "mission_fixture/synthetic_no_go_zones.geojson"
+  ],
+  "counts": {
+    "osm/osm_power_lines.geojson": 0,
+    "osm/osm_power_towers_poles.geojson": 0,
+    "osm/osm_roads_tracks_paths.geojson": 0,
+    "osm/osm_buildings.geojson": 0,
+    "osm/osm_natural_features.geojson": 0,
+    "osm/osm_waterways_barriers.geojson": 0,
+    "official_power/cec_transmission_lines.geojson": 0,
+    "official_power/hifld_transmission_lines.geojson": 0,
+    "terrain/elevation_samples_500m.csv": 99,
+    "terrain/terrain_attention_points.geojson": 1,
+    "mission_fixture/synthetic_unit_route.geojson": 1,
+    "mission_fixture/synthetic_drone_waypoints.geojson": 2,
+    "mission_fixture/synthetic_route_branches.geojson": 2,
+    "mission_fixture/synthetic_cue_zones.geojson": 1,
+    "mission_fixture/synthetic_no_go_zones.geojson": 1
+  },
+  "provenance": [
+    "OpenStreetMap Overpass",
+    "California Energy Commission ArcGIS",
+    "HIFLD ArcGIS",
+    "USGS EPQS",
+    "Synthetic mission fixtures"
+  ],
+  "safety_scope": "Planning-only ISR demo. Excludes strike/engage/kinetic/target-selection/weapon-release/real drone control/MAVLINK/GCS/hardware-control."
+}

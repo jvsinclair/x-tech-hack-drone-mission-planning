@@ -1,0 +1,22 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.84,
+          37.55
+        ]
+      },
+      "properties": {
+        "attention_type": "scout_high_ground",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "local",
+        "retrieved_at": "2026-05-03T01:52:09.210Z",
+        "provisional": true
+      }
+    }
+  ]
+}

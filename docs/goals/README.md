@@ -4,8 +4,8 @@ This folder is the durable task queue for Codex CLI. Each goal is a standalone M
 
 ## How To Use
 1. Read `AGENTS.md`.
-2. Read `docs/PROJECT_CONTEXT.md`.
-3. Read `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`.
+2. Read `docs/PROJECT_CONTEXT.md` — includes **where each clarification lives** (*Documentation Map*) and **authoring vs simulated PPS** (*Clarified Product And Scope Contract*).
+3. Read `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md` — **Product principle** (planner first; demo derivative), **Decisions** (Plan/Run), **Open Questions**.
 4. Before implementing **map UI, waypoints, routes, or cues**, read `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` (operator planning and symbology contract).
 5. Scan numbered goal files matching `docs/goals/[0-9][0-9][0-9][0-9]-*.md` in filename order.
 6. Pick the first goal with `status: "todo"`.

@@ -205,7 +205,8 @@ Provisional demo mapping (`docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`, goal **0005**)
 
 Approved reference render for **waypoint behavior cards** (grid of behaviors with schematic glyphs). Use alongside §8 for silhouette alignment; **written tables in this document take precedence** if copy or labels diverge.
 
-- **File:** `docs/assets/waypoint-behavior-atlas-stitch-reference.png`
+- **Raster:** `docs/assets/waypoint-behavior-atlas-stitch-reference.png`
+- **Interactive / code reference:** `docs/assets/waypoint-behavior-atlas-reference.html` — same atlas as an inspectable page (Tailwind CDN, SVG schematics, extended color tokens). Use for engineering handoff and pixel inspection; route strokes use amber `#fbbf24` (align with §6 yellow-route semantics when mapped into the app).
 - **Folder note:** `docs/assets/README.md`
 
 Treat fictional standard identifiers or extra dashboard chrome on the image as **presentation-only** unless promoted explicitly into project docs.

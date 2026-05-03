@@ -23,6 +23,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, MutableRefObject } from "react";
 import type { BranchType, BranchWaypointRecord, DecisionTargetZoneRecord, LaunchPackageRecord, MissionLayers, MissionSummary, WaypointRecord } from "@/lib/types";
 import { behaviorByType } from "@/lib/symbology/isr";
+import type { WaypointBehaviorDefinition, WaypointGlyphShape } from "@/lib/symbology/isr";
 import { WaypointGlyph } from "@/components/WaypointGlyph";
 import { formatLatLon, formatMgrs } from "@/lib/coordinates";
 
@@ -30,7 +31,10 @@ type PlacementMode = "decision_zone" | WaypointRecord["behavior"] | null;
 type MapMode = "terrain3d" | "topo2d";
 type TerrainSample = { lon: number; lat: number; elevationM: number };
 type ActiveBranchContext = { decisionPointId: string; zoneId: string; branchType: BranchType } | null;
+type RouteRenderablePoint = Pick<WaypointRecord, "id" | "lon" | "lat" | "altitudeM">;
+type BranchGroup = { id: string; type: BranchType; decisionPointId: string; waypoints: BranchWaypointRecord[] };
 const DEFAULT_ALTITUDE_M = 20;
+const VISUAL_HEIGHT_SCALE = 0.25;
 const DEFAULT_BOUNDS = { west: -121.9, south: 37.48, east: -121.74, north: 37.6 };
 
 type TacticalCesiumMapProps = {
@@ -399,7 +403,12 @@ export function TacticalCesiumMap({
         ))}
         <path d={routeGeometry.flightPath} className="drone-route-path" data-testid="flight-route-path" />
         {branchPaths.map((branch) => (
-          <path key={branch.id} d={branch.path} className={branch.type === activeBranchType ? "branch-path branch-path-active" : "branch-path"} />
+          <path
+            key={branch.id}
+            d={branch.path}
+            className={branch.type === activeBranchType ? "branch-path branch-path-active" : "branch-path"}
+            data-testid={`branch-path-${branch.id.replace(/[^a-z0-9-]/gi, "-")}`}
+          />
         ))}
       </svg>
       <div className={placementMode || activeBranchContext ? "map-click-capture map-click-capture-active" : "map-click-capture"} data-testid="map-click-surface" onClick={handleMapClick}>
@@ -590,15 +599,18 @@ function pointsToPath(points: Array<{ x: number; y: number }>): string {
 
 function branchSvgPaths(pkg: LaunchPackageRecord | null, branchWaypoints: BranchWaypointRecord[], bounds: MissionSummary["bounds"], terrainSamples: TerrainSample[]) {
   const authoredGroups = branchGroups(branchWaypoints);
-  const authored = authoredGroups.map((group) => ({
-    id: group.id,
-    type: group.type,
-    path: pointsToPath(sampleRoutePoints(group.waypoints).map((point) => {
-      const ground = svgPoint(point.lon, point.lat, bounds);
-      const elevationM = sampleGroundElevationM(point.lon, point.lat, terrainSamples);
-      return { x: ground.x, y: ground.y - heightOffsetMeters(elevationM + point.altitudeM) };
-    })),
-  }));
+  const authored = authoredGroups.map((group) => {
+    const pathWaypoints = branchPathWaypoints(pkg, group);
+    return {
+      id: group.id,
+      type: group.type,
+      path: pointsToPath(sampleRoutePoints(pathWaypoints).map((point) => {
+        const ground = svgPoint(point.lon, point.lat, bounds);
+        const elevationM = sampleGroundElevationM(point.lon, point.lat, terrainSamples);
+        return { x: ground.x, y: ground.y - heightOffsetMeters(elevationM + point.altitudeM) };
+      })),
+    };
+  });
   const seeded = (pkg?.routeBranches ?? []).map((branch) => {
     const coordinates = Array.isArray(branch.geometry?.coordinates) ? (branch.geometry.coordinates as number[][]) : [];
     return {
@@ -616,10 +628,10 @@ function branchSvgPaths(pkg: LaunchPackageRecord | null, branchWaypoints: Branch
 }
 
 function branchGroups(branchWaypoints: BranchWaypointRecord[]) {
-  const groups = new Map<string, { id: string; type: BranchType; waypoints: BranchWaypointRecord[] }>();
+  const groups = new Map<string, BranchGroup>();
   for (const waypoint of branchWaypoints) {
     const key = `${waypoint.decisionTargetZoneId}:${waypoint.branchType}`;
-    const group = groups.get(key) ?? { id: key, type: waypoint.branchType, waypoints: [] };
+    const group = groups.get(key) ?? { id: key, type: waypoint.branchType, decisionPointId: waypoint.decisionPointId, waypoints: [] };
     group.waypoints.push(waypoint);
     groups.set(key, group);
   }
@@ -627,6 +639,12 @@ function branchGroups(branchWaypoints: BranchWaypointRecord[]) {
     ...group,
     waypoints: group.waypoints.sort((a, b) => a.branchSequence - b.branchSequence),
   }));
+}
+
+function branchPathWaypoints(pkg: LaunchPackageRecord | null, branch: BranchGroup): RouteRenderablePoint[] {
+  const decisionPoint = pkg?.decisionPoints.find((point) => point.id === branch.decisionPointId);
+  const anchorWaypoint = decisionPoint?.waypointId ? pkg?.waypoints.find((waypoint) => waypoint.id === decisionPoint.waypointId) : null;
+  return anchorWaypoint ? [anchorWaypoint, ...branch.waypoints] : branch.waypoints;
 }
 
 function svgPoint(lon: number, lat: number, bounds: MissionSummary["bounds"]) {
@@ -662,7 +680,11 @@ function sampleRoutePoints(waypoints: Array<Pick<WaypointRecord, "id" | "lon" | 
 }
 
 function heightOffsetMeters(heightM: number): number {
-  return Math.max(18, Math.min(118, heightM / 3.5));
+  return Math.max(18, Math.min(118, heightM / 3.5)) * VISUAL_HEIGHT_SCALE;
+}
+
+function visualAltitudeM(altitudeM: number): number {
+  return altitudeM * VISUAL_HEIGHT_SCALE;
 }
 
 function eventToLonLat(
@@ -917,7 +939,7 @@ function drawCesiumPackageGraphics({
           Cesium.Cartesian3.fromDegrees(
             point.lon,
             point.lat,
-            sampleGroundElevationM(point.lon, point.lat, terrainSamples) + point.altitudeM,
+            sampleGroundElevationM(point.lon, point.lat, terrainSamples) + visualAltitudeM(point.altitudeM),
           ),
         ),
         width: 5,
@@ -945,7 +967,7 @@ function drawCesiumPackageGraphics({
   }
 
   for (const branch of branchGroups(displayBranchWaypoints)) {
-    const routeSamples = sampleRoutePoints(branch.waypoints);
+    const routeSamples = sampleRoutePoints(branchPathWaypoints(activePackage, branch));
     if (routeSamples.length < 1) continue;
     const active = branch.type === activeBranchType;
     if (routeSamples.length > 1) {
@@ -956,7 +978,7 @@ function drawCesiumPackageGraphics({
             Cesium.Cartesian3.fromDegrees(
               point.lon,
               point.lat,
-              sampleGroundElevationM(point.lon, point.lat, terrainSamples) + point.altitudeM,
+              sampleGroundElevationM(point.lon, point.lat, terrainSamples) + visualAltitudeM(point.altitudeM),
             ),
           ),
           width: active ? 5 : 3,
@@ -1005,6 +1027,7 @@ function drawCesiumPackageGraphics({
     const behavior = behaviorByType[waypoint.behavior];
     const groundElevationM = sampleGroundElevationM(waypoint.lon, waypoint.lat, terrainSamples);
     const altitudeM = waypoint.altitudeM ?? DEFAULT_ALTITUDE_M;
+    const displayAltitudeM = visualAltitudeM(altitudeM);
     const selected = waypoint.id === selectedWaypointId;
 
     dataSource.entities.add({
@@ -1012,7 +1035,7 @@ function drawCesiumPackageGraphics({
       polyline: {
         positions: [
           Cesium.Cartesian3.fromDegrees(waypoint.lon, waypoint.lat, groundElevationM),
-          Cesium.Cartesian3.fromDegrees(waypoint.lon, waypoint.lat, groundElevationM + altitudeM),
+          Cesium.Cartesian3.fromDegrees(waypoint.lon, waypoint.lat, groundElevationM + displayAltitudeM),
         ],
         width: 2,
         material: new Cesium.PolylineDashMaterialProperty({
@@ -1024,14 +1047,14 @@ function drawCesiumPackageGraphics({
 
     dataSource.entities.add({
       id: `waypoint-${waypoint.id}`,
-      position: Cesium.Cartesian3.fromDegrees(waypoint.lon, waypoint.lat, groundElevationM + altitudeM),
+      position: Cesium.Cartesian3.fromDegrees(waypoint.lon, waypoint.lat, groundElevationM + displayAltitudeM),
       properties: {
         plannerKind: "waypoint",
         waypointId: waypoint.id,
         altitudeM,
       },
       billboard: {
-        image: waypointBillboardSvg(behavior.color, behavior.shortLabel, selected),
+        image: waypointBillboardSvg(behavior, selected),
         verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
         scale: selected ? 1.12 : 1,
         disableDepthTestDistance: Number.POSITIVE_INFINITY,
@@ -1049,19 +1072,21 @@ function drawCesiumPackageGraphics({
   for (const waypoint of displayBranchWaypoints) {
     const groundElevationM = sampleGroundElevationM(waypoint.lon, waypoint.lat, terrainSamples);
     const altitudeM = waypoint.altitudeM ?? DEFAULT_ALTITUDE_M;
+    const displayAltitudeM = visualAltitudeM(altitudeM);
     const selected = waypoint.id === selectedBranchWaypointId;
     const color = branchColor(waypoint.branchType);
+    const behavior = behaviorByType[waypoint.behavior];
 
     dataSource.entities.add({
       id: `branch-waypoint-${waypoint.id}`,
-      position: Cesium.Cartesian3.fromDegrees(waypoint.lon, waypoint.lat, groundElevationM + altitudeM),
+      position: Cesium.Cartesian3.fromDegrees(waypoint.lon, waypoint.lat, groundElevationM + displayAltitudeM),
       properties: {
         plannerKind: "branch-waypoint",
         branchWaypointId: waypoint.id,
         altitudeM,
       },
       billboard: {
-        image: waypointBillboardSvg(color, `${waypoint.branchSequence}`, selected),
+        image: waypointBillboardSvg(behavior, selected, { accentColor: color, suffixLabel: `${waypoint.branchSequence}` }),
         verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
         scale: selected ? 1.02 : 0.82,
         disableDepthTestDistance: Number.POSITIVE_INFINITY,
@@ -1096,13 +1121,56 @@ function branchColor(branchType: BranchType): string {
   return "#60a5fa";
 }
 
-function waypointBillboardSvg(color: string, shortLabel: string, selected: boolean) {
+function waypointBillboardSvg(
+  behavior: WaypointBehaviorDefinition,
+  selected: boolean,
+  options?: { accentColor?: string; suffixLabel?: string },
+) {
+  const color = behavior.color;
+  const accentColor = options?.accentColor ?? color;
   const ring = selected ? `<circle cx="32" cy="32" r="28" fill="none" stroke="#6de0d2" stroke-width="6"/>` : "";
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="76" viewBox="0 0 64 76">
+    <title>${escapeSvgText(behavior.label)}</title>
     ${ring}
-    <circle cx="32" cy="32" r="24" fill="rgba(6,9,8,0.9)" stroke="${color}" stroke-width="5"/>
-    <path d="M32 58 24 44h16z" fill="${color}"/>
-    <text x="32" y="38" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="900" fill="${color}">${shortLabel}</text>
+    <circle cx="32" cy="32" r="24" fill="rgba(6,9,8,0.9)" stroke="${accentColor}" stroke-width="5"/>
+    ${billboardGlyphShape(behavior.glyphShape, color)}
+    <path d="M32 58 24 44h16z" fill="${accentColor}"/>
+    <text x="32" y="47" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="8" font-weight="900" fill="${color}">${escapeSvgText(behavior.shortLabel)}</text>
+    ${options?.suffixLabel ? `<text x="50" y="17" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="900" fill="${accentColor}">${escapeSvgText(options.suffixLabel)}</text>` : ""}
   </svg>`;
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
+
+function billboardGlyphShape(shape: WaypointGlyphShape, stroke: string): string {
+  switch (shape) {
+    case "pad":
+      return `<ellipse cx="32" cy="35" rx="15" ry="5" fill="${stroke}" fill-opacity="0.18" stroke="${stroke}" stroke-width="3"/><path d="M32 13v20M25 20l7-7 7 7" fill="none" stroke="${stroke}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`;
+    case "diamond":
+      return `<path d="M32 11 49 28 32 45 15 28Z" fill="rgba(6,9,8,0.8)" stroke="${stroke}" stroke-width="4" stroke-linejoin="round"/>`;
+    case "orbit":
+      return `<ellipse cx="32" cy="27" rx="18" ry="10" fill="none" stroke="${stroke}" stroke-width="4"/><circle cx="40" cy="24" r="4" fill="${stroke}"/><circle cx="32" cy="27" r="3" fill="#7ee7ff"/>`;
+    case "frame":
+      return `<path d="M17 22v-8h10M37 14h10v8M47 33v8H37M27 41H17v-8" fill="none" stroke="${stroke}" stroke-width="4" stroke-linecap="round"/><rect x="23" y="22" width="18" height="14" fill="${stroke}" fill-opacity="0.14" stroke="${stroke}" stroke-width="2.5"/>`;
+    case "post":
+      return `<path d="M32 12v32" fill="none" stroke="${stroke}" stroke-width="4" stroke-linecap="round"/><path d="M32 25h18" fill="none" stroke="#7ee7ff" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="25" r="9" fill="rgba(6,9,8,0.8)" stroke="${stroke}" stroke-width="4"/>`;
+    case "anchor":
+      return `<circle cx="32" cy="28" r="13" fill="none" stroke="${stroke}" stroke-width="4"/><path d="M32 12v8M32 36v8M16 28h8M40 28h8" fill="none" stroke="${stroke}" stroke-width="3.5" stroke-linecap="round"/>`;
+    case "decision":
+      return `<path d="M32 11 49 28 32 45 15 28Z" fill="rgba(6,9,8,0.8)" stroke="${stroke}" stroke-width="4" stroke-linejoin="round"/><path d="M15 28H8M49 28h7" fill="none" stroke="${stroke}" stroke-width="4" stroke-linecap="round"/>`;
+    case "home_arrow":
+      return `<path d="M17 31 32 13l15 18h-7v12H24V31Z" fill="rgba(6,9,8,0.8)" stroke="${stroke}" stroke-width="4" stroke-linejoin="round"/>`;
+    case "touchdown":
+      return `<path d="M18 14v23M46 14v23M20 43h24M23 33h8M34 33h8" fill="none" stroke="${stroke}" stroke-width="4" stroke-linecap="round"/><rect x="23" y="18" width="18" height="14" fill="${stroke}" fill-opacity="0.14" stroke="${stroke}" stroke-width="2.5"/>`;
+    case "octagon":
+      return `<path d="M25 11h14l10 10v14L39 45H25L15 35V21Z" fill="rgba(6,9,8,0.8)" stroke="${stroke}" stroke-width="4" stroke-linejoin="round"/><path d="M24 28h16" stroke="${stroke}" stroke-width="4" stroke-linecap="round"/>`;
+  }
+}
+
+function escapeSvgText(value: string): string {
+  return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+export const tacticalCesiumMapTestApi = {
+  visualAltitudeM,
+  waypointBillboardSvg,
+};

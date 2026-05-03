@@ -1,7 +1,9 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { PlannerShell } from "@/components/PlannerShell";
+import { tacticalCesiumMapTestApi } from "@/components/TacticalCesiumMap";
 import { formatLatLon, formatMgrs } from "@/lib/coordinates";
+import { behaviorByType } from "@/lib/symbology/isr";
 import { fetchMock, resetMockState } from "./mock-api";
 
 beforeEach(() => {
@@ -31,6 +33,25 @@ describe("Visual correctness", () => {
     const decisionMarker = screen.getByTestId("map-waypoint-wp-decision");
     const decisionSvg = decisionMarker.querySelector(".waypoint-glyph-svg");
     expect(decisionSvg?.querySelector("title")?.textContent).toBe("Decision");
+  });
+
+  it("uses design glyphs for Cesium waypoint billboards instead of letter-only badges", () => {
+    const scoutBillboard = tacticalCesiumMapTestApi.waypointBillboardSvg(behaviorByType.scout, false);
+    const decisionBillboard = tacticalCesiumMapTestApi.waypointBillboardSvg(behaviorByType.decision, true);
+    const decodedScout = decodeURIComponent(scoutBillboard.split(",")[1] ?? "");
+    const decodedDecision = decodeURIComponent(decisionBillboard.split(",")[1] ?? "");
+
+    expect(decodedScout).toContain("<title>Scout</title>");
+    expect(decodedScout).toContain("<ellipse");
+    expect(decodedScout).toContain("<circle");
+    expect(decodedDecision).toContain("<title>Decision</title>");
+    expect(decodedDecision).toContain("<path");
+    expect(decodedDecision).toContain('stroke="#6de0d2"');
+  });
+
+  it("renders waypoint visual altitude at 25 percent of stored altitude", () => {
+    expect(tacticalCesiumMapTestApi.visualAltitudeM(20)).toBe(5);
+    expect(tacticalCesiumMapTestApi.visualAltitudeM(120)).toBe(30);
   });
 
   it("DTZ markers render with zone styling", async () => {

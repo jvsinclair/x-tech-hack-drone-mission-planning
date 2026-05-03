@@ -198,6 +198,50 @@ describe("PlannerShell", () => {
     await waitFor(() => expect(getMockState().packages[0].branchWaypoints).toHaveLength(3));
   });
 
+  it("keeps a selected DTZ lane active when choosing a waypoint tool", async () => {
+    render(<PlannerShell />);
+    await screen.findByText("Mission Plans");
+
+    const surface = screen.getByTestId("map-click-surface");
+    fireEvent.click(screen.getByRole("button", { name: /place target zone/i }));
+    fireEvent.click(surface, { clientX: 520, clientY: 520 });
+    await waitFor(() => expect(getMockState().packages[0].decisionPoints[0].targetZones).toHaveLength(2));
+
+    fireEvent.click(screen.getByTestId("decision-zone-zone-1"));
+    fireEvent.click(screen.getByRole("button", { name: /select primary branch lane/i }));
+    fireEvent.click(screen.getByRole("button", { name: /place scout/i }));
+    fireEvent.click(surface, { clientX: 560, clientY: 500 });
+
+    await waitFor(() => expect(getMockState().packages[0].branchWaypoints).toHaveLength(1));
+    expect(getMockState().packages[0].waypoints).toHaveLength(2);
+    expect(getMockState().packages[0].branchWaypoints[0]).toMatchObject({
+      behavior: "scout",
+      branchType: "primary",
+      decisionPointId: "decision-1",
+      decisionTargetZoneId: "zone-1",
+    });
+    expect(screen.getByText(/Primary branch Scout placed from the decision point/i)).toBeInTheDocument();
+  });
+
+  it("draws authored DTZ branch paths from the parent decision waypoint", async () => {
+    render(<PlannerShell />);
+    await screen.findByText("Mission Plans");
+
+    const surface = screen.getByTestId("map-click-surface");
+    fireEvent.click(screen.getByRole("button", { name: /place target zone/i }));
+    fireEvent.click(surface, { clientX: 520, clientY: 520 });
+    await waitFor(() => expect(getMockState().packages[0].decisionPoints[0].targetZones).toHaveLength(2));
+
+    fireEvent.click(screen.getByTestId("decision-zone-zone-1"));
+    fireEvent.click(screen.getByRole("button", { name: /select primary branch lane/i }));
+    fireEvent.click(screen.getByRole("button", { name: /place scout/i }));
+    fireEvent.click(surface, { clientX: 560, clientY: 500 });
+
+    await waitFor(() => {
+      expect(screen.getByTestId("branch-path-zone-1-primary").getAttribute("d")).toContain(" L ");
+    });
+  });
+
   it("does not delete a waypoint when Delete is pressed inside an edit field", async () => {
     render(<PlannerShell />);
     await screen.findByText("Mission Plans");

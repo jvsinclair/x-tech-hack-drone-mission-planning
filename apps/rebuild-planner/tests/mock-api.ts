@@ -94,7 +94,7 @@ export async function fetchMock(input: RequestInfo | URL, init?: RequestInit): P
   // --- Branch waypoints POST ---
   if (url.includes("/branch-waypoints") && method === "POST") {
     const pkg = activePackage();
-    const branchBody = body as { decisionPointId: string; decisionTargetZoneId: string; branchType: BranchType; lon: number; lat: number };
+    const branchBody = body as { decisionPointId: string; decisionTargetZoneId: string; branchType: BranchType; behavior?: WaypointBehavior; lon: number; lat: number };
     const lane = pkg.branchWaypoints.filter((wp) => wp.decisionTargetZoneId === branchBody.decisionTargetZoneId && wp.branchType === branchBody.branchType);
     const zone = pkg.decisionPoints.flatMap((dp) => dp.targetZones).find((targetZone) => targetZone.id === branchBody.decisionTargetZoneId);
     const decisionWaypoint = pkg.waypoints.find((wp) => pkg.decisionPoints.some((dp) => dp.id === branchBody.decisionPointId && dp.waypointId === wp.id));
@@ -105,7 +105,7 @@ export async function fetchMock(input: RequestInfo | URL, init?: RequestInit): P
       decisionTargetZoneId: branchBody.decisionTargetZoneId,
       branchType: branchBody.branchType,
       branchSequence: lane.length + 1,
-      behavior: branchBody.branchType === "hold" ? "hold_loiter" : branchBody.branchType === "land" ? "land" : "transit",
+      behavior: branchBody.behavior ?? (branchBody.branchType === "hold" ? "hold_loiter" : branchBody.branchType === "land" ? "land" : "transit"),
       name: `WP${decisionWaypoint?.sequence ?? ""} ${zone?.name ?? "DTZ"} - ${branchLabel(branchBody.branchType)} ${lane.length + 1}`,
       objective: "",
       lon: branchBody.lon,

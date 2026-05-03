@@ -141,7 +141,8 @@ export function PlannerShell() {
   async function handleMapPlacement(lon: number, lat: number) {
     if (!activePackage) return;
     const branchContext = activeBranchContext;
-    if (branchContext && !placementMode) {
+    if (branchContext && placementMode !== "decision_zone") {
+      const behavior = placementMode ? behaviorByType[placementMode] : null;
       const response = await fetch(`/api/launch-packages/${activePackage.id}/branch-waypoints`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -149,6 +150,7 @@ export function PlannerShell() {
           decisionPointId: branchContext.decisionPointId,
           decisionTargetZoneId: branchContext.zoneId,
           branchType: branchContext.branchType,
+          behavior: placementMode ?? undefined,
           lon,
           lat,
         }),
@@ -160,8 +162,8 @@ export function PlannerShell() {
       setSelectedWaypointId(null);
       setSelectedZoneId(branchContext.zoneId);
       const branchLabel = branchButtons.find((branch) => branch.type === branchContext.branchType)?.label ?? branchContext.branchType;
-      setStatus(`${branchLabel} branch waypoint placed`);
-      await recordUi("map_placement", `branch_${branchContext.branchType}`, { lon, lat, zoneId: branchContext.zoneId });
+      setStatus(`${branchLabel} branch ${behavior?.label ?? "waypoint"} placed from the decision point`);
+      await recordUi("map_placement", `branch_${branchContext.branchType}`, { behavior: placementMode ?? "default", lon, lat, zoneId: branchContext.zoneId });
       return;
     }
     if (!placementMode) return;
@@ -670,13 +672,19 @@ export function PlannerShell() {
                   <strong>
                     {placementMode === "decision_zone"
                       ? "Decision target zone"
+                      : activeBranchContext && placementMode
+                        ? `${behaviorByType[placementMode].label} on ${branchButtons.find((branch) => branch.type === activeBranchContext.branchType)?.label ?? activeBranchContext.branchType}`
                       : placementMode
                         ? behaviorByType[placementMode].label
+                        : activeBranchContext
+                          ? `${branchButtons.find((branch) => branch.type === activeBranchContext.branchType)?.label ?? activeBranchContext.branchType} branch`
                         : "Pick waypoint"}
                   </strong>
                   <small>
                     {placementMode === "decision_zone"
                       ? "Click the map to place target geometry."
+                      : activeBranchContext
+                        ? "Click the map to append to the selected DTZ branch from its decision point."
                       : "Pick a marker type, then click the map."}
                   </small>
                 </div>
@@ -690,7 +698,6 @@ export function PlannerShell() {
                       style={{ "--marker-color": behavior.color } as CSSProperties}
                       onClick={() => {
                         setPlacementMode(behavior.type);
-                        setActiveBranchContext(null);
                         setSelectedBranchWaypointId(null);
                         setPendingZoneDecisionPointId(null);
                         void recordUi("click", "waypoint_palette", { behavior: behavior.type });

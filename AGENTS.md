@@ -11,6 +11,14 @@ Use it as the first stop before editing code or changing project rules.
 4. The most relevant handoff or research note in `docs/`; before the PRD lands, start with `docs/research/problem_statement_3_resource_map.md`
 5. The top-of-file context header for any covered module you plan to change
 
+## Goal Queue For Codex CLI
+- After reading the required project context, Codex CLI should check `docs/goals/` for executable goal files.
+- Numbered goal files matching `docs/goals/[0-9][0-9][0-9][0-9]-*.md` are processed in filename order. Pick the first file whose YAML front matter has `status: "todo"`.
+- When starting a goal, update its front matter to `status: "in_progress"` and set `started_at`.
+- When complete, update its front matter to `status: "done"`, set `completed_at`, and record the completion `commit_sha`.
+- If blocked, set `status: "blocked"` and add concise blocker notes in the goal body.
+- Do not edit goals already marked `done` unless explicitly asked.
+
 ## Architecture Snapshot
 - `x-tech-hackathon` follows a validator-first project shape:
   request or input normalization -> domain selection or enrichment -> validation pipeline -> runtime-backed tools -> review artifacts.

@@ -3,7 +3,7 @@
 This is the review guide for the current `x-tech-hackathon` tool, validator, and workflow surface.
 Every public stage should be documented here before agents depend on it.
 
-Current state: Goal 0002 adds a provisional frontend runtime data-provider boundary, `mission_data_provider_runtime`, for choosing a Foundry-hosted adapter when available and falling back to static scoped bundle data. Goal 0003 adds `mission_run_rehearsal_runtime` for app-side Plan Mission / Run Mission rehearsal. `optical_cue_interpreter_demo` and `terrain_attention_point_generator_demo` remain planned provisional stages for upcoming implementation slices.
+Current state: Goal 0002 adds a provisional frontend runtime data-provider boundary, `mission_data_provider_runtime`, for choosing a Foundry-hosted adapter when available and falling back to static scoped bundle data. Goal 0003 adds `mission_run_rehearsal_runtime` for app-side Plan Mission / Run Mission rehearsal. `optical_cue_interpreter_demo`, `terrain_attention_point_generator_demo`, and `terrain_aware_route_altitude_profile_demo` remain planned provisional stages for upcoming implementation slices.
 
 ## Field Glossary
 - `[field_name]`: `[description]` Units: `[units or enum or not_applicable]`.
@@ -135,6 +135,72 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
 - Current gaps / TODO notes:
   - Fixture thresholds and route-corridor geometry still need implementation.
   - External DEM ingestion is optional and should come after the fixture demo works.
+
+## `terrain_aware_route_altitude_profile_demo`
+- Display name: Terrain-Aware Route Altitude Profile Demo
+- Category: `selection`
+- Stage order: `3`
+- Purpose: Add provisional above-terrain altitude profiles to planned drone route branches for 3D review and API/function consumption.
+- When to call: After drone route branch geometry and terrain elevation samples/context are loaded, and before Cesium 3D rendering, bundle export, or API/function reads expose route branches.
+- When not to call: Do not call for certified flight planning, real drone command, autopilot upload, MAVLINK/GCS export, autonomous obstacle avoidance, or operational terrain clearance.
+- Input type: Planned drone route branches, terrain elevation samples/context, default altitude rule, and optional drone profile.
+- Output type: Route branch geometry or waypoint records with AGL/MSL altitude metadata, terrain provenance, and degraded-status warnings.
+- Supported use cases: Cesium 3D elevated route visualization; Foundry/OSDK route branch API contract; fixture-backed mission planning review.
+- Supported data or source families: Goal 0001 elevation samples; fixture terrain; future DEM-derived terrain samples; Cesium terrain for visual review where available.
+- Status values: `passed | warning | degraded | blocked`
+- Hard-fail vs warning behavior: Missing route geometry blocks altitude profiling; missing, stale, or sparse terrain data degrades the profile and must surface a warning instead of silently using ground-level coordinates.
+- Formula or rule groups: `demo_drone_route_default_altitude_agl_v1`
+- Support level: `provisional`
+- Platform support: `local Vite; Foundry-hosted API/function surface compatible`
+- Required binaries or services: `node`, `npm`; no live terrain service required for fixture mode.
+- Headless expectations: Pure profile helper should run headlessly against fixture route branches and terrain samples.
+- Degraded modes: Preserve route geometry with `terrain_status` and warnings when terrain elevation is unavailable.
+- Source module: `todo`
+- Kernel id: `terrain_aware_route_altitude_profile_kernel`
+- Kernel boundary: Deterministic conversion of WGS84 route branch points plus terrain elevation into AGL/MSL route profile records.
+- Pure function expected: `yes` for the profile helper; `mixed` in Cesium rendering.
+- Required input fields:
+  - `route_branches` (`GeoJSON FeatureCollection`): Planned drone route branches. Units: `WGS84 coordinates`.
+  - `default_altitude_agl_m` (`number`): Default planned route altitude from `demo_drone_route_default_altitude_agl_v1`. Units: `meters`.
+  - `terrain_elevation_samples` (`array`): Terrain elevation samples or route-point elevation context. Units: `meters`.
+- Optional input fields:
+  - `drone_profile` (`object`): Demo drone speed, endurance, ceiling, sensor, and altitude limits. Units: `mixed`.
+  - `terrain_source_ref` (`string`): Source id for terrain samples. Units: `id`.
+  - `altitude_overrides` (`array`): Future per-waypoint or per-segment operator altitude overrides. Units: `meters_agl`.
+- Derived fields: `terrain_elevation_m`, `altitude_agl_m`, `altitude_msl_m`, `terrain_status`, `terrain_source_ref`, `evidence_refs`, `warnings`
+- Minimal valid example input:
+```json
+{
+  "route_branches": {
+    "type": "FeatureCollection",
+    "features": []
+  },
+  "default_altitude_agl_m": 120,
+  "terrain_elevation_samples": [
+    {
+      "lon": -121.84,
+      "lat": 37.54,
+      "elevation_m": 248
+    }
+  ]
+}
+```
+- Example output summary:
+```json
+{
+  "status": "passed",
+  "route_point": {
+    "terrain_elevation_m": 248,
+    "altitude_agl_m": 120,
+    "altitude_msl_m": 368,
+    "terrain_status": "available",
+    "evidence_refs": ["demo_drone_route_default_altitude_agl_v1"]
+  }
+}
+```
+- Current gaps / TODO notes:
+  - Source module and tests do not exist yet.
+  - Per-waypoint altitude editing is desired but out of scope for the first required implementation.
 
 ## `palantir_sunol_bundle_generator`
 - Display name: Palantir Sunol Bundle Generator
@@ -285,7 +351,7 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
 ## `mission_run_rehearsal_runtime`
 - Display name: Mission Run Rehearsal Runtime
 - Category: `runtime`
-- Stage order: `3`
+- Stage order: `4`
 - Purpose: Separate editable Plan Mission state from immutable Run Mission rehearsal snapshots, named time jumps, and audit-style run logs.
 - When to call: When the operator switches into Run Mission mode, refreshes a run snapshot, or jumps to a named demo beat.
 - When not to call: Do not call for real drone execution, hardware command, MAVLINK/GCS export, autonomous operational command, strike, engage, or target-selection workflows.

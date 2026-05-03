@@ -105,7 +105,7 @@ Treat **scan behavior** as parameters **bound to states** (scout, scan area, obs
 
 - **Geometry** — orbit center vs corridor raster; footprint relative to waypoint/segment.
 - **Temporal** — dwell; revisit interval; “one pass then decision.”
-- **Sensor / product** — width, overlap, altitude band, identification range (warning-level until formula-registered).
+- **Sensor / product** — width, overlap, altitude band, identification range. Default route altitude starts at `120 m AGL` via `demo_drone_route_default_altitude_agl_v1`; additional altitude bands remain warning-level until source- and formula-registered.
 - **Exit conditions** — timer; detection event; operator cue; corridor complete.
 
 The **outline** shows states such as “Transit S3 → Scan/hold at WP4 → Decision”; the **side panel** holds numeric scanning knobs for those states. Changing parameters updates validation and timeline without necessarily moving map points.

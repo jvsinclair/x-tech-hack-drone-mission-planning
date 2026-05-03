@@ -5,7 +5,7 @@ Map the MVP approach for planning drone coverage around a moving Army unit, incl
 
 ## Status
 - Validation status: `provisional`
-- Last reviewed: `2026-05-02`
+- Last reviewed: `2026-05-03`
 - Owner or agent: `Codex`
 
 ## Sources
@@ -19,6 +19,7 @@ Map the MVP approach for planning drone coverage around a moving Army unit, incl
 - `palantir_aip_features`: Palantir AIP can work with Ontology data, logic, and actions through developer tools.
 - `maplibre_gl_js`: Candidate map UI layer.
 - `deck_gl`: Candidate geospatial overlay and terrain visualization layer.
+- `user_clarification_default_drone_route_altitude_2026_05_03`: User selected `120 m AGL` as the default planned route altitude and requested editable per-waypoint altitude as a TODO/stretch item.
 
 ## MVP Mission Planning Flow
 1. Define the unit movement plan:
@@ -42,10 +43,12 @@ Map the MVP approach for planning drone coverage around a moving Army unit, incl
    - Route B: push ahead to scout next terrain attention point
    - Hold/loiter: orbit at the current overwatch point
    - RTB: recover route
+   - default route altitude: `120 m AGL`, converted to MSL when terrain elevation is available
 6. Validate options:
    - route stays outside no-go zones
    - route stays inside configured demo bounds
    - route fits endurance/time assumptions
+   - route altitude profile has terrain elevation, AGL, MSL, and provenance or a visible degraded-terrain warning
    - command is valid from current state-machine node
    - cue sector and time window match the expected mission context
 7. Execute as a state-machine preview:
@@ -63,6 +66,16 @@ Use simple, explainable heuristics for the hackathon demo:
 - Manual obstacle: allow the operator to draw or click no-go/obstacle areas when source data is missing.
 
 These heuristics should be shown as "planning aids" rather than authoritative terrain truth.
+
+## Route Altitude Profile
+Use `demo_drone_route_default_altitude_agl_v1` for the first terrain-aware route planning slice:
+- Default planned route altitude is `120 m AGL`.
+- When terrain elevation is available, compute each route point's `altitude_msl_m` as `terrain_elevation_m + altitude_agl_m`.
+- Route branch outputs should preserve `terrain_elevation_m`, `altitude_agl_m`, `altitude_msl_m`, `terrain_source_ref`, `terrain_status`, and `evidence_refs`.
+- Cesium 3D should render drone route branches as elevated paths above terrain when MSL altitude is available.
+- Missing, stale, or sparse terrain data should produce a clear degraded-status warning; the app should not silently display a terrain-aware route at ground level.
+
+Editable per-waypoint or per-segment altitude is a desired follow-up. The first implementation should leave a TODO and keep `120 m AGL` as the default fallback.
 
 ## Map UI Shape
 - Full-screen map centered on the unit route.
@@ -109,11 +122,13 @@ For the one-minute demo:
 ## Limits
 - This is a planning and visualization demo, not an operational drone-control system.
 - Terrain heuristics are provisional and should be backed by fixture data for the demo.
+- The `120 m AGL` default is a demo planning assumption, not certified terrain clearance or flight authorization.
 - Do not implement kinetic/strike actions, target engagement, real PEQ-15 integration, or autonomous operational drone control.
 - Single-source terrain and capability assumptions are acceptable for the hackathon demo when visibly labeled as provisional.
 
 ## Follow-Up
 1. Create fixture data for a unit route, terrain attention points, no-go zones, and drone route options.
 2. Implement a pure function that maps route corridor + terrain fixtures into attention points.
-3. Implement a pure function that maps PPS observation + mission state into command preview.
-4. Build the MapLibre/deck.gl UI around those fixtures before connecting external terrain sources.
+3. Implement a pure function that adds terrain-aware AGL/MSL route altitude profiles to drone route branches.
+4. Implement a pure function that maps PPS observation + mission state into command preview.
+5. Build the MapLibre/deck.gl UI around those fixtures before connecting external terrain sources.

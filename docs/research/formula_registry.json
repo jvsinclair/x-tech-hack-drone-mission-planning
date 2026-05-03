@@ -123,6 +123,44 @@
       ],
       "notes": "Use fixture thresholds and manually curated terrain examples for the hackathon. If external DEM data is added, cite the exact source and record any thresholds separately before relying on them.",
       "status": "active"
+    },
+    {
+      "id": "demo_drone_route_default_altitude_agl_v1",
+      "kind": "constant",
+      "expression": "For fixture-backed planning demos, default drone route branches to 120 meters above terrain level. When terrain elevation is available, compute altitude_msl_m = terrain_elevation_m + 120. If terrain elevation is unavailable, preserve the route but mark altitude planning as degraded and require a visible warning.",
+      "variables": {
+        "terrain_elevation_m": "Terrain elevation at the waypoint or route segment sample.",
+        "altitude_agl_m": "Planned altitude above terrain level for the drone route point.",
+        "altitude_msl_m": "Computed planned altitude above mean sea level.",
+        "terrain_status": "Whether terrain data was available and suitable for the route altitude calculation."
+      },
+      "units": {
+        "terrain_elevation_m": "meters",
+        "altitude_agl_m": "meters",
+        "altitude_msl_m": "meters",
+        "terrain_status": "enum(available, degraded, missing, stale, sparse)"
+      },
+      "source_ref": "user_clarification_default_drone_route_altitude_2026_05_03; moving_unit_drone_mission_planning",
+      "applicability": [
+        "terrain_aware_route_altitude_profile_demo",
+        "drone_route_option_generation_demo",
+        "cesium_3d_route_visualization_demo",
+        "foundry_route_branch_api_contract_demo"
+      ],
+      "confidence": "medium",
+      "chosen_for": [
+        "Matches user-selected default for the hackathon planning demo.",
+        "Keeps route altitude explainable in AGL terms while allowing Cesium to render MSL coordinates.",
+        "Provides a simple first pass before editable per-waypoint altitude is implemented."
+      ],
+      "rejected_for": [
+        "Operational terrain clearance.",
+        "Certified flight planning.",
+        "Autonomous obstacle avoidance.",
+        "Real drone autopilot upload or hardware command."
+      ],
+      "notes": "Use 120 m AGL as a provisional default only. Future per-waypoint or per-segment altitude edits should cite this rule as the default fallback and add separate validation for operator overrides.",
+      "status": "active"
     }
   ]
 }

@@ -32,13 +32,14 @@ This folder is the durable task queue for Codex CLI. Each goal is a standalone M
 - Do not commit secrets, local machine paths, caches, huge generated downloads, or credentials.
 - If a goal introduces public tools, formula rules, workflow stages, or new evidence sources, update the corresponding registry in the same change.
 
-## Current Initial Queue
+## Current Queue
 1. `0001-palantir-offline-upload-bundle.md`
 2. `0002-local-vite-cesium-planner-scaffold.md`
 3. `0003-plan-mode-run-mission-mode.md`
 4. `0004-mgrs-latlon-coordinate-display.md`
 5. `0005-pps-cue-zones-and-route-preview.md`
 6. `0006-isr-map-symbology-waypoint-glyphs-and-legend.md`
+7. `0007-terrain-aware-drone-route-altitude.md`
 
 ## Creating New Goals
 Use `GOAL_TEMPLATE.md`, assign the next zero-padded numeric ID, and keep the goal small enough to finish in one focused Codex CLI run. `GOAL_TEMPLATE.md` is not an executable goal and must not be selected by Codex CLI.

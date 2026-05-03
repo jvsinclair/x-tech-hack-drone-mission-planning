@@ -34,6 +34,7 @@ Use this table when scoping work or explaining the repo to judges. Full queue or
 | **0004** | MGRS / LatLon display | Coordinate readout rules |
 | **0005** | PPS cue zones and route preview | Cue **zones**, **simulated** PPS mapping, branch **preview** in run — **not** authoring branches from cues |
 | **0006** | ISR map symbology, glyphs, legend | In-app implementation of iconography **R6–R8** and legend |
+| **0007** | Terrain-aware drone route altitude | `120 m AGL` default, AGL/MSL route profiles, degraded-terrain warnings, and elevated Cesium 3D route review |
 
 ---
 
@@ -70,6 +71,7 @@ Use this table when scoping work or explaining the repo to judges. Full queue or
   - high-ground scout candidates
   - no-go zones
 - Manually drawn obstacles and no-go zones are acceptable when clearly labeled as provisional planning aids.
+- Drone route branches should default to `120 m AGL` and expose AGL/MSL/provenance once goal `0007` is implemented; this is a planning assumption, not certified obstacle clearance.
 - Palantir is currently the preferred v1 source or fusion surface for terrain/context layers, but actual access and capabilities are still unknown.
 - If Palantir cannot provide or expose a needed terrain object, the fallback should be imported fixtures from public data, Danti/geospatial context, OSM/Overpass, Overture/Microsoft building data, or manual annotations.
 
@@ -160,7 +162,7 @@ Use this table when scoping work or explaining the repo to judges. Full queue or
   - fixed reserve percentage
   - fixed RTB threshold
   - simple distance/time estimate
-- Altitude, dwell time, sensor range, and identification range can be shown as configurable or warning-level planning assumptions until each rule is source-registered and formula-registered.
+- Altitude, dwell time, sensor range, and identification range can be shown as configurable or warning-level planning assumptions until each rule is source-registered and formula-registered. The current default route altitude is `120 m AGL` via `demo_drone_route_default_altitude_agl_v1`.
 - The UI should distinguish source-backed constants from provisional or user-configured tolerances.
 
 ## Cue And Command Preview

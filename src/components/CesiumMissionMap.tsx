@@ -14,7 +14,7 @@ Research / Source Links:
 Validated:
 - provisional: Typechecked and built in Goal 0002; browser rendering should be smoke-tested locally.
 Current Limits / TODO:
-- Uses public topo imagery for the planning base; 3D terrain uses Cesium ion when VITE_CESIUM_ION_TOKEN is configured, otherwise falls back to ellipsoid terrain.
+- Topo mode uses public topo imagery; 3D mode switches to satellite imagery and uses Cesium ion terrain when VITE_CESIUM_ION_TOKEN is configured.
 Agent Maintenance Rule:
 - If this module changes in any way, or a finding affects its contracts, update this header in the same change.
 */
@@ -25,10 +25,12 @@ import {
   Color,
   ColorMaterialProperty,
   ConstantProperty,
+  createWorldImageryAsync,
   EllipsoidTerrainProvider,
   GeoJsonDataSource,
   ImageryLayer,
   Ion,
+  IonWorldImageryStyle,
   Math as CesiumMath,
   PolylineDashMaterialProperty,
   Rectangle,
@@ -56,23 +58,29 @@ interface CesiumMissionMapProps {
 export function CesiumMissionMap({ layers, enabledLayerIds, onSelectObject }: CesiumMissionMapProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const viewerRef = useRef<Viewer | null>(null);
-  const [viewMode, setViewMode] = useState<MapViewMode>("topo");
+  const baseImageryLayerRef = useRef<ImageryLayer | null>(null);
+  const ionTokenRef = useRef<string | undefined>(undefined);
+  const [viewMode, setViewMode] = useState<MapViewMode>(() => readInitialViewMode());
   const [terrainStatus] = useState(() => terrainSourceStatus(readIonToken()));
 
   useEffect(() => {
     if (!containerRef.current || viewerRef.current) return;
 
     const ionToken = configureIonToken();
+    const initialViewMode = readInitialViewMode();
+    const baseLayer = initialViewMode === "terrain3d" ? createSatelliteBaseLayer(ionToken) : createTopoBaseLayer(ionToken);
+    ionTokenRef.current = ionToken;
+    baseImageryLayerRef.current = baseLayer;
     const viewer = new Viewer(containerRef.current, {
       animation: false,
-      baseLayer: createBaseLayer(ionToken),
+      baseLayer,
       baseLayerPicker: false,
       fullscreenButton: false,
       geocoder: false,
       homeButton: false,
       infoBox: false,
       navigationHelpButton: false,
-      sceneMode: SceneMode.SCENE2D,
+      sceneMode: initialViewMode === "terrain3d" ? SceneMode.SCENE3D : SceneMode.SCENE2D,
       sceneModePicker: false,
       selectionIndicator: false,
       timeline: false,
@@ -88,7 +96,7 @@ export function CesiumMissionMap({ layers, enabledLayerIds, onSelectObject }: Ce
     viewer.scene.screenSpaceCameraController.inertiaSpin = 0;
     viewer.scene.screenSpaceCameraController.inertiaTranslate = 0;
     viewer.scene.screenSpaceCameraController.inertiaZoom = 0;
-    applyMapView(viewer, "topo", 0);
+    applyMapView(viewer, initialViewMode, 0);
 
     viewer.selectedEntityChanged.addEventListener((entity) => {
       onSelectObject(entity ? selectedObjectFromEntity(entity) : null);
@@ -99,6 +107,8 @@ export function CesiumMissionMap({ layers, enabledLayerIds, onSelectObject }: Ce
     return () => {
       viewer.destroy();
       viewerRef.current = null;
+      baseImageryLayerRef.current = null;
+      ionTokenRef.current = undefined;
     };
   }, [onSelectObject]);
 
@@ -152,7 +162,10 @@ export function CesiumMissionMap({ layers, enabledLayerIds, onSelectObject }: Ce
 
   function changeMapView(nextMode: MapViewMode) {
     setViewMode(nextMode);
-    if (viewerRef.current) applyMapView(viewerRef.current, nextMode, 0.5);
+    if (viewerRef.current) {
+      switchBaseImagery(viewerRef.current, nextMode);
+      applyMapView(viewerRef.current, nextMode, 0.5);
+    }
   }
 
   function recenterMap() {
@@ -168,18 +181,38 @@ export function CesiumMissionMap({ layers, enabledLayerIds, onSelectObject }: Ce
             Topo
           </button>
           <button className={viewMode === "terrain3d" ? "is-active" : ""} onClick={() => changeMapView("terrain3d")} type="button">
-            3D
+            3D Sat
           </button>
         </div>
         <button className="map-recenter" onClick={recenterMap} type="button">
           Recenter AOI
         </button>
         <span className={`terrain-status terrain-status-${terrainStatus}`}>
-          {terrainStatus === "cesium_world_terrain" ? "Cesium terrain" : "Ellipsoid terrain"}
+          {viewMode === "terrain3d"
+            ? terrainStatus === "cesium_world_terrain"
+              ? "Satellite + terrain"
+              : "Satellite + ellipsoid"
+            : "Topo planning"}
         </span>
       </div>
     </div>
   );
+
+  function switchBaseImagery(viewer: Viewer, mode: MapViewMode) {
+    const nextLayer = mode === "terrain3d" ? createSatelliteBaseLayer(ionTokenRef.current) : createTopoBaseLayer(ionTokenRef.current);
+    const layers = viewer.imageryLayers;
+    const currentLayer = baseImageryLayerRef.current;
+
+    if (currentLayer && layers.contains(currentLayer)) {
+      layers.remove(currentLayer, true);
+    } else if (layers.length > 0) {
+      layers.remove(layers.get(0), true);
+    }
+
+    layers.add(nextLayer, 0);
+    baseImageryLayerRef.current = nextLayer;
+    viewer.scene.requestRender();
+  }
 }
 
 function styleEntity(entity: Entity, layer: MissionLayer) {
@@ -230,13 +263,33 @@ function readIonToken(): string | undefined {
   return import.meta.env.VITE_CESIUM_ION_TOKEN?.trim() || undefined;
 }
 
-function createBaseLayer(ionToken: string | undefined): ImageryLayer {
+function readInitialViewMode(): MapViewMode {
+  if (typeof window === "undefined") return "topo";
+  const view = new URLSearchParams(window.location.search).get("view")?.toLowerCase();
+  return view === "3d" || view === "terrain3d" ? "terrain3d" : "topo";
+}
+
+function createTopoBaseLayer(ionToken: string | undefined): ImageryLayer {
   return new ImageryLayer(
     new UrlTemplateImageryProvider({
       url: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
       subdomains: ["a", "b", "c"],
       credit: ionToken ? "OpenTopoMap contributors; Cesium World Terrain" : "OpenTopoMap contributors",
       maximumLevel: 17,
+    }),
+  );
+}
+
+function createSatelliteBaseLayer(ionToken: string | undefined): ImageryLayer {
+  if (ionToken) {
+    return ImageryLayer.fromProviderAsync(createWorldImageryAsync({ style: IonWorldImageryStyle.AERIAL_WITH_LABELS }));
+  }
+
+  return new ImageryLayer(
+    new UrlTemplateImageryProvider({
+      url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      credit: "Esri World Imagery",
+      maximumLevel: 19,
     }),
   );
 }

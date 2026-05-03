@@ -33,17 +33,22 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
   keep deterministic normalization, validation, and correlation logic separate from UI and partner platform code
 
 ## Current Critical Modules
-- `todo`: PRD-specific app entrypoint
-- `todo`: mission plan, drone asset, optical cue, waypoint, route constraint, and observation schemas
+- `src/App.tsx`: Vite/React planner shell with Cesium map, layer controls, provider selector, status, and selected-object panel.
+- `src/components/CesiumMissionMap.tsx`: Cesium 3D map renderer for WGS84 mission layers centered on Sunol / Pleasanton Ridge.
+- `src/data/loadMissionData.ts`: Foundry-first/static-fallback provider selector for mission data.
+- `src/data/staticBundleProvider.ts`: Local loader for Goal 0001 Palantir upload bundle artifacts under `/resources/palantir_sunol_aoi_upload/`.
+- `src/data/foundryProvider.ts`: No-server Foundry-hosted adapter seam for generated OSDK data.
+- `src/data/missionTypes.ts`: Minimal mission layer, provider, and GeoJSON-facing contracts.
+- `todo`: full mission plan, drone asset, optical cue, waypoint, route constraint, and observation schemas
 - `todo`: ruleset-backed mission state machine and decision tree module
 - `todo`: feed and geospatial context normalization module
 - `todo`: entity/event/location extraction, optical cue interpretation, and route constraint correlation module
 - `todo`: validator pipeline for provenance, cue confidence, route safety, and workflow readiness
-- `todo`: drone mission planning dashboard or operational-picture interface
+- `provisional`: drone mission planning dashboard or operational-picture interface scaffold exists in `src/`.
 - `todo`: review artifact and registry loader modules
 
 ## What Is Validated Enough To Trust
-- `validated`: repo is currently a research-first scaffold with no application source code.
+- `provisional`: repo now includes a runnable Vite + React + TypeScript + Cesium planner scaffold for Goal 0002.
 - `validated`: project domain is Problem Statement 3, Mission Command and Control, based on user-provided hackathon context on 2026-05-02.
 - `validated`: working product direction is drone mission planning, based on user clarification on 2026-05-02.
 - `validated`: working scenario direction is a simple maneuver to secure an Army unit with drone coverage, based on user clarification on 2026-05-02.
@@ -61,10 +66,11 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `provisional`: PPS route-selection mapping is a simulation rule, not authenticated friendly identification or an operational command protocol.
 - `provisional`: `docs/StatePlanningForFlightPath.md` includes FPV/kinetic examples; implementation should narrow to ISR, route planning, cue interpretation, overwatch, RTB, and human-reviewed decisions unless the PRD explicitly defines safer non-kinetic scope.
 - `provisional`: candidate partner resources and OSINT sources are mapped in `docs/research/problem_statement_3_resource_map.md`, but account access and dataset/API availability are not yet verified.
-- `todo`: no runnable app, fixtures, tests, generated artifacts, or public workflow actions exist yet.
+- `provisional`: Foundry-hosted OSDK data access is represented by an adapter seam, not live Palantir calls.
+- `todo`: full mission state machine, run mode, PPS cue preview, writeback actions, and generated Goal 0001 artifacts still need completion.
 
 ## Current Active Blockers
-- No application stack, runtime, source modules, or tests have been chosen.
+- Foundry Developer Console / OSDK application setup still needs the hackathon instance object types, permissions, and generated package.
 - Real hardware integration and operational low-probability-of-intercept signaling are out of scope for this repo unless the PRD explicitly reframes them as safe simulation-only requirements.
 - No partner platform accounts, source datasets, or demo fixtures have been verified locally.
 - No project-specific schemas, validation stages, formulas, thresholds, or workflow actions have been registered.
@@ -84,6 +90,10 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
   `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
 - Tool catalog:
   `docs/TOOL_INTERFACE_CATALOG.md`
+- Foundry-hosted app setup:
+  `docs/FOUNDRY_HOSTED_APP_SETUP.md`
+- Covered module registry:
+  `docs/COVERED_MODULE_REGISTRY.md`
 - Formula and threshold governance:
   `docs/FORMULA_REGISTRY_POLICY.md`
 - Validation vocabulary:

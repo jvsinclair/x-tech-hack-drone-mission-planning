@@ -3,7 +3,7 @@
 This is the review guide for the current `x-tech-hackathon` tool, validator, and workflow surface.
 Every public stage should be documented here before agents depend on it.
 
-Current state: no implemented public tools, validator stages, workflow actions, or runtime-backed operations exist yet. `optical_cue_interpreter_demo` and `terrain_attention_point_generator_demo` are planned provisional stages for the first implementation slice.
+Current state: Goal 0002 adds a provisional frontend runtime data-provider boundary, `mission_data_provider_runtime`, for choosing a Foundry-hosted adapter when available and falling back to static scoped bundle data. `optical_cue_interpreter_demo` and `terrain_attention_point_generator_demo` remain planned provisional stages for upcoming implementation slices.
 
 ## Field Glossary
 - `[field_name]`: `[description]` Units: `[units or enum or not_applicable]`.
@@ -135,6 +135,54 @@ Current state: no implemented public tools, validator stages, workflow actions, 
 - Current gaps / TODO notes:
   - Fixture thresholds and route-corridor geometry still need implementation.
   - External DEM ingestion is optional and should come after the fixture demo works.
+
+## `mission_data_provider_runtime`
+- Display name: Mission Data Provider Runtime
+- Category: `runtime`
+- Stage order: `0`
+- Purpose: Load AOI-scoped mission layers for the planner from Foundry when available, otherwise from the static Goal 0001 bundle or built-in placeholder geometry.
+- When to call: At planner startup and when the operator changes the provider selector.
+- When not to call: Do not use for writeback, Palantir Actions, real drone control, MAVLINK/GCS, or hardware-control workflows.
+- Input type: Preferred provider mode plus optional Foundry adapter or static bundle path.
+- Output type: `MissionData` containing grouped WGS84 GeoJSON mission layers and provider status.
+- Supported use cases: Foundry-hosted app data access; local fallback; Cesium layer rendering.
+- Supported data or source families: Foundry OSDK adapter; Goal 0001 static GeoJSON/CSV bundle; built-in synthetic placeholder geometry.
+- Status values: `ready | partial | missing | unavailable`
+- Hard-fail vs warning behavior: Missing Foundry adapter or static bundle degrades to placeholder geometry with a visible notice; malformed loaded data should surface as a warning or error.
+- Formula or rule groups: `none`
+- Support level: `provisional`
+- Platform support: `Foundry-hosted adapter optional; local Vite fallback supported`
+- Required binaries or services: `node`, `npm`; Foundry auth only when using the adapter path.
+- Headless expectations: Provider selection and static fallback are unit-testable without a browser.
+- Degraded modes: Built-in placeholder Sunol mission geometry.
+- Source module: `src/data/loadMissionData.ts`
+- Kernel id: `mission_data_provider_runtime`
+- Kernel boundary: Provider selection and mission layer grouping; Cesium rendering is separate.
+- Pure function expected: `mixed`
+- Required input fields:
+  - `preferredProvider` (`enum(auto, foundry, static)`): Requested provider path. Units: `enum`.
+- Optional input fields:
+  - `basePath` (`string`): Static bundle root. Units: `path`.
+  - `fetcher` (`function`): Fetch implementation for tests or runtime. Units: `function`.
+  - `window.__FOUNDRY_MISSION_PROVIDER__` (`object`): Foundry-hosted adapter injected by generated OSDK setup. Units: `object`.
+- Derived fields: `provider`, `status`, `notices`, `layers`
+- Minimal valid example input:
+```json
+{
+  "preferredProvider": "auto"
+}
+```
+- Example output summary:
+```json
+{
+  "provider": "placeholder",
+  "status": "missing",
+  "layers": 9
+}
+```
+- Current gaps / TODO notes:
+  - Generated OSDK package and Foundry object mappings are not configured yet.
+  - Writeback/actions are intentionally deferred.
 
 ## Entry Template
 

@@ -18,7 +18,7 @@ Add **MIL-STD-2525D**-based **unit symbology** for **squad-level, land-only** en
 1. `AGENTS.md`
 2. `docs/PROJECT_CONTEXT.md`
 3. `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
-4. `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` — align **layer z-order** with this goal (see below); do not replace waypoint semantics from `0006`.
+4. `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` — **§6** (R1–R7, **PA1/PA2**), **§13** static mission overlay (**graphic control measures**); align **layer z-order** with this goal; do not replace waypoint semantics from `0006`.
 5. `docs/goals/0002-local-vite-cesium-planner-scaffold.md`
 6. `docs/goals/0006-isr-map-symbology-waypoint-glyphs-and-legend.md` — **waypoints stay**; integrate **depth ordering** so units and waypoints do not fight.
 
@@ -91,6 +91,20 @@ Return:
 - verification results
 - commit SHA
 - modifiers deferred or not supported by library
+
+## Extended design contract (session — mission plan + dashboard)
+
+Codified in **`docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md`** on the same tracks as this goal:
+
+| Topic | Decision |
+| --- | --- |
+| **Mission copy** | Do **not** use **“mission steps”** as the operator-facing pattern for the static fixture lane — use **control measure** vocabulary (waypoint, rally point, checkpoint, **decision point**, etc.). |
+| **Mission points / symbols** | Render **graphic control measure**–style points per [MGRS Mapper — Graphic Control Measure Symbols](https://mgrs-mapper.com/blog/graphic_control_measure_symbols/) study guide; use **official** **Decision Point** (and related point SIDCs / SVG), **not** abstract diamonds on the **mission/fixture** lane. §8 **diamond** heads remain **drone waypoint** grammar only. |
+| **Primary vs alternate (binary)** | **PA1** (dotted) / **PA2** (solid) **light blue** polylines for static **primary / alternate** courses (schedule slip, missed rally, etc.). **Yellow R1/R2** stays **drone ISR route** only. |
+| **Mission scope** | Narrative **outside** the drone path exists **only** as minimal static glue for demo — see §13. |
+| **Dashboard / shell (follow-on implementation)** | **Accordion** outline: **Plan Mission**, **Units**, **Layers** (exclusive expand); map **zoom/fly-to** on outline rows parity with path clicks; **globe / scene-mode** controls aligned with Cesium defaults where agreed — wire against `src/App.tsx` shell after this goal’s map entities exist. |
+
+**Implementation note:** Control-measure **points** and **unit** icons can share the same **milsymbol / 2525D SVG** pipeline where SIDCs are tactical-point or land-unit sets; catalog separate fixtures for **static overlay** vs **tactical units**.
 
 ## Blocker Notes
 

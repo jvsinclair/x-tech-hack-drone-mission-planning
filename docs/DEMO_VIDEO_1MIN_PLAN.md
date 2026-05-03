@@ -4,6 +4,76 @@ Flexible structure for a ~60-second recording aligned with judging criteria and 
 
 ---
 
+## FLAG — roundtable gate for final VO
+
+**Do not freeze word-level voiceover or shot list until the checklist below has team answers.** These items drive what you may truthfully say and show in ~60 seconds.
+
+**Highest leverage (answer first):** problem lead and story (6–8), recording surface and live vs fixture (15–16), AOI label (17), demo beat priority (19–20), partner beat in VO (21), Palantir/data packaging truth (24–27), ISR-only guardrails (28), ambiguous-cue posture (29).
+
+---
+
+## Roundtable checklist — questions to answer before final VO
+
+### Intro (~6–10 s)
+
+1. **Team identity:** Name people/roles in VO, or only team + track/problem statement?
+2. **Product name:** One official string for the hackathon (repo vs pitch name).
+3. **Platform one-liner:** Approved phrase (e.g. planner prototype, rehearsal tool, planning aid).
+4. **Operator framing:** Default “operator” in one word (squad, platoon, planner, GCS role).
+5. **Synthetic disclaimer:** Exact wording and placement (VO, on-screen, or both).
+
+### Problem / context (~12–18 s)
+
+6. **Pain you own:** Single lead—branching + rehearsal, terrain-aware ISR, human-in-the-loop decisions, or operational picture; others subordinate.
+7. **Friendly force story:** Route security / scout-ahead ISR vs any PRD wording that could sound kinetic—align for VO.
+8. **Decision event:** Target-ID / unknown observation on route—in the 60s cut, judges-only, or dropped?
+9. **Jargon budget:** Which terms get plain-English gloss on first use (Primary/Alternate, decision point, Decision Target Zone, PPS, rehearsal, audit log)?
+
+### Solution (~14–22 s)
+
+10. **Plan vs Run labels:** Exact phrases matching on-screen UI.
+11. **Cue language:** One approved description (simulated intent cue, launch-package simulation, etc.); name IR/PEQ-15 in VO or not.
+12. **PPS semantics for pitch:** One-breath mapping VO must match legend (hold / RTB / Primary / Alternate vs legacy Route A/B).
+13. **“Validation” in VO:** One truthful example for the recorded build (battery/range, topology, ruleset, ready-to-run).
+14. **Integrity line:** Owner-approved wording for “same app as live demo; saved mission + cuts.”
+
+### Demo block (~22–38 s)
+
+15. **Recording surface:** Which app/shell appears (e.g. Vite/Cesium vs rebuild-planner vs both).
+16. **Fixture vs live authoring:** Preloaded only, or include a short live edit—what is actually recorded?
+17. **AOI name:** Place/coordinates label for VO (“synthetic training area based on …”).
+18. **Terrain story:** What the viewer should notice (ridge, road, no-go, towers)—agreed list for this mission.
+19. **“Wow” beat order:** Queue, branch preview, PPS, audit, timeline—priority for 60s (only 2–3 can be loud).
+20. **Primary branch moment:** UI click vs simulated PPS vs both—canonical for the video.
+21. **Export / partner beat:** What VO may claim (Palantir/Foundry, bundle export, integration path)—visible or demoable only.
+
+### Close (~4–8 s)
+
+22. **Closing CTA:** One of—judge can edit live, repo/openness, follow-on prototype, contact.
+23. **Future potential:** One approved impact sentence without doctrine/fielding overclaim.
+
+### Palantir, data, packaging
+
+24. **Palantir access truth:** What can be said during the event (Foundry read-only, offline bundle, Map, nothing live).
+25. **Minimum judge “win”:** If CSV/GeoJSON alone is weak, what is the honest line—and does VO tease it?
+26. **Ontology / custom objects:** Claim custom mission objects in Palantir, or stay on shared model / export path?
+27. **Export priority:** First artifact if VO mentions one (GeoJSON, CSV, JSON state machine, briefing, Palantir bundle).
+
+### Scope and safety
+
+28. **ISR guardrails:** VO must never imply strike, weaponized FPV, live aircraft control, or real cue hardware—confirm.
+29. **Unknown / ambiguous cue:** One-sentence product posture if asked; VO hedge if needed (e.g. invalid cue → no auto transition, logged).
+30. **Mandatory objective types:** Any objective type required in the demo mission beyond the baseline vocabulary?
+
+### Logistics
+
+31. **Music / VO mix:** Narrator-only vs captions vs hybrid—drives word count.
+32. **Legal / sponsor:** Required acknowledgments (Palantir, Army xTech, others) on end card or in VO?
+
+**Shortcut:** Answering items **6–8, 15–17, 19–21, 24–25, 28** is enough to draft a credible first VO pass; fill the rest before record.
+
+---
+
 ## Judging alignment
 
 Projects are evaluated on four criteria ([National Security Hackathon rules — Devpost](https://natsechack.devpost.com/rules)). Map each spoken or visual beat to them so nothing important is orphaned when you trim.
@@ -81,95 +151,8 @@ Brief answers for live Q&A; do not cram into VO unless unavoidable.
 
 ---
 
-## Full roundtable pack for VO (master script)
+## Next steps (out of scope for this file)
 
-**Read rate:** Target **roughly ~120–135 spoken words** in **~54–62 s** on a conversational clip (~2–2.3 words/sec sustained). Blocks below aim for **≈ sixty seconds total**, not summed maxima per paragraph. Dry-run with a slate; shave with *Alternate trims*.
-
-### Master VO (timed blocks — ~≈58 s voiced)
-
-| Block | Target | Narration |
-| --- | --- | --- |
-| **AB — Synthetic + pain** | ~12 s | “**Synthetic training scenario**—scout-ahead **ISR route security**, all fictitious. **Primary** and **Alternate** usually live in briefings—we need them **in the mission**, with validation and a **rehearsable outline**.” |
-| **C — Plan** | ~13 s | “**Plan mode**: ordered **waypoint queue** and **segment** logic—the operator **state outline**. **Distance** and **battery** warnings ride edits; default altitude **one-twenty metres A-G-L**—**planning only**, not certified clearance.” |
-| **DE — Run + cues** | ~15 s | “**Run** rehearses **the same build**—exit clears **sim only**, authored route **persists**. **Hard lock** in Run—edit back in Plan. **Simulated cue** or UI: **same gate**—pulse picks among **hold, RTB, Primary, Alternate already authored**. **Training rehearsal**, **not IFF** or operational command protocol.” |
-| **F — Demo** | ~19 s | “Load saved **scout fixture**—**terrain**, **queue**—**jump cut**—**Decision Target Zone**—**ambiguous contact** on-route. Fire **four P-P-S** (**Launch Package Simulation**), **Primary** branch—you see **zone**, **preview**, **rationale**, **warnings**, **audit** line.” |
-| **G — Close** | ~5–7 s | “**Same shipped app**—judges fly it **interactive**; we **compressed time**. **Optional VO:** partner handoff once export is real—omit if nothing is on screen.” |
-
-**Continuous read-through (paste-friendly):**
-
-> Synthetic training scenario—scout-ahead ISR route security—all fictitious. Primary and Alternate usually live in briefings; we surface them inside the mission with validation and a rehearsable outline.
->
-> Plan mode: waypoint queue plus segment logic—the operator outline—with distance and battery warnings on edits. One-twenty metres AGL default—planning assumption, not clearance certification.
->
-> Run rehearses the same mission; leaving Run resets rehearsal, not your authored geometry. Locked in Run; edit in Plan. Simulated pulse or UI—same gate—only picks branches you authored: hold, RTB, Primary, Alternate. Simulation for rehearsal—not IFF or operational command protocol.
->
-> Load our scout fixture—terrain, queue—jump to a decision zone—we’re on an ambiguous contact—four PPS, Primary—with zone, preview, rationale, warnings, audit—all synthetic data.
->
-> Same app judges can fly live; we compressed time only.
-
-### Alternate trims (if long)
-
-Drop in this order:
-
-1. **C**: delete “distance and”—keep battery warnings only, or vice versa.
-2. **DE**: replace “Simulation for rehearsal—not IFF or battlefield C-two” → “Simulation only.”
-3. **F**: drop parentheses “**(Launch Package Simulation)**” → keep spoken “four PPS.”
-4. **AB**: shorten second sentence → “Briefings hide branches—we put Primary and Alternate in the plan.”
-5. **G**: optional partner clause—always cut first if over.
-
----
-
-## Beat sheet for picture lock (tie VO to visuals)
-
-Aligned to roundtable *One-Minute Video Path*; same app and fixture; jump cuts allowed.
-
-| # | Seconds (guide) | On screen | Narration hinge |
-| --- | --- | --- | --- |
-| 1 | 0–3 | Title card or synthetic AOI label | “Synthetic training…” |
-| 2 | 3–8 | Brief map terrain (ridge / road / no-go optional) | “Scout-ahead ISR…” |
-| 3 | 8–14 | Waypoint queue + launch | “Waypoint queue…” |
-| 4 | 14–22 | One waypoint or segment config / validation strip | “Primary and Alternate…” / “warnings” |
-| 5 | 22–30 | Mode to Run / timeline cue | “Rehearsal on the same build” |
-| 6 | 30–38 | Aircraft or playhead approaching **Decision Target Zone** | “Decision zone” |
-| 7 | 38–46 | Observation / TID language (minimal if tight) | “Ambiguous contact” |
-| 8 | 46–52 | Simulate **four P-P-S**; command preview resolves to **Primary** | “Four PPS—Primary branch” |
-| 9 | 52–56 | Highlight zone + preview trace + log line | “Preview… audit” |
-| 10 | 56–60 | Optional continued transit or hold on outline | “Same app… jump cut” |
-
----
-
-## Roundtable fidelity checklist (do not contradict on VO)
-
-These are authoritative product postures captured in roundtable docs; VO should either land them explicitly or avoid implying the opposite.
-
-| Topic | VO line / guardrail |
-| --- | --- |
-| **Derivative demo** | Same UI and workflow as shipped interactive path; preload + jumps only compress time—not a forked demo build. |
-| **Plan vs Run** | Plan authors branches **as designed** (Primary / Alternate attached to waypoint or segment); Run selects among those after **Decision Target Zone** validation. |
-| **PPS** | **Simulation input** selecting among preplanned options; **canonical mapping:** `1` hold—`2` RTB—`4` Primary—`8` Alternate **(video uses “four PPS”)**. |
-| **Not claiming** | Not IFF; not operational C2 protocol; not designing branches *from* cues mid-video. |
-| **Scenario** | **Route-security / scout-ahead** ISR; synthetic actors; **ambiguous contact / TID on route** as decision pivot—not L-shaped ambush execution framing. |
-| **Platform** | X10D ISR / recon scope; **no** strike, kinetic, live GCS, real drone. |
-| **Mission durability** | Exiting Run: discard rehearsal/sim clock/preview position only; **do not** say the plan snaps back—**authored mission stays**. |
-| **Edit rule** | “Change waypoints **in Plan**”—hard lock during Run unless you consciously show return-to-plan (usually skip in 60s). |
-| **Altitude** | Say **planning altitude** **120 m AGL** if altitude appears; caveat **planning assumption** if terrain clearance is visible. |
-| **Unknown observation** | One line max in VO if time; fuller unknown-contact handling in live judge slot if needed. |
-| **Palantir / partner** | Mention only **if demonstrated**—otherwise closing “partner handoff” as **future**. |
-| **Validation** | If shown: incompleteness blocks Run starts in product—voice may skip unless you flash a validator. |
-
----
-
-## Optional jargon card (producer)
-
-- **Primary / Alternate** — preplanned route branches, operator-facing labels (not “Route A/B” in narration).
-- **Decision Target Zone** — spatial gate where cues apply; invalid/out-of-zone rejects with logged reason (do not verbalize rejection path in VO unless showing it).
-- **Launch Package Simulation** — label for rehearsal cue set; VO can say **“simulated pulses”** or **“four PPS”**.
-- **SC2-style queue** — internal wow-label; VO can say **“ordered mission queue.”**
-
----
-
-## Next steps
-
-- Shot list per beat, captions, bumper, music.
-- Dry run with timer; shave alts until **≤ 60 s** with slate.
-- Separate expected judge Q&A document.
+- Word-level script and exact timings.
+- Shot list, captions, and music.
+- Separate expected Q&A document.

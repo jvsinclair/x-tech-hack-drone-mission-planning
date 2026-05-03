@@ -173,6 +173,7 @@ Use this table when scoping work or explaining the repo to judges. Full queue or
   - `2 PPS`: Route A preview
   - `4 PPS`: Route B preview
   - `8 PPS`: RTB preview
+- **Flash code shorthand** (simulated IR / simple labeling): **`a`** → primary static path (**PA1**) branch preview; **`b`** → alternate (**PA2**) — same preview-then-confirm rules; canonical wording in `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` §10.
 - RTB should require confirmation or explicit acknowledgement in the product (and in any recorded walkthrough).
 - Unknown, no-pulse, or ambiguous cue behavior still needs final product language. Candidate behavior is to reject automatic transition, clear or leave the current preview unchanged, and log a warning for review.
 

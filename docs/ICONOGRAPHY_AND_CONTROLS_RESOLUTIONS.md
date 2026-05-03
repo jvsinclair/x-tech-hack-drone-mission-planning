@@ -18,7 +18,7 @@ This is the **single consolidated reference** for:
 | --- | --- |
 | **Review** | Consolidated planning + symbology — update when assets or schema freeze. |
 | **Validation** | `provisional` |
-| **Last updated** | `2026-05-02` |
+| **Last updated** | `2026-05-03` |
 
 ---
 
@@ -112,8 +112,8 @@ Maneuvers **1–3** must read as **planned or rehearsed**, not implied real-time
 | **R5** | **Scan footprint / scan path** | **Non-yellow**, distinct fill/stroke — polygon, corridor, orbit ribbon, or sweep; legend labels **Scan area** / **Scan path** (pick one vocabulary). |
 | **R6** | **Waypoint marker family** | Shared **stem**; behaviors differ by **head / halo / attachments** only (§8). |
 | **R7** | **Preview vs commit** | Route branches, hold, RTB previews stay **provisional** until confirm — lighter stroke, dashed, and/or explicit **preview** label. |
-| **PA1** | **Primary (binary path)** | **Dotted** polyline, **light blue**, ~**50%** opacity — **primary** course for the static scenario (schedule/nominal). Same *line grammar* idea as **R1**, **different hue** from yellow so it never reads as **drone** route. |
-| **PA2** | **Alternate (binary path)** | **Solid** polyline, **light blue**, ~**50%** opacity — **alternate** when a schedule threshold fails or a **Decision Point** selects the alternate. Same *line grammar* idea as **R2**, light blue family only. |
+| **PA1** | **Primary (binary path)** | **Solid** polyline, **light blue**, ~**50%** opacity — **primary** course for the static scenario (schedule/nominal). Same *line grammar* idea as **R2** (committed / main stroke), **different hue** from yellow so it never reads as **drone** route. |
+| **PA2** | **Alternate (binary path)** | **Dotted** polyline, **light blue**, ~**50%** opacity — **alternate** when a schedule threshold fails or a **Decision Point** selects the alternate. Same *line grammar* idea as **R1**, light blue family only. |
 
 **Hue separation:** **Yellow (R1/R2)** = **drone ISR route** progression. **Light blue (PA1/PA2)** = **primary vs alternate** branching for the **static mission overlay** geometry (binary approach). **Light blue (R4)** remains **sensor/camera** emphasis — do not use R4 geometry for branch polylines; keep branch strokes clearly **polyline** vs **wedge/arc**.
 
@@ -178,6 +178,8 @@ Provisional demo mapping (`docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`, goal **0005**)
 | `4 PPS` | Route B preview |
 | `8 PPS` | RTB preview |
 
+**Flash code shorthand (simulated IR / demo labeling):** **`a`** → **primary** branch intent (**PA1** static path, §6); **`b`** → **alternate** branch intent (**PA2** static path, §6). Use **`a` / `b`** as the operator-facing and log label when the scenario does not need pulse counts; wire through the same preview-then-confirm pipeline as PPS-mapped branch previews at the tied **Decision Point**.
+
 **Rules:** previews **do not commit** state until operator confirms; **ambiguous** cue → **no** automatic advance — reject or ignore with logged warning.
 
 ---
@@ -226,8 +228,8 @@ Render **official-style** point symbols (e.g. via MIL-STD-2525D **tactical point
 
 ### Lines on the map (binary primary / alternate)
 
-- **Primary** path: **PA1** (dotted light blue).
-- **Alternate** path: **PA2** (solid light blue) when the scenario selects **alternate** (e.g. missed rally window).
+- **Primary** path: **PA1** (solid light blue).
+- **Alternate** path: **PA2** (dotted light blue) when the scenario selects **alternate** (e.g. missed rally window).
 - **Yellow R1/R2** remains reserved for the **drone** route (§6), so operators can always tell **aircraft pathing** from **static primary/alternate** course lines.
 
 ### Click / selection

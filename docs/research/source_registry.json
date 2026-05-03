@@ -574,6 +574,91 @@
       ],
       "validation_status": "provisional",
       "notes": "Use for brainstorming, not validation."
+    },
+    {
+      "id": "openstreetmap_overpass_api",
+      "title": "OpenStreetMap Overpass API public instances",
+      "type": "dataset_or_api",
+      "location": "https://wiki.openstreetmap.org/wiki/Overpass_API",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "OSM roads, tracks, paths, power features, buildings, natural features, waterways, and barriers for the Sunol offline upload bundle",
+        "bbox-limited public map context queries"
+      ],
+      "limits": [
+        "Public instances can rate-limit, throttle, or block poorly identified clients.",
+        "OSM data is community maintained and not authoritative terrain, utility, or safety truth.",
+        "Use a clear custom user agent, modest query counts, and mirror fallback."
+      ],
+      "validation_status": "provisional",
+      "notes": "Goal 0001 generator queries the main public endpoint first, then a mirror, and records selected endpoint plus source-health attempts in the manifest."
+    },
+    {
+      "id": "overpass_private_coffee_mirror",
+      "title": "Private.coffee Overpass mirror",
+      "type": "dataset_or_api",
+      "location": "https://overpass.private.coffee/api/interpreter",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "fallback Overpass endpoint for OSM source layers when the main endpoint is blocked, slow, or rate-limited"
+      ],
+      "limits": [
+        "Mirror freshness and availability may differ from the main Overpass service.",
+        "Still depends on public OSM data and fair shared-resource use."
+      ],
+      "validation_status": "provisional",
+      "notes": "Used only as a public mirror fallback; can be overridden with PALANTIR_BUNDLE_OVERPASS_MIRROR_URL."
+    },
+    {
+      "id": "cec_transmission_line_featureserver",
+      "title": "California Energy Commission Transmission_Line FeatureServer",
+      "type": "dataset_or_api",
+      "location": "https://services3.arcgis.com/bWPjFyq029ChCGur/arcgis/rest/services/Transmission_Line/FeatureServer/2",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "California electric transmission line context for the Sunol offline upload bundle",
+        "ArcGIS metadata, bbox count, and GeoJSON feature queries"
+      ],
+      "limits": [
+        "Planning context only; not legal, engineering, surveying, flight-safety, or utility-operation truth.",
+        "ArcGIS availability and supported output formats should be probed before use."
+      ],
+      "validation_status": "provisional",
+      "notes": "Current AOI probe returned CEC transmission features for the Sunol bbox. Goal 0001 generator records metadata/count/sample probes in manifest source_health."
+    },
+    {
+      "id": "hifld_us_electric_power_transmission_lines_featureserver",
+      "title": "HIFLD U.S. Electric Power Transmission Lines FeatureServer",
+      "type": "dataset_or_api",
+      "location": "https://services2.arcgis.com/LYMgRMwHfrWWEg3s/ArcGIS/rest/services/HIFLD_US_Electric_Power_Transmission_Lines/FeatureServer/0",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "national electric power transmission line context for the Sunol offline upload bundle",
+        "ArcGIS metadata, bbox count, and GeoJSON feature queries"
+      ],
+      "limits": [
+        "Informational infrastructure data only; not suitable as operational utility truth.",
+        "Coverage, attribution, and freshness are source-dependent."
+      ],
+      "validation_status": "provisional",
+      "notes": "Current AOI probe returned HIFLD transmission features for the Sunol bbox. Goal 0001 generator records metadata/count/sample probes in manifest source_health."
+    },
+    {
+      "id": "usgs_epqs",
+      "title": "USGS Elevation Point Query Service",
+      "type": "dataset_or_api",
+      "location": "https://epqs.nationalmap.gov/v1/json",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "500m reduced elevation sample grid for the Sunol offline upload bundle",
+        "provisional high-ground terrain attention points"
+      ],
+      "limits": [
+        "EPQS returns interpolated elevations from 3DEP and is not a surveyed-control source.",
+        "Large point grids should use limited concurrency and record partial failures."
+      ],
+      "validation_status": "provisional",
+      "notes": "Goal 0001 generator queries EPQS with bounded concurrency and records partial failures in the manifest."
     }
   ]
 }

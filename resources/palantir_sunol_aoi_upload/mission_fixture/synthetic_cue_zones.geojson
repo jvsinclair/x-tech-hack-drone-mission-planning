@@ -1,0 +1,140 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "cue_zone_route_a",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.848,
+              37.534
+            ],
+            [
+              -121.838,
+              37.534
+            ],
+            [
+              -121.838,
+              37.543
+            ],
+            [
+              -121.848,
+              37.543
+            ],
+            [
+              -121.848,
+              37.534
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "cue_zone_route_a",
+        "cue_pps": 2,
+        "command_preview": "preview_route_a",
+        "name": "Cue zone for Route A preview",
+        "layer_id": "synthetic_cue_zones",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cue_zone_route_b",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.837,
+              37.544
+            ],
+            [
+              -121.826,
+              37.544
+            ],
+            [
+              -121.826,
+              37.556
+            ],
+            [
+              -121.837,
+              37.556
+            ],
+            [
+              -121.837,
+              37.544
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "cue_zone_route_b",
+        "cue_pps": 4,
+        "command_preview": "preview_route_b",
+        "name": "Cue zone for Route B preview",
+        "layer_id": "synthetic_cue_zones",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "cue_zone_rtb",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.871,
+              37.516
+            ],
+            [
+              -121.858,
+              37.516
+            ],
+            [
+              -121.858,
+              37.529
+            ],
+            [
+              -121.871,
+              37.529
+            ],
+            [
+              -121.871,
+              37.516
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "cue_zone_rtb",
+        "cue_pps": 8,
+        "command_preview": "preview_return_to_base",
+        "name": "Cue zone for RTB preview",
+        "layer_id": "synthetic_cue_zones",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    }
+  ],
+  "metadata": {
+    "layer_id": "synthetic_cue_zones",
+    "description": "Synthetic PPS cue zones for demo command preview.",
+    "retrieved_at": "2026-05-03T02:52:20.212Z",
+    "source_name": "Synthetic mission fixture",
+    "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+    "provisional": true,
+    "status": "generated"
+  }
+}

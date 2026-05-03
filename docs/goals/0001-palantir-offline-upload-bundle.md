@@ -1,10 +1,10 @@
 ---
 goal_id: "0001"
 title: "Palantir Offline Upload Bundle"
-status: "todo"
+status: "done"
 created_at: "2026-05-03T00:18:56Z"
-started_at: null
-completed_at: null
+started_at: "2026-05-03T01:14:51Z"
+completed_at: "2026-05-03T02:57:33Z"
 owner: "codex-cli"
 commit_sha: null
 ---
@@ -96,4 +96,31 @@ Return:
 - blockers or follow-up questions
 
 ## Blocker Notes
-- None yet.
+- 2026-05-03T02:57:33Z: Recovered the failed Codex Cloud handoff by moving to branch `codex/goal-0001-source-recovery` from `origin/main`, cleaning unresolved conflict markers, hardening public-source fetches, regenerating the bundle, and rerunning verification.
+- Final generated counts:
+  - `sunol_training_area_aoi`: 1
+  - `osm_power_lines`: 38
+  - `osm_power_towers_poles`: 268
+  - `osm_roads_tracks_paths`: 727
+  - `osm_buildings`: 312
+  - `osm_natural_features`: 124
+  - `osm_waterways_barriers`: 485
+  - `cec_transmission_lines`: 26
+  - `hifld_transmission_lines`: 17
+  - `elevation_samples_500m`: 783
+  - `synthetic_unit_route`: 1
+  - `synthetic_drone_waypoints`: 5
+  - `synthetic_route_branches`: 3
+  - `synthetic_cue_zones`: 3
+  - `synthetic_no_go_zones`: 2
+  - `terrain_attention_points`: 4
+- Verification passed:
+  - `git diff --check`
+  - conflict-marker scan across `docs`, `scripts`, and `resources`
+  - `node --check scripts/generate-palantir-bundle.mjs`
+  - `node --check scripts/validate-palantir-bundle.mjs`
+  - `node scripts/generate-palantir-bundle.mjs`
+  - `node scripts/validate-palantir-bundle.mjs`
+  - `find resources/palantir_sunol_aoi_upload -type f | sort`
+- Remaining blocker:
+  - Palantir account import behavior and permissions are not validated locally.

@@ -1,0 +1,96 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic_no_go_power_corridor",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.858,
+              37.548
+            ],
+            [
+              -121.834,
+              37.548
+            ],
+            [
+              -121.834,
+              37.557
+            ],
+            [
+              -121.858,
+              37.557
+            ],
+            [
+              -121.858,
+              37.548
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "synthetic_no_go_power_corridor",
+        "no_go_type": "utility_corridor_buffer",
+        "name": "Synthetic no-go utility corridor buffer",
+        "layer_id": "synthetic_no_go_zones",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "synthetic_no_go_steep_ridge",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.812,
+              37.569
+            ],
+            [
+              -121.792,
+              37.569
+            ],
+            [
+              -121.792,
+              37.585
+            ],
+            [
+              -121.812,
+              37.585
+            ],
+            [
+              -121.812,
+              37.569
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "synthetic_no_go_steep_ridge",
+        "no_go_type": "steep_ridge_review",
+        "name": "Synthetic steep-ridge review zone",
+        "layer_id": "synthetic_no_go_zones",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    }
+  ],
+  "metadata": {
+    "layer_id": "synthetic_no_go_zones",
+    "description": "Synthetic provisional no-go and review zones.",
+    "retrieved_at": "2026-05-03T02:52:20.212Z",
+    "source_name": "Synthetic mission fixture",
+    "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+    "provisional": true,
+    "status": "generated"
+  }
+}

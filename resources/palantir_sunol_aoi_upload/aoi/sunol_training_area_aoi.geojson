@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "sunol_training_area_aoi",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -121.9,
+              37.48
+            ],
+            [
+              -121.74,
+              37.48
+            ],
+            [
+              -121.74,
+              37.6
+            ],
+            [
+              -121.9,
+              37.6
+            ],
+            [
+              -121.9,
+              37.48
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "sunol_training_area_aoi",
+        "object_type": "area_of_interest",
+        "name": "Sunol Ridge Training Area",
+        "west": -121.9,
+        "south": 37.48,
+        "east": -121.74,
+        "north": 37.6,
+        "source_name": "Synthetic AOI from goal 0001",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    }
+  ]
+}

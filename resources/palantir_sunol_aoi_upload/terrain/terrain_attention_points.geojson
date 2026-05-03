@@ -1,0 +1,100 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "terrain_high_ground_1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.741393,
+          37.511653
+        ]
+      },
+      "properties": {
+        "id": "terrain_high_ground_1",
+        "attention_type": "scout_high_ground",
+        "recommended_drone_task": "preview_route_b",
+        "confidence": 0.62,
+        "elevation_m": 1020.13,
+        "rationale": "Top available USGS EPQS elevation sample inside the AOI; use as provisional high-ground scout candidate.",
+        "source_name": "USGS EPQS",
+        "source_url": "https://epqs.nationalmap.gov/v1/json",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true,
+        "evidence_refs": "demo_terrain_attention_points_v1"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "terrain_high_ground_2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.741393,
+          37.516175
+        ]
+      },
+      "properties": {
+        "id": "terrain_high_ground_2",
+        "attention_type": "scout_high_ground",
+        "recommended_drone_task": "observe",
+        "confidence": 0.62,
+        "elevation_m": 988.2,
+        "rationale": "Top available USGS EPQS elevation sample inside the AOI; use as provisional high-ground scout candidate.",
+        "source_name": "USGS EPQS",
+        "source_url": "https://epqs.nationalmap.gov/v1/json",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true,
+        "evidence_refs": "demo_terrain_attention_points_v1"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "terrain_high_ground_3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.741393,
+          37.507131
+        ]
+      },
+      "properties": {
+        "id": "terrain_high_ground_3",
+        "attention_type": "scout_high_ground",
+        "recommended_drone_task": "observe",
+        "confidence": 0.62,
+        "elevation_m": 966.12,
+        "rationale": "Top available USGS EPQS elevation sample inside the AOI; use as provisional high-ground scout candidate.",
+        "source_name": "USGS EPQS",
+        "source_url": "https://epqs.nationalmap.gov/v1/json",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true,
+        "evidence_refs": "demo_terrain_attention_points_v1"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "terrain_route_decision_review",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.842,
+          37.538
+        ]
+      },
+      "properties": {
+        "id": "terrain_route_decision_review",
+        "attention_type": "coverage_gap_review",
+        "recommended_drone_task": "hold_or_loiter",
+        "confidence": 0.55,
+        "rationale": "Synthetic decision-point review marker where Route A and Route B split.",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true,
+        "evidence_refs": "demo_terrain_attention_points_v1"
+      }
+    }
+  ]
+}

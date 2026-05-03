@@ -1,0 +1,54 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic_unit_route_main",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -121.887,
+            37.506
+          ],
+          [
+            -121.868,
+            37.518
+          ],
+          [
+            -121.849,
+            37.532
+          ],
+          [
+            -121.829,
+            37.546
+          ],
+          [
+            -121.806,
+            37.558
+          ]
+        ]
+      },
+      "properties": {
+        "id": "synthetic_unit_route_main",
+        "object_type": "unit_route",
+        "mission_phase": "route_security_recon",
+        "name": "Synthetic unit route: launch to ridge objective",
+        "layer_id": "synthetic_unit_route",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    }
+  ],
+  "metadata": {
+    "layer_id": "synthetic_unit_route",
+    "description": "Synthetic friendly-unit movement route.",
+    "retrieved_at": "2026-05-03T02:52:20.212Z",
+    "source_name": "Synthetic mission fixture",
+    "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+    "provisional": true,
+    "status": "generated"
+  }
+}

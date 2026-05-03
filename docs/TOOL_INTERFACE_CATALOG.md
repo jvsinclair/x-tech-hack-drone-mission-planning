@@ -136,6 +136,104 @@ Current state: no implemented public tools, validator stages, workflow actions, 
   - Fixture thresholds and route-corridor geometry still need implementation.
   - External DEM ingestion is optional and should come after the fixture demo works.
 
+## `palantir_sunol_bundle_generator`
+- Display name: Palantir Sunol Bundle Generator
+- Category: `runtime`
+- Stage order: `not_applicable`
+- Purpose: Generate the offline Sunol / Pleasanton Ridge Palantir upload bundle from public geospatial sources and synthetic mission fixtures.
+- When to call: For goal 0001 or when the team needs a clean uploadable AOI bundle for a restricted-network Palantir environment.
+- When not to call: Do not call to operate real drones, certify terrain or utility safety, create strike workflows, or fetch private Palantir data.
+- Input type: Fixed goal-0001 AOI configuration plus public OSM Overpass, CEC ArcGIS, HIFLD ArcGIS, and USGS EPQS endpoints. Endpoint URLs may be overridden with local environment variables.
+- Output type: GeoJSON, CSV, Markdown, and `manifest.json` files under `resources/palantir_sunol_aoi_upload/`.
+- Supported use cases: Offline Palantir upload preparation; public-source map context generation; synthetic ISR/recon mission fixture generation.
+- Supported data or source families: OpenStreetMap Overpass; CEC transmission FeatureServer; HIFLD transmission FeatureServer; USGS EPQS; synthetic mission fixtures.
+- Status values: `generated | empty | source_error | partial_failure`
+- Hard-fail vs warning behavior: Script execution fails only on unhandled runtime errors; individual source failures write empty source-error layers with manifest evidence.
+- Formula or rule groups: `demo_terrain_attention_points_v1`
+- Support level: `provisional`
+- Platform support: `local_node`
+- Required binaries or services: Node.js with network access to public endpoints.
+- Headless expectations: Runs headlessly with `node scripts/generate-palantir-bundle.mjs`.
+- Degraded modes: Overpass mirror fallback; ArcGIS JSON-to-GeoJSON fallback; empty source-error layers when all attempts fail; EPQS partial-failure manifest entries.
+- Source module: `scripts/generate-palantir-bundle.mjs`
+- Kernel id: `palantir_sunol_bundle_generator_kernel`
+- Kernel boundary: Deterministic fixture generation plus best-effort live public source normalization into WGS84 artifacts.
+- Pure function expected: `mixed`
+- Required input fields:
+  - `AOI bbox` (`object`): Sunol Ridge Training Area west/south/east/north from goal 0001. Units: `WGS84 decimal degrees`.
+- Optional input fields:
+  - `PALANTIR_BUNDLE_OVERPASS_URL` (`string`): Override for primary Overpass endpoint. Units: `URL`.
+  - `PALANTIR_BUNDLE_OVERPASS_MIRROR_URL` (`string`): Override for Overpass fallback endpoint. Units: `URL`.
+  - `PALANTIR_BUNDLE_CEC_TRANSMISSION_URL` (`string`): Override for CEC query endpoint. Units: `URL`.
+  - `PALANTIR_BUNDLE_HIFLD_TRANSMISSION_URL` (`string`): Override for HIFLD query endpoint. Units: `URL`.
+  - `PALANTIR_BUNDLE_USGS_EPQS_URL` (`string`): Override for EPQS endpoint. Units: `URL`.
+- Derived fields: `source_health`, layer counts, provenance, retrieval timestamp, safety scope.
+- Minimal valid example input:
+```json
+{
+  "aoi": {
+    "west": -121.9,
+    "south": 37.48,
+    "east": -121.74,
+    "north": 37.6
+  }
+}
+```
+- Example output summary:
+```json
+{
+  "status": "generated",
+  "output_root": "resources/palantir_sunol_aoi_upload",
+  "manifest": "resources/palantir_sunol_aoi_upload/manifest.json"
+}
+```
+- Current gaps / TODO notes:
+  - Public source freshness and exact Palantir import behavior remain provisional.
+
+## `palantir_sunol_bundle_validator`
+- Display name: Palantir Sunol Bundle Validator
+- Category: `validation`
+- Stage order: `not_applicable`
+- Purpose: Validate that the generated Palantir upload bundle is parseable, complete, provenance-bearing, and free of obvious local-path or conflict-marker leakage.
+- When to call: After generating or changing `resources/palantir_sunol_aoi_upload/`.
+- When not to call: Do not use as a substitute for Palantir import testing, source freshness validation, or operational geospatial safety checks.
+- Input type: `resources/palantir_sunol_aoi_upload/manifest.json` and required bundle files.
+- Output type: CLI pass/fail result with layer counts and validation errors.
+- Supported use cases: Goal 0001 verification; pre-upload artifact hygiene; handoff safety check.
+- Supported data or source families: Generated GeoJSON, CSV, Markdown, and manifest artifacts.
+- Status values: `passed | failed`
+- Hard-fail vs warning behavior: Missing files, invalid JSON/GeoJSON, missing CSV headers, missing provenance fields, local paths, instance-specific upload URLs, or conflict markers fail validation.
+- Formula or rule groups: `not_applicable`
+- Support level: `provisional`
+- Platform support: `local_node`
+- Required binaries or services: Node.js; no network required.
+- Headless expectations: Runs headlessly with `node scripts/validate-palantir-bundle.mjs`.
+- Degraded modes: None.
+- Source module: `scripts/validate-palantir-bundle.mjs`
+- Kernel id: `palantir_sunol_bundle_validator_kernel`
+- Kernel boundary: Local deterministic artifact validation.
+- Pure function expected: `yes`
+- Required input fields:
+  - `manifest.json` (`object`): Bundle manifest with layer paths, counts, source names, source URLs, retrieval timestamps, and statuses. Units: `JSON`.
+- Optional input fields:
+  - `not_applicable` (`not_applicable`): No optional runtime inputs. Units: `not_applicable`.
+- Derived fields: validation errors, layer counts.
+- Minimal valid example input:
+```json
+{
+  "manifest": "resources/palantir_sunol_aoi_upload/manifest.json"
+}
+```
+- Example output summary:
+```json
+{
+  "status": "passed",
+  "summary": "Palantir bundle validation passed."
+}
+```
+- Current gaps / TODO notes:
+  - Does not validate Palantir account permissions, external source freshness, geometry topology, or operational terrain correctness.
+
 ## Entry Template
 
 ## `[tool_or_stage_id]`

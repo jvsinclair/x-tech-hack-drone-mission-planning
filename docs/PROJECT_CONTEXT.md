@@ -33,6 +33,9 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
   keep deterministic normalization, validation, and correlation logic separate from UI and partner platform code
 
 ## Current Critical Modules
+- `provisional`: `scripts/generate-palantir-bundle.mjs` generates the goal-0001 Sunol / Pleasanton Ridge offline Palantir upload bundle.
+- `provisional`: `scripts/validate-palantir-bundle.mjs` validates the generated Palantir upload bundle for required files, parseability, provenance fields, conflict markers, and obvious local-path leakage.
+- `provisional`: `resources/palantir_sunol_aoi_upload/` contains generated public-source and synthetic mission artifacts for manual Palantir import.
 - `todo`: PRD-specific app entrypoint
 - `todo`: mission plan, drone asset, optical cue, waypoint, route constraint, and observation schemas
 - `todo`: ruleset-backed mission state machine and decision tree module
@@ -54,6 +57,7 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `provisional`: demo optical cue grammar is 2 PPS -> Route A, 4 PPS -> Route B, and 8 PPS -> return to base; registered as `demo_optical_cue_pps_route_mapping_v1`.
 - `provisional`: broader v1 drone command grammar is 1 PPS -> hold/loiter, 2 PPS -> Route A, 4 PPS -> Route B, and 8 PPS -> return to base; registered as `demo_optical_cue_pps_command_mapping_v1`.
 - `provisional`: moving-unit mission planning approach is mapped in `docs/research/moving_unit_drone_mission_planning.md`.
+- `provisional`: public OSM Overpass, CEC transmission, HIFLD transmission, and USGS EPQS sources are registered and can produce the goal-0001 Sunol upload bundle with manifest source-health evidence.
 
 ## What Is Still Provisional
 - `provisional`: exact drone mission planning product scope, maneuver details, data sources, constraints, and demo path still need final acceptance criteria.
@@ -61,13 +65,14 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `provisional`: PPS route-selection mapping is a simulation rule, not authenticated friendly identification or an operational command protocol.
 - `provisional`: `docs/StatePlanningForFlightPath.md` includes FPV/kinetic examples; implementation should narrow to ISR, route planning, cue interpretation, overwatch, RTB, and human-reviewed decisions unless the PRD explicitly defines safer non-kinetic scope.
 - `provisional`: candidate partner resources and OSINT sources are mapped in `docs/research/problem_statement_3_resource_map.md`, but account access and dataset/API availability are not yet verified.
-- `todo`: no runnable app, fixtures, tests, generated artifacts, or public workflow actions exist yet.
+- `provisional`: the goal-0001 Palantir upload bundle is generated for manual import, but Palantir account import behavior is not yet validated.
+- `todo`: no runnable app or tests exist yet.
 
 ## Current Active Blockers
 - No application stack, runtime, source modules, or tests have been chosen.
 - Real hardware integration and operational low-probability-of-intercept signaling are out of scope for this repo unless the PRD explicitly reframes them as safe simulation-only requirements.
-- No partner platform accounts, source datasets, or demo fixtures have been verified locally.
-- No project-specific schemas, validation stages, formulas, thresholds, or workflow actions have been registered.
+- No partner platform accounts or Palantir import permissions have been verified locally.
+- No project-specific schemas, runtime app tests, or workflow actions have been implemented beyond the provisional goal-0001 bundle scripts.
 
 ## Current Debug Track
 - Main active investigation:

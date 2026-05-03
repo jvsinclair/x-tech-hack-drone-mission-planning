@@ -1,0 +1,124 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "wp_launch",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.884,
+          37.508
+        ]
+      },
+      "properties": {
+        "id": "wp_launch",
+        "sequence": 1,
+        "action": "launch",
+        "name": "Launch / comms check",
+        "layer_id": "synthetic_drone_waypoints",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp_overwatch_1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.862,
+          37.523
+        ]
+      },
+      "properties": {
+        "id": "wp_overwatch_1",
+        "sequence": 2,
+        "action": "observe",
+        "name": "Overwatch checkpoint Alpha",
+        "layer_id": "synthetic_drone_waypoints",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp_decision_alpha",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.842,
+          37.538
+        ]
+      },
+      "properties": {
+        "id": "wp_decision_alpha",
+        "sequence": 3,
+        "action": "decision point",
+        "name": "Decision Alpha: Route A or B",
+        "layer_id": "synthetic_drone_waypoints",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp_scout_high_ground",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.819,
+          37.563
+        ]
+      },
+      "properties": {
+        "id": "wp_scout_high_ground",
+        "sequence": 4,
+        "action": "scout",
+        "name": "Scout high-ground candidate",
+        "layer_id": "synthetic_drone_waypoints",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp_recover",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.79,
+          37.552
+        ]
+      },
+      "properties": {
+        "id": "wp_recover",
+        "sequence": 5,
+        "action": "land/recover",
+        "name": "Recover / RTB lane",
+        "layer_id": "synthetic_drone_waypoints",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    }
+  ],
+  "metadata": {
+    "layer_id": "synthetic_drone_waypoints",
+    "description": "Synthetic ordered drone waypoint queue.",
+    "retrieved_at": "2026-05-03T02:52:20.212Z",
+    "source_name": "Synthetic mission fixture",
+    "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+    "provisional": true,
+    "status": "generated"
+  }
+}

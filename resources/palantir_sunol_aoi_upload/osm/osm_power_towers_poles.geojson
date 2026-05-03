@@ -1,0 +1,5407 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.85535,
+          37.587182
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 52997527,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.846947,
+          37.592228
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 52997529,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.844535,
+          37.593745
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 52997531,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.837609,
+          37.481957
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 65382312,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.841511,
+          37.595571
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 262632404,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.853479,
+          37.588358
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180051,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.850766,
+          37.589991
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180052,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.855487,
+          37.587413
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180223,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.854165,
+          37.588216
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180224,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.851041,
+          37.590086
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180225,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.847222,
+          37.592385
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180226,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.845763,
+          37.593262
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180227,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.843016,
+          37.594928
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180228,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.840982,
+          37.596152
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180229,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.83887,
+          37.597424
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180230,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.836639,
+          37.598777
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180231,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.836736,
+          37.598981
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180430,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.838899,
+          37.597655
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180431,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.840924,
+          37.596471
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180432,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.843044,
+          37.595166
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180433,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.84592,
+          37.593466
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180434,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.847525,
+          37.592459
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180435,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.851121,
+          37.590276
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180436,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.854331,
+          37.588412
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180437,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.855704,
+          37.587549
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180438,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.855933,
+          37.587678
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180590,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.854457,
+          37.588556
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180591,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.85141,
+          37.590351
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180592,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.847985,
+          37.592446
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180593,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.846037,
+          37.593636
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180594,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.843282,
+          37.595302
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180595,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.84111,
+          37.596608
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180596,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.83905,
+          37.597819
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180597,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.836896,
+          37.599145
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180598,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.857633,
+          37.584692
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180631,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.861778,
+          37.580142
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180804,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.85977,
+          37.582387
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263180805,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.899836,
+          37.537317
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183798,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.896128,
+          37.541503
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183800,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.894686,
+          37.543123
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183801,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.89224,
+          37.545913
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183802,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.889919,
+          37.548525
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183803,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.887317,
+          37.551436
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183804,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.885382,
+          37.553527
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183805,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.882326,
+          37.556991
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183806,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.880326,
+          37.559216
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183807,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.877743,
+          37.562155
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183808,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874989,
+          37.565299
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183809,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8743,
+          37.566059
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183810,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.871194,
+          37.569496
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183811,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.868465,
+          37.572584
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183812,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866216,
+          37.575101
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183813,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.864096,
+          37.57755
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263183814,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895012,
+          37.541074
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184221,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.893253,
+          37.543034
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184222,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.890841,
+          37.545736
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184223,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.888515,
+          37.548281
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184224,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.881039,
+          37.556732
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184225,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.878232,
+          37.559862
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184226,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876258,
+          37.562155
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184227,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874149,
+          37.564445
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184228,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.871846,
+          37.569149
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184439,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.86825,
+          37.573197
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184440,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.86595,
+          37.575782
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184441,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.864233,
+          37.577666
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184442,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.861993,
+          37.580183
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184443,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.860414,
+          37.581999
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184445,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.858783,
+          37.583781
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184446,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.857126,
+          37.585563
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184447,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.857438,
+          37.585678
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184625,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.859078,
+          37.583801
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184626,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.860846,
+          37.581856
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184627,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.862502,
+          37.579992
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184628,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.864493,
+          37.577801
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184629,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866133,
+          37.57591
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184630,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.868459,
+          37.573319
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184631,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.872064,
+          37.569285
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184632,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874847,
+          37.565934
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184633,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.872241,
+          37.569394
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184783,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.868653,
+          37.573414
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184785,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866362,
+          37.576013
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184786,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.864637,
+          37.577945
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184787,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.863246,
+          37.57955
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184788,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.861221,
+          37.581802
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184789,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.85965,
+          37.583509
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184790,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.857727,
+          37.585631
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184791,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874499,
+          37.566115
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184846,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.875168,
+          37.566127
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263184898,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.899089,
+          37.536562
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185156,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.893527,
+          37.543089
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185293,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895175,
+          37.541217
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185294,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.899244,
+          37.536664
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185296,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.88727,
+          37.550724
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185528,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.889296,
+          37.548383
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185529,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.891424,
+          37.546076
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185530,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.892549,
+          37.544837
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185531,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.894017,
+          37.543116
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185532,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895364,
+          37.541639
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185533,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.899467,
+          37.537038
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185534,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.888764,
+          37.548349
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185558,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.891073,
+          37.545851
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185559,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.893544,
+          37.545845
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185764,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.891646,
+          37.547927
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185765,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.890736,
+          37.549023
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185766,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.889382,
+          37.550404
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185767,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.888947,
+          37.550485
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185843,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.890495,
+          37.548917
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185844,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.891438,
+          37.547867
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185845,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.893324,
+          37.545756
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185846,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895822,
+          37.543149
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185847,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895956,
+          37.543197
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185898,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895055,
+          37.544075
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185899,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.896372,
+          37.541548
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185980,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895004,
+          37.543123
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185981,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.892909,
+          37.545477
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185982,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.891914,
+          37.546641
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263185983,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.897131,
+          37.541085
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186124,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.896883,
+          37.541938
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186207,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.881245,
+          37.556855
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186526,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.878438,
+          37.560012
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186527,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876421,
+          37.562271
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186529,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.883219,
+          37.557059
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186707,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.881322,
+          37.559182
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186708,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.878859,
+          37.561951
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186709,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.877528,
+          37.563455
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186710,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.88275,
+          37.557263
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186761,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.880913,
+          37.55927
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186762,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.878527,
+          37.561985
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186763,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876956,
+          37.563774
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186764,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876739,
+          37.563652
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186834,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.878301,
+          37.561862
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186835,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.880696,
+          37.559141
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186836,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.882498,
+          37.557141
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186837,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.881837,
+          37.556855
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186924,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.879803,
+          37.559141
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186925,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.878799,
+          37.56027
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186926,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.877228,
+          37.562012
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186927,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.875202,
+          37.564319
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186928,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874224,
+          37.564781
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263186971,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.890103,
+          37.548621
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263187440,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.887489,
+          37.551538
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263187441,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.885811,
+          37.553391
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263187442,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.88603,
+          37.553607
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263187496,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.88618,
+          37.553854
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263187823,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.884841,
+          37.552793
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263187923,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.88527,
+          37.552963
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 263187962,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.838545,
+          37.599343
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633317,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.890923,
+          37.569923
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633320,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.869964,
+          37.586279
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633321,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.865291,
+          37.588207
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633322,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.888775,
+          37.5709
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633325,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874512,
+          37.565418
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633335,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.879057,
+          37.576347
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633346,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876573,
+          37.564287
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633347,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.884195,
+          37.568814
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633374,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.894278,
+          37.56808
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633375,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.835851,
+          37.598998
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633380,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.875913,
+          37.578786
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633382,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874946,
+          37.566027
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633383,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866529,
+          37.5877
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633384,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895717,
+          37.574074
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633386,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.875925,
+          37.563904
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633396,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.877416,
+          37.566808
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633406,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.875036,
+          37.579858
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633410,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.838689,
+          37.599447
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633412,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.887875,
+          37.571574
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633415,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.863152,
+          37.589094
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633416,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.873166,
+          37.583407
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633423,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.875404,
+          37.565955
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633429,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.851659,
+          37.593823
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633434,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.838707,
+          37.597283
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633435,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.848467,
+          37.59514
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633437,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.87422,
+          37.581378
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633438,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.86189,
+          37.589608
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633439,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.843555,
+          37.597161
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633442,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876552,
+          37.564001
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633445,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.872133,
+          37.585384
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633446,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.857071,
+          37.591593
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633453,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.892525,
+          37.569034
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633462,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.885591,
+          37.572807
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633471,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.841099,
+          37.598173
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633477,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.853971,
+          37.592874
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633483,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876385,
+          37.563897
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633494,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.84601,
+          37.59615
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633502,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.873163,
+          37.566629
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633506,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.899803,
+          37.575919
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633510,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.896559,
+          37.566852
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633517,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.859173,
+          37.590731
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633519,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876633,
+          37.564123
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804633524,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.83049,
+          37.59642
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644087,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.855108,
+          37.586892
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644100,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.843779,
+          37.591326
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644103,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.840798,
+          37.592437
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644109,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.827389,
+          37.5976
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644119,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.833656,
+          37.595185
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644137,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.849056,
+          37.589247
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644154,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.857665,
+          37.584007
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644160,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.852999,
+          37.587741
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644169,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.837604,
+          37.593671
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644183,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.825177,
+          37.598483
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 804644192,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.862348,
+          37.57877
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805544136,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.86927,
+          37.570994
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805544139,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.859261,
+          37.582257
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805544143,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866142,
+          37.574509
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805544147,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.864455,
+          37.576413
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805544149,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.871289,
+          37.568728
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805544151,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.860814,
+          37.580516
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805544154,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.867711,
+          37.572773
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805544156,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.896811,
+          37.541468
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805891796,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895412,
+          37.543171
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805891918,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.898871,
+          37.541925
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805892020,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.893162,
+          37.545681
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 805892224,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.880678,
+          37.567773
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 925831688,
+        "osm_power": "tower",
+        "osm_source": "Yahoo",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.899995,
+          37.543744
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1278072030,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.87501,
+          37.56573
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633135863,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.871343,
+          37.558589
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633135867,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.875179,
+          37.563494
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633135868,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874094,
+          37.564694
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633135869,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.875001,
+          37.566408
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633135870,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874577,
+          37.566161
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633135880,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.863931,
+          37.542027
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633140207,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.870362,
+          37.556413
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633140208,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.86649,
+          37.547811
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633140209,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.864688,
+          37.543732
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633140210,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8684,
+          37.552158
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1633140211,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.855599,
+          37.522865
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561526,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.846908,
+          37.503034
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561529,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.845202,
+          37.499195
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561531,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.849441,
+          37.508781
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561532,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.840257,
+          37.487995
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561534,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.853463,
+          37.517842
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561536,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.858936,
+          37.530684
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561538,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.841587,
+          37.490983
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561540,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.850868,
+          37.511981
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561547,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.861049,
+          37.535508
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561550,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.843421,
+          37.495169
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561551,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.856951,
+          37.52609
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 1853561554,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.899967,
+          37.537478
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 4015000361,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.83915,
+          37.599745
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 4078756645,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.839268,
+          37.599629
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 4078756649,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.838737,
+          37.599234
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 4078756650,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.838373,
+          37.599436
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 4078756651,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.880935,
+          37.575329
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 8753865770,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.883299,
+          37.574047
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 8753865772,
+        "osm_power": "tower",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.854886,
+          37.490469
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 9659925240,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.865626,
+          37.57436
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650889,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.865238,
+          37.574882
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650890,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.865644,
+          37.574736
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650891,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.865782,
+          37.575287
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650892,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.867476,
+          37.575708
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650893,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866909,
+          37.576014
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650894,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866839,
+          37.57609
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650895,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866787,
+          37.576033
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650896,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866517,
+          37.575963
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650897,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866042,
+          37.575599
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650898,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866235,
+          37.575626
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650899,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.865332,
+          37.575092
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650900,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.867975,
+          37.575434
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650901,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.868671,
+          37.575166
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650902,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.869184,
+          37.575578
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650903,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.869705,
+          37.575994
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747650904,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.870238,
+          37.57643
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747675905,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.870797,
+          37.576882
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747675906,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.865494,
+          37.574036
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747675907,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.865216,
+          37.573378
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 10747675908,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.870134,
+          37.586178
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 11619736878,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.870374,
+          37.586581
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 11619736879,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.869914,
+          37.586262
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 11833578112,
+        "osm_power": "pole",
+        "layer_id": "osm_power_towers_poles",
+        "source_name": "OpenStreetMap via Overpass API",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    }
+  ],
+  "metadata": {
+    "source_name": "OpenStreetMap via Overpass API",
+    "source_url": "https://overpass-api.de/api/interpreter",
+    "source_health": {
+      "selected_endpoint": "https://overpass-api.de/api/interpreter",
+      "attempts": [
+        {
+          "endpoint": "https://overpass-api.de/api/interpreter",
+          "status": "ok",
+          "element_count": 268
+        }
+      ]
+    },
+    "layer_id": "osm_power_towers_poles",
+    "description": "OSM power tower and pole point features intersecting the AOI.",
+    "retrieved_at": "2026-05-03T02:52:20.212Z",
+    "provisional": true,
+    "status": "generated"
+  }
+}

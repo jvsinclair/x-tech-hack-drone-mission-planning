@@ -1,0 +1,114 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "route_a_close_overwatch",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -121.842,
+            37.538
+          ],
+          [
+            -121.829,
+            37.546
+          ],
+          [
+            -121.81,
+            37.552
+          ]
+        ]
+      },
+      "properties": {
+        "id": "route_a_close_overwatch",
+        "branch_id": "route_a",
+        "command_preview": "preview_route_a",
+        "name": "Route A close overwatch",
+        "layer_id": "synthetic_route_branches",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "route_b_scout_ahead",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -121.842,
+            37.538
+          ],
+          [
+            -121.835,
+            37.552
+          ],
+          [
+            -121.819,
+            37.563
+          ],
+          [
+            -121.803,
+            37.558
+          ]
+        ]
+      },
+      "properties": {
+        "id": "route_b_scout_ahead",
+        "branch_id": "route_b",
+        "command_preview": "preview_route_b",
+        "name": "Route B scout ahead",
+        "layer_id": "synthetic_route_branches",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rtb_recover_branch",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -121.842,
+            37.538
+          ],
+          [
+            -121.862,
+            37.523
+          ],
+          [
+            -121.884,
+            37.508
+          ]
+        ]
+      },
+      "properties": {
+        "id": "rtb_recover_branch",
+        "branch_id": "rtb",
+        "command_preview": "preview_return_to_base",
+        "name": "Return-to-base branch",
+        "layer_id": "synthetic_route_branches",
+        "source_name": "Synthetic mission fixture",
+        "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "provisional": true
+      }
+    }
+  ],
+  "metadata": {
+    "layer_id": "synthetic_route_branches",
+    "description": "Synthetic Route A, Route B, and RTB branches.",
+    "retrieved_at": "2026-05-03T02:52:20.212Z",
+    "source_name": "Synthetic mission fixture",
+    "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
+    "provisional": true,
+    "status": "generated"
+  }
+}

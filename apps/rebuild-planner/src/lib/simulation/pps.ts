@@ -20,10 +20,10 @@ Agent Maintenance Rule:
 
 import type { DecisionTargetZoneRecord } from "@/lib/types";
 
-export const PPS_BRANCH_RULE_ID = "demo_launch_package_pps_branch_mapping_v2";
+export const PPS_BRANCH_RULE_ID = "demo_launch_package_pps_branch_mapping_v3";
 
 export type PpsRate = 1 | 2 | 4 | 8;
-export type PpsAction = "hold" | "rtb" | "primary" | "alternate";
+export type PpsAction = "hold" | "land" | "primary" | "alternate";
 export type PpsRejectReason = "unsupported_pps" | "no_active_decision" | "no_target_zone" | "zone_mismatch" | "outside_zone" | "pps_not_allowed";
 
 export type PpsEvaluationInput = {
@@ -51,7 +51,7 @@ export type PpsEvaluationResult =
 
 const ppsToAction: Record<PpsRate, PpsAction> = {
   1: "hold",
-  2: "rtb",
+  2: "land",
   4: "primary",
   8: "alternate",
 };
@@ -102,7 +102,7 @@ export function isSupportedPps(value: number): value is PpsRate {
 
 export function actionLabel(action: PpsAction): string {
   if (action === "hold") return "hold/loiter";
-  if (action === "rtb") return "RTB";
+  if (action === "land") return "land/recover";
   if (action === "primary") return "primary route";
   return "alternate route";
 }

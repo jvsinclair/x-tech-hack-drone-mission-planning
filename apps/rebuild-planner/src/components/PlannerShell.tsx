@@ -25,12 +25,20 @@ import { TacticalCesiumMap } from "@/components/TacticalCesiumMap";
 import { WaypointGlyph } from "@/components/WaypointGlyph";
 import { formatLatLon, formatMgrs } from "@/lib/coordinates";
 import { behaviorByType, waypointBehaviors } from "@/lib/symbology/isr";
-import type { BootstrapPayload, DecisionPointRecord, DecisionTargetZoneRecord, LaunchPackageRecord, MissionLayers, MissionSummary, SimulationRecord, WaypointBehavior, WaypointRecord } from "@/lib/types";
+import type { BranchType, BranchWaypointRecord, BootstrapPayload, DecisionPointRecord, DecisionTargetZoneRecord, LaunchPackageRecord, MissionLayers, MissionSummary, SimulationRecord, WaypointBehavior, WaypointRecord } from "@/lib/types";
 
 type Mode = "plan" | "run";
 type AssetSource = "auto" | "palantir" | "local";
 type MapMode = "terrain3d" | "topo2d";
 type PlacementMode = WaypointBehavior | "decision_zone" | null;
+type ActiveBranchContext = { decisionPointId: string; zoneId: string; branchType: BranchType } | null;
+
+const branchButtons: Array<{ type: BranchType; label: string; shortLabel: string }> = [
+  { type: "primary", label: "Primary", shortLabel: "PRI" },
+  { type: "alternate", label: "Alternate", shortLabel: "ALT" },
+  { type: "hold", label: "Hold", shortLabel: "HLD" },
+  { type: "land", label: "Land", shortLabel: "LND" },
+];
 
 export function PlannerShell() {
   const [mission, setMission] = useState<MissionSummary | null>(null);
@@ -38,8 +46,10 @@ export function PlannerShell() {
   const [packages, setPackages] = useState<LaunchPackageRecord[]>([]);
   const [expandedPackageId, setExpandedPackageId] = useState<string | null>(null);
   const [selectedWaypointId, setSelectedWaypointId] = useState<string | null>(null);
+  const [selectedBranchWaypointId, setSelectedBranchWaypointId] = useState<string | null>(null);
   const [selectedZoneId, setSelectedZoneId] = useState<string | null>(null);
   const [placementMode, setPlacementMode] = useState<PlacementMode>(null);
+  const [activeBranchContext, setActiveBranchContext] = useState<ActiveBranchContext>(null);
   const [mode, setMode] = useState<Mode>("plan");
   const [assetSource, setAssetSource] = useState<AssetSource>("palantir");
   const [mapMode, setMapMode] = useState<MapMode>("terrain3d");
@@ -55,7 +65,11 @@ export function PlannerShell() {
 
   const activePackage = useMemo(() => packages.find((pkg) => pkg.id === expandedPackageId) ?? packages[0] ?? null, [expandedPackageId, packages]);
   const selectedWaypoint = activePackage?.waypoints.find((waypoint) => waypoint.id === selectedWaypointId) ?? null;
+  const selectedBranchWaypoint = activePackage?.branchWaypoints.find((waypoint) => waypoint.id === selectedBranchWaypointId) ?? null;
   const selectedZone = activePackage?.decisionPoints.flatMap((point) => point.targetZones).find((zone) => zone.id === selectedZoneId) ?? null;
+  const selectedZoneDecisionPoint = selectedZone
+    ? activePackage?.decisionPoints.find((point) => point.id === selectedZone.decisionPointId) ?? null
+    : null;
   const selectedWaypointDecisionPoint = selectedWaypoint
     ? activePackage?.decisionPoints.find((point) => point.waypointId === selectedWaypoint.id) ?? null
     : null;
@@ -64,15 +78,19 @@ export function PlannerShell() {
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
-      if (mode !== "plan" || !selectedWaypointId || isTextEntryTarget(event.target)) return;
+      if (mode !== "plan" || (!selectedWaypointId && !selectedBranchWaypointId) || isTextEntryTarget(event.target)) return;
       if (event.key !== "Delete" && event.key !== "Backspace") return;
       event.preventDefault();
-      void handleDeleteWaypoint(selectedWaypointId);
+      if (selectedBranchWaypointId) {
+        void handleDeleteBranchWaypoint(selectedBranchWaypointId);
+      } else if (selectedWaypointId) {
+        void handleDeleteWaypoint(selectedWaypointId);
+      }
     }
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activePackage?.id, mode, selectedWaypointId]);
+  }, [activePackage?.id, mode, selectedBranchWaypointId, selectedWaypointId]);
 
   async function loadBootstrap(source: AssetSource) {
     try {
@@ -90,6 +108,8 @@ export function PlannerShell() {
       setPackages(payload.packages);
       setExpandedPackageId((current) => current ?? payload.packages[0]?.id ?? null);
       setPendingZoneDecisionPointId(null);
+      setActiveBranchContext(null);
+      setSelectedBranchWaypointId(null);
       setStatus(payload.mission.providerMessage);
     } catch (error) {
       const message = error instanceof Error ? error.message : "Mission context failed to load";
@@ -110,18 +130,50 @@ export function PlannerShell() {
     setPackages((current) => [...current, payload.package]);
     setExpandedPackageId(payload.package.id);
     setSelectedWaypointId(null);
+    setSelectedBranchWaypointId(null);
     setSelectedZoneId(null);
     setPendingZoneDecisionPointId(null);
     setPlacementMode(null);
+    setActiveBranchContext(null);
     setStatus(`${payload.package.name} ready for waypoint placement`);
   }
 
   async function handleMapPlacement(lon: number, lat: number) {
-    if (!activePackage || !placementMode) return;
+    if (!activePackage) return;
+    const branchContext = activeBranchContext;
+    if (branchContext && !placementMode) {
+      const response = await fetch(`/api/launch-packages/${activePackage.id}/branch-waypoints`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          decisionPointId: branchContext.decisionPointId,
+          decisionTargetZoneId: branchContext.zoneId,
+          branchType: branchContext.branchType,
+          lon,
+          lat,
+        }),
+      });
+      const payload = (await response.json()) as { package: LaunchPackageRecord };
+      updatePackageState(payload.package);
+      const newest = newestBranchWaypoint(payload.package, branchContext);
+      setSelectedBranchWaypointId(newest?.id ?? null);
+      setSelectedWaypointId(null);
+      setSelectedZoneId(branchContext.zoneId);
+      const branchLabel = branchButtons.find((branch) => branch.type === branchContext.branchType)?.label ?? branchContext.branchType;
+      setStatus(`${branchLabel} branch waypoint placed`);
+      await recordUi("map_placement", `branch_${branchContext.branchType}`, { lon, lat, zoneId: branchContext.zoneId });
+      return;
+    }
+    if (!placementMode) return;
     if (placementMode === "decision_zone") {
       const decisionPointId = pendingZoneDecisionPoint?.id;
       if (!decisionPointId) {
         setStatus("Add or select a decision waypoint before placing a target zone");
+        return;
+      }
+      const currentZoneCount = pendingZoneDecisionPoint.targetZones.length;
+      if (currentZoneCount >= 4) {
+        setStatus("A decision waypoint can have up to 4 target zones");
         return;
       }
       const response = await fetch(`/api/launch-packages/${activePackage.id}/decision-zones`, {
@@ -133,6 +185,8 @@ export function PlannerShell() {
       updatePackageState(payload.package);
       const newestZone = payload.package.decisionPoints.flatMap((point) => point.targetZones).at(-1);
       setSelectedZoneId(newestZone?.id ?? null);
+      setSelectedBranchWaypointId(null);
+      if (newestZone) maybeArmBranchContext(payload.package, newestZone.id, "primary");
       setStatus("Decision target zone placed");
     } else {
       const behavior = behaviorByType[placementMode];
@@ -145,7 +199,9 @@ export function PlannerShell() {
       const newest = payload.package.waypoints.at(-1);
       updatePackageState(payload.package);
       setSelectedWaypointId(newest?.id ?? null);
+      setSelectedBranchWaypointId(null);
       setSelectedZoneId(null);
+      setActiveBranchContext(null);
       if (placementMode === "decision" && newest) {
         const decisionPoint = payload.package.decisionPoints.find((point) => point.waypointId === newest.id);
         setPendingZoneDecisionPointId(decisionPoint?.id ?? null);
@@ -196,6 +252,42 @@ export function PlannerShell() {
     void recordUi("drag", "waypoint_move", { waypointId, lon, lat });
   }
 
+  async function handleUpdateBranchWaypoint(branchWaypointId: string, fields: Partial<BranchWaypointRecord>) {
+    if (!activePackage) return;
+    const response = await fetch(`/api/launch-packages/${activePackage.id}/branch-waypoints/${branchWaypointId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(fields),
+    });
+    const payload = (await response.json()) as { package: LaunchPackageRecord };
+    updatePackageState(payload.package);
+    setStatus("Branch waypoint updated");
+    void recordUi("click", "branch_waypoint_update", { branchWaypointId });
+  }
+
+  async function handleMoveBranchWaypoint(branchWaypointId: string, lon: number, lat: number) {
+    if (!activePackage) return;
+    setPackages((current) =>
+      current.map((pkg) =>
+        pkg.id === activePackage.id
+          ? {
+              ...pkg,
+              branchWaypoints: pkg.branchWaypoints.map((waypoint) => (waypoint.id === branchWaypointId ? { ...waypoint, lon, lat } : waypoint)),
+            }
+          : pkg,
+      ),
+    );
+    const response = await fetch(`/api/launch-packages/${activePackage.id}/branch-waypoints/${branchWaypointId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ lon, lat }),
+    });
+    const payload = (await response.json()) as { package: LaunchPackageRecord };
+    updatePackageState(payload.package);
+    setStatus("Branch waypoint moved");
+    void recordUi("drag", "branch_waypoint_move", { branchWaypointId, lon, lat });
+  }
+
   async function handleDeleteWaypoint(waypointId: string) {
     if (!activePackage) return;
     const response = await fetch(`/api/launch-packages/${activePackage.id}/waypoints/${waypointId}`, {
@@ -206,6 +298,18 @@ export function PlannerShell() {
     setSelectedWaypointId(null);
     setStatus("Waypoint deleted");
     void recordUi("click", "waypoint_delete", { waypointId });
+  }
+
+  async function handleDeleteBranchWaypoint(branchWaypointId: string) {
+    if (!activePackage) return;
+    const response = await fetch(`/api/launch-packages/${activePackage.id}/branch-waypoints/${branchWaypointId}`, {
+      method: "DELETE",
+    });
+    const payload = (await response.json()) as { package: LaunchPackageRecord };
+    updatePackageState(payload.package);
+    setSelectedBranchWaypointId(null);
+    setStatus("Branch waypoint deleted");
+    void recordUi("click", "branch_waypoint_delete", { branchWaypointId });
   }
 
   async function handleResequence(waypointIds: string[]) {
@@ -242,7 +346,9 @@ export function PlannerShell() {
       setExpandedPackageId(remaining[0]?.id ?? null);
     }
     setSelectedWaypointId(null);
+    setSelectedBranchWaypointId(null);
     setSelectedZoneId(null);
+    setActiveBranchContext(null);
     setStatus("Package deleted");
     void recordUi("click", "package_delete", { packageId });
   }
@@ -268,6 +374,8 @@ export function PlannerShell() {
     const payload = (await response.json()) as { package: LaunchPackageRecord };
     updatePackageState(payload.package);
     setSelectedZoneId(null);
+    setSelectedBranchWaypointId(null);
+    setActiveBranchContext(null);
     setStatus("Zone deleted");
     void recordUi("click", "zone_delete", { zoneId });
   }
@@ -327,8 +435,10 @@ export function PlannerShell() {
 
   function selectWaypoint(waypointId: string) {
     setSelectedWaypointId(waypointId);
+    setSelectedBranchWaypointId(null);
     setSelectedZoneId(null);
     setPlacementMode(null);
+    setActiveBranchContext(null);
     setPendingZoneDecisionPointId(null);
     void recordUi("select", "waypoint", { waypointId });
   }
@@ -336,14 +446,34 @@ export function PlannerShell() {
   function selectZone(zoneId: string) {
     setSelectedZoneId(zoneId);
     setSelectedWaypointId(null);
+    setSelectedBranchWaypointId(null);
     setPlacementMode(null);
     setPendingZoneDecisionPointId(null);
+    maybeArmBranchContext(activePackage, zoneId, activeBranchContext?.branchType ?? "primary");
     void recordUi("select", "decision_zone", { zoneId });
+  }
+
+  function selectBranchWaypoint(branchWaypointId: string) {
+    const branchWaypoint = activePackage?.branchWaypoints.find((waypoint) => waypoint.id === branchWaypointId);
+    if (!branchWaypoint) return;
+    setSelectedBranchWaypointId(branchWaypointId);
+    setSelectedWaypointId(null);
+    setSelectedZoneId(branchWaypoint.decisionTargetZoneId);
+    setPlacementMode(null);
+    setPendingZoneDecisionPointId(null);
+    setActiveBranchContext({
+      decisionPointId: branchWaypoint.decisionPointId,
+      zoneId: branchWaypoint.decisionTargetZoneId,
+      branchType: branchWaypoint.branchType,
+    });
+    void recordUi("select", "branch_waypoint", { branchWaypointId });
   }
 
   function beginZonePlacement(decisionPointId: string) {
     setPendingZoneDecisionPointId(decisionPointId);
     setPlacementMode("decision_zone");
+    setActiveBranchContext(null);
+    setSelectedBranchWaypointId(null);
     setSelectedZoneId(null);
     const waypointId = activePackage?.decisionPoints.find((point) => point.id === decisionPointId)?.waypointId ?? null;
     if (waypointId) setSelectedWaypointId(waypointId);
@@ -360,6 +490,30 @@ export function PlannerShell() {
 
   function updatePackageState(pkg: LaunchPackageRecord) {
     setPackages((current) => current.map((item) => (item.id === pkg.id ? pkg : item)));
+  }
+
+  function maybeArmBranchContext(pkg: LaunchPackageRecord | null | undefined, zoneId: string, branchType: BranchType) {
+    const decisionPoint = pkg?.decisionPoints.find((point) => point.targetZones.some((zone) => zone.id === zoneId));
+    if (!decisionPoint || decisionPoint.targetZones.length < 2) {
+      setActiveBranchContext(null);
+      return;
+    }
+    setActiveBranchContext({ decisionPointId: decisionPoint.id, zoneId, branchType });
+  }
+
+  function chooseBranch(branchType: BranchType) {
+    if (!selectedZoneDecisionPoint || !selectedZone) {
+      setStatus("Select a decision target zone before choosing a branch lane");
+      return;
+    }
+    if (selectedZoneDecisionPoint.targetZones.length < 2) {
+      setStatus("Place at least 2 target zones before authoring branches");
+      return;
+    }
+    setPlacementMode(null);
+    setActiveBranchContext({ decisionPointId: selectedZoneDecisionPoint.id, zoneId: selectedZone.id, branchType });
+    setStatus(`${branchButtons.find((branch) => branch.type === branchType)?.label ?? branchType} lane active. Click map to add branch waypoints.`);
+    void recordUi("click", "branch_lane", { decisionPointId: selectedZoneDecisionPoint.id, zoneId: selectedZone.id, branchType });
   }
 
   async function recordUi(kind: string, target: string, payload: Record<string, unknown>) {
@@ -385,6 +539,7 @@ export function PlannerShell() {
               const nextMode = mode === "plan" ? "run" : "plan";
               setMode(nextMode);
               setPlacementMode(null);
+              setActiveBranchContext(null);
               setPendingZoneDecisionPointId(null);
               void recordUi("click", "mode_toggle", { nextMode });
             }}
@@ -409,13 +564,17 @@ export function PlannerShell() {
         placementMode={placementMode}
         mapMode={mapMode}
         selectedWaypointId={selectedWaypointId}
+        selectedBranchWaypointId={selectedBranchWaypointId}
         selectedZoneId={selectedZoneId}
         activeBranchType={simulation?.activeBranchType ?? null}
+        activeBranchContext={activeBranchContext}
         onMapPlacement={handleMapPlacement}
         onMapModeChange={setMapMode}
         onSelectWaypoint={selectWaypoint}
+        onSelectBranchWaypoint={selectBranchWaypoint}
         onSelectZone={selectZone}
         onMoveWaypoint={handleMoveWaypoint}
+        onMoveBranchWaypoint={handleMoveBranchWaypoint}
       />
 
       {placementMode === "decision_zone" && pendingZoneDecisionPoint ? (
@@ -446,9 +605,11 @@ export function PlannerShell() {
                     onClick={() => {
                       setExpandedPackageId(pkg.id);
                       setSelectedWaypointId(null);
+                      setSelectedBranchWaypointId(null);
                       setSelectedZoneId(null);
                       setPendingZoneDecisionPointId(null);
                       setPlacementMode(null);
+                      setActiveBranchContext(null);
                       void recordUi("click", "package_expand", { packageId: pkg.id });
                     }}
                     onDoubleClick={() => mode === "plan" && setRenamingPackageId(pkg.id)}
@@ -529,6 +690,8 @@ export function PlannerShell() {
                       style={{ "--marker-color": behavior.color } as CSSProperties}
                       onClick={() => {
                         setPlacementMode(behavior.type);
+                        setActiveBranchContext(null);
+                        setSelectedBranchWaypointId(null);
                         setPendingZoneDecisionPointId(null);
                         void recordUi("click", "waypoint_palette", { behavior: behavior.type });
                       }}
@@ -556,6 +719,17 @@ export function PlannerShell() {
                     Target Zone
                   </button>
                 </div>
+                <BranchAuthoringPanel
+                  activePackage={activePackage}
+                  selectedZone={selectedZone}
+                  selectedDecisionPoint={selectedZoneDecisionPoint}
+                  selectedBranchWaypointId={selectedBranchWaypointId}
+                  activeBranchContext={activeBranchContext}
+                  onChooseBranch={chooseBranch}
+                  onSelectBranchWaypoint={selectBranchWaypoint}
+                  onDeleteBranchWaypoint={handleDeleteBranchWaypoint}
+                  onBeginZonePlacement={beginZonePlacement}
+                />
                 <WaypointList
                   activePackage={activePackage}
                   selectedWaypointId={selectedWaypointId}
@@ -578,22 +752,24 @@ export function PlannerShell() {
             <EditableSelectionBlock
               activePackage={activePackage}
               waypoint={selectedWaypoint}
+              branchWaypoint={selectedBranchWaypoint}
               zone={selectedZone}
               mode={mode}
+              onSelectZone={selectZone}
               onBeginZonePlacement={beginZonePlacement}
               onUpdateWaypoint={handleUpdateWaypoint}
               onDeleteWaypoint={handleDeleteWaypoint}
+              onUpdateBranchWaypoint={handleUpdateBranchWaypoint}
+              onDeleteBranchWaypoint={handleDeleteBranchWaypoint}
               onUpdateZone={handleUpdateZone}
               onDeleteZone={handleDeleteZone}
             />
           </div>
         ) : null}
-        <SafetyCallout />
       </aside>
 
       <footer className="bottom-status">
         <span>{status}</span>
-        <span>{mission?.safetyScope[0] ?? "Simulation only"}</span>
       </footer>
     </main>
   );
@@ -705,28 +881,148 @@ function WaypointList({
   );
 }
 
+function BranchAuthoringPanel({
+  activePackage,
+  selectedZone,
+  selectedDecisionPoint,
+  selectedBranchWaypointId,
+  activeBranchContext,
+  onChooseBranch,
+  onSelectBranchWaypoint,
+  onDeleteBranchWaypoint,
+  onBeginZonePlacement,
+}: {
+  activePackage: LaunchPackageRecord;
+  selectedZone: DecisionTargetZoneRecord | null;
+  selectedDecisionPoint: DecisionPointRecord | null;
+  selectedBranchWaypointId: string | null;
+  activeBranchContext: ActiveBranchContext;
+  onChooseBranch: (branchType: BranchType) => void;
+  onSelectBranchWaypoint: (branchWaypointId: string) => void;
+  onDeleteBranchWaypoint: (branchWaypointId: string) => void;
+  onBeginZonePlacement: (decisionPointId: string) => void;
+}) {
+  if (!selectedZone || !selectedDecisionPoint) {
+    return <div className="branch-authoring branch-authoring-muted">Select a decision target zone to build Primary, Alternate, Hold, or Land lanes.</div>;
+  }
+
+  const zoneCount = selectedDecisionPoint.targetZones.length;
+  const branchWaypoints = activePackage.branchWaypoints
+    .filter((waypoint) => waypoint.decisionTargetZoneId === selectedZone.id)
+    .sort((a, b) => a.branchType.localeCompare(b.branchType) || a.branchSequence - b.branchSequence);
+  const ready = zoneCount >= 2 && zoneCount <= 4;
+
+  return (
+    <section className="branch-authoring" aria-label="Decision branch authoring">
+      <div className="branch-authoring-header">
+        <span>{selectedZone.name}</span>
+        <strong>{selectedDecisionPoint.name}</strong>
+        <small>{zoneCount}/4 zones placed</small>
+      </div>
+      {!ready ? (
+        <div className="branch-authoring-warning">
+          Place at least 2 target zones before branch lanes become active.
+          <button type="button" onClick={() => onBeginZonePlacement(selectedDecisionPoint.id)}>
+            Add Zone
+          </button>
+        </div>
+      ) : null}
+      <div className="branch-lane-grid">
+        {branchButtons.map((branch) => (
+          <button
+            key={branch.type}
+            type="button"
+            aria-label={`Select ${branch.label} branch lane`}
+            disabled={!ready}
+            className={activeBranchContext?.zoneId === selectedZone.id && activeBranchContext.branchType === branch.type ? "branch-lane branch-lane-active" : "branch-lane"}
+            onClick={() => onChooseBranch(branch.type)}
+          >
+            <span>{branch.shortLabel}</span>
+            {branch.label}
+          </button>
+        ))}
+      </div>
+      <div className="branch-waypoint-list" aria-label="Branch waypoints">
+        {branchWaypoints.length === 0 ? (
+          <small>No branch waypoints for {selectedZone.name} yet.</small>
+        ) : (
+          branchButtons.map((branch) => {
+            const laneWaypoints = branchWaypoints.filter((waypoint) => waypoint.branchType === branch.type);
+            if (laneWaypoints.length === 0) return null;
+            return (
+              <div key={branch.type} className="branch-waypoint-lane">
+                <strong>{branch.label}</strong>
+                {laneWaypoints.map((waypoint) => (
+                  <div key={waypoint.id} className={waypoint.id === selectedBranchWaypointId ? "branch-waypoint-row branch-waypoint-row-active" : "branch-waypoint-row"}>
+                    <button type="button" onClick={() => onSelectBranchWaypoint(waypoint.id)}>
+                      <span>{waypoint.branchSequence}</span>
+                      {waypoint.name}
+                    </button>
+                    <button type="button" aria-label={`Delete ${waypoint.name}`} onClick={() => onDeleteBranchWaypoint(waypoint.id)}>
+                      x
+                    </button>
+                  </div>
+                ))}
+              </div>
+            );
+          })
+        )}
+      </div>
+    </section>
+  );
+}
+
 function EditableSelectionBlock({
   activePackage,
   waypoint,
+  branchWaypoint,
   zone,
   mode,
+  onSelectZone,
   onBeginZonePlacement,
   onUpdateWaypoint,
   onDeleteWaypoint,
+  onUpdateBranchWaypoint,
+  onDeleteBranchWaypoint,
   onUpdateZone,
   onDeleteZone,
 }: {
   activePackage: LaunchPackageRecord;
   waypoint: WaypointRecord | null;
+  branchWaypoint: BranchWaypointRecord | null;
   zone: DecisionTargetZoneRecord | null;
   mode: Mode;
+  onSelectZone: (zoneId: string) => void;
   onBeginZonePlacement: (decisionPointId: string) => void;
   onUpdateWaypoint: (waypointId: string, fields: Partial<WaypointRecord>) => void;
   onDeleteWaypoint: (waypointId: string) => void;
+  onUpdateBranchWaypoint: (branchWaypointId: string, fields: Partial<BranchWaypointRecord>) => void;
+  onDeleteBranchWaypoint: (branchWaypointId: string) => void;
   onUpdateZone: (zoneId: string, fields: Partial<DecisionTargetZoneRecord>) => void;
   onDeleteZone: (zoneId: string) => void;
 }) {
-  if (!waypoint && !zone) return <div className="selection-inline">Select a waypoint or target zone.</div>;
+  if (!waypoint && !branchWaypoint && !zone) return <div className="selection-inline">Select a waypoint or target zone.</div>;
+
+  if (branchWaypoint) {
+    if (mode === "plan") {
+      return (
+        <BranchWaypointEditForm
+          waypoint={branchWaypoint}
+          onSave={(fields) => onUpdateBranchWaypoint(branchWaypoint.id, fields)}
+          onDelete={() => onDeleteBranchWaypoint(branchWaypoint.id)}
+        />
+      );
+    }
+    return (
+      <div className="selection-inline">
+        <strong>
+          {branchButtons.find((branch) => branch.type === branchWaypoint.branchType)?.label ?? branchWaypoint.branchType}: {branchWaypoint.name}
+        </strong>
+        <span>{formatLatLon(branchWaypoint.lon, branchWaypoint.lat)}</span>
+        <span>{formatMgrs(branchWaypoint.lon, branchWaypoint.lat)}</span>
+      </div>
+    );
+  }
 
   if (zone) {
     if (mode === "plan") {
@@ -757,6 +1053,7 @@ function EditableSelectionBlock({
         {decisionPoint ? (
           <DecisionTargetZoneSummary
             decisionPoint={decisionPoint}
+            onSelectZone={onSelectZone}
             onBeginZonePlacement={() => onBeginZonePlacement(decisionPoint.id)}
             onDeleteZone={onDeleteZone}
           />
@@ -783,22 +1080,27 @@ function EditableSelectionBlock({
 
 function DecisionTargetZoneSummary({
   decisionPoint,
+  onSelectZone,
   onBeginZonePlacement,
   onDeleteZone,
 }: {
   decisionPoint: DecisionPointRecord;
+  onSelectZone: (zoneId: string) => void;
   onBeginZonePlacement: () => void;
   onDeleteZone: (zoneId: string) => void;
 }) {
+  const canAddZones = decisionPoint.targetZones.length < 4;
   return (
     <div className="decision-zone-summary" aria-label="Decision target zones">
       <p className="eyebrow">Decision Target Zones</p>
-      <span>Target zones define the ground the drone is watching for simulated PPS.</span>
+      <span>Place 2-4 zones before authoring branch lanes.</span>
       {decisionPoint.targetZones.length > 0 ? (
         <ul>
           {decisionPoint.targetZones.map((zone) => (
             <li key={zone.id}>
-              <strong>{zone.name}</strong>
+              <button type="button" className="zone-list-button" onClick={() => onSelectZone(zone.id)}>
+                <strong>{zone.name}</strong>
+              </button>
               <small>{formatMgrs(zone.centerLon, zone.centerLat)}</small>
               <button type="button" aria-label={`Delete ${zone.name}`} onClick={() => onDeleteZone(zone.id)}>
                 x
@@ -809,9 +1111,13 @@ function DecisionTargetZoneSummary({
       ) : (
         <small>No zones placed for this decision.</small>
       )}
-      <button type="button" className="primary-action" onClick={onBeginZonePlacement}>
-        Add Target Zone On Map
-      </button>
+      {canAddZones ? (
+        <button type="button" className="primary-action" onClick={onBeginZonePlacement}>
+          Add Target Zone On Map
+        </button>
+      ) : (
+        <small>Maximum 4 zones for this decision.</small>
+      )}
     </div>
   );
 }
@@ -880,6 +1186,78 @@ function WaypointEditForm({
       <div className="edit-actions">
         <button type="submit">Save</button>
         <button type="button" aria-label="Delete waypoint" onClick={onDelete}>
+          Delete
+        </button>
+      </div>
+    </form>
+  );
+}
+
+function BranchWaypointEditForm({
+  waypoint,
+  onSave,
+  onDelete,
+}: {
+  waypoint: BranchWaypointRecord;
+  onSave: (fields: Partial<BranchWaypointRecord>) => void;
+  onDelete: () => void;
+}) {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    const form = formRef.current;
+    if (!form) return;
+    const data = new FormData(form);
+    onSave({
+      name: data.get("branch-waypoint-name") as string,
+      behavior: data.get("behavior") as WaypointBehavior,
+      objective: data.get("objective") as string,
+      altitudeM: Number(data.get("altitude")) || null,
+      dwellSeconds: Number(data.get("dwell")) || null,
+      lat: Number(data.get("latitude")),
+      lon: Number(data.get("longitude")),
+    });
+  }
+
+  return (
+    <form ref={formRef} className="edit-form" onSubmit={handleSubmit} data-testid="branch-waypoint-edit-form">
+      <strong>{branchButtons.find((branch) => branch.type === waypoint.branchType)?.label ?? waypoint.branchType} Branch Waypoint</strong>
+      <label>
+        Name
+        <input name="branch-waypoint-name" defaultValue={waypoint.name} key={waypoint.id} />
+      </label>
+      <label>
+        Behavior
+        <select name="behavior" defaultValue={waypoint.behavior} key={`branch-beh-${waypoint.id}`}>
+          {waypointBehaviors.map((b) => (
+            <option key={b.type} value={b.type}>{b.label}</option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Objective
+        <input name="objective" defaultValue={waypoint.objective} key={`branch-obj-${waypoint.id}`} />
+      </label>
+      <label>
+        Altitude AGL (m)
+        <input name="altitude" type="number" defaultValue={waypoint.altitudeM ?? ""} key={`branch-alt-${waypoint.id}`} />
+      </label>
+      <label>
+        Dwell (s)
+        <input name="dwell" type="number" defaultValue={waypoint.dwellSeconds ?? ""} key={`branch-dw-${waypoint.id}`} />
+      </label>
+      <label>
+        Latitude
+        <input name="latitude" type="number" step="any" defaultValue={waypoint.lat} key={`branch-lat-${waypoint.id}`} />
+      </label>
+      <label>
+        Longitude
+        <input name="longitude" type="number" step="any" defaultValue={waypoint.lon} key={`branch-lon-${waypoint.id}`} />
+      </label>
+      <div className="edit-actions">
+        <button type="submit">Save</button>
+        <button type="button" aria-label="Delete branch waypoint" onClick={onDelete}>
           Delete
         </button>
       </div>
@@ -990,9 +1368,15 @@ function SimulationPanel({
             </button>
           </div>
           <div className="pps-grid" aria-label="PPS controls">
-            {[1, 2, 4, 8].map((pps) => (
-              <button key={pps} type="button" onClick={() => onPps(pps, activeZone ?? undefined)}>
+            {[
+              [1, "Hold"],
+              [2, "Land"],
+              [4, "Primary"],
+              [8, "Alternate"],
+            ].map(([pps, label]) => (
+              <button key={pps} type="button" onClick={() => onPps(Number(pps), activeZone ?? undefined)}>
                 {pps} PPS
+                <span>{label}</span>
               </button>
             ))}
           </div>
@@ -1007,21 +1391,18 @@ function SimulationPanel({
   );
 }
 
-function SafetyCallout() {
-  return (
-    <section className="rail-section safety-callout" aria-label="Simulation safety scope">
-      <strong>Simulation only.</strong>
-      <span>
-        Surveillance launch package planning only. No real drone control, no MAVLINK/GCS export, no kinetic actions. PPS events are simulated.
-      </span>
-    </section>
-  );
-}
-
 function firstActiveZone(pkg: LaunchPackageRecord | null, activeDecisionPointId: string | null): DecisionTargetZoneRecord | null {
   if (!pkg) return null;
   const zones = pkg.decisionPoints.flatMap((point) => point.targetZones);
   return zones.find((zone) => zone.decisionPointId === activeDecisionPointId) ?? zones[0] ?? null;
+}
+
+function newestBranchWaypoint(pkg: LaunchPackageRecord, context: NonNullable<ActiveBranchContext>): BranchWaypointRecord | null {
+  return (
+    pkg.branchWaypoints
+      .filter((waypoint) => waypoint.decisionTargetZoneId === context.zoneId && waypoint.branchType === context.branchType)
+      .sort((a, b) => b.branchSequence - a.branchSequence)[0] ?? null
+  );
 }
 
 function isTextEntryTarget(target: EventTarget | null): boolean {

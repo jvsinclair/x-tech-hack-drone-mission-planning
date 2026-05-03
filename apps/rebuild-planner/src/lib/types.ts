@@ -77,9 +77,10 @@ export type WaypointBehavior =
   | "observe"
   | "hold_loiter"
   | "decision"
-  | "rtb"
   | "land"
   | "abort";
+
+export type BranchType = "primary" | "alternate" | "hold" | "land";
 
 export type WaypointRecord = {
   id: string;
@@ -112,11 +113,27 @@ export type DecisionTargetZoneRecord = {
   allowedPps: number[];
 };
 
+export type BranchWaypointRecord = {
+  id: string;
+  packageId: string;
+  decisionPointId: string;
+  decisionTargetZoneId: string;
+  branchType: BranchType;
+  branchSequence: number;
+  behavior: WaypointBehavior;
+  name: string;
+  objective: string;
+  lon: number;
+  lat: number;
+  altitudeM: number | null;
+  dwellSeconds: number | null;
+};
+
 export type RouteBranchRecord = {
   id: string;
   packageId: string;
   decisionPointId: string | null;
-  type: "primary" | "alternate" | "hold" | "rtb";
+  type: BranchType;
   name: string;
   geometry: GeoJsonGeometry | null;
 };
@@ -129,6 +146,7 @@ export type LaunchPackageRecord = {
   status: string;
   waypoints: WaypointRecord[];
   decisionPoints: DecisionPointRecord[];
+  branchWaypoints: BranchWaypointRecord[];
   routeBranches: RouteBranchRecord[];
   warnings: ValidationWarningRecord[];
 };

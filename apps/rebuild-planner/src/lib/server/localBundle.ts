@@ -31,6 +31,7 @@ type ManifestShape = {
 };
 
 const emptyFeatureCollection: GeoJsonFeatureCollection = { type: "FeatureCollection", features: [] };
+const DEFAULT_ALTITUDE_M = 20;
 
 export function loadLocalBundle(): Omit<BootstrapPayload, "packages"> & { starterPackage: StarterPackageSeed } {
   const root = resolveBundleRoot();
@@ -127,7 +128,7 @@ function starterFromFixtures(waypoints: GeoJsonFeatureCollection, cueZones: GeoJ
         objective: "",
         lon: coordinates[0],
         lat: coordinates[1],
-        altitudeM: 120,
+        altitudeM: DEFAULT_ALTITUDE_M,
         dwellSeconds: null,
       };
     })
@@ -177,8 +178,8 @@ function normalizeBehavior(value: string): WaypointBehavior {
   if (key.includes("scout")) return "scout";
   if (key.includes("observe")) return "observe";
   if (key.includes("hold") || key.includes("loiter")) return "hold_loiter";
-  if (key.includes("rtb") || key.includes("return")) return "rtb";
   if (key.includes("land") || key.includes("recover")) return "land";
+  if (key.includes("rtb") || key.includes("return")) return "land";
   if (key.includes("scan")) return "scan_area";
   return "transit";
 }

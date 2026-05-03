@@ -265,7 +265,7 @@ button {
 }
 
 .map-marker-layer {
-  z-index: 7;
+  z-index: 9;
   pointer-events: none;
 }
 
@@ -320,6 +320,51 @@ button {
 .waypoint-marker-selected .waypoint-glyph {
   border-radius: 50%;
   box-shadow: 0 0 0 5px rgba(109, 224, 210, 0.38), 0 0 28px rgba(109, 224, 210, 0.75);
+}
+
+.branch-waypoint-marker {
+  position: absolute;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  place-items: center;
+  border: 2px solid var(--marker-color);
+  border-radius: 50%;
+  background: rgba(6, 9, 8, 0.88);
+  color: var(--marker-color);
+  pointer-events: auto;
+  cursor: grab;
+  box-shadow: 0 0 16px color-mix(in srgb, var(--marker-color) 40%, transparent);
+}
+
+.branch-waypoint-marker:active {
+  cursor: grabbing;
+}
+
+.branch-waypoint-marker-primary {
+  --marker-color: var(--teal);
+}
+
+.branch-waypoint-marker-alternate {
+  --marker-color: var(--scan);
+}
+
+.branch-waypoint-marker-hold {
+  --marker-color: #fb923c;
+}
+
+.branch-waypoint-marker-land {
+  --marker-color: #60a5fa;
+}
+
+.branch-waypoint-marker-selected {
+  box-shadow: 0 0 0 4px rgba(109, 224, 210, 0.36), 0 0 24px color-mix(in srgb, var(--marker-color) 70%, transparent);
+}
+
+.branch-waypoint-dot {
+  font-size: 11px;
+  font-weight: 900;
 }
 
 .decision-zone {
@@ -627,6 +672,160 @@ button {
   padding: 10px;
 }
 
+.branch-authoring {
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 10px;
+}
+
+.branch-authoring-muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.branch-authoring-header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+}
+
+.branch-authoring-header span,
+.branch-authoring-header small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.branch-authoring-header strong {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--amber);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.branch-authoring-warning {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid rgba(255, 209, 102, 0.32);
+  border-radius: 8px;
+  background: rgba(255, 209, 102, 0.07);
+  padding: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.branch-authoring-warning button,
+.branch-lane,
+.branch-waypoint-row button {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(20, 25, 23, 0.72);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.branch-lane-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.branch-lane {
+  display: grid;
+  gap: 2px;
+  min-height: 45px;
+  place-items: center;
+  padding: 6px 4px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.branch-lane span {
+  color: var(--amber);
+  font-size: 11px;
+}
+
+.branch-lane:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+.branch-lane-active {
+  border-color: rgba(109, 224, 210, 0.7);
+  background: rgba(109, 224, 210, 0.14);
+  color: var(--teal);
+}
+
+.branch-waypoint-list {
+  display: grid;
+  gap: 6px;
+}
+
+.branch-waypoint-list > small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.branch-waypoint-lane {
+  display: grid;
+  gap: 4px;
+}
+
+.branch-waypoint-lane > strong {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.branch-waypoint-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 24px;
+  gap: 5px;
+}
+
+.branch-waypoint-row button:first-child {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.branch-waypoint-row button:first-child span {
+  display: grid;
+  min-width: 20px;
+  height: 20px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(251, 191, 36, 0.16);
+  color: var(--route);
+}
+
+.branch-waypoint-row button:last-child {
+  color: var(--danger);
+}
+
+.branch-waypoint-row-active button:first-child {
+  border-color: rgba(109, 224, 210, 0.66);
+  background: rgba(109, 224, 210, 0.12);
+}
+
 .decision-zone-summary {
   display: grid;
   gap: 8px;
@@ -658,6 +857,15 @@ button {
   border-bottom: 1px dashed rgba(238, 241, 235, 0.12);
   padding: 3px 0;
   font-size: 12px;
+}
+
+.zone-list-button {
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
 }
 
 .decision-zone-summary small {
@@ -835,6 +1043,12 @@ button {
   color: var(--pale);
 }
 
+.pps-grid button span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+
 .audit-log {
   display: grid;
   gap: 5px;
@@ -858,7 +1072,7 @@ button {
   bottom: 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 12px;
   border: 1px solid var(--line);
   border-radius: 8px;

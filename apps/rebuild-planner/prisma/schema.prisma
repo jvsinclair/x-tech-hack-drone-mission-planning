@@ -38,6 +38,7 @@ model LaunchPackage {
   mission        Mission              @relation(fields: [missionId], references: [id], onDelete: Cascade)
   waypoints      DroneWaypoint[]
   decisionPoints DecisionPoint[]
+  branchWaypoints BranchWaypoint[]
   routeBranches  RouteBranch[]
   simulations    LaunchSimulation[]
   auditLog       AuditLogEvent[]
@@ -76,6 +77,7 @@ model DecisionPoint {
   waypoint      DroneWaypoint?       @relation(fields: [waypointId], references: [id], onDelete: SetNull)
   targetZones   DecisionTargetZone[]
   routeBranches RouteBranch[]
+  branchWaypoints BranchWaypoint[]
 }
 
 model DecisionTargetZone {
@@ -90,6 +92,31 @@ model DecisionTargetZone {
   updatedAt       DateTime @updatedAt
 
   decisionPoint DecisionPoint @relation(fields: [decisionPointId], references: [id], onDelete: Cascade)
+  branchWaypoints BranchWaypoint[]
+}
+
+model BranchWaypoint {
+  id                   String   @id
+  packageId            String
+  decisionPointId      String
+  decisionTargetZoneId String
+  branchType           String
+  branchSequence       Int
+  behavior             String
+  name                 String
+  objective            String   @default("")
+  lon                  Float
+  lat                  Float
+  altitudeM            Float?
+  dwellSeconds         Int?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  package            LaunchPackage      @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  decisionPoint      DecisionPoint      @relation(fields: [decisionPointId], references: [id], onDelete: Cascade)
+  decisionTargetZone DecisionTargetZone @relation(fields: [decisionTargetZoneId], references: [id], onDelete: Cascade)
+
+  @@unique([decisionTargetZoneId, branchType, branchSequence])
 }
 
 model RouteBranch {

@@ -167,6 +167,37 @@ describe("PlannerShell", () => {
     expect(screen.queryByTestId("waypoint-edit-form")).not.toBeInTheDocument();
   });
 
+  it("authors branch-local waypoints for each decision lane and deletes one with the Delete key", async () => {
+    render(<PlannerShell />);
+    await screen.findByText("Mission Plans");
+
+    const surface = screen.getByTestId("map-click-surface");
+    fireEvent.click(screen.getByRole("button", { name: /place target zone/i }));
+    fireEvent.click(surface, { clientX: 520, clientY: 520 });
+    await waitFor(() => expect(getMockState().packages[0].decisionPoints[0].targetZones).toHaveLength(2));
+    fireEvent.click(screen.getByTestId("decision-zone-zone-1"));
+
+    for (const lane of ["Primary", "Alternate", "Hold", "Land"]) {
+      fireEvent.click(screen.getByRole("button", { name: new RegExp(`select ${lane} branch lane`, "i") }));
+      fireEvent.click(surface, { clientX: 500, clientY: 500 });
+      await waitFor(() => expect(getMockState().packages[0].branchWaypoints.at(-1)?.branchType).toBe(lane.toLowerCase()));
+    }
+
+    expect(getMockState().packages[0].branchWaypoints.map((waypoint) => waypoint.name)).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("DTZ-1 - Primary"),
+        expect.stringContaining("DTZ-1 - Alternate"),
+        expect.stringContaining("DTZ-1 - Hold"),
+        expect.stringContaining("DTZ-1 - Land"),
+      ]),
+    );
+
+    fireEvent.click(screen.getByTestId("map-branch-waypoint-branch-wp-1"));
+    await waitFor(() => expect(screen.getByTestId("branch-waypoint-edit-form")).toBeInTheDocument());
+    fireEvent.keyDown(window, { key: "Delete" });
+    await waitFor(() => expect(getMockState().packages[0].branchWaypoints).toHaveLength(3));
+  });
+
   it("does not delete a waypoint when Delete is pressed inside an edit field", async () => {
     render(<PlannerShell />);
     await screen.findByText("Mission Plans");

@@ -32,19 +32,19 @@ Safety scope is mandatory:
 - PEQ-15/PPS behavior in the MVP is simulated only.
 - Public-source terrain, infrastructure, and route context are provisional planning aids, not certified operational truth.
 
-Core data model: Mission, AreaOfInterest, UnitRoute, Checkpoint, DroneProfile, LaunchPackage, LaunchSimulation, DroneWaypoint, RouteSegment, DecisionPoint, DecisionTargetZone, PrimaryRouteBranch, AlternateRouteBranch, HoldBranch, RtbBranch, PulseCueEvent, MissionStateNode, MissionStateTransition, AuditLogEvent, TerrainAttentionPoint, NoGoZone, TacticalUnit, InfrastructureFeature, RoadOrPath, Building, NaturalFeature, SourceManifest, ValidationWarning, and Observation.
+Core data model: Mission, AreaOfInterest, UnitRoute, Checkpoint, DroneProfile, LaunchPackage, LaunchSimulation, DroneWaypoint, RouteSegment, DecisionPoint, DecisionTargetZone, PrimaryRouteBranch, AlternateRouteBranch, HoldBranch, LandBranch, PulseCueEvent, MissionStateNode, MissionStateTransition, AuditLogEvent, TerrainAttentionPoint, NoGoZone, TacticalUnit, InfrastructureFeature, RoadOrPath, Building, NaturalFeature, SourceManifest, ValidationWarning, and Observation.
 
 Store all geometry as WGS84 GeoJSON or Palantir geospatial object geometry. Display Lat/Lon and MGRS for map objects, waypoints, decision target zones, and selected simulation state. Preserve `source_name`, `source_url`, `retrieved_at`, `provisional`, `layer_id`, and `evidence_refs` wherever present.
 
 Implement the simulation PPS grammar exactly:
 
 - `1 PPS` = Hold / loiter.
-- `2 PPS` = RTB.
+- `2 PPS` = Land / recover.
 - `4 PPS` = Primary route.
 - `8 PPS` = Alternate route.
 - Unsupported, outside-zone, stale, invalid-state, or ambiguous cue = no route state change; log a warning.
 
-At a decision point, the simulation must pause. The operator selects or highlights a placed decision target zone and simulates a PPS value aimed at that zone. If the event is valid for the active decision point and zone, the simulation applies the resulting branch/action immediately in simulation and writes an audit log. Valid 4 PPS selects the primary route. Valid 8 PPS selects the alternate route. Valid 1 PPS holds/loiters. Valid 2 PPS routes to RTB. Do not require an extra confirmation click after a valid PPS event in the simulation.
+At a decision point, the simulation must pause. The operator selects or highlights a placed decision target zone and simulates a PPS value aimed at that zone. If the event is valid for the active decision point and zone, the simulation applies the resulting branch/action immediately in simulation and writes an audit log. Valid 4 PPS selects the primary route. Valid 8 PPS selects the alternate route. Valid 1 PPS holds/loiters. Valid 2 PPS routes to Land/recover. Do not require an extra confirmation click after a valid PPS event in the simulation.
 
 Map and symbology contract:
 
@@ -89,7 +89,7 @@ Plan Mission requirements:
 - Maintain multiple named launch packages.
 - Pick waypoint behavior before placement from a marker palette.
 - Select a waypoint, segment, decision point, target zone, tactical unit, terrain point, or branch and show detail panel.
-- Configure waypoint objective, surveillance action, dwell/scan parameters, decision triggers, timeout behavior, primary branch, alternate branch, hold behavior, RTB behavior, and target zones.
+- Configure waypoint objective, surveillance action, dwell/scan parameters, decision triggers, timeout behavior, primary branch, alternate branch, hold behavior, Land behavior, and target zones.
 - Recompile on every edit: route distance, simulated timeline, warnings, state graph, branch attachments, and Palantir action/API payloads.
 
 Waypoint behavior catalog:
@@ -101,14 +101,14 @@ Waypoint behavior catalog:
 - Observe: hold sensor attention on a point/zone.
 - Hold/loiter: wait at a planned hold point; selected by 1 PPS at a decision point.
 - Decision point: simulation pause state where PPS target-zone events are evaluated.
-- RTB: simulated return-to-base/recovery path; selected by 2 PPS.
+- Land/recover: simulated recovery path; selected by 2 PPS.
 - Land/recover: terminal simulated recovery.
 - Abort/emergency: stop simulated progression and require acknowledgement.
 
 Palantir APIs/functions/actions to expose:
 
 - Reads: `getMissionBundle`, `getAoi`, `getMapContextLayers`, `getInfrastructureContext`, `getTerrainAttentionPoints`, `getMissionRoute`, `getLaunchPackages`, `getLaunchSimulation`, `getRouteBranches`, `getDecisionTargetZones`, `getNoGoZones`, `getSourceManifest`, `getMissionStateGraph`, `getAuditLog`.
-- Planning actions: `createLaunchPackage`, `updateLaunchPackage`, `addDroneWaypoint`, `updateDroneWaypoint`, `deleteDroneWaypoint`, `updateRouteSegment`, `addDecisionPoint`, `addDecisionTargetZone`, `attachPrimaryRouteBranch`, `attachAlternateRouteBranch`, `attachHoldBranch`, `attachRtbBranch`, `addNoGoZone`, `placeTacticalUnit`, `updateTacticalUnit`, `compileLaunchPackage`.
+- Planning actions: `createLaunchPackage`, `updateLaunchPackage`, `addDroneWaypoint`, `updateDroneWaypoint`, `deleteDroneWaypoint`, `updateRouteSegment`, `addDecisionPoint`, `addDecisionTargetZone`, `attachPrimaryRouteBranch`, `attachAlternateRouteBranch`, `attachHoldBranch`, `attachLandBranch`, `addNoGoZone`, `placeTacticalUnit`, `updateTacticalUnit`, `compileLaunchPackage`.
 - Simulation actions: `startLaunchSimulation`, `pauseLaunchSimulation`, `resumeLaunchSimulation`, `stepLaunchSimulation`, `jumpLaunchSimulationToState`, `simulateDecisionZoneCue`, `selectSimulationBranch`, `appendAuditLogEvent`.
 - All read responses must use JSON/GeoJSON, WGS84 geometry, provenance, validation status, and warning arrays.
 - All actions must append or reference an audit event and return updated simulation state, changed object ids, validation warnings, and selected branch/action where applicable.
@@ -125,7 +125,7 @@ Army units need a field-planning tool for drone surveillance missions that can m
 
 ### One-Sentence Product
 
-A Palantir-backed surveillance launch-package planner where operators create waypoint-based drone overwatch routes for moving units, simulate launch playback, and use simulated PEQ/PPS pulses at decision target zones to select hold, RTB, primary, or alternate route behavior.
+A Palantir-backed surveillance launch-package planner where operators create waypoint-based drone overwatch routes for moving units, simulate launch playback, and use simulated PEQ/PPS pulses at decision target zones to select hold, Land/recover, primary, or alternate route behavior.
 
 ### MVP Promise
 
@@ -159,7 +159,7 @@ The MVP is not a static map import. It is an interactive simulation workflow:
 - Simulated launch playback with auto-play, pause, step, and jump controls.
 - Decision points and placed decision target zones.
 - Simulated PEQ/PPS branch selection.
-- Hold/loiter, scout, scan, observe, primary route, alternate route, RTB, land/recover, and abort/emergency states.
+- Hold/loiter, scout, scan, observe, primary route, alternate route, Land/recover, and abort/emergency states.
 - Terrain attention points and route altitude planning.
 - Source provenance, validation warnings, and audit logs.
 - Natural-language summaries or questions with citations to mission objects.
@@ -310,7 +310,7 @@ Requirements:
 - Show waypoint sequence, behavior glyph, coordinates, status, and provenance/source.
 - Add decision points along waypoints or route segments.
 - Place one or more decision target zones for each decision point.
-- Configure waypoint behavior, objective, surveillance parameters, dwell/scan parameters, branch attachments, timeout behavior, hold behavior, RTB behavior, and validation expectations.
+- Configure waypoint behavior, objective, surveillance parameters, dwell/scan parameters, branch attachments, timeout behavior, hold behavior, Land behavior, and validation expectations.
 - Allow route segment details when segment behavior matters.
 - Recompile live after each edit:
   - route distance
@@ -354,7 +354,7 @@ Minimum simulation states:
 - Hold / Loiter
 - Primary Branch Active
 - Alternate Branch Active
-- RTB
+- Land / recover
 - Land / Recover
 - Abort / Emergency
 
@@ -372,8 +372,8 @@ Minimum simulation states:
 | Scan area | Cover an area/corridor | frame/bracket + scan footprint | overlap, altitude band, exit condition |
 | Observe | Sensor-focused watch | stable post + blue stare stub | dwell, FOV, priority target |
 | Hold/loiter | Wait at planned hold | anchor ring + dwell ticks | duration, timeout, exit path |
-| Decision point | Pause for PPS target-zone evaluation | decision head + target-zone link | primary/alternate/hold/RTB attachments |
-| RTB | Simulated return/recovery | homeward arrow/notch | fuel margin, path |
+| Decision point | Pause for PPS target-zone evaluation | decision head + target-zone link | primary/alternate/hold/Land attachments |
+| Land / recover | Simulated return/recovery | touchdown brackets | fuel margin, path |
 | Land/recover | End simulated package | touchdown brackets | recovery point, approach |
 | Abort/emergency | Stop simulated progression | octagon/stop plate | acknowledgement and reason |
 
@@ -516,7 +516,7 @@ Waypoint and launch-package glyphs:
 | Observe | `post` | `O` | `#7ee7ff` | Pair with camera/FOV overlay. |
 | Hold/loiter | `anchor` | `H` | `#fb923c` | 1 PPS simulation action. |
 | Decision point | `decision` | `D` | `#f97316` | Simulation pause state; links to target zones. |
-| RTB | `home_arrow` | `R` | `#f59e0b` | 2 PPS simulation action. |
+| Land / recover | `touchdown` | `LD` | `#60a5fa` | 2 PPS simulation action. |
 | Land/recover | `touchdown` | `LD` | `#60a5fa` | Terminal simulated recovery. |
 | Abort/emergency | `octagon` | `!` | `#f87171` | Stop simulated progression. |
 
@@ -525,7 +525,7 @@ Decision target zone icon:
 - Use a terrain-clamped circle or polygon with a small reticle/crosshair center marker.
 - Stroke: `#fff1a8`; active stroke/accent: `#6de0d2`; fill alpha should stay low enough to see terrain.
 - Label format: `DTZ-{number}` plus associated decision point name when space allows.
-- Show compact PPS chips near the selected zone: `1 Hold`, `2 RTB`, `4 Primary`, `8 Alt`.
+- Show compact PPS chips near the selected zone: `1 Hold`, `2 Land`, `4 Primary`, `8 Alt`.
 - When selected during simulation, draw a stronger outline and a short light-blue simulated aim ray from the active route/decision point to the target-zone center.
 
 Simulation and context icons:
@@ -568,7 +568,7 @@ Tactical unit icons:
 | Simulated cue | Simulation action | Notes |
 | --- | --- | --- |
 | `1 PPS` | Hold / loiter | valid only at an armed decision point/target zone |
-| `2 PPS` | RTB | valid only at an armed decision point/target zone |
+| `2 PPS` | Land / recover | valid only at an armed decision point/target zone |
 | `4 PPS` | Primary route | selects the attached primary branch |
 | `8 PPS` | Alternate route | selects the attached alternate branch |
 | no pulse / unknown | No state change | log warning or ignored event |
@@ -580,7 +580,7 @@ Tactical unit icons:
 - PPS event is simulated against the selected target zone.
 - Pulse rate is in the approved grammar.
 - Mapped action is allowed from current simulation state.
-- Required branch/hold/RTB target exists.
+- Required branch/hold/Land target exists.
 - Target route/action passes no-go, terrain, and route validity checks.
 - Cue timestamp/source/audit metadata are recorded.
 
@@ -636,7 +636,7 @@ Use this pattern for all simulation events:
 - PPS simulated
 - branch/action selected
 - hold complete
-- RTB selected
+- Land selected
 - land/recover reached
 - obstacle/review warning
 - timeout
@@ -650,7 +650,7 @@ Use this pattern for all simulation events:
 - `primary_branch_id`
 - `alternate_branch_id`
 - `hold_branch_id`
-- `rtb_branch_id`
+- `land_branch_id`
 - `allowed_pulses_pps`
 - `timeout_behavior`
 - `validation_gate_ids`
@@ -678,7 +678,7 @@ Use this pattern for all simulation events:
 | `PrimaryRouteBranch` | 4 PPS branch geometry | attaches to DecisionPoint |
 | `AlternateRouteBranch` | 8 PPS branch geometry | attaches to DecisionPoint |
 | `HoldBranch` | 1 PPS hold geometry/state | attaches to DecisionPoint |
-| `RtbBranch` | 2 PPS return/recovery path | attaches to DecisionPoint |
+| `LandBranch` | 2 PPS return/recovery path | attaches to DecisionPoint |
 | `PulseCueEvent` | simulated PPS event | creates state transition or rejection |
 | `MissionStateNode` | compiled state | from package topology |
 | `MissionStateTransition` | simulation transition | logged from events |
@@ -747,7 +747,7 @@ All functions return JSON or GeoJSON-compatible objects, WGS84 geometry, provena
 | `getMissionRoute()` | unit route, checkpoints, and baseline waypoints |
 | `getLaunchPackages()` | surveillance launch packages and summaries |
 | `getLaunchSimulation()` | active simulation state and controls |
-| `getRouteBranches()` | primary, alternate, hold, and RTB branch geometry |
+| `getRouteBranches()` | primary, alternate, hold, and Land branch geometry |
 | `getDecisionTargetZones()` | target zones with PPS action mapping |
 | `getNoGoZones()` | no-go/review zones |
 | `getSourceManifest()` | manifest/source-health evidence |
@@ -771,7 +771,7 @@ All actions must append or reference an audit log entry and return updated valid
 | `attachPrimaryRouteBranch` | attach 4 PPS branch |
 | `attachAlternateRouteBranch` | attach 8 PPS branch |
 | `attachHoldBranch` | attach 1 PPS hold action |
-| `attachRtbBranch` | attach 2 PPS RTB path |
+| `attachLandBranch` | attach 2 PPS Land/recover path |
 | `addNoGoZone` | add manual review/no-go area |
 | `placeTacticalUnit` | add 2525D land unit |
 | `updateTacticalUnit` | edit SIDC/affiliation/label/position |
@@ -826,7 +826,7 @@ All actions must append or reference an audit log entry and return updated valid
 - Missing primary branch for a decision point that accepts 4 PPS.
 - Missing alternate branch for a decision point that accepts 8 PPS.
 - Missing hold action for a decision point that accepts 1 PPS.
-- Missing RTB path for a decision point that accepts 2 PPS.
+- Missing Land/recover path for a decision point that accepts 2 PPS.
 - Invalid route geometry.
 - No-go zone conflict.
 - Unfinished surveillance waypoint configuration.
@@ -856,8 +856,8 @@ All actions must append or reference an audit log entry and return updated valid
 
 ### Formula / Rule IDs To Preserve
 
-- `demo_optical_cue_pps_command_mapping_v1`: update rule expression to `1 PPS = hold`, `2 PPS = RTB`, `4 PPS = primary route`, `8 PPS = alternate route` when the registry is aligned.
-- `demo_drone_route_default_altitude_agl_v1`: default `120 m AGL`.
+- `demo_launch_package_pps_branch_mapping_v3`: `1 PPS = hold`, `2 PPS = Land`, `4 PPS = primary route`, `8 PPS = alternate route`.
+- `demo_drone_route_default_altitude_agl_v2`: default `20 m AGL`.
 - `demo_terrain_attention_points_v1`: provisional terrain attention point generation.
 
 Any new scoring, threshold, freshness window, confidence score, or heuristic must be registered before it is treated as authoritative.
@@ -868,7 +868,7 @@ Any new scoring, threshold, freshness window, confidence score, or heuristic mus
 
 ### Default Rule
 
-- Planned route altitude defaults to `120 m AGL`.
+- Planned route altitude defaults to `20 m AGL`.
 - Editable per-waypoint altitude is a stretch item.
 - This is a planning assumption, not certified obstacle clearance.
 
@@ -905,7 +905,7 @@ Useful planning constants:
 - Max hover time: 35 minutes.
 - Max transit speed with obstacle avoidance: 16 m/s.
 - Assumed planning range: 5 km.
-- Default planned route altitude: 120 m AGL.
+- Default planned route altitude: 20 m AGL.
 - ISR payload assumptions are provisional and must display source/provisional status.
 
 ### Future / Not MVP
@@ -943,7 +943,7 @@ Requirements:
 1. Load Sunol mission.
 2. Show AOI, ground unit route, and surveillance planning map.
 3. Show Launch Packages panel and ordered waypoint queue.
-4. Add or select launch, transit, observe/scout, decision, and RTB waypoints.
+4. Add or select launch, transit, observe/scout, decision, and Land waypoints.
 5. Place a decision point and decision target zone.
 6. Show terrain attention point and no-go context.
 7. Start Launch Package Simulation.
@@ -972,7 +972,7 @@ A judge must be able to:
 - See 4 PPS select the primary route.
 - See 8 PPS select the alternate route.
 - See 1 PPS hold/loiter.
-- See 2 PPS route to RTB.
+- See 2 PPS route to Land/recover.
 - See outside-zone or invalid-state cue rejection.
 - Inspect source provenance.
 - See MGRS and Lat/Lon.
@@ -1009,7 +1009,7 @@ A judge must be able to:
 - Decision target zones are placed map geometry linked to decision points.
 - PPS is simulated against a selected target zone.
 - `1 PPS` holds/loiters.
-- `2 PPS` routes to RTB.
+- `2 PPS` routes to Land/recover.
 - `4 PPS` selects the primary route.
 - `8 PPS` selects the alternate route.
 - Valid PPS applies the simulated branch/action and logs it.

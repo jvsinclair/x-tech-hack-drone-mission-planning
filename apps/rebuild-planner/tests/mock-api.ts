@@ -1,4 +1,4 @@
-import type { LaunchPackageRecord, SimulationRecord, WaypointBehavior } from "@/lib/types";
+import type { BranchType, BranchWaypointRecord, LaunchPackageRecord, SimulationRecord, WaypointBehavior } from "@/lib/types";
 import { bootstrapFixture, packageFixture, simulationFixture } from "./fixtures";
 
 export type MockState = {
@@ -56,11 +56,66 @@ export async function fetchMock(input: RequestInfo | URL, init?: RequestInit): P
       name: (body.name as string) ?? "Launch package 2",
       waypoints: [],
       decisionPoints: [],
+      branchWaypoints: [],
       routeBranches: [],
       warnings: [],
     });
     state.packages.push(newPkg);
     return json({ package: newPkg }, 201);
+  }
+
+  // --- Single branch waypoint PATCH / DELETE ---
+  const branchWaypointMatch = url.match(/\/branch-waypoints\/([\w-]+)$/);
+  if (branchWaypointMatch && (method === "PATCH" || method === "DELETE")) {
+    const pkg = activePackage();
+    if (method === "PATCH") {
+      const updated = {
+        ...pkg,
+        branchWaypoints: pkg.branchWaypoints.map((wp) => (wp.id === branchWaypointMatch[1] ? { ...wp, ...body } : wp)),
+      };
+      updatePackageInState(updated);
+      return json({ package: updated });
+    }
+    const deleted = pkg.branchWaypoints.find((wp) => wp.id === branchWaypointMatch[1]);
+    const updated = {
+      ...pkg,
+      branchWaypoints: pkg.branchWaypoints
+        .filter((wp) => wp.id !== branchWaypointMatch[1])
+        .map((wp) =>
+          deleted && wp.decisionTargetZoneId === deleted.decisionTargetZoneId && wp.branchType === deleted.branchType
+            ? { ...wp, branchSequence: pkg.branchWaypoints.filter((candidate) => candidate.id !== deleted.id && candidate.decisionTargetZoneId === deleted.decisionTargetZoneId && candidate.branchType === deleted.branchType).findIndex((candidate) => candidate.id === wp.id) + 1 }
+            : wp,
+        ),
+    };
+    updatePackageInState(updated);
+    return json({ package: updated });
+  }
+
+  // --- Branch waypoints POST ---
+  if (url.includes("/branch-waypoints") && method === "POST") {
+    const pkg = activePackage();
+    const branchBody = body as { decisionPointId: string; decisionTargetZoneId: string; branchType: BranchType; lon: number; lat: number };
+    const lane = pkg.branchWaypoints.filter((wp) => wp.decisionTargetZoneId === branchBody.decisionTargetZoneId && wp.branchType === branchBody.branchType);
+    const zone = pkg.decisionPoints.flatMap((dp) => dp.targetZones).find((targetZone) => targetZone.id === branchBody.decisionTargetZoneId);
+    const decisionWaypoint = pkg.waypoints.find((wp) => pkg.decisionPoints.some((dp) => dp.id === branchBody.decisionPointId && dp.waypointId === wp.id));
+    const branchWaypoint: BranchWaypointRecord = {
+      id: `branch-wp-${pkg.branchWaypoints.length + 1}`,
+      packageId: pkg.id,
+      decisionPointId: branchBody.decisionPointId,
+      decisionTargetZoneId: branchBody.decisionTargetZoneId,
+      branchType: branchBody.branchType,
+      branchSequence: lane.length + 1,
+      behavior: branchBody.branchType === "hold" ? "hold_loiter" : branchBody.branchType === "land" ? "land" : "transit",
+      name: `WP${decisionWaypoint?.sequence ?? ""} ${zone?.name ?? "DTZ"} - ${branchLabel(branchBody.branchType)} ${lane.length + 1}`,
+      objective: "",
+      lon: branchBody.lon,
+      lat: branchBody.lat,
+      altitudeM: 20,
+      dwellSeconds: null,
+    };
+    const updated = { ...pkg, branchWaypoints: [...pkg.branchWaypoints, branchWaypoint] };
+    updatePackageInState(updated);
+    return json({ package: updated }, 201);
   }
 
   // --- Single package PATCH / DELETE ---
@@ -132,7 +187,7 @@ export async function fetchMock(input: RequestInfo | URL, init?: RequestInit): P
       objective: "",
       lon: wpBody.lon,
       lat: wpBody.lat,
-      altitudeM: 120,
+      altitudeM: 20,
       dwellSeconds: null,
     };
     let decisionPoints = pkg.decisionPoints;
@@ -220,7 +275,7 @@ export async function fetchMock(input: RequestInfo | URL, init?: RequestInit): P
     return json({ simulation: state.currentSimulation });
   }
   if (url.includes("/pps")) {
-    const ppsBranch: Record<number, string> = { 1: "hold", 2: "rtb", 4: "primary", 8: "alternate" };
+    const ppsBranch: Record<number, string> = { 1: "hold", 2: "land", 4: "primary", 8: "alternate" };
     const ppsValue = (body.observedPps as number) ?? 4;
     const branchType = ppsBranch[ppsValue] ?? "primary";
     state.currentSimulation = {
@@ -245,4 +300,11 @@ export async function fetchMock(input: RequestInfo | URL, init?: RequestInit): P
   }
 
   return json({}, 404);
+}
+
+function branchLabel(branchType: BranchType): string {
+  if (branchType === "primary") return "Primary";
+  if (branchType === "alternate") return "Alternate";
+  if (branchType === "hold") return "Hold";
+  return "Land";
 }

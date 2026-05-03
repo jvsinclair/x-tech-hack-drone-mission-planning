@@ -31,7 +31,7 @@ Operators planning an ISR route are not “drawing a line”; they are staging *
 | **Where does the mission start and how does it thread terrain?** | Yellow route polylines; launch waypoint; AOI / no-go context layers |
 | **Where does collection happen vs mere transit?** | Waypoint behavior glyph + **scan footprint** (not yellow route alone) |
 | **Is the platform moving, the sensor moving, or both?** | Kinematics **1–5** shorthand and behavior-specific markers (orbit vs observe vs pan) |
-| **Where can the plan branch?** | Decision waypoint + Primary/Alternate/Hold/RTB preview geometry + Decision Target Zones |
+| **Where can the plan branch?** | Decision waypoint + Primary/Alternate/Hold/Land preview geometry + Decision Target Zones |
 | **What is preview vs committed?** | Lighter / dashed / labeled **preview** overlays in Plan; accepted branch/action styling in Run (`R7`) |
 | **What threatens feasibility?** | Warnings panel — **not** overloaded into icons |
 
@@ -49,7 +49,7 @@ Operators planning an ISR route are not “drawing a line”; they are staging *
 | **Fill / ribbon (non-yellow)** | **Collection geometry** | Scan AOI polygon, corridor — **not** the same as route centerline |
 | **Badges / fractions / AUTO** | Dominant **parameter headline** | `50% overlap`, `10s dwell`, `CW` — one glance without opening a modal |
 
-Avoid one glyph carrying **payload gadgetry** unless the demo script requires it; prefer **mission outcome** (geometry, dwell, branch, RTB).
+Avoid one glyph carrying **payload gadgetry** unless the demo script requires it; prefer **mission outcome** (geometry, dwell, branch, Land/recover).
 
 ---
 
@@ -83,7 +83,7 @@ These numbers describe **how a step is authored** and **who moves** (platform vs
 
 ### 4.2 **4** vs **5** And Defaults
 
-- **4** = **semantics and parameters** (objectives, dwell, triggers, Primary/Alternate/Hold/RTB choices, confirmation policy).
+- **4** = **semantics and parameters** (objectives, dwell, triggers, Primary/Alternate/Hold/Land choices, confirmation policy).
 - **5** = **geometry authoring** — rule of thumb: **defaults first**; free-draw when templates fail.
 
 ---
@@ -124,7 +124,7 @@ Use this table as the build contract for map layers, legends, and tests.
 | Visual concept | Layer type | Color / grammar | Z-order | Selection behavior | Plan vs Run behavior |
 | --- | --- | --- | --- | --- | --- |
 | **Drone route** | Ordered waypoint polyline | Yellow `#fbbf24`; dotted for untread, solid for tread | 20 | Selecting a segment opens route/segment details | Plan edits geometry; Run derives tread/untread from simulation progress |
-| **Drone branch previews** | Decision-attached Primary, Alternate, Hold, RTB geometry | Yellow route family with preview label/dash until active; active branch gets stronger yellow | 20 | Selecting branch shows decision point, mapped PPS, validation, and audit context | Plan previews are editable attachments; Run valid PPS applies simulated action and logs |
+| **Drone branch previews** | Decision-attached Primary, Alternate, Hold, Land geometry | Yellow route family with preview label/dash until active; active branch gets stronger yellow | 20 | Selecting branch shows decision point, mapped PPS, validation, and audit context | Plan previews are editable attachments; Run valid PPS applies simulated action and logs |
 | **Decision Target Zone** | Decision-owned circle/polygon | Pale yellow or teal outline/fill; never route yellow fill | 10 when active, 20 otherwise | Selecting zone opens PPS, MGRS, decision, radius/shape details | Plan edits zones; Run uses selected/aimed zone for PPS validation |
 | **Static primary/alternate overlay** | Fixture-backed ground/control-measure path | PA1 solid light blue; PA2 dotted light blue | 30 | Selecting shows read-only control-measure context | Read-only fixture lane in both modes |
 | **Sensor/camera** | FOV wedge, aim ray, stare stub, pan arc | Light blue `#7ee7ff`; wedge/ray/arc geometry, not branch polyline | 10 when active, 20 otherwise | Selecting shows fixation/aim context when exposed | Plan previews collection intent; Run shows active simulated sensor state |
@@ -160,8 +160,7 @@ Use this table for **Stitch**, **Cesium layers**, and **panel design**. “Imple
 | **Observe** | **Hold** attention with **sensor** motion more than path | **Stable post** + short **blue** stare stub | Minimal yellow motion | Dwell, FOV, priority target | Maps to kinematics **3** vs Scout **2** |
 | **Hold / loiter** | **Wait** for cue, time, or fuel | **Anchor ring** + dwell ticks on stem | Closed loop / racetrack optional | Duration, re-prompt, timeout branch | Pairs with **1 PPS** hold action in Launch Package Simulation |
 | **Decision point** | Choose **preplanned** branch | **Diamond head** + **two stubs** for primary/alternate (**drone waypoint** grammar only) | Branch **preview** polylines (R7); **Decision Target Zone** if PPS simulation is used | Choices, timeout, validation | **Mission/fixture lane:** use official **Decision Point** control measure graphic (§13), **not** this diamond head. Core demo beat; `docs/goals/0005` |
-| **RTB** | **Recover** safely | **Homeward arrow** + **home notch** | Path to recovery; **preview** until valid simulation event or explicit plan commit | Fuel margin, recovery path, audit state | **2 PPS** selects RTB in Launch Package Simulation |
-| **Land / recover** | End **flight** segment | **Touchdown brackets** + ground patch | Terminal **solid** yellow | Approach, strip/point id | Terminal state |
+| **Land / recover** | **Recover** safely and end the **flight** segment | **Touchdown brackets** + ground patch | Path to recovery; **preview** until valid simulation event or explicit plan commit | Fuel margin, recovery path, audit state | **2 PPS** selects Land in Launch Package Simulation |
 | **Abort / emergency** | **Stop** planning progression safely | **Octagon / stop plate** | Cease extension of route | Explicit acknowledgement | Use sparingly; non-kinetic copy |
 
 ### 8.1 Waypoint Glyph Implementation Contract
@@ -177,8 +176,7 @@ Every drone waypoint uses a shared stem and behavior-specific head/attachment. T
 | **Observe** | Stable post + short blue stare stub | `Observe` | May expose dwell/FOV/priority target |
 | **Hold / loiter** | Anchor ring + dwell ticks | `Hold` | 1 PPS runtime action when attached to active decision |
 | **Decision point** | Diamond head + primary/alternate stubs | `Decision` | Selecting reveals attached target zones and branch options |
-| **RTB** | Homeward arrow + home notch | `RTB` | 2 PPS runtime action when attached to active decision |
-| **Land / recover** | Touchdown brackets + ground patch | `Recover` | Terminal recovery waypoint |
+| **Land / recover** | Touchdown brackets + ground patch | `Land` | 2 PPS runtime action when attached to active decision; terminal recovery waypoint |
 | **Abort / emergency** | Octagon / stop plate | `Abort` | Requires explicit acknowledgement copy; no kinetic wording |
 
 ---
@@ -193,7 +191,7 @@ From `docs/goals/0002-local-vite-cesium-planner-scaffold.md`. Keep **context lay
 | **No-go** | Hard constraint | Hatch / slash; **not** route yellow |
 | **Terrain attention point** | Planning cue | Pin / flag — not a drone waypoint unless promoted |
 | **Unit route** | Friendly context | **Distinct** stroke color from drone yellow (pick one muted palette) |
-| **Drone route branches** | Primary / Alternate / Hold / RTB | Decision-attached, **preview-capable** drone geometry (yellow / R7); **primary vs alternate** **binary** static paths use **PA1/PA2** (light blue). |
+| **Drone route branches** | Primary / Alternate / Hold / Land | Decision-attached, **preview-capable** drone geometry (yellow / R7); **primary vs alternate** **binary** static paths use **PA1/PA2** (light blue). |
 | **Decision Target Zone** | Simulated PPS target geometry | Ground circle/polygon, terrain-clamped in 3D; PPS labels and decision attachment — goal **0005** |
 | **Power / roads / buildings** | Context | Thin neutral symbology |
 
@@ -201,12 +199,12 @@ From `docs/goals/0002-local-vite-cesium-planner-scaffold.md`. Keep **context lay
 
 ## 10. Simulated PPS — Decision Target Zone Mapping
 
-Canonical Launch Package Simulation mapping (`docs/PALANTIR_REBUILD_MASTER_PRD.md`, formula `demo_launch_package_pps_branch_mapping_v2`):
+Canonical Launch Package Simulation mapping (`docs/PALANTIR_REBUILD_MASTER_PRD.md`, formula `demo_launch_package_pps_branch_mapping_v3`):
 
 | Pulses | Simulated action |
 | --- | --- |
 | `1 PPS` | Hold / loiter |
-| `2 PPS` | RTB |
+| `2 PPS` | Land / recover |
 | `4 PPS` | Primary route |
 | `8 PPS` | Alternate route |
 
@@ -233,13 +231,13 @@ Canonical Launch Package Simulation mapping (`docs/PALANTIR_REBUILD_MASTER_PRD.m
 
 - **Geometry:** internal representation **WGS84** GeoJSON-style coordinates; MGRS for **display** per goal **0004**.
 - **Layer separation:** implement **route** (yellow), **scan footprint** (R5 style), **sensor** (blue), **Decision Target Zones**, **branches**, **context**, and **static control-measure overlays** as separately addressable primitives.
-- **Preview flag:** planning branch/hold/RTB geometries should carry **`preview: true`** (or equivalent) until committed in Plan; Run simulation should derive active/accepted styling from the simulation event log and selected branch/action.
-- **Decision attachment:** Primary/Alternate/Hold/RTB options are **attached to a waypoint or segment decision point**, not global commands (`ROUNDTABLE_DEMO_REQUIREMENTS.md`).
+- **Preview flag:** planning branch/hold/Land geometries should carry **`preview: true`** (or equivalent) until committed in Plan; Run simulation should derive active/accepted styling from the simulation event log and selected branch/action.
+- **Decision attachment:** Primary/Alternate/Hold/Land options are **attached to a waypoint or segment decision point**, not global commands (`ROUNDTABLE_DEMO_REQUIREMENTS.md`).
 - **Logging:** cue event, preview, operator choice, validation warning, state transition — align with roundtable audit list.
 
 ### 12.1 Acceptance Checks For Implementation
 
-- PPS labels and tests use `1 Hold`, `2 RTB`, `4 Primary`, `8 Alternate`.
+- PPS labels and tests use `1 Hold`, `2 Land`, `4 Primary`, `8 Alternate`.
 - Yellow is used only for drone route, drone route branch, and active drone route state geometry.
 - PA1/PA2 stay light blue static overlay paths and never represent the aircraft route.
 - Decision Target Zones are selectable and visually distinct from scan footprints, no-go zones, and context cue/attention layers.

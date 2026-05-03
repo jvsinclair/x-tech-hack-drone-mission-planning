@@ -19,6 +19,8 @@ Agent Maintenance Rule:
 
 import type {
   AuditLogRecord,
+  BranchType,
+  BranchWaypointRecord,
   DecisionPointRecord,
   LaunchPackageRecord,
   RouteBranchRecord,
@@ -36,6 +38,7 @@ type PackageLike = {
   status: string;
   waypoints?: WaypointLike[];
   decisionPoints?: DecisionPointLike[];
+  branchWaypoints?: BranchWaypointLike[];
   routeBranches?: RouteBranchLike[];
   warnings?: WarningLike[];
 };
@@ -44,6 +47,22 @@ type WaypointLike = {
   id: string;
   packageId: string;
   sequence: number;
+  behavior: string;
+  name: string;
+  objective: string;
+  lon: number;
+  lat: number;
+  altitudeM: number | null;
+  dwellSeconds: number | null;
+};
+
+type BranchWaypointLike = {
+  id: string;
+  packageId: string;
+  decisionPointId: string;
+  decisionTargetZoneId: string;
+  branchType: string;
+  branchSequence: number;
   behavior: string;
   name: string;
   objective: string;
@@ -119,6 +138,9 @@ export function serializePackage(pkg: PackageLike): LaunchPackageRecord {
     status: pkg.status,
     waypoints: (pkg.waypoints ?? []).sort((a, b) => a.sequence - b.sequence).map(serializeWaypoint),
     decisionPoints: (pkg.decisionPoints ?? []).map(serializeDecisionPoint),
+    branchWaypoints: (pkg.branchWaypoints ?? [])
+      .sort((a, b) => a.decisionTargetZoneId.localeCompare(b.decisionTargetZoneId) || normalizeBranchType(a.branchType).localeCompare(normalizeBranchType(b.branchType)) || a.branchSequence - b.branchSequence)
+      .map(serializeBranchWaypoint),
     routeBranches: (pkg.routeBranches ?? []).map(serializeRouteBranch),
     warnings: (pkg.warnings ?? []).map(serializeWarning),
   };
@@ -129,7 +151,25 @@ export function serializeWaypoint(waypoint: WaypointLike): WaypointRecord {
     id: waypoint.id,
     packageId: waypoint.packageId,
     sequence: waypoint.sequence,
-    behavior: waypoint.behavior as WaypointBehavior,
+    behavior: normalizeWaypointBehavior(waypoint.behavior),
+    name: waypoint.name,
+    objective: waypoint.objective,
+    lon: waypoint.lon,
+    lat: waypoint.lat,
+    altitudeM: waypoint.altitudeM,
+    dwellSeconds: waypoint.dwellSeconds,
+  };
+}
+
+export function serializeBranchWaypoint(waypoint: BranchWaypointLike): BranchWaypointRecord {
+  return {
+    id: waypoint.id,
+    packageId: waypoint.packageId,
+    decisionPointId: waypoint.decisionPointId,
+    decisionTargetZoneId: waypoint.decisionTargetZoneId,
+    branchType: normalizeBranchType(waypoint.branchType),
+    branchSequence: waypoint.branchSequence,
+    behavior: normalizeWaypointBehavior(waypoint.behavior),
     name: waypoint.name,
     objective: waypoint.objective,
     lon: waypoint.lon,
@@ -162,7 +202,7 @@ export function serializeRouteBranch(branch: RouteBranchLike): RouteBranchRecord
     id: branch.id,
     packageId: branch.packageId,
     decisionPointId: branch.decisionPointId,
-    type: branch.type as RouteBranchRecord["type"],
+    type: normalizeBranchType(branch.type),
     name: branch.name,
     geometry: parseJson(branch.geometryJson, null),
   };
@@ -210,4 +250,14 @@ function parseJson<T>(value: string, fallback: T): T {
   } catch {
     return fallback;
   }
+}
+
+function normalizeWaypointBehavior(value: string): WaypointBehavior {
+  if (value === "rtb") return "land";
+  return value as WaypointBehavior;
+}
+
+function normalizeBranchType(value: string): BranchType {
+  if (value === "rtb") return "land";
+  return value as BranchType;
 }

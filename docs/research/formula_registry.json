@@ -120,7 +120,48 @@
         "Autonomous targeting or engagement.",
         "Operational drone command or autopilot upload."
       ],
-      "notes": "This supersedes older route-preview PPS mappings inside the rebuild app. Older mappings remain documented for historical Vite app behavior until that app is retired or migrated.",
+      "notes": "Superseded by demo_launch_package_pps_branch_mapping_v3 when the operator-facing 2 PPS action was renamed from RTB to Land/recover.",
+      "status": "deprecated"
+    },
+    {
+      "id": "demo_launch_package_pps_branch_mapping_v3",
+      "kind": "heuristic",
+      "expression": "For Launch Package Simulation only: 1 PPS selects hold_or_loiter, 2 PPS selects land_or_recover, 4 PPS selects the primary route branch, and 8 PPS selects the alternate route branch. A PPS event is valid only when simulation is paused at an active decision point, a decision target zone attached to that point is selected, the simulated aim point is inside that zone, and the PPS value is allowed for that zone. Valid events apply the simulated branch/action immediately and write an audit log; invalid events do not change simulation state and must log a rejection reason.",
+      "variables": {
+        "observed_pulse_rate_pps": "Observed simulated optical cue pulse rate in pulses per second.",
+        "active_decision_point": "Current simulation pause state where PPS may be evaluated.",
+        "selected_decision_target_zone": "Target zone selected or aimed at by the operator.",
+        "aim_point": "Simulated lon/lat point receiving the PPS event.",
+        "allowed_pulses_pps": "PPS values accepted by the selected decision target zone."
+      },
+      "units": {
+        "observed_pulse_rate_pps": "pulses_per_second",
+        "active_decision_point": "id_or_null",
+        "selected_decision_target_zone": "id_or_null",
+        "aim_point": "WGS84 lon_lat",
+        "allowed_pulses_pps": "set(enum(1, 2, 4, 8))",
+        "output_action": "enum(hold_or_loiter, land_or_recover, primary_route, alternate_route, reject_and_log)"
+      },
+      "source_ref": "docs/PALANTIR_REBUILD_MASTER_PRD.md; user_clarification_land_not_rtb_2026_05_03",
+      "applicability": [
+        "rebuild_planner_runtime",
+        "launch_package_simulation_runtime",
+        "pps_decision_target_zone_simulation"
+      ],
+      "confidence": "medium",
+      "chosen_for": [
+        "Matches the current local rebuild planner behavior.",
+        "Keeps PPS behavior simulation-only and tied to preauthored decision target zones.",
+        "Uses operator-facing Land/recover language instead of RTB while preserving auditability."
+      ],
+      "rejected_for": [
+        "Real hardware integration.",
+        "Authenticated friendly identification.",
+        "Covert signaling protocol design.",
+        "Autonomous targeting or engagement.",
+        "Operational drone command or autopilot upload."
+      ],
+      "notes": "This supersedes older route-preview and RTB-labeled PPS mappings inside the rebuild app.",
       "status": "active"
     },
     {
@@ -200,7 +241,45 @@
         "Autonomous obstacle avoidance.",
         "Real drone autopilot upload or hardware command."
       ],
-      "notes": "Use 120 m AGL as a provisional default only. Future per-waypoint or per-segment altitude edits should cite this rule as the default fallback and add separate validation for operator overrides.",
+      "notes": "Superseded by demo_drone_route_default_altitude_agl_v2 after user review found the 120 m visual too high for the demo route.",
+      "status": "deprecated"
+    },
+    {
+      "id": "demo_drone_route_default_altitude_agl_v2",
+      "kind": "constant",
+      "expression": "For fixture-backed planning demos, default drone route and branch waypoints to 20 meters above terrain level. When terrain elevation is available, compute altitude_msl_m = terrain_elevation_m + 20. If terrain elevation is unavailable, preserve the route but mark altitude planning as degraded and require a visible warning.",
+      "variables": {
+        "terrain_elevation_m": "Terrain elevation at the waypoint or route segment sample.",
+        "altitude_agl_m": "Planned altitude above terrain level for the drone route point.",
+        "altitude_msl_m": "Computed planned altitude above mean sea level.",
+        "terrain_status": "Whether terrain data was available and suitable for the route altitude calculation."
+      },
+      "units": {
+        "terrain_elevation_m": "meters",
+        "altitude_agl_m": "meters",
+        "altitude_msl_m": "meters",
+        "terrain_status": "enum(available, degraded, missing, stale, sparse)"
+      },
+      "source_ref": "user_clarification_default_drone_route_altitude_2026_05_03",
+      "applicability": [
+        "terrain_aware_route_altitude_profile_demo",
+        "drone_route_option_generation_demo",
+        "cesium_3d_route_visualization_demo",
+        "local_rebuild_planner_authoring"
+      ],
+      "confidence": "medium",
+      "chosen_for": [
+        "Matches the corrected user-selected default for the hackathon planning demo.",
+        "Keeps route altitude explainable in AGL terms while allowing Cesium to render MSL coordinates.",
+        "Keeps the planned route visually close enough to terrain for tactical route review."
+      ],
+      "rejected_for": [
+        "Operational terrain clearance.",
+        "Certified flight planning.",
+        "Autonomous obstacle avoidance.",
+        "Real drone autopilot upload or hardware command."
+      ],
+      "notes": "Use 20 m AGL as the local rebuild planner default. Per-waypoint altitude edits may override this value for the local simulation only.",
       "status": "active"
     }
   ]

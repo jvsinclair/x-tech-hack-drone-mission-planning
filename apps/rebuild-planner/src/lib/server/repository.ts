@@ -21,11 +21,12 @@ import { prisma } from "@/lib/server/db";
 import { serializePackage, serializeSimulation } from "@/lib/server/serializers";
 import { compileLaunchPackage } from "@/lib/simulation/compile";
 import { actionLabel, evaluatePpsEvent } from "@/lib/simulation/pps";
-import type { BootstrapPayload, LaunchPackageRecord, StarterPackageSeed, WaypointBehavior } from "@/lib/types";
+import type { BranchType, BootstrapPayload, LaunchPackageRecord, StarterPackageSeed, WaypointBehavior } from "@/lib/types";
 
 const packageInclude = {
   waypoints: true,
   decisionPoints: { include: { targetZones: true } },
+  branchWaypoints: true,
   routeBranches: true,
   warnings: true,
 } as const;
@@ -33,6 +34,16 @@ const packageInclude = {
 const simulationInclude = {
   events: { orderBy: { createdAt: "asc" as const } },
 } as const;
+
+const DEFAULT_ALTITUDE_M = 20;
+const MAX_DECISION_ZONES = 4;
+const MIN_BRANCH_READY_ZONES = 2;
+const branchLabels: Record<BranchType, string> = {
+  primary: "Primary",
+  alternate: "Alternate",
+  hold: "Hold",
+  land: "Land",
+};
 
 export async function ensureMissionAndStarter(
   context: Omit<BootstrapPayload, "packages"> & { starterPackage: StarterPackageSeed },
@@ -118,7 +129,7 @@ export async function addWaypoint(input: {
       objective: input.objective ?? "",
       lon: input.lon,
       lat: input.lat,
-      altitudeM: 120,
+      altitudeM: DEFAULT_ALTITUDE_M,
     },
   });
 
@@ -157,6 +168,9 @@ export async function addDecisionZone(input: {
     (await createDecisionPointFromLastWaypoint(input.packageId));
 
   const zoneNumber = (await prisma.decisionTargetZone.count({ where: { decisionPointId: decisionPoint.id } })) + 1;
+  if (zoneNumber > MAX_DECISION_ZONES) {
+    throw new Error(`A decision waypoint supports up to ${MAX_DECISION_ZONES} target zones.`);
+  }
   const zone = await prisma.decisionTargetZone.create({
     data: {
       id: crypto.randomUUID(),
@@ -322,6 +336,116 @@ export async function deleteDecisionZone(input: {
 }): Promise<LaunchPackageRecord> {
   await prisma.decisionTargetZone.delete({ where: { id: input.zoneId } });
   await appendAuditEvent(input.packageId, null, "zone_deleted", "Decision zone deleted.", { zoneId: input.zoneId });
+  return getPackageOrThrow(input.packageId);
+}
+
+export async function addBranchWaypoint(input: {
+  packageId: string;
+  decisionPointId: string;
+  decisionTargetZoneId: string;
+  branchType: BranchType;
+  lon: number;
+  lat: number;
+  behavior?: WaypointBehavior;
+  name?: string;
+  objective?: string;
+}): Promise<LaunchPackageRecord> {
+  const branchType = normalizeBranchType(input.branchType);
+  const zone = await prisma.decisionTargetZone.findFirst({
+    where: { id: input.decisionTargetZoneId, decisionPointId: input.decisionPointId },
+    include: { decisionPoint: { include: { waypoint: true, targetZones: true } } },
+  });
+  if (!zone || zone.decisionPoint.packageId !== input.packageId) {
+    throw new Error("Decision target zone not found for this package.");
+  }
+  if (zone.decisionPoint.targetZones.length < MIN_BRANCH_READY_ZONES) {
+    throw new Error(`Add at least ${MIN_BRANCH_READY_ZONES} target zones before authoring branch waypoints.`);
+  }
+
+  const nextSequence =
+    (await prisma.branchWaypoint.count({
+      where: { decisionTargetZoneId: input.decisionTargetZoneId, branchType },
+    })) + 1;
+  const created = await prisma.branchWaypoint.create({
+    data: {
+      id: crypto.randomUUID(),
+      packageId: input.packageId,
+      decisionPointId: input.decisionPointId,
+      decisionTargetZoneId: input.decisionTargetZoneId,
+      branchType,
+      branchSequence: nextSequence,
+      behavior: input.behavior ?? defaultBranchWaypointBehavior(branchType),
+      name: input.name ?? defaultBranchWaypointName(zone.decisionPoint.waypoint?.sequence ?? null, zone.name, branchType, nextSequence),
+      objective: input.objective ?? "",
+      lon: input.lon,
+      lat: input.lat,
+      altitudeM: DEFAULT_ALTITUDE_M,
+    },
+  });
+
+  await appendAuditEvent(input.packageId, null, "branch_waypoint_added", `${created.name} placed.`, {
+    decisionPointId: input.decisionPointId,
+    decisionTargetZoneId: input.decisionTargetZoneId,
+    branchType,
+    branchSequence: nextSequence,
+  });
+
+  return getPackageOrThrow(input.packageId);
+}
+
+export async function updateBranchWaypoint(input: {
+  branchWaypointId: string;
+  packageId: string;
+  name?: string;
+  behavior?: WaypointBehavior;
+  objective?: string;
+  altitudeM?: number | null;
+  dwellSeconds?: number | null;
+  lon?: number;
+  lat?: number;
+}): Promise<LaunchPackageRecord> {
+  const existing = await prisma.branchWaypoint.findFirst({
+    where: { id: input.branchWaypointId, packageId: input.packageId },
+  });
+  if (!existing) throw new Error("Branch waypoint not found.");
+
+  const data: Record<string, unknown> = {};
+  if (input.name !== undefined) data.name = input.name;
+  if (input.behavior !== undefined) data.behavior = input.behavior;
+  if (input.objective !== undefined) data.objective = input.objective;
+  if (input.altitudeM !== undefined) data.altitudeM = input.altitudeM;
+  if (input.dwellSeconds !== undefined) data.dwellSeconds = input.dwellSeconds;
+  if (input.lon !== undefined) data.lon = input.lon;
+  if (input.lat !== undefined) data.lat = input.lat;
+
+  await prisma.branchWaypoint.update({ where: { id: input.branchWaypointId }, data });
+  await appendAuditEvent(input.packageId, null, "branch_waypoint_updated", "Branch waypoint updated.", {
+    branchWaypointId: input.branchWaypointId,
+    fields: Object.keys(data),
+  });
+  return getPackageOrThrow(input.packageId);
+}
+
+export async function deleteBranchWaypoint(input: {
+  branchWaypointId: string;
+  packageId: string;
+}): Promise<LaunchPackageRecord> {
+  const existing = await prisma.branchWaypoint.findFirst({
+    where: { id: input.branchWaypointId, packageId: input.packageId },
+  });
+  if (!existing) throw new Error("Branch waypoint not found.");
+
+  await prisma.branchWaypoint.delete({ where: { id: input.branchWaypointId } });
+  const remaining = await prisma.branchWaypoint.findMany({
+    where: { decisionTargetZoneId: existing.decisionTargetZoneId, branchType: existing.branchType },
+    orderBy: { branchSequence: "asc" },
+  });
+  await resequenceBranchWaypoints(remaining.map((waypoint) => waypoint.id));
+
+  await appendAuditEvent(input.packageId, null, "branch_waypoint_deleted", `${existing.name} deleted.`, {
+    branchWaypointId: input.branchWaypointId,
+    branchType: existing.branchType,
+  });
   return getPackageOrThrow(input.packageId);
 }
 
@@ -527,7 +651,7 @@ async function ensureStarterPackage(missionId: string, seed: StarterPackageSeed)
             [decisionWaypoint.lon, decisionWaypoint.lat],
             [decisionWaypoint.lon + 0.002, decisionWaypoint.lat + 0.002],
           ]),
-          branchSeed(pkg.id, decision.id, "rtb", "RTB route", [
+          branchSeed(pkg.id, decision.id, "land", "Land route", [
             [decisionWaypoint.lon, decisionWaypoint.lat],
             [launch.lon, launch.lat],
           ]),
@@ -602,7 +726,7 @@ async function createDecisionPointFromLastWaypoint(packageId: string) {
         name: `Decision ${next}`,
         lon: waypoint?.lon ?? -121.842,
         lat: waypoint?.lat ?? 37.538,
-        altitudeM: 120,
+        altitudeM: DEFAULT_ALTITUDE_M,
       },
     });
     return prisma.decisionPoint.create({
@@ -624,7 +748,7 @@ async function createDecisionPointFromLastWaypoint(packageId: string) {
   });
 }
 
-function branchSeed(packageId: string, decisionPointId: string, type: "primary" | "alternate" | "hold" | "rtb", name: string, coordinates: number[][]) {
+function branchSeed(packageId: string, decisionPointId: string, type: BranchType, name: string, coordinates: number[][]) {
   return {
     id: crypto.randomUUID(),
     packageId,
@@ -644,9 +768,34 @@ function defaultWaypointName(behavior: WaypointBehavior, sequence: number): stri
     observe: "Observe",
     hold_loiter: "Hold",
     decision: "Decision",
-    rtb: "RTB",
-    land: "Recover",
+    land: "Land",
     abort: "Abort",
   };
   return `${labels[behavior]} ${sequence}`;
+}
+
+async function resequenceBranchWaypoints(branchWaypointIds: string[]) {
+  await prisma.$transaction(async (tx) => {
+    for (let index = 0; index < branchWaypointIds.length; index++) {
+      await tx.branchWaypoint.update({ where: { id: branchWaypointIds[index] }, data: { branchSequence: 10000 + index } });
+    }
+    for (let index = 0; index < branchWaypointIds.length; index++) {
+      await tx.branchWaypoint.update({ where: { id: branchWaypointIds[index] }, data: { branchSequence: index + 1 } });
+    }
+  });
+}
+
+function defaultBranchWaypointBehavior(branchType: BranchType): WaypointBehavior {
+  if (branchType === "hold") return "hold_loiter";
+  if (branchType === "land") return "land";
+  return "transit";
+}
+
+function defaultBranchWaypointName(decisionSequence: number | null, zoneName: string, branchType: BranchType, sequence: number): string {
+  const decisionLabel = decisionSequence ? `WP${decisionSequence}` : "Decision";
+  return `${decisionLabel} ${zoneName} - ${branchLabels[branchType]} ${sequence}`;
+}
+
+function normalizeBranchType(branchType: BranchType | "rtb"): BranchType {
+  return branchType === "rtb" ? "land" : branchType;
 }

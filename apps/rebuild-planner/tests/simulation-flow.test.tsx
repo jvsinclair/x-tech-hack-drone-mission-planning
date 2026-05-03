@@ -47,13 +47,13 @@ describe("Simulation lifecycle", () => {
     await waitFor(() => expect(getMockState().currentSimulation?.activeBranchType).toBe("hold"));
   });
 
-  it("PPS 2 selects rtb branch", async () => {
+  it("PPS 2 selects land branch", async () => {
     await enterRunAndStartSim();
     fireEvent.click(screen.getByRole("button", { name: /step/i }));
     await waitFor(() => expect(getMockState().currentSimulation?.activeDecisionPointId).toBe("decision-1"));
 
     fireEvent.click(screen.getByRole("button", { name: /2 PPS/i }));
-    await waitFor(() => expect(getMockState().currentSimulation?.activeBranchType).toBe("rtb"));
+    await waitFor(() => expect(getMockState().currentSimulation?.activeBranchType).toBe("land"));
   });
 
   it("PPS 4 selects primary branch", async () => {

@@ -29,26 +29,37 @@ export function compileLaunchPackage(pkg: LaunchPackageRecord): Omit<ValidationW
   if (!hasBehavior("decision")) {
     warnings.push({ code: "missing_decision", severity: "warning", message: "Add a decision waypoint to test PPS branch behavior." });
   }
-  if (!hasBehavior("rtb")) {
-    warnings.push({ code: "missing_rtb", severity: "warning", message: "Add an RTB waypoint or branch for 2 PPS behavior." });
+  if (!hasBehavior("land") && !pkg.branchWaypoints.some((waypoint) => waypoint.branchType === "land")) {
+    warnings.push({ code: "missing_land", severity: "warning", message: "Add a Land waypoint or branch for 2 PPS behavior." });
   }
 
   for (const decisionPoint of pkg.decisionPoints) {
-    if (decisionPoint.targetZones.length === 0) {
+    if (decisionPoint.targetZones.length < 2) {
       warnings.push({
         code: "missing_decision_zone",
         severity: "blocker",
-        message: `${decisionPoint.name} needs a decision target zone before PPS simulation.`,
+        message: `${decisionPoint.name} needs 2-4 decision target zones before branch authoring and PPS simulation.`,
       });
     }
-    for (const branchType of ["primary", "alternate", "hold", "rtb"] as const) {
-      const hasBranch = pkg.routeBranches.some((branch) => branch.decisionPointId === decisionPoint.id && branch.type === branchType);
-      if (!hasBranch) {
-        warnings.push({
-          code: `missing_${branchType}_branch`,
-          severity: branchType === "primary" || branchType === "alternate" ? "warning" : "info",
-          message: `${decisionPoint.name} has no ${branchType} branch attachment yet.`,
-        });
+    if (decisionPoint.targetZones.length > 4) {
+      warnings.push({
+        code: "too_many_decision_zones",
+        severity: "blocker",
+        message: `${decisionPoint.name} has more than 4 decision target zones.`,
+      });
+    }
+    for (const zone of decisionPoint.targetZones) {
+      for (const branchType of ["primary", "alternate", "hold", "land"] as const) {
+        const hasBranchWaypoints = pkg.branchWaypoints.some(
+          (waypoint) => waypoint.decisionPointId === decisionPoint.id && waypoint.decisionTargetZoneId === zone.id && waypoint.branchType === branchType,
+        );
+        if (!hasBranchWaypoints) {
+          warnings.push({
+            code: `missing_${branchType}_branch`,
+            severity: branchType === "primary" || branchType === "alternate" ? "warning" : "info",
+            message: `${zone.name} has no ${branchType} branch waypoint yet.`,
+          });
+        }
       }
     }
   }

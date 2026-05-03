@@ -46,6 +46,7 @@ type FoundrySourceManifest = {
 };
 
 const emptyFeatureCollection: GeoJsonFeatureCollection = { type: "FeatureCollection", features: [] };
+const DEFAULT_ALTITUDE_M = 20;
 
 export async function loadFoundryContext(token: string): Promise<Omit<BootstrapPayload, "packages"> & { starterPackage: StarterPackageSeed }> {
   const [bundle, aoi, route, branches, cueZones, noGo, terrain, infrastructure, sourceManifest] = await Promise.all([
@@ -128,7 +129,7 @@ function starterFromFoundryRoute(route: GeoJsonFeatureCollection, cueZones: GeoJ
       objective: "",
       lon: coordinates[0],
       lat: coordinates[1],
-      altitudeM: Number(props.altitudeM ?? 120),
+      altitudeM: DEFAULT_ALTITUDE_M,
       dwellSeconds: null,
     };
   });
@@ -207,7 +208,7 @@ function normalizeBehavior(value: string): WaypointBehavior {
   if (key.includes("observe")) return "observe";
   if (key.includes("scan")) return "scan_area";
   if (key.includes("hold")) return "hold_loiter";
-  if (key.includes("rtb") || key.includes("return")) return "rtb";
   if (key.includes("land") || key.includes("recover")) return "land";
+  if (key.includes("rtb") || key.includes("return")) return "land";
   return "transit";
 }

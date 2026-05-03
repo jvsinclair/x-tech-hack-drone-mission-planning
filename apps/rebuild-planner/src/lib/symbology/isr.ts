@@ -63,8 +63,7 @@ export const waypointBehaviors: WaypointBehaviorDefinition[] = [
   { type: "observe", label: "Observe", shortLabel: "O", glyphShape: "post", color: tacticalColors.cameraBlue },
   { type: "hold_loiter", label: "Hold", shortLabel: "H", glyphShape: "anchor", color: "#fb923c" },
   { type: "decision", label: "Decision", shortLabel: "D", glyphShape: "decision", color: "#f97316" },
-  { type: "rtb", label: "RTB", shortLabel: "R", glyphShape: "home_arrow", color: "#f59e0b" },
-  { type: "land", label: "Recover", shortLabel: "LD", glyphShape: "touchdown", color: "#60a5fa" },
+  { type: "land", label: "Land", shortLabel: "LD", glyphShape: "touchdown", color: "#60a5fa" },
   { type: "abort", label: "Abort", shortLabel: "!", glyphShape: "octagon", color: "#f87171" },
 ];
 

@@ -21,13 +21,15 @@ Agent Maintenance Rule:
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, MutableRefObject } from "react";
-import type { DecisionTargetZoneRecord, LaunchPackageRecord, MissionLayers, MissionSummary, WaypointRecord } from "@/lib/types";
+import type { BranchType, BranchWaypointRecord, DecisionTargetZoneRecord, LaunchPackageRecord, MissionLayers, MissionSummary, WaypointRecord } from "@/lib/types";
 import { behaviorByType } from "@/lib/symbology/isr";
 import { WaypointGlyph } from "@/components/WaypointGlyph";
 
 type PlacementMode = "decision_zone" | WaypointRecord["behavior"] | null;
 type MapMode = "terrain3d" | "topo2d";
 type TerrainSample = { lon: number; lat: number; elevationM: number };
+type ActiveBranchContext = { decisionPointId: string; zoneId: string; branchType: BranchType } | null;
+const DEFAULT_ALTITUDE_M = 20;
 
 type TacticalCesiumMapProps = {
   mission: MissionSummary | null;
@@ -36,13 +38,17 @@ type TacticalCesiumMapProps = {
   placementMode: PlacementMode;
   mapMode: MapMode;
   selectedWaypointId: string | null;
+  selectedBranchWaypointId: string | null;
   selectedZoneId: string | null;
   activeBranchType: string | null;
+  activeBranchContext: ActiveBranchContext;
   onMapPlacement: (lon: number, lat: number) => void;
   onMapModeChange: (mode: MapMode) => void;
   onSelectWaypoint: (waypointId: string) => void;
+  onSelectBranchWaypoint: (branchWaypointId: string) => void;
   onSelectZone: (zoneId: string) => void;
   onMoveWaypoint: (waypointId: string, lon: number, lat: number) => void;
+  onMoveBranchWaypoint: (branchWaypointId: string, lon: number, lat: number) => void;
 };
 
 export function TacticalCesiumMap({
@@ -52,13 +58,17 @@ export function TacticalCesiumMap({
   placementMode,
   mapMode,
   selectedWaypointId,
+  selectedBranchWaypointId,
   selectedZoneId,
   activeBranchType,
+  activeBranchContext,
   onMapPlacement,
   onMapModeChange,
   onSelectWaypoint,
+  onSelectBranchWaypoint,
   onSelectZone,
   onMoveWaypoint,
+  onMoveBranchWaypoint,
 }: TacticalCesiumMapProps) {
   const mapStageRef = useRef<HTMLElement | null>(null);
   const cesiumContainerRef = useRef<HTMLDivElement | null>(null);
@@ -66,16 +76,19 @@ export function TacticalCesiumMap({
   const viewerRef = useRef<any | null>(null);
   const missionDataSourcesRef = useRef<any[]>([]);
   const packageDataSourceRef = useRef<any | null>(null);
-  const cesiumDragRef = useRef<{ waypointId: string; altitudeM: number | null; draft: { lon: number; lat: number } | null } | null>(null);
+  const cesiumDragRef = useRef<{ kind: "waypoint" | "branch-waypoint"; waypointId: string; altitudeM: number | null; draft: { lon: number; lat: number } | null } | null>(null);
   const mapDragRef = useRef<{ startX: number; startY: number; originX: number; originY: number } | null>(null);
-  const waypointDragRef = useRef<{ waypointId: string; altitudeM: number | null } | null>(null);
-  const waypointDraftRef = useRef<{ waypointId: string; lon: number; lat: number } | null>(null);
+  const waypointDragRef = useRef<{ kind: "waypoint" | "branch-waypoint"; waypointId: string; altitudeM: number | null } | null>(null);
+  const waypointDraftRef = useRef<{ kind: "waypoint" | "branch-waypoint"; waypointId: string; lon: number; lat: number } | null>(null);
   const windowDragCleanupRef = useRef<(() => void) | null>(null);
   const placementModeRef = useRef<PlacementMode>(placementMode);
+  const activeBranchContextRef = useRef<ActiveBranchContext>(activeBranchContext);
   const onMapPlacementRef = useRef(onMapPlacement);
   const onMoveWaypointRef = useRef(onMoveWaypoint);
+  const onMoveBranchWaypointRef = useRef(onMoveBranchWaypoint);
   const [mapPanOffset, setMapPanOffset] = useState({ x: 0, y: 0 });
   const [draggedWaypoint, setDraggedWaypoint] = useState<{ waypointId: string; lon: number; lat: number } | null>(null);
+  const [draggedBranchWaypoint, setDraggedBranchWaypoint] = useState<{ waypointId: string; lon: number; lat: number } | null>(null);
   const [cesiumReady, setCesiumReady] = useState(false);
   const [cesiumRevision, setCesiumRevision] = useState(0);
   const bounds = mission?.bounds ?? { west: -121.9, south: 37.48, east: -121.74, north: 37.6 };
@@ -88,14 +101,23 @@ export function TacticalCesiumMap({
     );
   }, [activePackage?.waypoints, draggedWaypoint]);
   const routeGeometry = useMemo(() => makeRouteGeometry(displayWaypoints, bounds, terrainSamples), [displayWaypoints, bounds, terrainSamples]);
-  const branchPaths = useMemo(() => branchSvgPaths(activePackage, bounds), [activePackage, bounds]);
+  const displayBranchWaypoints = useMemo(() => {
+    const waypoints = activePackage?.branchWaypoints ?? [];
+    if (!draggedBranchWaypoint) return waypoints;
+    return waypoints.map((waypoint) =>
+      waypoint.id === draggedBranchWaypoint.waypointId ? { ...waypoint, lon: draggedBranchWaypoint.lon, lat: draggedBranchWaypoint.lat } : waypoint,
+    );
+  }, [activePackage?.branchWaypoints, draggedBranchWaypoint]);
+  const branchPaths = useMemo(() => branchSvgPaths(activePackage, displayBranchWaypoints, bounds, terrainSamples), [activePackage, bounds, displayBranchWaypoints, terrainSamples]);
   const mapPanStyle = useMemo(() => ({ transform: `translate3d(${mapPanOffset.x}px, ${mapPanOffset.y}px, 0)` }), [mapPanOffset.x, mapPanOffset.y]);
 
   useEffect(() => {
     placementModeRef.current = placementMode;
+    activeBranchContextRef.current = activeBranchContext;
     onMapPlacementRef.current = onMapPlacement;
     onMoveWaypointRef.current = onMoveWaypoint;
-  }, [onMapPlacement, onMoveWaypoint, placementMode]);
+    onMoveBranchWaypointRef.current = onMoveBranchWaypoint;
+  }, [activeBranchContext, onMapPlacement, onMoveBranchWaypoint, onMoveWaypoint, placementMode]);
 
   useEffect(() => {
     return () => clearWindowDragListeners();
@@ -147,12 +169,17 @@ export function TacticalCesiumMap({
             if (typeof waypointId === "string") onSelectWaypoint(waypointId);
             return;
           }
+          if (kind === "branch-waypoint") {
+            const waypointId = getEntityProperty(entity, "branchWaypointId");
+            if (typeof waypointId === "string") onSelectBranchWaypoint(waypointId);
+            return;
+          }
           if (kind === "decision-zone") {
             const zoneId = getEntityProperty(entity, "zoneId");
             if (typeof zoneId === "string") onSelectZone(zoneId);
             return;
           }
-          if (!placementModeRef.current) return;
+          if (!placementModeRef.current && !activeBranchContextRef.current) return;
           const point = pickGlobeLonLat(viewer, Cesium, movement.position);
           if (!point) return;
           onMapPlacementRef.current(point.lon, point.lat);
@@ -162,12 +189,14 @@ export function TacticalCesiumMap({
           if (placementModeRef.current) return;
           const picked = viewer.scene.pick(movement.position as never);
           const entity = picked?.id;
-          if (getEntityProperty(entity, "plannerKind") !== "waypoint") return;
-          const waypointId = getEntityProperty(entity, "waypointId");
+          const plannerKind = getEntityProperty(entity, "plannerKind");
+          if (plannerKind !== "waypoint" && plannerKind !== "branch-waypoint") return;
+          const waypointId = plannerKind === "branch-waypoint" ? getEntityProperty(entity, "branchWaypointId") : getEntityProperty(entity, "waypointId");
           if (typeof waypointId !== "string") return;
-          const altitudeM = Number(getEntityProperty(entity, "altitudeM") ?? 120);
-          cesiumDragRef.current = { waypointId, altitudeM, draft: null };
-          onSelectWaypoint(waypointId);
+          const altitudeM = Number(getEntityProperty(entity, "altitudeM") ?? DEFAULT_ALTITUDE_M);
+          cesiumDragRef.current = { kind: plannerKind, waypointId, altitudeM, draft: null };
+          if (plannerKind === "branch-waypoint") onSelectBranchWaypoint(waypointId);
+          else onSelectWaypoint(waypointId);
           viewer.scene.screenSpaceCameraController.enableInputs = false;
         }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
 
@@ -177,15 +206,24 @@ export function TacticalCesiumMap({
           if (!point) return;
           const { lon, lat } = point;
           cesiumDragRef.current.draft = { lon, lat };
-          setDraggedWaypoint({ waypointId: cesiumDragRef.current.waypointId, lon, lat });
+          if (cesiumDragRef.current.kind === "branch-waypoint") {
+            setDraggedBranchWaypoint({ waypointId: cesiumDragRef.current.waypointId, lon, lat });
+          } else {
+            setDraggedWaypoint({ waypointId: cesiumDragRef.current.waypointId, lon, lat });
+          }
         }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 
         handler.setInputAction(() => {
           if (cesiumDragRef.current?.draft) {
-            onMoveWaypointRef.current(cesiumDragRef.current.waypointId, cesiumDragRef.current.draft.lon, cesiumDragRef.current.draft.lat);
+            if (cesiumDragRef.current.kind === "branch-waypoint") {
+              onMoveBranchWaypointRef.current(cesiumDragRef.current.waypointId, cesiumDragRef.current.draft.lon, cesiumDragRef.current.draft.lat);
+            } else {
+              onMoveWaypointRef.current(cesiumDragRef.current.waypointId, cesiumDragRef.current.draft.lon, cesiumDragRef.current.draft.lat);
+            }
           }
           cesiumDragRef.current = null;
           setDraggedWaypoint(null);
+          setDraggedBranchWaypoint(null);
           viewer.scene.screenSpaceCameraController.enableInputs = true;
         }, Cesium.ScreenSpaceEventType.LEFT_UP);
 
@@ -225,23 +263,25 @@ export function TacticalCesiumMap({
       activeBranchType,
       activePackage,
       bounds,
+      displayBranchWaypoints,
       displayWaypoints,
+      selectedBranchWaypointId,
       selectedWaypointId,
       selectedZoneId,
       terrainSamples,
       viewer: viewerRef.current,
       packageDataSourceRef,
     });
-  }, [activeBranchType, activePackage, bounds, cesiumReady, cesiumRevision, displayWaypoints, layers, mission, selectedWaypointId, selectedZoneId, terrainSamples]);
+  }, [activeBranchType, activePackage, bounds, cesiumReady, cesiumRevision, displayBranchWaypoints, displayWaypoints, layers, mission, selectedBranchWaypointId, selectedWaypointId, selectedZoneId, terrainSamples]);
 
   function handleMapClick(event: React.MouseEvent<HTMLDivElement>) {
-    if (!placementMode) return;
+    if (!placementMode && !activeBranchContext) return;
     const point = eventToLonLat(event.currentTarget.getBoundingClientRect(), event.clientX, event.clientY, bounds, mapPanOffset, 0);
     onMapPlacement(point.lon, point.lat);
   }
 
   function handleMapMouseDown(event: React.MouseEvent<HTMLElement>) {
-    if (placementMode || event.button !== 0 || isInteractiveTarget(event.target)) return;
+    if (placementMode || activeBranchContext || event.button !== 0 || isInteractiveTarget(event.target)) return;
     mapDragRef.current = {
       startX: event.clientX,
       startY: event.clientY,
@@ -258,9 +298,10 @@ export function TacticalCesiumMap({
   function updateDragFromClient(rect: DOMRect, clientX: number, clientY: number) {
     if (waypointDragRef.current) {
       const point = clientToGroundLonLatFromFlight(rect, clientX, clientY, bounds, mapPanOffset, waypointDragRef.current.altitudeM, terrainSamples);
-      const draft = { waypointId: waypointDragRef.current.waypointId, lon: point.lon, lat: point.lat };
+      const draft = { kind: waypointDragRef.current.kind, waypointId: waypointDragRef.current.waypointId, lon: point.lon, lat: point.lat };
       waypointDraftRef.current = draft;
-      setDraggedWaypoint(draft);
+      if (draft.kind === "branch-waypoint") setDraggedBranchWaypoint(draft);
+      else setDraggedWaypoint(draft);
       return;
     }
 
@@ -274,12 +315,14 @@ export function TacticalCesiumMap({
   function handleMapMouseUp() {
     if (waypointDragRef.current && waypointDraftRef.current) {
       const draft = waypointDraftRef.current;
-      onMoveWaypointRef.current(draft.waypointId, draft.lon, draft.lat);
+      if (draft.kind === "branch-waypoint") onMoveBranchWaypointRef.current(draft.waypointId, draft.lon, draft.lat);
+      else onMoveWaypointRef.current(draft.waypointId, draft.lon, draft.lat);
     }
     mapDragRef.current = null;
     waypointDragRef.current = null;
     waypointDraftRef.current = null;
     setDraggedWaypoint(null);
+    setDraggedBranchWaypoint(null);
     clearWindowDragListeners();
   }
 
@@ -336,8 +379,16 @@ export function TacticalCesiumMap({
           <path key={branch.id} d={branch.path} className={branch.type === activeBranchType ? "branch-path branch-path-active" : "branch-path"} />
         ))}
       </svg>
-      <div className={placementMode ? "map-click-capture map-click-capture-active" : "map-click-capture"} data-testid="map-click-surface" onClick={handleMapClick}>
-        {placementMode ? <span>{placementMode === "decision_zone" ? "Click map to place target zone" : "Click map to place waypoint"}</span> : null}
+      <div className={placementMode || activeBranchContext ? "map-click-capture map-click-capture-active" : "map-click-capture"} data-testid="map-click-surface" onClick={handleMapClick}>
+        {placementMode || activeBranchContext ? (
+          <span>
+            {placementMode === "decision_zone"
+              ? "Click map to place target zone"
+              : placementMode
+                ? "Click map to place waypoint"
+                : `Click map to add ${activeBranchContext?.branchType ?? ""} branch waypoint`}
+          </span>
+        ) : null}
       </div>
       <div className="map-marker-layer" style={mapPanStyle} data-testid="map-marker-layer">
         {(activePackage?.decisionPoints ?? []).flatMap((point) =>
@@ -371,8 +422,8 @@ export function TacticalCesiumMap({
                 event.preventDefault();
                 event.stopPropagation();
                 onSelectWaypoint(waypoint.id);
-                waypointDragRef.current = { waypointId: waypoint.id, altitudeM: waypoint.altitudeM };
-                waypointDraftRef.current = { waypointId: waypoint.id, lon: waypoint.lon, lat: waypoint.lat };
+                waypointDragRef.current = { kind: "waypoint", waypointId: waypoint.id, altitudeM: waypoint.altitudeM };
+                waypointDraftRef.current = { kind: "waypoint", waypointId: waypoint.id, lon: waypoint.lon, lat: waypoint.lat };
               }}
               onClick={(event) => {
                 event.stopPropagation();
@@ -385,6 +436,32 @@ export function TacticalCesiumMap({
                 <WaypointGlyph behavior={behavior} />
               </span>
               <span className="waypoint-seq">{waypoint.sequence}</span>
+            </button>
+          );
+        })}
+        {displayBranchWaypoints.map((waypoint) => {
+          return (
+            <button
+              key={waypoint.id}
+              type="button"
+              className={waypoint.id === selectedBranchWaypointId ? `branch-waypoint-marker branch-waypoint-marker-${waypoint.branchType} branch-waypoint-marker-selected` : `branch-waypoint-marker branch-waypoint-marker-${waypoint.branchType}`}
+              style={{ ...flightPointStyle(waypoint, bounds, terrainSamples), "--marker-color": branchColor(waypoint.branchType) } as CSSProperties}
+              onMouseDown={(event) => {
+                if (event.button !== 0 || placementMode) return;
+                event.preventDefault();
+                event.stopPropagation();
+                onSelectBranchWaypoint(waypoint.id);
+                waypointDragRef.current = { kind: "branch-waypoint", waypointId: waypoint.id, altitudeM: waypoint.altitudeM };
+                waypointDraftRef.current = { kind: "branch-waypoint", waypointId: waypoint.id, lon: waypoint.lon, lat: waypoint.lat };
+              }}
+              onClick={(event) => {
+                event.stopPropagation();
+                onSelectBranchWaypoint(waypoint.id);
+              }}
+              data-testid={`map-branch-waypoint-${waypoint.id}`}
+              aria-label={`Select ${waypoint.name}`}
+            >
+              <span className="branch-waypoint-dot">{waypoint.branchSequence}</span>
             </button>
           );
         })}
@@ -409,9 +486,9 @@ function pointStyle(lon: number, lat: number, bounds: MissionSummary["bounds"]):
   return { left: `${left}%`, top: `${top}%` };
 }
 
-function flightPointStyle(waypoint: WaypointRecord, bounds: MissionSummary["bounds"], terrainSamples: TerrainSample[]): CSSProperties {
+function flightPointStyle(waypoint: Pick<WaypointRecord, "lon" | "lat" | "altitudeM">, bounds: MissionSummary["bounds"], terrainSamples: TerrainSample[]): CSSProperties {
   const ground = svgPoint(waypoint.lon, waypoint.lat, bounds);
-  const flightY = ground.y - heightOffsetMeters(sampleGroundElevationM(waypoint.lon, waypoint.lat, terrainSamples) + (waypoint.altitudeM ?? 120));
+  const flightY = ground.y - heightOffsetMeters(sampleGroundElevationM(waypoint.lon, waypoint.lat, terrainSamples) + (waypoint.altitudeM ?? DEFAULT_ALTITUDE_M));
   return {
     left: `${ground.x / 10}%`,
     top: `${flightY / 10}%`,
@@ -467,8 +544,18 @@ function pointsToPath(points: Array<{ x: number; y: number }>): string {
     .join(" ");
 }
 
-function branchSvgPaths(pkg: LaunchPackageRecord | null, bounds: MissionSummary["bounds"]) {
-  return (pkg?.routeBranches ?? []).map((branch) => {
+function branchSvgPaths(pkg: LaunchPackageRecord | null, branchWaypoints: BranchWaypointRecord[], bounds: MissionSummary["bounds"], terrainSamples: TerrainSample[]) {
+  const authoredGroups = branchGroups(branchWaypoints);
+  const authored = authoredGroups.map((group) => ({
+    id: group.id,
+    type: group.type,
+    path: pointsToPath(sampleRoutePoints(group.waypoints).map((point) => {
+      const ground = svgPoint(point.lon, point.lat, bounds);
+      const elevationM = sampleGroundElevationM(point.lon, point.lat, terrainSamples);
+      return { x: ground.x, y: ground.y - heightOffsetMeters(elevationM + point.altitudeM) };
+    })),
+  }));
+  const seeded = (pkg?.routeBranches ?? []).map((branch) => {
     const coordinates = Array.isArray(branch.geometry?.coordinates) ? (branch.geometry.coordinates as number[][]) : [];
     return {
       id: branch.id,
@@ -481,6 +568,21 @@ function branchSvgPaths(pkg: LaunchPackageRecord | null, bounds: MissionSummary[
         .join(" "),
     };
   });
+  return [...seeded, ...authored].filter((branch) => branch.path);
+}
+
+function branchGroups(branchWaypoints: BranchWaypointRecord[]) {
+  const groups = new Map<string, { id: string; type: BranchType; waypoints: BranchWaypointRecord[] }>();
+  for (const waypoint of branchWaypoints) {
+    const key = `${waypoint.decisionTargetZoneId}:${waypoint.branchType}`;
+    const group = groups.get(key) ?? { id: key, type: waypoint.branchType, waypoints: [] };
+    group.waypoints.push(waypoint);
+    groups.set(key, group);
+  }
+  return [...groups.values()].map((group) => ({
+    ...group,
+    waypoints: group.waypoints.sort((a, b) => a.branchSequence - b.branchSequence),
+  }));
 }
 
 function svgPoint(lon: number, lat: number, bounds: MissionSummary["bounds"]) {
@@ -490,15 +592,15 @@ function svgPoint(lon: number, lat: number, bounds: MissionSummary["bounds"]) {
   };
 }
 
-function sampleRoutePoints(waypoints: WaypointRecord[]) {
+function sampleRoutePoints(waypoints: Array<Pick<WaypointRecord, "id" | "lon" | "lat" | "altitudeM">>) {
   if (waypoints.length <= 1) {
-    return waypoints.map((waypoint) => ({ id: waypoint.id, lon: waypoint.lon, lat: waypoint.lat, altitudeM: waypoint.altitudeM ?? 120, isWaypoint: true }));
+    return waypoints.map((waypoint) => ({ id: waypoint.id, lon: waypoint.lon, lat: waypoint.lat, altitudeM: waypoint.altitudeM ?? DEFAULT_ALTITUDE_M, isWaypoint: true }));
   }
 
   return waypoints.flatMap((waypoint, waypointIndex) => {
     const next = waypoints[waypointIndex + 1];
     if (!next) {
-      return [{ id: waypoint.id, lon: waypoint.lon, lat: waypoint.lat, altitudeM: waypoint.altitudeM ?? 120, isWaypoint: true }];
+      return [{ id: waypoint.id, lon: waypoint.lon, lat: waypoint.lat, altitudeM: waypoint.altitudeM ?? DEFAULT_ALTITUDE_M, isWaypoint: true }];
     }
     const samples = [];
     for (let index = 0; index < 8; index++) {
@@ -507,7 +609,7 @@ function sampleRoutePoints(waypoints: WaypointRecord[]) {
         id: index === 0 ? waypoint.id : `${waypoint.id}-${next.id}-${index}`,
         lon: waypoint.lon + (next.lon - waypoint.lon) * t,
         lat: waypoint.lat + (next.lat - waypoint.lat) * t,
-        altitudeM: (waypoint.altitudeM ?? 120) + ((next.altitudeM ?? 120) - (waypoint.altitudeM ?? 120)) * t,
+        altitudeM: (waypoint.altitudeM ?? DEFAULT_ALTITUDE_M) + ((next.altitudeM ?? DEFAULT_ALTITUDE_M) - (waypoint.altitudeM ?? DEFAULT_ALTITUDE_M)) * t,
         isWaypoint: index === 0,
       });
     }
@@ -548,7 +650,7 @@ function clientToGroundLonLatFromFlight(
   const rawYRatio = (clientY - rect.top - mapPanOffset.y) / rect.height;
   const lon = bounds.west + xRatio * (bounds.east - bounds.west);
   const approximateLat = bounds.north - rawYRatio * (bounds.north - bounds.south);
-  const groundOffset = heightOffsetMeters(sampleGroundElevationM(lon, approximateLat, terrainSamples) + (altitudeM ?? 120));
+  const groundOffset = heightOffsetMeters(sampleGroundElevationM(lon, approximateLat, terrainSamples) + (altitudeM ?? DEFAULT_ALTITUDE_M));
   const yRatio = rawYRatio + groundOffset / 1000;
   return {
     lon,
@@ -703,7 +805,9 @@ function drawCesiumPackageGraphics({
   activeBranchType,
   activePackage,
   bounds,
+  displayBranchWaypoints,
   displayWaypoints,
+  selectedBranchWaypointId,
   selectedWaypointId,
   selectedZoneId,
   terrainSamples,
@@ -714,7 +818,9 @@ function drawCesiumPackageGraphics({
   activeBranchType: string | null;
   activePackage: LaunchPackageRecord | null;
   bounds: MissionSummary["bounds"];
+  displayBranchWaypoints: BranchWaypointRecord[];
   displayWaypoints: WaypointRecord[];
+  selectedBranchWaypointId: string | null;
   selectedWaypointId: string | null;
   selectedZoneId: string | null;
   terrainSamples: TerrainSample[];
@@ -780,6 +886,31 @@ function drawCesiumPackageGraphics({
     });
   }
 
+  for (const branch of branchGroups(displayBranchWaypoints)) {
+    const routeSamples = sampleRoutePoints(branch.waypoints);
+    if (routeSamples.length < 1) continue;
+    const active = branch.type === activeBranchType;
+    if (routeSamples.length > 1) {
+      dataSource.entities.add({
+        id: `branch-waypoint-path-${branch.id}`,
+        polyline: {
+          positions: routeSamples.map((point) =>
+            Cesium.Cartesian3.fromDegrees(
+              point.lon,
+              point.lat,
+              sampleGroundElevationM(point.lon, point.lat, terrainSamples) + point.altitudeM,
+            ),
+          ),
+          width: active ? 5 : 3,
+          material: new Cesium.PolylineDashMaterialProperty({
+            color: Cesium.Color.fromCssColorString(active ? "#6de0d2" : branchColor(branch.type)).withAlpha(active ? 0.92 : 0.72),
+            dashLength: active ? 24 : 18,
+          }),
+        },
+      });
+    }
+  }
+
   for (const decisionPoint of activePackage.decisionPoints) {
     for (const zone of decisionPoint.targetZones) {
       const selected = zone.id === selectedZoneId;
@@ -815,7 +946,7 @@ function drawCesiumPackageGraphics({
   for (const waypoint of displayWaypoints) {
     const behavior = behaviorByType[waypoint.behavior];
     const groundElevationM = sampleGroundElevationM(waypoint.lon, waypoint.lat, terrainSamples);
-    const altitudeM = waypoint.altitudeM ?? 120;
+    const altitudeM = waypoint.altitudeM ?? DEFAULT_ALTITUDE_M;
     const selected = waypoint.id === selectedWaypointId;
 
     dataSource.entities.add({
@@ -857,6 +988,39 @@ function drawCesiumPackageGraphics({
     });
   }
 
+  for (const waypoint of displayBranchWaypoints) {
+    const groundElevationM = sampleGroundElevationM(waypoint.lon, waypoint.lat, terrainSamples);
+    const altitudeM = waypoint.altitudeM ?? DEFAULT_ALTITUDE_M;
+    const selected = waypoint.id === selectedBranchWaypointId;
+    const color = branchColor(waypoint.branchType);
+
+    dataSource.entities.add({
+      id: `branch-waypoint-${waypoint.id}`,
+      position: Cesium.Cartesian3.fromDegrees(waypoint.lon, waypoint.lat, groundElevationM + altitudeM),
+      properties: {
+        plannerKind: "branch-waypoint",
+        branchWaypointId: waypoint.id,
+        altitudeM,
+      },
+      billboard: {
+        image: waypointBillboardSvg(color, `${waypoint.branchSequence}`, selected),
+        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+        scale: selected ? 1.02 : 0.82,
+        disableDepthTestDistance: Number.POSITIVE_INFINITY,
+      },
+      label: {
+        text: waypoint.branchType.toUpperCase(),
+        fillColor: Cesium.Color.fromCssColorString(color),
+        outlineColor: Cesium.Color.BLACK,
+        outlineWidth: 2,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        font: "800 10px Segoe UI, sans-serif",
+        pixelOffset: new Cesium.Cartesian2(0, -34),
+        disableDepthTestDistance: Number.POSITIVE_INFINITY,
+      },
+    });
+  }
+
   viewer.dataSources.add(dataSource);
   viewer.scene.requestRender();
 }
@@ -865,6 +1029,13 @@ function getEntityProperty(entity: any, propertyName: string) {
   if (!entity?.properties) return undefined;
   const values = typeof entity.properties.getValue === "function" ? entity.properties.getValue() : entity.properties;
   return values?.[propertyName];
+}
+
+function branchColor(branchType: BranchType): string {
+  if (branchType === "primary") return "#6de0d2";
+  if (branchType === "alternate") return "#a78bfa";
+  if (branchType === "hold") return "#fb923c";
+  return "#60a5fa";
 }
 
 function waypointBillboardSvg(color: string, shortLabel: string, selected: boolean) {

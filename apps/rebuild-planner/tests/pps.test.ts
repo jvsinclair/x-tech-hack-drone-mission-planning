@@ -15,7 +15,7 @@ const zone: DecisionTargetZoneRecord = {
 describe("PPS launch-package grammar", () => {
   it.each([
     [1, "hold"],
-    [2, "rtb"],
+    [2, "land"],
     [4, "primary"],
     [8, "alternate"],
   ] as const)("maps %i PPS to %s", (observedPps, action) => {

@@ -25,8 +25,8 @@ export function packageFixture(overrides?: Partial<LaunchPackageRecord>): Launch
     description: "",
     status: "draft",
     waypoints: [
-      { id: "wp-launch", packageId: "pkg-1", sequence: 1, behavior: "launch", name: "Launch", objective: "", lon: -121.884, lat: 37.508, altitudeM: 120, dwellSeconds: null },
-      { id: "wp-decision", packageId: "pkg-1", sequence: 2, behavior: "decision", name: "Decision Alpha", objective: "", lon: -121.842, lat: 37.538, altitudeM: 120, dwellSeconds: null },
+      { id: "wp-launch", packageId: "pkg-1", sequence: 1, behavior: "launch", name: "Launch", objective: "", lon: -121.884, lat: 37.508, altitudeM: 20, dwellSeconds: null },
+      { id: "wp-decision", packageId: "pkg-1", sequence: 2, behavior: "decision", name: "Decision Alpha", objective: "", lon: -121.842, lat: 37.538, altitudeM: 20, dwellSeconds: null },
     ],
     decisionPoints: [
       {
@@ -37,6 +37,7 @@ export function packageFixture(overrides?: Partial<LaunchPackageRecord>): Launch
         targetZones: [{ id: "zone-1", decisionPointId: "decision-1", name: "DTZ-1", centerLon: -121.842, centerLat: 37.538, radiusM: 250, allowedPps: [1, 2, 4, 8] }],
       },
     ],
+    branchWaypoints: [],
     routeBranches: [],
     warnings: [],
     ...overrides,

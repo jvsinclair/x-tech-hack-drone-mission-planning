@@ -19,7 +19,8 @@ Implement **canonical map symbology** from `docs/ICONOGRAPHY_AND_CONTROLS_RESOLU
 2. `docs/PROJECT_CONTEXT.md`
 3. `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` — **authoritative** §6 (R1–R7), §7–§8 (behaviors), §12 (implementation notes)
 4. `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
-5. `docs/goals/0002-local-vite-cesium-planner-scaffold.md`
+5. `docs/assets/waypoint-behavior-atlas-stitch-reference.png` — optional visual alignment for waypoint glyph silhouettes (spec remains `ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md`).
+6. `docs/goals/0002-local-vite-cesium-planner-scaffold.md`
 
 ## Scope
 

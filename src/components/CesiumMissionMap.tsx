@@ -5,8 +5,8 @@ Purpose:
 Why This Exists:
 - Goal 0002 requires a 3D route-planning surface centered on the Sunol AOI without Palantir access.
 Primary Inputs/Outputs:
-- Inputs: MissionLayer GeoJSON, enabled layer ids, selection callback.
-- Outputs: Cesium Viewer with styled AOI, route, infrastructure, terrain, cue, and no-go overlays.
+- Inputs: MissionLayer GeoJSON, enabled layer ids, optional VITE_CESIUM_ION_TOKEN, selection callback.
+- Outputs: Cesium Viewer with base imagery/terrain, styled AOI, route, infrastructure, terrain, cue, and no-go overlays.
 Research / Source Links:
 - docs/goals/0002-local-vite-cesium-planner-scaffold.md
 - docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md
@@ -14,7 +14,7 @@ Research / Source Links:
 Validated:
 - provisional: Typechecked and built in Goal 0002; browser rendering should be smoke-tested locally.
 Current Limits / TODO:
-- Full waypoint glyphs, plan/run timeline, and cue previews land in goals 0003, 0005, and 0006.
+- Uses Cesium ion imagery/terrain when VITE_CESIUM_ION_TOKEN is configured; otherwise falls back to OpenStreetMap imagery and ellipsoid terrain.
 Agent Maintenance Rule:
 - If this module changes in any way, or a finding affects its contracts, update this header in the same change.
 */
@@ -27,7 +27,11 @@ import {
   ConstantProperty,
   EllipsoidTerrainProvider,
   GeoJsonDataSource,
+  ImageryLayer,
+  Ion,
+  OpenStreetMapImageryProvider,
   PolylineDashMaterialProperty,
+  Terrain,
   Viewer,
   type Entity,
 } from "cesium";
@@ -40,7 +44,11 @@ interface CesiumMissionMapProps {
   onSelectObject: (selected: SelectedMissionObject | null) => void;
 }
 
-const sunolCameraDestination = Cartesian3.fromDegrees(-121.82, 37.54, 13_500);
+const startCoordinate = {
+  lat: 37.504646,
+  lon: -121.832739,
+};
+const sunolCameraDestination = Cartesian3.fromDegrees(startCoordinate.lon, startCoordinate.lat, 11_500);
 
 export function CesiumMissionMap({ layers, enabledLayerIds, onSelectObject }: CesiumMissionMapProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -49,9 +57,10 @@ export function CesiumMissionMap({ layers, enabledLayerIds, onSelectObject }: Ce
   useEffect(() => {
     if (!containerRef.current || viewerRef.current) return;
 
+    const ionToken = configureIonToken();
     const viewer = new Viewer(containerRef.current, {
       animation: false,
-      baseLayer: false,
+      baseLayer: createBaseLayer(ionToken),
       baseLayerPicker: false,
       fullscreenButton: false,
       geocoder: false,
@@ -61,7 +70,8 @@ export function CesiumMissionMap({ layers, enabledLayerIds, onSelectObject }: Ce
       sceneModePicker: true,
       selectionIndicator: false,
       timeline: false,
-      terrainProvider: new EllipsoidTerrainProvider(),
+      terrain: ionToken ? Terrain.fromWorldTerrain({ requestVertexNormals: true }) : undefined,
+      terrainProvider: ionToken ? undefined : new EllipsoidTerrainProvider(),
       requestRenderMode: true,
       maximumRenderTimeChange: Number.POSITIVE_INFINITY,
     });
@@ -175,4 +185,24 @@ function selectedObjectFromEntity(entity: Entity): SelectedMissionObject {
 
 function color(css: string, alpha = 1): Color {
   return Color.fromCssColorString(css).withAlpha(alpha);
+}
+
+function configureIonToken(): string | undefined {
+  const token = import.meta.env.VITE_CESIUM_ION_TOKEN?.trim();
+  if (!token) return undefined;
+  Ion.defaultAccessToken = token;
+  return token;
+}
+
+function createBaseLayer(ionToken: string | undefined): ImageryLayer {
+  if (ionToken) {
+    return ImageryLayer.fromWorldImagery({});
+  }
+
+  return new ImageryLayer(
+    new OpenStreetMapImageryProvider({
+      url: "https://tile.openstreetmap.org/",
+      credit: "OpenStreetMap contributors",
+    }),
+  );
 }

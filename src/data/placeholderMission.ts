@@ -61,7 +61,7 @@ function placeholderGeojsonFor(layerId: LayerDefinition["id"]): GeoJsonFeatureCo
     case "unitRoute":
       return fc([
         line("synthetic_unit_route_placeholder", [
-          [-121.887, 37.506],
+          [-121.832739, 37.504646],
           [-121.868, 37.518],
           [-121.849, 37.532],
           [-121.829, 37.546],
@@ -70,7 +70,7 @@ function placeholderGeojsonFor(layerId: LayerDefinition["id"]): GeoJsonFeatureCo
       ]);
     case "droneBranches":
       return fc([
-        point("wp_launch", [-121.884, 37.508], { name: "Launch", sequence: 1, action: "launch" }),
+        point("wp_launch", [-121.832739, 37.504646], { name: "Launch", sequence: 1, action: "launch" }),
         point("wp_decision_alpha", [-121.842, 37.538], { name: "Decision Alpha", sequence: 2, action: "decision" }),
         point("wp_scout_high_ground", [-121.819, 37.563], { name: "Scout High Ground", sequence: 3, action: "scout" }),
         line("route_a_close_overwatch", [

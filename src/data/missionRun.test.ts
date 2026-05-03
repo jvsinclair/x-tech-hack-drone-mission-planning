@@ -12,6 +12,14 @@ describe("missionRun", () => {
     expect(plan.lastCompiledAt).toBe("2026-05-03T03:00:00.000Z");
   });
 
+  it("uses the requested launch coordinate in placeholder mission data", () => {
+    const mission = createPlaceholderMissionData();
+    const droneLayer = mission.layers.find((layer) => layer.id === "droneBranches");
+    const launch = droneLayer?.geojson.features.find((feature) => feature.id === "wp_launch");
+
+    expect(launch?.geometry?.coordinates).toEqual([-121.832739, 37.504646]);
+  });
+
   it("creates an immutable run snapshot copy of the plan", () => {
     const plan = createEditablePlanState(createPlaceholderMissionData(), new Date("2026-05-03T03:00:00Z"));
     const snapshot = createRunMissionSnapshot(plan, new Date("2026-05-03T03:01:00Z"));

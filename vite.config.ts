@@ -34,6 +34,9 @@ export default defineConfig({
     CESIUM_BASE_URL: JSON.stringify("/cesium"),
   },
   plugins: [react(), serveStaticAssetsPlugin()],
+  build: {
+    emptyOutDir: false,
+  },
   server: {
     port: 5173,
   },
@@ -50,6 +53,14 @@ export default defineConfig({
 function serveStaticAssetsPlugin(): Plugin {
   return {
     name: "serve-planner-static-assets",
+    buildStart() {
+      fs.rmSync(path.join(repoRoot, "dist"), {
+        recursive: true,
+        force: true,
+        maxRetries: 5,
+        retryDelay: 120,
+      });
+    },
     configureServer(server) {
       server.middlewares.use("/cesium", (request, response, next) => {
         serveFileFromRoot(cesiumRoot, request.url, response, next);

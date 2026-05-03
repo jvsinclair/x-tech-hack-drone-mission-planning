@@ -16,6 +16,16 @@ npm install
 npm run dev
 ```
 
+For Cesium ion world imagery and 3D terrain, set a local token before starting the app:
+
+```bash
+cp .env.example .env
+# edit .env and set VITE_CESIUM_ION_TOKEN
+npm run dev
+```
+
+Without `VITE_CESIUM_ION_TOKEN`, the app uses OpenStreetMap imagery and ellipsoid terrain as a no-key fallback.
+
 Useful checks:
 
 ```bash

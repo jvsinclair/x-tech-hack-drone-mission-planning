@@ -6,16 +6,17 @@ This folder is the durable task queue for Codex CLI. Each goal is a standalone M
 1. Read `AGENTS.md`.
 2. Read `docs/PROJECT_CONTEXT.md`.
 3. Read `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`.
-4. Scan numbered goal files matching `docs/goals/[0-9][0-9][0-9][0-9]-*.md` in filename order.
-5. Pick the first goal with `status: "todo"`.
-6. Set `status: "in_progress"` and `started_at`.
-7. Implement only that goal.
-8. Run the goal's verification commands.
-9. If verification passes, commit and update the same goal file with:
-   - `status: "done"`
-   - `completed_at`
-   - `commit_sha`
-10. If blocked, set `status: "blocked"` and add blocker notes in the goal body.
+4. Before implementing **map UI, waypoints, routes, or cues**, read `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` (operator planning and symbology contract).
+5. Scan numbered goal files matching `docs/goals/[0-9][0-9][0-9][0-9]-*.md` in filename order.
+6. Pick the first goal with `status: "todo"`.
+7. Set `status: "in_progress"` and `started_at`.
+8. Implement only that goal.
+9. Run the goal's verification commands.
+10. If verification passes, commit and update the same goal file with:
+    - `status: "done"`
+    - `completed_at`
+    - `commit_sha`
+11. If blocked, set `status: "blocked"` and add blocker notes in the goal body.
 
 ## Status Values
 - `todo`: ready to implement.
@@ -37,6 +38,7 @@ This folder is the durable task queue for Codex CLI. Each goal is a standalone M
 3. `0003-plan-mode-run-mission-mode.md`
 4. `0004-mgrs-latlon-coordinate-display.md`
 5. `0005-pps-cue-zones-and-route-preview.md`
+6. `0006-isr-map-symbology-waypoint-glyphs-and-legend.md`
 
 ## Creating New Goals
 Use `GOAL_TEMPLATE.md`, assign the next zero-padded numeric ID, and keep the goal small enough to finish in one focused Codex CLI run. `GOAL_TEMPLATE.md` is not an executable goal and must not be selected by Codex CLI.

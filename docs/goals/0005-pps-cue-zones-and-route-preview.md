@@ -16,9 +16,10 @@ Add simulated PEQ-15/PPS cue zones and command-preview behavior for route branch
 1. `AGENTS.md`
 2. `docs/PROJECT_CONTEXT.md`
 3. `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
-4. `docs/research/pps_drone_command_mapping_plan.md`
-5. `docs/goals/0003-plan-mode-run-mission-mode.md`
-6. `docs/goals/0004-mgrs-latlon-coordinate-display.md`
+4. `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` — **R7** preview vs commit; §10 PPS table; reuse symbology tokens from goal `0006` when available.
+5. `docs/research/pps_drone_command_mapping_plan.md`
+6. `docs/goals/0003-plan-mode-run-mission-mode.md`
+7. `docs/goals/0004-mgrs-latlon-coordinate-display.md`
 
 ## Scope
 Do:
@@ -47,6 +48,7 @@ Do not:
 - Route A and Route B are preplanned branches attached to a waypoint or route segment.
 - All command previews require human confirmation before advancing state.
 - Unknown, no-pulse, or ambiguous cue input must not advance state; log a warning or ignored event.
+- Branch and cue **preview** visuals must follow **R7** (provisional styling until confirm) and share color/tokens with `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` / goal `0006` symbology module.
 - Decision panel must show:
   - map zone
   - PPS value

@@ -16,7 +16,8 @@ Scaffold a fast local web app for the ISR drone mission planner using Vite, Reac
 1. `AGENTS.md`
 2. `docs/PROJECT_CONTEXT.md`
 3. `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
-4. `docs/goals/0001-palantir-offline-upload-bundle.md`
+4. `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` — layer/chroma contract (§6–§7); full R1–R7 + glyphs land in goal `0006` if not in this change set.
+5. `docs/goals/0001-palantir-offline-upload-bundle.md`
 
 ## Scope
 Do:
@@ -58,6 +59,7 @@ Do not:
   - no-go zones
 - If generated bundle files are missing, show a non-blocking "bundle not generated yet" state and keep the map usable.
 - Keep internal geometry as WGS84 GeoJSON.
+- Where demo routes or polylines exist, prefer styling consistent with `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` §6 **R1/R2** (dotted vs solid yellow route); detailed legend and waypoint glyph set are implemented in goal `0006`.
 
 ## Verification
 Run:

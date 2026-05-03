@@ -1,9 +1,9 @@
 ---
 goal_id: "0007"
 title: "SIDC 2525D Squad Land Units SVG Picker And Map Rendering"
-status: "todo"
+status: "in_progress"
 created_at: "2026-05-03T18:00:00Z"
-started_at: null
+started_at: "2026-05-03T20:00:00Z"
 completed_at: null
 owner: "codex-cli"
 commit_sha: null

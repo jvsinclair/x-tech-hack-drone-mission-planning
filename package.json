@@ -1,0 +1,16 @@
+{
+  "name": "x-tech-hack-drone-mission-planning",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:icons": "node scripts/generate-sidc-unit-svgs.mjs",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "milsymbol": "^2.2.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.3"
+  }
+}

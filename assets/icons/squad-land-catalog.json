@@ -1,0 +1,82 @@
+{
+  "schema": "squad-land-icons",
+  "sidcVersion": "2525D",
+  "generator": "milsymbol",
+  "notes": "Infantry uses entity code 121100; motorized distinction uses 121303 (reconnaissance + motorized) — numeric 121104 did not validate in milsymbol for this builder.",
+  "entries": [
+    {
+      "id": "land-infantry-friendly",
+      "sidc2525d": "100310000012110000000000000000",
+      "label": "Land unit — infantry (Friendly)",
+      "tags": [
+        "land",
+        "squad",
+        "infantry",
+        "friendly"
+      ],
+      "filename": "land-infantry-friendly.svg"
+    },
+    {
+      "id": "land-infantry-hostile",
+      "sidc2525d": "100610000012110000000000000000",
+      "label": "Land unit — infantry (Hostile)",
+      "tags": [
+        "land",
+        "squad",
+        "infantry",
+        "hostile"
+      ],
+      "filename": "land-infantry-hostile.svg"
+    },
+    {
+      "id": "land-infantry-neutral",
+      "sidc2525d": "100410000012110000000000000000",
+      "label": "Land unit — infantry (Neutral)",
+      "tags": [
+        "land",
+        "squad",
+        "infantry",
+        "neutral"
+      ],
+      "filename": "land-infantry-neutral.svg"
+    },
+    {
+      "id": "land-infantry-unknown",
+      "sidc2525d": "100710000012110000000000000000",
+      "label": "Land unit — infantry (Unknown)",
+      "tags": [
+        "land",
+        "squad",
+        "infantry",
+        "unknown"
+      ],
+      "filename": "land-infantry-unknown.svg"
+    },
+    {
+      "id": "land-motorized-recon-friendly",
+      "sidc2525d": "100310000012130300000000000000",
+      "label": "Land unit — reconnaissance / motorized (Friendly)",
+      "tags": [
+        "land",
+        "squad",
+        "motorized",
+        "reconnaissance",
+        "friendly"
+      ],
+      "filename": "land-motorized-recon-friendly.svg"
+    },
+    {
+      "id": "land-motorized-recon-hostile",
+      "sidc2525d": "100610000012130300000000000000",
+      "label": "Land unit — reconnaissance / motorized (Hostile)",
+      "tags": [
+        "land",
+        "squad",
+        "motorized",
+        "reconnaissance",
+        "hostile"
+      ],
+      "filename": "land-motorized-recon-hostile.svg"
+    }
+  ]
+}

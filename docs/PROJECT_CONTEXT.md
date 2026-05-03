@@ -43,7 +43,7 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `todo`: review artifact and registry loader modules
 
 ## What Is Validated Enough To Trust
-- `validated`: repo is currently a research-first scaffold with no application source code.
+- `validated`: repo is primarily a research-first scaffold; **symbology** (`src/symbology/`, `assets/icons/`) exists for Goal **0007** ahead of the full Vite/Cesium app.
 - `validated`: project domain is Problem Statement 3, Mission Command and Control, based on user-provided hackathon context on 2026-05-02.
 - `validated`: working product direction is drone mission planning, based on user clarification on 2026-05-02.
 - `validated`: working scenario direction is a simple maneuver to secure an Army unit with drone coverage, based on user clarification on 2026-05-02.
@@ -84,10 +84,11 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 | **Demo guardrails, waypoint mapper, judge path, Palantir posture** | `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md` | MVP promise; **resolved Plan/Run decisions** (*Decisions* table); remaining **open questions**; **workflow-first** principle (demo derivative). |
 | **Visual contract: route vs scan vs camera, R1–R7, behaviors, PPS table** | `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` | Single UX/engineering handoff for map symbology and preview-vs-commit (**R7**). |
 | **Topology vs events vs runtime (“recompile” on edit)** | `docs/STATE_DECISION_GRAPH.md` | Planning draft; align with roundtable before freezing. |
-| **Codex implementation queue (ordered goals)** | `docs/goals/README.md` | Queue rules; goals `0001`–`0006` are the durable task list. |
+| **Codex implementation queue (ordered goals)** | `docs/goals/README.md` | Queue rules; goals `0001`–`0007` are the durable task list. |
 | **Plan Mode + Run Mission Mode + from-scratch authoring + mode-roundtable prompts** | `docs/goals/0003-plan-mode-run-mission-mode.md` | Authoritative **implementation** spec for modes; **Roundtable Questions** subsection is copied/summarized in roundtable doc for one-stop review. |
 | **PPS cue zones, branch preview UI, demo PPS mapping** | `docs/goals/0005-pps-cue-zones-and-route-preview.md` | **Runtime** cueing over **preplanned** Route A/B — not mission authoring from scratch. |
 | **Waypoint glyphs, legend, ISR map symbology in app** | `docs/goals/0006-isr-map-symbology-waypoint-glyphs-and-legend.md` | Implements iconography §6–§8 in code (often after `0002`/`0003`). |
+| **NATO 2525D land-unit SIDC, SVG icons, tactical units** | `assets/icons/squad-land-catalog.json`, `src/symbology/sidcSymbols.ts` | Goal `docs/goals/0007-sidc-2525d-squad-land-units-svg-picker.md`; icons via **milsymbol** (`npm run generate:icons`). |
 | **App scaffold, layers, toggles** | `docs/goals/0002-local-vite-cesium-planner-scaffold.md` | Local Vite + Cesium baseline. |
 
 If a teammate asks **“where did we write that down?”** — start here, then open the linked file.

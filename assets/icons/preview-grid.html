@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Squad land unit icons (2525D SVG preview)</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 1rem;
+        background: #1a1a1a;
+        color: #e8e8e8;
+      }
+      h1 {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      figure {
+        margin: 0;
+        padding: 0.75rem;
+        background: #2a2a2a;
+        border-radius: 8px;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      figcaption {
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        line-height: 1.35;
+      }
+      code {
+        font-size: 0.65rem;
+        word-break: break-all;
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>MIL-STD-2525D — curated squad land icons (offline SVG)</h1>
+    <p style="font-size: 0.8rem; opacity: 0.8">
+      Open this file from disk or serve the repo root. Catalog: <code>squad-land-catalog.json</code>
+    </p>
+    <div class="grid" id="root"></div>
+    <script type="module">
+      const res = await fetch(new URL("./squad-land-catalog.json", import.meta.url));
+      const data = await res.json();
+      const root = document.getElementById("root");
+      for (const e of data.entries) {
+        const fig = document.createElement("figure");
+        const img = document.createElement("img");
+        img.src = new URL("./" + e.filename, import.meta.url).href;
+        img.alt = e.label;
+        const cap = document.createElement("figcaption");
+        cap.innerHTML = `<div>${e.label}</div><code>${e.sidc2525d}</code>`;
+        fig.append(img, cap);
+        root.append(fig);
+      }
+    </script>
+  </body>
+</html>

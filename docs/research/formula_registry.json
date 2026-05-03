@@ -38,8 +38,8 @@
         "Autonomous targeting or engagement.",
         "Operational drone command without human-approved safety gates."
       ],
-      "notes": "Pulse-rate mapping is not authentication and can be spoofed or misread. Treat cue observations as intent hints that must be checked against expected sector, time window, state-machine transition, and route safety constraints.",
-      "status": "active"
+      "notes": "Superseded for the rebuild planner by demo_launch_package_pps_branch_mapping_v2. Retained as historical context for earlier Vite route-preview work. Pulse-rate mapping is not authentication and can be spoofed or misread.",
+      "status": "deprecated"
     },
     {
       "id": "demo_optical_cue_pps_command_mapping_v1",
@@ -79,8 +79,8 @@
         "Autonomous targeting or engagement.",
         "Operational drone command without human-approved safety gates."
       ],
-      "notes": "Use this as the preferred v1 command grammar for the hackathon demo. The cue is an intent hint, not proof of friendly identity. All non-RTB commands should be previewed before state-machine advancement; RTB may be visually prioritized but should still be logged and explainable.",
-      "status": "active"
+      "notes": "Superseded for the rebuild planner by demo_launch_package_pps_branch_mapping_v2. Retained as historical context for earlier preview-before-confirmation work. The cue is an intent hint, not proof of friendly identity.",
+      "status": "deprecated"
     },
     {
       "id": "demo_launch_package_pps_branch_mapping_v2",

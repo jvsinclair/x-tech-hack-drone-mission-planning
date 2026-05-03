@@ -1,42 +1,43 @@
 # Research Note: PPS Drone Command Mapping Plan
 
 ## Purpose
-Define the provisional demo grammar for mapping simulated PEQ-15-style pulse observations to drone mission-planning commands.
+Define the demo grammar for mapping simulated PPS observations to launch-package simulation commands.
 
 ## Status
 - Validation status: `provisional`
-- Last reviewed: `2026-05-02`
+- Last reviewed: `2026-05-03`
 - Owner or agent: `Codex`
 
 ## Sources
 - `user_clarification_pps_drone_commands_2026_05_02`: User confirmed that PPS observations should map to drone commands.
-- `user_clarification_pps_route_mapping_2026_05_02`: User proposed 2 PPS for Route A, 4 PPS for Route B, and 8 PPS for RTB.
+- `docs/PALANTIR_REBUILD_MASTER_PRD.md`: Focused rebuild PRD establishes active Decision Target Zone validation and the current PPS branch mapping.
 - `atpial_public_manual_ir_pulse_rates`: Public manual evidence for fixed IR illuminator pulse-rate options.
-- `demo_optical_cue_pps_command_mapping_v1`: Project rule in `docs/research/formula_registry.json`.
+- `demo_launch_package_pps_branch_mapping_v2`: Current project rule in `docs/research/formula_registry.json`.
+- `demo_optical_cue_pps_command_mapping_v1`: Deprecated historical mapping retained for earlier route-preview work.
 
 ## Command Grammar
-| Observed cue | Demo command | State-machine behavior | Confirmation policy |
+| Observed cue | Demo command | State-machine behavior | Runtime policy |
 | --- | --- | --- | --- |
-| 1 PPS | Hold / loiter | Preview shift to current preplanned hold pattern or overwatch orbit. | Confirm before advancing. |
-| 2 PPS | Route A | Preview Route A branch from the current decision point. | Confirm before advancing. |
-| 4 PPS | Route B | Preview Route B branch from the current decision point. | Confirm before advancing. |
-| 8 PPS | Return to base | Preview RTB / recover branch and visually prioritize it. | Confirm or require explicit operator acknowledgement, depending on PRD safety posture. |
-| Continuous / no pulse / unknown | No command | Reject or clear preview. | Log as ignored or route to review if ambiguous. |
+| 1 PPS | Hold / loiter | Select the attached hold/loiter action from the active decision point. | Apply in Launch Package Simulation after Decision Target Zone guards pass; write audit log. |
+| 2 PPS | Return to base | Select the attached RTB / recover branch from the active decision point. | Apply after guards pass; write audit log. |
+| 4 PPS | Primary route | Select the attached primary branch from the active decision point. | Apply after guards pass; write audit log. |
+| 8 PPS | Alternate route | Select the attached alternate branch from the active decision point. | Apply after guards pass; write audit log. |
+| Continuous / no pulse / unknown | No command | Reject or clear preview. | Log as ignored or rejected with reason. |
 
 ## Validation Gates
-- Cue must be observed in the expected sector or map region.
-- Cue must arrive inside the expected time window for the current mission state.
-- The mapped command must be allowed from the current state-machine node.
+- Simulation must be paused at an active decision point.
+- A Decision Target Zone attached to that decision point must be selected or aimed at.
+- The simulated aim point must be inside the selected/active target zone.
+- The mapped command must be allowed from the current state-machine node and allowed by the target zone.
 - The selected route or state transition must pass no-go, safety, and route-validity checks.
 - Cue confidence, source, timestamp, and rejection reason must be recorded.
-- The system should display the cue as an intent hint, not as proof of friendly identity.
+- The system should display the cue as a simulated input, not as proof of friendly identity.
 
 ## Demo UX
-- Show the detected PPS value and mapped command in the mission timeline.
+- Show the detected PPS value and mapped command in the simulation panel and audit log.
 - Highlight the affected route, hold pattern, or RTB path on the map.
 - Explain why the command is allowed or blocked.
-- Require a simple human confirmation before advancing the state machine for Route A, Route B, or Hold.
-- For RTB, make the recommended action prominent and logged even if final confirmation is still required.
+- In Launch Package Simulation, valid PPS events apply immediately after guards pass; invalid events never change route state.
 
 ## Limits
 - This is simulation and fixture-backed demo logic only.
@@ -44,6 +45,5 @@ Define the provisional demo grammar for mapping simulated PEQ-15-style pulse obs
 - The mapping should stay inside ISR/recon, route planning, overwatch, hold/loiter, and RTB workflows.
 
 ## Follow-Up
-1. Confirm whether RTB should require confirmation or immediately advance after preview.
-2. Decide whether continuous illumination should remain ignored or act as a clear/cancel command.
-3. Implement the interpreter as a pure function first, then wire it into the UI/state-machine layer.
+1. Decide whether continuous illumination should remain ignored or act as a clear/cancel command.
+2. Keep the interpreter pure and covered by tests before wiring it into UI/state-machine changes.

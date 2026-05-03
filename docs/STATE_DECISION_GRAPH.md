@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Describe how **mission topology** (waypoints, segments, Route A/B branches), **state nodes**, **events**, and **scanning parameters** relate for the hackathon ISR planner. The flight path is where the machine runs; the graph defines **what can happen next** when something fires—not a static outline only.
+Describe how **mission topology** (waypoints, segments, Primary/Alternate branches), **state nodes**, **events**, and **scanning parameters** relate for the hackathon ISR planner. The flight path is where the machine runs; the graph defines **what can happen next** when something fires—not a static outline only.
 
 ## Status
 
@@ -16,7 +16,7 @@ Describe how **mission topology** (waypoints, segments, Route A/B branches), **s
 
 - V1 stays ISR/recon route planning, waypoint configuration, overwatch, cue interpretation, route preview, hold, landing/recovery, RTB per roundtable guardrails.
 - Simulated cues (e.g. PPS) are intent hints for command preview, not authenticated command protocol.
-- Route A and Route B are **alternate preplanned branches** attached to a waypoint or segment, not global magic commands.
+- Primary and Alternate are **preplanned branches** attached to a waypoint or segment, not global magic commands. Older Route A/B language is a legacy alias only.
 
 ---
 
@@ -24,7 +24,7 @@ Describe how **mission topology** (waypoints, segments, Route A/B branches), **s
 
 | Layer | What it is | Changes when… |
 | --- | --- | --- |
-| **Topology** | Ordered waypoints + segments (+ optional branch subgraphs) | Operator moves points, adds segments, attaches Route A/B |
+| **Topology** | Ordered waypoints + segments (+ optional branch subgraphs) | Operator moves points, adds segments, attaches Primary/Alternate/Hold/RTB options |
 | **State nodes** | Each waypoint and each segment with custom logic maps to one or more **states** in the operator-facing outline | Same geometry; mode, triggers, or scan bundle differ |
 | **Runtime** | Current state + pending decision + clocks | Sim/events advance the machine; plan edits may **recompile** outline, decision tree, and timeline |
 
@@ -56,7 +56,7 @@ Group events so wiring stays maintainable:
 **Motion / segment**
 
 - Segment start; progress along corridor; inbound to waypoint.
-- Obstacle or corridor violation (simulated) → obstacle subtree (hold, reroute via A/B, RTB).
+- Obstacle or corridor violation (simulated) → obstacle subtree (hold, reroute via Primary/Alternate, RTB).
 
 **Waypoint arrival**
 
@@ -68,11 +68,11 @@ Group events so wiring stays maintainable:
 
 **Operator**
 
-- Confirm preview; choose Route A vs B; override hold; acknowledge RTB.
+- Confirm plan preview; choose Primary vs Alternate; override hold; acknowledge RTB.
 
 **Simulated cue (PPS)**
 
-- Mapped pulses preview hold, Route A, Route B, RTB per project grammar; transition after guards and optional confirmation. See `docs/research/pps_drone_command_mapping_plan.md`.
+- Mapped pulses use the canonical Launch Package Simulation grammar: `1 PPS` hold, `2 PPS` RTB, `4 PPS` Primary, `8 PPS` Alternate. Valid events apply the simulated branch/action immediately after guards; invalid events log a rejection. See `docs/research/pps_drone_command_mapping_plan.md`.
 
 **Timers / thresholds**
 
@@ -92,10 +92,10 @@ Each **edge** in the graph should record: **triggering events**, **disallowed ev
 
 - **Entry** — which predecessor states or segments can enter (transit vs hold vs scan).
 - **Inputs** — which event classes are **armed** at this node (e.g. demo: PPS + manual confirm only).
-- **Outgoing** — Route A, Route B, continue route, extend surveillance, RTB, abort; each with a preview target subgraph.
+- **Outgoing** — Primary, Alternate, continue route, extend surveillance, RTB, abort; each with a preview target subgraph.
 - **Coupling** — rules such as “if unknown observation open, disable auto-continue.”
 
-Route A and Route B attach to a **specific decision point** (waypoint or segment), consistent with the waypoint-queue model in `ROUNDTABLE_DEMO_REQUIREMENTS.md`.
+Primary and Alternate branches attach to a **specific decision point** (waypoint or segment), consistent with the waypoint-queue model in `ROUNDTABLE_DEMO_REQUIREMENTS.md`.
 
 ---
 
@@ -119,8 +119,8 @@ flowchart LR
   subgraph topology["Mission topology"]
     WP[Waypoints]
     SEG[Segments]
-    RA[Route A subgraph]
-    RB[Route B subgraph]
+    PR[Primary branch subgraph]
+    ALT[Alternate branch subgraph]
   end
 
   subgraph runtime["Runtime layer"]
@@ -130,8 +130,8 @@ flowchart LR
   end
 
   WP --> SEG
-  SEG --> RA
-  SEG --> RB
+  SEG --> PR
+  SEG --> ALT
   topology -->|"compile"| CUR
   EVT -->|"guard + action"| CUR
   CUR --> DEC

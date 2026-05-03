@@ -15,10 +15,10 @@ These are **different layers** of the product; both appear in the MVP, but they 
 
 | Layer | Question it answers | Primary docs |
 | --- | --- | --- |
-| **Mission authoring (Plan Mode)** | Where does the drone go, what behaviors attach at each step, where can the plan **branch**, and what are Route A / Route B **as designed**? | This file (Waypoint Mapper, state machine), **`docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md`** §5 / §8, **`docs/STATE_DECISION_GRAPH.md`**, goal **`0003`** |
-| **Simulated cueing (Run / rehearsal)** | When a **simulated** PPS (or UI equivalent) fires, which **preplanned** option do we **preview** (hold, A, B, RTB) and when does the operator **commit**? | **`docs/goals/0005-pps-cue-zones-and-route-preview.md`**, iconography §10, *Cue And Command Preview* below |
+| **Mission authoring (Plan Mode)** | Where does the drone go, what behaviors attach at each step, where can the plan **branch**, and what are Primary / Alternate **as designed**? | This file (Waypoint Mapper, state machine), **`docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md`** §5 / §8, **`docs/STATE_DECISION_GRAPH.md`**, goal **`0003`** |
+| **Simulated cueing (Run / rehearsal)** | When a **simulated** PPS (or UI equivalent) fires, which **preplanned** option is selected (hold, RTB, primary, alternate), and why was it accepted or rejected? | **`docs/goals/0005-pps-cue-zones-and-route-preview.md`**, iconography §10, *Cue And Command Preview* below |
 
-**Clarified rule:** PPS and simulated optical cues are **intent hints** for **command preview** — not mission design tools, not IFF, not an operational command protocol. They **select among** branch/hold/RTB options that the plan already defines. A **one-minute recording** may use a **preloaded** mission and fast-forward (same app); **full interactive** use (author, edit, recompute) remains the **primary** acceptance path—see *Decisions* and *Interactive Judge Path*.
+**Clarified rule:** PPS and simulated optical cues are **simulation inputs** for preplanned branch/action selection — not mission design tools, not IFF, not an operational command protocol. They **select among** branch/hold/RTB options that the plan already defines after active Decision Target Zone validation. A **one-minute recording** may use a **preloaded** mission and fast-forward (same app); **full interactive** use (author, edit, recompute) remains the **primary** acceptance path—see *Decisions* and *Interactive Judge Path*.
 
 ---
 
@@ -32,7 +32,7 @@ Use this table when scoping work or explaining the repo to judges. Full queue or
 | **0002** | Local Vite Cesium planner scaffold | App shell, map, layers, toggles |
 | **0003** | Plan Mode and Run Mission Mode | Modes, **from-scratch + fixture** authoring, queue, timeline shell, snapshot + logging hooks, **preview** data contract for later goals |
 | **0004** | MGRS / LatLon display | Coordinate readout rules |
-| **0005** | PPS cue zones and route preview | Cue **zones**, **simulated** PPS mapping, branch **preview** in run — **not** authoring branches from cues |
+| **0005** | PPS Decision Target Zones and route preview | Decision Target **Zones**, **simulated** PPS mapping, branch/action selection in Run — **not** authoring branches from cues |
 | **0006** | ISR map symbology, glyphs, legend | In-app implementation of iconography **R6–R8** and legend |
 | **0007** | SIDC 2525D squad land-unit icons | Unit symbology catalog, SVG generation, and tactical unit helpers |
 | **0008** | Terrain-aware drone route altitude | `120 m AGL` default, AGL/MSL route profiles, degraded-terrain warnings, and elevated Cesium 3D route review |
@@ -112,7 +112,7 @@ Use this table when scoping work or explaining the repo to judges. Full queue or
   - decision point
   - RTB
   - abort/emergency
-- Route A and Route B should be modeled as alternate preplanned route branches attached to a waypoint or route segment. They are not magic global commands.
+- Primary and Alternate should be modeled as alternate preplanned route branches attached to a waypoint or route segment. Legacy "Route A/B" labels may appear only as aliases in old fixtures or historical docs; operator-facing rebuild copy should say Primary / Alternate.
 
 ## State Machine And Decision Model
 - The waypoint queue is the operator-facing state-machine outline.
@@ -167,13 +167,14 @@ Use this table when scoping work or explaining the repo to judges. Full queue or
 - The UI should distinguish source-backed constants from provisional or user-configured tolerances.
 
 ## Cue And Command Preview
-- UI clicks and simulated PPS/IR cues should feed the same command-preview function.
-- Current provisional command mapping:
-  - `1 PPS`: hold/loiter preview
-  - `2 PPS`: Route A preview
-  - `4 PPS`: Route B preview
-  - `8 PPS`: RTB preview
-- RTB should require confirmation or explicit acknowledgement in the product (and in any recorded walkthrough).
+- UI clicks and simulated PPS/IR cues should feed the same decision validation path.
+- Canonical Launch Package Simulation command mapping:
+  - `1 PPS`: hold/loiter
+  - `2 PPS`: RTB
+  - `4 PPS`: Primary route
+  - `8 PPS`: Alternate route
+- **Flash code shorthand** (simulated IR / simple labeling): **`a`** → primary branch intent; **`b`** → alternate branch intent — same active Decision Point and Decision Target Zone validation path; canonical wording in `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` §10.
+- In Launch Package Simulation, a valid PPS event applies the simulated branch/action immediately and writes an audit log. Invalid, outside-zone, stale, or unsupported cues must not change route state and must log a rejection reason.
 - Unknown, no-pulse, or ambiguous cue behavior still needs final product language. Candidate behavior is to reject automatic transition, clear or leave the current preview unchanged, and log a warning for review.
 
 ## One-Minute Video Path (Example Script — Derivative)
@@ -186,18 +187,17 @@ Use this table when scoping work or explaining the repo to judges. Full queue or
 4. Fast-forward to a route decision.
 5. Show target-identification or unknown-observation review on the route.
 6. Simulate `4 PPS`.
-7. Preview Route B as a preplanned alternate route branch.
-8. Show map zone, rationale, warnings, and confirmation.
-9. Confirm.
-10. Animate drone scout-ahead behavior.
-11. Log state transition and show the updated outline or partner layer (e.g. Palantir) if available.
+7. Select the Primary route as a preplanned branch.
+8. Show map zone, rationale, warnings, and audit entry.
+9. Animate drone scout-ahead behavior.
+10. Log state transition and show the updated outline or partner layer (e.g. Palantir) if available.
 
 ## Interactive Judge Path
 - A judge should be able to change live:
   - move a waypoint
   - add an obstacle/no-go zone
   - trigger PPS
-  - pick Route A or Route B
+  - pick Primary or Alternate
   - add or reveal an unknown observation
   - modify a previous waypoint's behavior
 - After a live edit, the app should recompute:

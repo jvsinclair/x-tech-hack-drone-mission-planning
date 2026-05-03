@@ -46,19 +46,17 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `src/data/ppsCuePreview.ts`: Pure simulated PPS cue interpreter for preview-only Route A/B, hold, and RTB commands.
 - `src/data/missionGeojson.ts`: Provider-normalization helpers for static and Foundry GeoJSON/provenance fields.
 - `src/data/missionTypes.ts`: Minimal mission layer, provider, and GeoJSON-facing contracts.
+- `src/symbology/` and `assets/icons/`: Goal 0006/0007 symbology modules, generated SVG assets, and MIL-STD-2525D land-unit icon tooling.
 - `todo`: full mission plan, drone asset, optical cue, waypoint, route constraint, and observation schemas
 - `todo`: ruleset-backed mission state machine and decision tree module
 - `todo`: feed and geospatial context normalization module
 - `todo`: entity/event/location extraction, optical cue interpretation, and route constraint correlation module
 - `todo`: validator pipeline for provenance, cue confidence, route safety, and workflow readiness
-- `todo`: terrain-aware drone route altitude profile module and Cesium elevated route review wiring
-- `provisional`: drone mission planning dashboard or operational-picture interface scaffold exists in `src/`.
+- `todo`: drone mission planning dashboard or operational-picture interface
 - `todo`: review artifact and registry loader modules
 
 ## What Is Validated Enough To Trust
-- `provisional`: repo now includes a runnable Vite + React + TypeScript + Cesium planner scaffold for Goal 0002.
-- `provisional`: Plan Mission and Run Mission modes exist as an app-side rehearsal shell with named timeline jumps and run logs.
-- `validated`: NATO 2525D land-unit symbology (`src/symbology/`, `assets/icons/`) exists for Goal 0007.
+- `validated`: repo is primarily a research-first scaffold; **symbology** (`src/symbology/`, `assets/icons/`) exists for Goal **0007** ahead of the full Vite/Cesium app.
 - `validated`: project domain is Problem Statement 3, Mission Command and Control, based on user-provided hackathon context on 2026-05-02.
 - `validated`: working product direction is drone mission planning, based on user clarification on 2026-05-02.
 - `validated`: working scenario direction is a simple maneuver to secure an Army unit with drone coverage, based on user clarification on 2026-05-02.
@@ -80,10 +78,7 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `provisional`: PPS route-selection mapping is a simulation rule, not authenticated friendly identification or an operational command protocol.
 - `provisional`: `docs/StatePlanningForFlightPath.md` includes FPV/kinetic examples; implementation should narrow to ISR, route planning, cue interpretation, overwatch, RTB, and human-reviewed decisions unless the PRD explicitly defines safer non-kinetic scope.
 - `provisional`: candidate partner resources and OSINT sources are mapped in `docs/research/problem_statement_3_resource_map.md`, but account access and dataset/API availability are not yet verified.
-- `provisional`: the goal-0001 Palantir upload bundle is generated for manual import, but Palantir account import behavior is not yet validated.
-- `provisional`: Foundry-hosted OSDK data access is represented by an adapter seam, not live Palantir calls.
-- `provisional`: terrain-aware route altitude planning is specified in goal `0008` and `demo_drone_route_default_altitude_agl_v1`, but the code path and 3D elevated rendering are still todo.
-- `todo`: full mission state-machine execution, PPS cue preview, writeback actions, and generated Goal 0001 artifacts still need completion.
+- `todo`: no runnable app, fixtures, tests, generated artifacts, or public workflow actions exist yet.
 
 ## Current Active Blockers
 - Foundry Developer Console / OSDK application setup is still optional for direct object queries; the current app uses published read-only Functions REST when a bearer token is supplied.
@@ -106,12 +101,11 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 | **Demo guardrails, waypoint mapper, judge path, Palantir posture** | `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md` | MVP promise; **resolved Plan/Run decisions** (*Decisions* table); remaining **open questions**; **workflow-first** principle (demo derivative). |
 | **Visual contract: route vs scan vs camera, R1–R7, behaviors, PPS table** | `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` | Single UX/engineering handoff for map symbology and preview-vs-commit (**R7**). |
 | **Topology vs events vs runtime (“recompile” on edit)** | `docs/STATE_DECISION_GRAPH.md` | Planning draft; align with roundtable before freezing. |
-| **Codex implementation queue (ordered goals)** | `docs/goals/README.md` | Queue rules; goals `0001`–`0008` are the durable task list. |
+| **Codex implementation queue (ordered goals)** | `docs/goals/README.md` | Queue rules; goals `0001`–`0007` are the durable task list. |
 | **Plan Mode + Run Mission Mode + from-scratch authoring + mode-roundtable prompts** | `docs/goals/0003-plan-mode-run-mission-mode.md` | Authoritative **implementation** spec for modes; **Roundtable Questions** subsection is copied/summarized in roundtable doc for one-stop review. |
 | **PPS cue zones, branch preview UI, demo PPS mapping** | `docs/goals/0005-pps-cue-zones-and-route-preview.md` | **Runtime** cueing over **preplanned** Route A/B — not mission authoring from scratch. |
 | **Waypoint glyphs, legend, ISR map symbology in app** | `docs/goals/0006-isr-map-symbology-waypoint-glyphs-and-legend.md` | Implements iconography §6–§8 in code (often after `0002`/`0003`). |
 | **NATO 2525D land-unit SIDC, SVG icons, tactical units** | `assets/icons/squad-land-catalog.json`, `src/symbology/sidcSymbols.ts` | Goal `docs/goals/0007-sidc-2525d-squad-land-units-svg-picker.md`; icons via **milsymbol** (`npm run generate:icons`). |
-| **Terrain-aware route altitude and 3D elevated drone paths** | `docs/goals/0008-terrain-aware-drone-route-altitude.md` | Adds `120 m AGL` default, AGL/MSL route profiles, degraded-terrain warnings, and Cesium 3D elevated route review. |
 | **App scaffold, layers, toggles** | `docs/goals/0002-local-vite-cesium-planner-scaffold.md` | Local Vite + Cesium baseline. |
 
 If a teammate asks **“where did we write that down?”** — start here, then open the linked file.
@@ -143,8 +137,6 @@ These points consolidate **recent clarification** (chat and doc passes, 2026-05)
 | **0004** | MGRS/LatLon display rules | Modes |
 | **0005** | Cue zones, simulated PPS preview mapping, Route A/B **preview** in run context | Authorship of branches (branches come from the plan); real PEQ-15 hardware |
 | **0006** | Waypoint glyphs, legend, symbology module in UI | Replacing mode logic in **0003** |
-| **0007** | NATO 2525D land-unit SVG icon generation, catalog, and symbology helpers | Replacing mission route/waypoint symbology goals; live tactical feed ingestion |
-| **0008** | Terrain-aware route altitude profile, `120 m AGL` default, AGL/MSL/provenance fields, Cesium 3D elevated route display | Real drone control; certified obstacle clearance; per-waypoint altitude editing beyond TODO/stretch |
 
 ### Demo vs interactive expectations
 
@@ -164,10 +156,6 @@ These points consolidate **recent clarification** (chat and doc passes, 2026-05)
   `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
 - Tool catalog:
   `docs/TOOL_INTERFACE_CATALOG.md`
-- Foundry-hosted app setup:
-  `docs/FOUNDRY_HOSTED_APP_SETUP.md`
-- Covered module registry:
-  `docs/COVERED_MODULE_REGISTRY.md`
 - Formula and threshold governance:
   `docs/FORMULA_REGISTRY_POLICY.md`
 - Validation vocabulary:

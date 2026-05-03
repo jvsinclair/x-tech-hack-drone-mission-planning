@@ -16,22 +16,18 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 
 let ms;
+let std2525d;
 try {
-  const mod = await import("milsymbol");
-  ms = mod.default ?? mod;
+  ({ ms, std2525d } = await import("milsymbol/index.esm.js"));
 } catch {
   const fallback = pathToFileURL(join(root, ".tmp-milsymbol/package/index.esm.js")).href;
-  const fallbackMod = await import(fallback);
-  ms = fallbackMod.ms ?? fallbackMod.default ?? fallbackMod;
-  if (fallbackMod.std2525d && typeof ms.addIcons === "function") {
-    ms.reset();
-    ms.addIcons(fallbackMod.std2525d);
-  }
+  ({ ms, std2525d } = await import(fallback));
 }
 
 const outDir = join(root, "assets", "icons");
 
-ms.setStandard("2525");
+ms.reset();
+ms.addIcons(std2525d);
 
 /** @type {{ id: string; sidc2525d: string; label: string; tags: string[] }[]} */
 const catalog = [

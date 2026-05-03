@@ -18,7 +18,7 @@ This is the **single consolidated reference** for:
 | --- | --- |
 | **Review** | Consolidated planning + symbology — update when assets or schema freeze. |
 | **Validation** | `provisional` |
-| **Last updated** | `2026-05-03` |
+| **Last updated** | `2026-05-02` |
 
 ---
 
@@ -43,7 +43,7 @@ Operators planning an ISR route are not “drawing a line”; they are staging *
 
 | Channel | Encodes | Examples |
 | --- | --- | --- |
-| **Silhouette** | Behavior **class** | Diamond = decision; ring = orbit/scout; brackets = land |
+| **Silhouette** | Behavior **class** | **Drone waypoint heads (§8):** diamond = decision **behavior**; ring = orbit/scout; brackets = land. **Static mission overlay (§13):** use **graphic control measure** point symbols — **not** abstract diamonds for command decisions. |
 | **Hue family** | **Subsystem** or severity | Yellow = route progression; light blue = sensor; red/sparing = hard stop / no-go |
 | **Line grammar** | **Progress** along route | Dotted yellow = untread; solid yellow = tread |
 | **Fill / ribbon (non-yellow)** | **Collection geometry** | Scan AOI polygon, corridor — **not** the same as route centerline |
@@ -112,6 +112,10 @@ Maneuvers **1–3** must read as **planned or rehearsed**, not implied real-time
 | **R5** | **Scan footprint / scan path** | **Non-yellow**, distinct fill/stroke — polygon, corridor, orbit ribbon, or sweep; legend labels **Scan area** / **Scan path** (pick one vocabulary). |
 | **R6** | **Waypoint marker family** | Shared **stem**; behaviors differ by **head / halo / attachments** only (§8). |
 | **R7** | **Preview vs commit** | Route branches, hold, RTB previews stay **provisional** until confirm — lighter stroke, dashed, and/or explicit **preview** label. |
+| **PA1** | **Primary (binary path)** | **Dotted** polyline, **light blue**, ~**50%** opacity — **primary** course for the static scenario (schedule/nominal). Same *line grammar* idea as **R1**, **different hue** from yellow so it never reads as **drone** route. |
+| **PA2** | **Alternate (binary path)** | **Solid** polyline, **light blue**, ~**50%** opacity — **alternate** when a schedule threshold fails or a **Decision Point** selects the alternate. Same *line grammar* idea as **R2**, light blue family only. |
+
+**Hue separation:** **Yellow (R1/R2)** = **drone ISR route** progression. **Light blue (PA1/PA2)** = **primary vs alternate** branching for the **static mission overlay** geometry (binary approach). **Light blue (R4)** remains **sensor/camera** emphasis — do not use R4 geometry for branch polylines; keep branch strokes clearly **polyline** vs **wedge/arc**.
 
 ---
 
@@ -140,7 +144,7 @@ Use this table for **Stitch**, **Cesium layers**, and **panel design**. “Imple
 | **Fly-by** | Pass **without** stopping | **Tangent chevron** on path | Route emphasis only | Pass distance / speed | Often transit-class |
 | **Observe** | **Hold** attention with **sensor** motion more than path | **Stable post** + short **blue** stare stub | Minimal yellow motion | Dwell, FOV, priority target | Maps to kinematics **3** vs Scout **2** |
 | **Hold / loiter** | **Wait** for cue, time, or fuel | **Anchor ring** + dwell ticks on stem | Closed loop / racetrack optional | Duration, re-prompt, timeout branch | Pairs with **1 PPS** hold *preview* in demo |
-| **Decision point** | Choose **preplanned** branch | **Diamond head** + **two stubs** for A/B | Branch **preview** polylines (R7); **cue zone** if used | Choices, confirmation, timeout | Core demo beat; `docs/goals/0005` |
+| **Decision point** | Choose **preplanned** branch | **Diamond head** + **two stubs** for A/B (**drone waypoint** grammar only) | Branch **preview** polylines (R7); **cue zone** if used | Choices, confirmation, timeout | **Mission/fixture lane:** use official **Decision Point** control measure graphic (§13), **not** this diamond head. Core demo beat; `docs/goals/0005` |
 | **RTB** | **Recover** safely | **Homeward arrow** + **home notch** | Path to recovery; **preview** until confirm | Fuel margin, confirm gate | **8 PPS** preview; confirm required per roundtable |
 | **Land / recover** | End **flight** segment | **Touchdown brackets** + ground patch | Terminal **solid** yellow | Approach, strip/point id | Terminal state |
 | **Abort / emergency** | **Stop** planning progression safely | **Octagon / stop plate** | Cease extension of route | Explicit acknowledgement | Use sparingly; non-kinetic copy |
@@ -157,7 +161,7 @@ From `docs/goals/0002-local-vite-cesium-planner-scaffold.md`. Keep **context lay
 | **No-go** | Hard constraint | Hatch / slash; **not** route yellow |
 | **Terrain attention point** | Planning cue | Pin / flag — not a drone waypoint unless promoted |
 | **Unit route** | Friendly context | **Distinct** stroke color from drone yellow (pick one muted palette) |
-| **Drone route branches** | Route A / B | Two **preview-capable** styles from decision geometry |
+| **Drone route branches** | Route A / B | Two **preview-capable** styles from decision geometry (yellow / R7); **primary vs alternate** **binary** static paths use **PA1/PA2** (light blue). |
 | **Cue zone** | Simulated optical cue | Ground circle/polygon, terrain-clamped in 3D; PPS labels — goal **0005** |
 | **Power / roads / buildings** | Context | Thin neutral symbology |
 
@@ -201,6 +205,37 @@ Provisional demo mapping (`docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`, goal **0005**)
 
 ---
 
+## 13. Static Mission Overlay — Graphic Control Measures (No “Mission Steps”)
+
+This project **does not** ship a separate ground-maneuver or generic **“mission steps”** queue beyond what static fixtures need to **justify and clock** the ISR drone path for demo. Anything drawn here is **read-only / fixture-backed**.
+
+### Vocabulary
+
+- **Do not** use **“mission steps”** as the operator-facing pattern for this lane — prefer **control measure** names and symbols.
+- **Reference:** Graphic control measure fundamentals and point types (checkpoints, rally points, decision points, waypoints, etc.) per doctrine summarized in [MGRS Mapper — Graphic Control Measure Symbols](https://mgrs-mapper.com/blog/graphic_control_measure_symbols/) (study guide; aligns with FM 1-02.1 / JP usage for categories of **points, lines, areas**).
+
+### Points on the map (mission lane)
+
+Render **official-style** point symbols (e.g. via MIL-STD-2525D **tactical point / control measure** SIDCs or equivalent SVG), **not** bespoke diamonds:
+
+| Concept | Symbol family (examples) | Notes |
+| --- | --- | --- |
+| **Navigation / plan glue** | **Waypoint** (distinctive action — GPS/nav-aid sense per reference) | Anchors **time/spatial** linkage to the drone sortie; numbered labels OK. |
+| **Merge / timing hook** | **Rally Point**, **Checkpoint**, **Linkup Point**, **Release Point**, … | Pick **only** what the static scenario requires — minimal fixture surface. |
+| **Schedule failure / branch choice** | **Decision Point** (JP 5-0 sense — key decision in space and time) | Expresses **what happens if** the force **does not** hit a rally or checkpoint **on schedule** — ties to **alternate** pathing (**PA2**) and preview semantics (**R7** / confirmation), **not** a generic diamond glyph on this lane. |
+
+### Lines on the map (binary primary / alternate)
+
+- **Primary** path: **PA1** (dotted light blue).
+- **Alternate** path: **PA2** (solid light blue) when the scenario selects **alternate** (e.g. missed rally window).
+- **Yellow R1/R2** remains reserved for the **drone** route (§6), so operators can always tell **aircraft pathing** from **static primary/alternate** course lines.
+
+### Click / selection
+
+Static overlay entities use the **same interaction contract** as drone features (select → panel detail, optional camera focus) but **no** free-form editing in MVP unless a goal explicitly adds it.
+
+---
+
 ## Design Reference (Stitch Export)
 
 Approved reference render for **waypoint behavior cards** (grid of behaviors with schematic glyphs). Use alongside §8 for silhouette alignment; **written tables in this document take precedence** if copy or labels diverge.
@@ -222,3 +257,4 @@ Treat fictional standard identifiers or extra dashboard chrome on the image as *
 - `docs/goals/0002-local-vite-cesium-planner-scaffold.md` — app scaffold and layers.
 - `docs/goals/0003-plan-mode-run-mission-mode.md` — Plan vs Run behavior.
 - `docs/goals/0005-pps-cue-zones-and-route-preview.md` — cue zones and branch preview.
+- [MGRS Mapper — Graphic Control Measure Symbols](https://mgrs-mapper.com/blog/graphic_control_measure_symbols/) — field guide for **control measure** point/line/area symbology (static overlay lane, §13).

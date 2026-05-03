@@ -1,0 +1,36 @@
+{
+  "name": "rebuild-planner",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 3001",
+    "build": "prisma generate && next build",
+    "start": "next start --hostname 127.0.0.1 --port 3001",
+    "test": "vitest run --pool=vmThreads --maxWorkers=2",
+    "typecheck": "tsc --noEmit",
+    "db:deploy": "prisma migrate deploy",
+    "db:reset": "prisma migrate reset --force",
+    "postinstall": "prisma generate && node scripts/copy-cesium.mjs"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.0.0",
+    "cesium": "^1.141.0",
+    "mgrs": "^2.1.0",
+    "next": "latest",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "jsdom": "^29.1.1",
+    "prisma": "^6.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.5"
+  }
+}

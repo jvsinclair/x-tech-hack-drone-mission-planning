@@ -83,6 +83,47 @@
       "status": "active"
     },
     {
+      "id": "demo_launch_package_pps_branch_mapping_v2",
+      "kind": "heuristic",
+      "expression": "For Launch Package Simulation only: 1 PPS selects hold_or_loiter, 2 PPS selects return_to_base, 4 PPS selects the primary route branch, and 8 PPS selects the alternate route branch. A PPS event is valid only when simulation is paused at an active decision point, a decision target zone attached to that point is selected, the simulated aim point is inside that zone, and the PPS value is allowed for that zone. Valid events apply the simulated branch/action immediately and write an audit log; invalid events do not change simulation state and must log a rejection reason.",
+      "variables": {
+        "observed_pulse_rate_pps": "Observed simulated optical cue pulse rate in pulses per second.",
+        "active_decision_point": "Current simulation pause state where PPS may be evaluated.",
+        "selected_decision_target_zone": "Target zone selected or aimed at by the operator.",
+        "aim_point": "Simulated lon/lat point receiving the PPS event.",
+        "allowed_pulses_pps": "PPS values accepted by the selected decision target zone."
+      },
+      "units": {
+        "observed_pulse_rate_pps": "pulses_per_second",
+        "active_decision_point": "id_or_null",
+        "selected_decision_target_zone": "id_or_null",
+        "aim_point": "WGS84 lon_lat",
+        "allowed_pulses_pps": "set(enum(1, 2, 4, 8))",
+        "output_action": "enum(hold_or_loiter, return_to_base, primary_route, alternate_route, reject_and_log)"
+      },
+      "source_ref": "docs/PALANTIR_REBUILD_MASTER_PRD.md",
+      "applicability": [
+        "rebuild_planner_runtime",
+        "launch_package_simulation_runtime",
+        "pps_decision_target_zone_simulation"
+      ],
+      "confidence": "medium",
+      "chosen_for": [
+        "Matches the focused Palantir rebuild PRD.",
+        "Keeps PPS behavior simulation-only and tied to preauthored decision target zones.",
+        "Preserves auditability by logging accepted and rejected events."
+      ],
+      "rejected_for": [
+        "Real hardware integration.",
+        "Authenticated friendly identification.",
+        "Covert signaling protocol design.",
+        "Autonomous targeting or engagement.",
+        "Operational drone command or autopilot upload."
+      ],
+      "notes": "This supersedes older route-preview PPS mappings inside the rebuild app. Older mappings remain documented for historical Vite app behavior until that app is retired or migrated.",
+      "status": "active"
+    },
+    {
       "id": "demo_terrain_attention_points_v1",
       "kind": "heuristic",
       "expression": "For fixture-backed demos, generate terrain attention points inside the buffered unit movement corridor. Mark obstacle_candidate when terrain/context intersects the route corridor or a manual obstacle is present. Mark scout_high_ground when a local high point or ridge candidate is within drone range and can observe an upcoming route segment. Mark coverage_gap when a route segment is outside the planned drone sensor/coverage area. All generated points are planning aids, not authoritative terrain truth.",

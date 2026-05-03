@@ -1,0 +1,155 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Mission {
+  id          String   @id
+  name        String
+  safetyScope String
+  source      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  packages LaunchPackage[]
+}
+
+model PalantirSourceCache {
+  id        String   @id
+  payload   String
+  source    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model LaunchPackage {
+  id          String   @id
+  missionId   String
+  name        String
+  description String   @default("")
+  status      String   @default("draft")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  mission        Mission              @relation(fields: [missionId], references: [id], onDelete: Cascade)
+  waypoints      DroneWaypoint[]
+  decisionPoints DecisionPoint[]
+  routeBranches  RouteBranch[]
+  simulations    LaunchSimulation[]
+  auditLog       AuditLogEvent[]
+  warnings       ValidationWarning[]
+}
+
+model DroneWaypoint {
+  id            String   @id
+  packageId     String
+  sequence      Int
+  behavior      String
+  name          String
+  objective     String   @default("")
+  lon           Float
+  lat           Float
+  altitudeM     Float?
+  dwellSeconds  Int?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  package       LaunchPackage @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  decisionPoint DecisionPoint?
+
+  @@unique([packageId, sequence])
+}
+
+model DecisionPoint {
+  id         String   @id
+  packageId  String
+  waypointId String?  @unique
+  name       String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  package       LaunchPackage        @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  waypoint      DroneWaypoint?       @relation(fields: [waypointId], references: [id], onDelete: SetNull)
+  targetZones   DecisionTargetZone[]
+  routeBranches RouteBranch[]
+}
+
+model DecisionTargetZone {
+  id              String   @id
+  decisionPointId String
+  name            String
+  centerLon       Float
+  centerLat       Float
+  radiusM         Float
+  allowedPpsJson  String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  decisionPoint DecisionPoint @relation(fields: [decisionPointId], references: [id], onDelete: Cascade)
+}
+
+model RouteBranch {
+  id              String   @id
+  packageId       String
+  decisionPointId String?
+  type            String
+  name            String
+  geometryJson    String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  package       LaunchPackage @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  decisionPoint DecisionPoint? @relation(fields: [decisionPointId], references: [id], onDelete: SetNull)
+}
+
+model LaunchSimulation {
+  id                    String   @id
+  packageId             String
+  status                String   @default("paused")
+  clockSeconds          Int      @default(0)
+  currentWaypointSeq    Int      @default(1)
+  activeDecisionPointId String?
+  selectedTargetZoneId  String?
+  activeBranchType      String?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  package LaunchPackage  @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  events  AuditLogEvent[]
+}
+
+model AuditLogEvent {
+  id           String   @id
+  packageId    String
+  simulationId String?
+  kind         String
+  message      String
+  detailsJson  String
+  createdAt    DateTime @default(now())
+
+  package    LaunchPackage     @relation(fields: [packageId], references: [id], onDelete: Cascade)
+  simulation LaunchSimulation? @relation(fields: [simulationId], references: [id], onDelete: SetNull)
+}
+
+model ValidationWarning {
+  id        String   @id
+  packageId String
+  code      String
+  severity  String
+  message   String
+  createdAt DateTime @default(now())
+
+  package LaunchPackage @relation(fields: [packageId], references: [id], onDelete: Cascade)
+}
+
+model DebugClickEvent {
+  id        String   @id
+  kind      String
+  target    String
+  payload   String
+  createdAt DateTime @default(now())
+}

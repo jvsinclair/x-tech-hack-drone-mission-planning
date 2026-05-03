@@ -3,7 +3,7 @@
 This is the review guide for the current `x-tech-hackathon` tool, validator, and workflow surface.
 Every public stage should be documented here before agents depend on it.
 
-Current state: Goal 0002 adds a provisional frontend runtime data-provider boundary, `mission_data_provider_runtime`, for choosing a Foundry-hosted adapter/Functions path when available and falling back to static scoped bundle data. Goal 0003 adds `mission_run_rehearsal_runtime` for app-side Plan Mission / Run Mission rehearsal. Goal 0005 implements the provisional `optical_cue_interpreter_demo` as a local pure preview interpreter. `terrain_attention_point_generator_demo` and `terrain_aware_route_altitude_profile_demo` remain planned provisional stages for upcoming implementation slices.
+Current state: Goal 0002 adds a provisional frontend runtime data-provider boundary, `mission_data_provider_runtime`, for choosing a Foundry-hosted adapter/Functions path when available and falling back to static scoped bundle data. Goal 0003 adds `mission_run_rehearsal_runtime` for app-side Plan Mission / Run Mission rehearsal. Goal 0005 implements the provisional `optical_cue_interpreter_demo` as a local pure preview interpreter. The rebuild app adds `rebuild_planner_runtime`, a local Next.js backend-backed authoring and simulation runtime in `apps/rebuild-planner`. `terrain_attention_point_generator_demo` and `terrain_aware_route_altitude_profile_demo` remain planned provisional stages for upcoming implementation slices.
 
 ## Field Glossary
 - `[field_name]`: `[description]` Units: `[units or enum or not_applicable]`.
@@ -348,6 +348,63 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
 - Current gaps / TODO notes:
   - Neutral context object geometries from `RoadOrPath`, `Building`, and `NaturalFeature` need OSDK/direct-query support or additional Functions wrappers.
   - Writeback/actions are intentionally deferred; the current UI logs previews locally only.
+
+## `rebuild_planner_runtime`
+- Display name: Rebuild Planner Runtime
+- Category: `runtime`
+- Stage order: `0`
+- Purpose: Provide a local Next.js backend for tactical launch-package authoring, Palantir/local mission bootstrap, SQLite persistence, simulation controls, PPS decision-zone handling, audit logs, and clickstream debugging.
+- When to call: When the operator opens `apps/rebuild-planner`, creates or edits launch packages, places waypoints or decision target zones, starts simulation, steps playback, or simulates 1/2/4/8 PPS.
+- When not to call: Do not call for real drone control, MAVLINK/GCS, hardware integration, autonomous targeting, kinetic workflows, or Palantir writeback until Foundry Actions are explicitly added.
+- Input type: Browser UI actions plus optional server-side Foundry token and local Sunol fallback resources.
+- Output type: Mission bootstrap payloads, persisted launch packages, simulation records, validation warnings, audit events, and debug clickstream records.
+- Supported use cases: Tactical field-planning demo; DroneDeploy-like waypoint authoring; launch-package rehearsal; simulated PPS branch selection.
+- Supported data or source families: Palantir Functions REST read path; local `resources/palantir_sunol_aoi_upload`; operator-authored local SQLite records.
+- Status values: `draft | paused | playing | complete | warning | blocked`
+- Hard-fail vs warning behavior: Missing Palantir auth falls back to local Sunol data in auto mode; explicit Palantir mode without a token fails visibly; invalid PPS logs a rejection and does not change simulation state.
+- Formula or rule groups: `demo_launch_package_pps_branch_mapping_v2`
+- Support level: `provisional`
+- Platform support: `local Next.js; SQLite; Cesium Direct client map`
+- Required binaries or services: `node`, `npm`; optional Foundry bearer token; no hardware services.
+- Headless expectations: PPS grammar, compile warnings, and core API state transitions should be testable without Cesium.
+- Degraded modes: Local Sunol fallback; HTML map overlay remains testable if Cesium assets fail to load.
+- Source module: `apps/rebuild-planner`
+- Kernel id: `rebuild_planner_runtime`
+- Kernel boundary: Local backend state machine and PPS interpreter; Cesium rendering and UI clicks are mixed runtime behavior.
+- Pure function expected: `mixed`
+- Required input fields:
+  - `missionId` (`string`): Mission context identifier. Units: `id`.
+  - `packageId` (`string`): Launch package identifier for authoring and simulation actions. Units: `id`.
+  - `waypoint behavior` (`enum`): Launch, transit, scout, scan area, observe, hold, decision, RTB, recover, or abort. Units: `enum`.
+  - `lon` / `lat` (`number`): WGS84 placement coordinates. Units: `decimal_degrees`.
+  - `observedPps` (`number`): Simulated PPS value. Units: `pulses_per_second`.
+- Optional input fields:
+  - `FOUNDRY_BEARER_TOKEN` (`string`): Server-side token for Palantir reads. Units: `secret_token`.
+  - `x-foundry-token` (`string`): Local dev fallback token header. Units: `secret_token`.
+  - `decisionPointId` / `targetZoneId` (`string`): Selected simulation context identifiers. Units: `id`.
+- Derived fields: active simulation state, active branch type, validation warnings, audit log entries, clickstream events.
+- Minimal valid example input:
+```json
+{
+  "packageId": "pkg_123",
+  "waypoint": {
+    "behavior": "decision",
+    "lon": -121.842,
+    "lat": 37.538
+  }
+}
+```
+- Example output summary:
+```json
+{
+  "status": "paused",
+  "activeDecisionPointId": "decision_123",
+  "auditLog": ["4 PPS accepted: primary route selected."]
+}
+```
+- Current gaps / TODO notes:
+  - Palantir write actions are intentionally not implemented.
+  - Polygon target zones and full branch drawing are deferred.
 
 ## `mission_run_rehearsal_runtime`
 - Display name: Mission Run Rehearsal Runtime

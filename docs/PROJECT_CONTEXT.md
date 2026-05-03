@@ -47,6 +47,7 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `src/data/missionGeojson.ts`: Provider-normalization helpers for static and Foundry GeoJSON/provenance fields.
 - `src/data/missionTypes.ts`: Minimal mission layer, provider, and GeoJSON-facing contracts.
 - `src/symbology/` and `assets/icons/`: Goal 0006/0007 symbology modules, generated SVG assets, and MIL-STD-2525D land-unit icon tooling.
+- `apps/rebuild-planner/`: Isolated Next.js rebuild app with local SQLite backend, Palantir/local mission bootstrap, tactical Cesium map shell, waypoint authoring, decision target zones, simulated PPS branch selection, audit logs, and clickstream debugging.
 - `todo`: full mission plan, drone asset, optical cue, waypoint, route constraint, and observation schemas
 - `todo`: ruleset-backed mission state machine and decision tree module
 - `todo`: feed and geospatial context normalization module

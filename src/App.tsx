@@ -5,8 +5,8 @@ Purpose:
 Why This Exists:
 - Goals 0002 and 0003 need the usable planner surface plus explicit Plan Mission and Run Mission rehearsal modes.
 Primary Inputs/Outputs:
-- Inputs: MissionData from Foundry or static bundle provider, layer toggle state, mode state, Cesium selection events.
-- Outputs: Operator-style React UI for Sunol ISR route planning and app-side run rehearsal.
+- Inputs: MissionData from Foundry or static bundle provider, layer toggle state, mode state, Cesium selection and cursor events.
+- Outputs: Operator-style React UI for Sunol ISR route planning, coordinate readouts, and app-side run rehearsal.
 Research / Source Links:
 - docs/PROJECT_CONTEXT.md
 - docs/goals/0002-local-vite-cesium-planner-scaffold.md
@@ -31,6 +31,7 @@ import { defaultEnabledLayerIds } from "./data/layerCatalog";
 import { loadMissionData } from "./data/loadMissionData";
 import { activeTimelineBeat, createEditablePlanState, createRunMissionSnapshot, jumpRunSnapshot, type PlannerMode, type RunMissionSnapshot } from "./data/missionRun";
 import type { LayerId, MissionData, MissionProviderId, SelectedMissionObject } from "./data/missionTypes";
+import type { Wgs84DisplayCoordinate } from "./data/coordinateFormat";
 
 const initialLayerState: Record<LayerId, boolean> = {
   aoi: defaultEnabledLayerIds.has("aoi"),
@@ -51,6 +52,7 @@ export default function App() {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [enabledLayers, setEnabledLayers] = useState<Record<LayerId, boolean>>(initialLayerState);
   const [selectedObject, setSelectedObject] = useState<SelectedMissionObject | null>(null);
+  const [cursorCoordinate, setCursorCoordinate] = useState<Wgs84DisplayCoordinate | null>(null);
   const [mode, setMode] = useState<PlannerMode>("plan");
   const [runSnapshot, setRunSnapshot] = useState<RunMissionSnapshot | null>(null);
 
@@ -139,9 +141,11 @@ export default function App() {
         <CesiumMissionMap
           enabledLayerIds={enabledLayerIds}
           layers={missionData?.layers || []}
+          onPointerCoordinate={setCursorCoordinate}
           onSelectObject={setSelectedObject}
         />
         <StatusBar
+          cursorCoordinate={cursorCoordinate}
           enabledCount={enabledLayerIds.size}
           isLoading={isLoading}
           loadError={loadError}

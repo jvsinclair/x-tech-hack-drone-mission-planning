@@ -101,6 +101,11 @@ export interface SelectedMissionObject {
   layerLabel: string;
   objectId: string;
   name: string;
+  coordinate?: {
+    lat: number;
+    lon: number;
+    elevationMeters?: number;
+  };
   properties: Record<string, unknown>;
 }
 

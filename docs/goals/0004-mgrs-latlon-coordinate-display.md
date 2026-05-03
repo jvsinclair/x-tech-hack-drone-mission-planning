@@ -1,9 +1,9 @@
 ---
 goal_id: "0004"
 title: "MGRS And Lat/Lon Coordinate Display"
-status: "todo"
+status: "in_progress"
 created_at: "2026-05-03T00:18:56Z"
-started_at: null
+started_at: "2026-05-03T06:57:53Z"
 completed_at: null
 owner: "codex-cli"
 commit_sha: null

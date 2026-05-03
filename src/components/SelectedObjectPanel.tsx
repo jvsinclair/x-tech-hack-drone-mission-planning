@@ -6,9 +6,10 @@ Why This Exists:
 - The operator shell needs a compact inspection surface for map entities without leaving the planner.
 Primary Inputs/Outputs:
 - Inputs: SelectedMissionObject from Cesium selection events and editing lock state.
-- Outputs: Human-readable object id, layer, name, properties, and future-edit readiness.
+- Outputs: Human-readable object id, layer, name, coordinates, properties, and future-edit readiness.
 Research / Source Links:
 - docs/goals/0002-local-vite-cesium-planner-scaffold.md
+- docs/goals/0004-mgrs-latlon-coordinate-display.md
 - docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md
 Validated:
 - provisional: Rendered through App shell tests.
@@ -19,6 +20,7 @@ Agent Maintenance Rule:
 */
 
 import type { SelectedMissionObject } from "../data/missionTypes";
+import { formatCoordinatePair } from "../data/coordinateFormat";
 
 interface SelectedObjectPanelProps {
   selectedObject: SelectedMissionObject | null;
@@ -27,6 +29,7 @@ interface SelectedObjectPanelProps {
 
 export function SelectedObjectPanel({ selectedObject, editingLocked }: SelectedObjectPanelProps) {
   const properties = Object.entries(selectedObject?.properties || {}).slice(0, 8);
+  const coordinateDisplay = selectedObject?.coordinate ? formatCoordinatePair(selectedObject.coordinate) : null;
 
   return (
     <section className="panel-section object-panel">
@@ -44,6 +47,24 @@ export function SelectedObjectPanel({ selectedObject, editingLocked }: SelectedO
           <h2>{selectedObject.name}</h2>
           <p className="object-id">{selectedObject.objectId}</p>
           <dl className="property-list">
+            {coordinateDisplay ? (
+              <>
+                <div>
+                  <dt>lat/lon</dt>
+                  <dd>{coordinateDisplay.latLon}</dd>
+                </div>
+                <div>
+                  <dt>mgrs</dt>
+                  <dd>{coordinateDisplay.mgrs}</dd>
+                </div>
+                {coordinateDisplay.elevation ? (
+                  <div>
+                    <dt>elevation</dt>
+                    <dd>{coordinateDisplay.elevation}</dd>
+                  </div>
+                ) : null}
+              </>
+            ) : null}
             {properties.map(([key, value]) => (
               <div key={key}>
                 <dt>{key}</dt>

@@ -5,8 +5,8 @@ Purpose:
 Why This Exists:
 - Goal 0002 requires a 3D route-planning surface centered on the Sunol AOI without Palantir access.
 Primary Inputs/Outputs:
-- Inputs: MissionLayer GeoJSON, enabled layer ids, optional VITE_CESIUM_ION_TOKEN, selection callback.
-- Outputs: Cesium Viewer with topo imagery, optional Cesium World Terrain, styled AOI, route, infrastructure, terrain, cue, and no-go overlays.
+- Inputs: MissionLayer GeoJSON, enabled layer ids, optional VITE_CESIUM_ION_TOKEN, selection and cursor callbacks.
+- Outputs: Cesium Viewer with topo imagery, optional Cesium World Terrain, styled AOI, route, infrastructure, terrain, cue, no-go overlays, and WGS84 pointer/selection coordinates.
 Research / Source Links:
 - docs/goals/0002-local-vite-cesium-planner-scaffold.md
 - docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md
@@ -22,6 +22,7 @@ Agent Maintenance Rule:
 import { useEffect, useRef, useState } from "react";
 import {
   Cartesian3,
+  Cartographic,
   Color,
   ColorMaterialProperty,
   ConstantProperty,
@@ -31,13 +32,17 @@ import {
   ImageryLayer,
   Ion,
   IonWorldImageryStyle,
+  JulianDate,
   Math as CesiumMath,
   PolylineDashMaterialProperty,
   Rectangle,
   SceneMode,
+  ScreenSpaceEventHandler,
+  ScreenSpaceEventType,
   Terrain,
   UrlTemplateImageryProvider,
   Viewer,
+  type Cartesian2,
   type Entity,
 } from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
@@ -48,14 +53,16 @@ import {
   terrainSourceStatus,
 } from "../data/mapView";
 import type { LayerId, MissionLayer, SelectedMissionObject } from "../data/missionTypes";
+import type { Wgs84DisplayCoordinate } from "../data/coordinateFormat";
 
 interface CesiumMissionMapProps {
   layers: MissionLayer[];
   enabledLayerIds: Set<LayerId>;
+  onPointerCoordinate: (coordinate: Wgs84DisplayCoordinate | null) => void;
   onSelectObject: (selected: SelectedMissionObject | null) => void;
 }
 
-export function CesiumMissionMap({ layers, enabledLayerIds, onSelectObject }: CesiumMissionMapProps) {
+export function CesiumMissionMap({ layers, enabledLayerIds, onPointerCoordinate, onSelectObject }: CesiumMissionMapProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const viewerRef = useRef<Viewer | null>(null);
   const baseImageryLayerRef = useRef<ImageryLayer | null>(null);
@@ -102,15 +109,22 @@ export function CesiumMissionMap({ layers, enabledLayerIds, onSelectObject }: Ce
       onSelectObject(entity ? selectedObjectFromEntity(entity) : null);
     });
 
+    const pointerHandler = new ScreenSpaceEventHandler(viewer.scene.canvas);
+    pointerHandler.setInputAction((movement: { endPosition?: Cartesian2 }) => {
+      const coordinate = movement.endPosition ? coordinateFromCanvasPosition(viewer, movement.endPosition) : null;
+      onPointerCoordinate(coordinate);
+    }, ScreenSpaceEventType.MOUSE_MOVE);
+
     viewerRef.current = viewer;
 
     return () => {
+      pointerHandler.destroy();
       viewer.destroy();
       viewerRef.current = null;
       baseImageryLayerRef.current = null;
       ionTokenRef.current = undefined;
     };
-  }, [onSelectObject]);
+  }, [onPointerCoordinate, onSelectObject]);
 
   useEffect(() => {
     const viewer = viewerRef.current;
@@ -244,6 +258,7 @@ function selectedObjectFromEntity(entity: Entity): SelectedMissionObject {
     layerLabel: String(properties?.planner_layer_label || "Layer"),
     objectId: String(entity.id),
     name: String(properties?.name || entity.name || entity.id),
+    coordinate: representativeEntityCoordinate(entity),
     properties: properties || {},
   };
 }
@@ -323,4 +338,59 @@ function applyMapView(viewer: Viewer, mode: MapViewMode, duration: number) {
 function sunolAoiRectangle(): Rectangle {
   const { west, south, east, north } = SUNOL_AOI_RECTANGLE_DEGREES;
   return Rectangle.fromDegrees(west, south, east, north);
+}
+
+function coordinateFromCanvasPosition(viewer: Viewer, endPosition: Cartesian2): Wgs84DisplayCoordinate | null {
+  const cartesian = viewer.camera.pickEllipsoid(endPosition, viewer.scene.globe.ellipsoid);
+  return cartesian ? coordinateFromCartesian(cartesian) : null;
+}
+
+function representativeEntityCoordinate(entity: Entity): Wgs84DisplayCoordinate | undefined {
+  const time = JulianDate.now();
+  const position = entity.position?.getValue(time);
+  if (position) return coordinateFromCartesian(position);
+
+  const polylinePositions = entity.polyline?.positions?.getValue(time);
+  if (Array.isArray(polylinePositions) && polylinePositions.length > 0) {
+    return averageCoordinate(polylinePositions);
+  }
+
+  const polygonHierarchy = entity.polygon?.hierarchy?.getValue(time);
+  const polygonPositions = polygonHierarchy?.positions;
+  if (Array.isArray(polygonPositions) && polygonPositions.length > 0) {
+    return averageCoordinate(polygonPositions);
+  }
+
+  return undefined;
+}
+
+function averageCoordinate(positions: Cartesian3[]): Wgs84DisplayCoordinate {
+  const coordinates = positions.map(coordinateFromCartesian);
+  const total = coordinates.reduce<{ lat: number; lon: number; elevationMeters: number; elevationCount: number }>(
+    (sum, coordinate) => {
+      const elevationMeters = coordinate.elevationMeters;
+      const hasElevation = elevationMeters !== undefined && Number.isFinite(elevationMeters);
+      return {
+        lat: sum.lat + coordinate.lat,
+        lon: sum.lon + coordinate.lon,
+        elevationMeters: sum.elevationMeters + (hasElevation ? elevationMeters : 0),
+        elevationCount: sum.elevationCount + (hasElevation ? 1 : 0),
+      };
+    },
+    { lat: 0, lon: 0, elevationMeters: 0, elevationCount: 0 },
+  );
+  return {
+    lat: total.lat / coordinates.length,
+    lon: total.lon / coordinates.length,
+    elevationMeters: total.elevationCount === 0 ? undefined : total.elevationMeters / total.elevationCount,
+  };
+}
+
+function coordinateFromCartesian(cartesian: Cartesian3): Wgs84DisplayCoordinate {
+  const cartographic = Cartographic.fromCartesian(cartesian);
+  return {
+    lat: CesiumMath.toDegrees(cartographic.latitude),
+    lon: CesiumMath.toDegrees(cartographic.longitude),
+    elevationMeters: cartographic.height,
+  };
 }

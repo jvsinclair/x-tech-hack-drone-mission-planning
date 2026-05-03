@@ -83,45 +83,39 @@ Brief answers for live Q&A; do not cram into VO unless unavoidable.
 
 ## Full roundtable pack for VO (master script)
 
-**Read rate:** Aim for roughly **125–145 spoken words** in **~55–60 s** (~2.1–2.6 words/sec). Rehearse with a timer; trim using *Alternate trims* below.
+**Read rate:** Target **roughly ~120–135 spoken words** in **~54–62 s** on a conversational clip (~2–2.3 words/sec sustained). Blocks below aim for **≈ sixty seconds total**, not summed maxima per paragraph. Dry-run with a slate; shave with *Alternate trims*.
 
-### Master VO (timed blocks)
+### Master VO (timed blocks — ~≈58 s voiced)
 
 | Block | Target | Narration |
 | --- | --- | --- |
-| **A — Intro + guardrail** | ~8 s | “**Synthetic training scenario.** We’re demoing scout-ahead **ISR route security**: plan the route before launch, not live aircraft.” |
-| **B — Problem** | ~12 s | “**Primary** and **Alternate** branches usually live in briefings—we need them **designed into the mission** with validation and a **rehearsable trace**, not pasted-on slides.” |
-| **C — Solution (Plan)** | ~12 s | “**Plan mode** builds an ordered **waypoint queue** and **segment** logic—the operator-facing **state outline**. Terrain and stubs like **distance and battery warnings** track edits; default route altitude in product is **one-twenty metres A-G-L**—a planning assumption, not certified clearance.” |
-| **D — Solution (Run)** | ~10 s | “**Run** is **rehearsal on the same build**: exiting drops **sim state only**, not the authored plan. Topology is **locked in Run**—you **return to Plan** to change geometry.” |
-| **E — Cue discipline** | ~8 s | “**Simulated** cue or UI click—**same gate**. Pulses pick among **hold, return-to-base, Primary, Alternate** already in the mission—**intent for rehearsal**, not IFF or battlefield command.” |
-| **F — Demo** | ~28 s | “We load a **saved scout-ahead** mission—establish **terrain**—here’s our **queued waypoints**. Jump ahead: **decision zone** — we’re reviewing an **ambiguous contact along the route**. Fire **four P-P-S**: that selects our **Primary** branch. You see **zone**, **route preview**, **rationale**, **warnings**, and an **audit** or timeline tick—we’re illustrating **scout-ahead** continuity, not an ambush playbook.” |
-| **G — Close** | ~5 s | “This is the **same app** judges can drive **interactively**—we only **jump cut** time. Next: harder **partner** handoff once access lands.” |
+| **AB — Synthetic + pain** | ~12 s | “**Synthetic training scenario**—scout-ahead **ISR route security**, all fictitious. **Primary** and **Alternate** usually live in briefings—we need them **in the mission**, with validation and a **rehearsable outline**.” |
+| **C — Plan** | ~13 s | “**Plan mode**: ordered **waypoint queue** and **segment** logic—the operator **state outline**. **Distance** and **battery** warnings ride edits; default altitude **one-twenty metres A-G-L**—**planning only**, not certified clearance.” |
+| **DE — Run + cues** | ~15 s | “**Run** rehearses **the same build**—exit clears **sim only**, authored route **persists**. **Hard lock** in Run—edit back in Plan. **Simulated cue** or UI: **same gate**—pulse picks among **hold, RTB, Primary, Alternate already authored**. **Training rehearsal**, **not IFF** or operational command protocol.” |
+| **F — Demo** | ~19 s | “Load saved **scout fixture**—**terrain**, **queue**—**jump cut**—**Decision Target Zone**—**ambiguous contact** on-route. Fire **four P-P-S** (**Launch Package Simulation**), **Primary** branch—you see **zone**, **preview**, **rationale**, **warnings**, **audit** line.” |
+| **G — Close** | ~5–7 s | “**Same shipped app**—judges fly it **interactive**; we **compressed time**. **Optional VO:** partner handoff once export is real—omit if nothing is on screen.” |
 
 **Continuous read-through (paste-friendly):**
 
-> Synthetic training scenario—we’re demoing scout-ahead ISR route security; plan before launch, not live aircraft.
+> Synthetic training scenario—scout-ahead ISR route security—all fictitious. Primary and Alternate usually live in briefings; we surface them inside the mission with validation and a rehearsable outline.
 >
-> Primary and Alternate usually live in briefings—we need them designed into the mission with validation and a rehearsable trace.
+> Plan mode: waypoint queue plus segment logic—the operator outline—with distance and battery warnings on edits. One-twenty metres AGL default—planning assumption, not clearance certification.
 >
-> Plan mode is an ordered waypoint queue and segment logic—the operator state outline—with distance and battery warnings tracking edits. Default altitude is one-twenty metres AGL—planning only, not certified clearance.
+> Run rehearses the same mission; leaving Run resets rehearsal, not your authored geometry. Locked in Run; edit in Plan. Simulated pulse or UI—same gate—only picks branches you authored: hold, RTB, Primary, Alternate. Simulation for rehearsal—not IFF or operational command protocol.
 >
-> Run is rehearsal on the same build: sim state resets when you leave Run; authored mission persists. Topology is locked in Run—you return to Plan to edit geometry.
+> Load our scout fixture—terrain, queue—jump to a decision zone—we’re on an ambiguous contact—four PPS, Primary—with zone, preview, rationale, warnings, audit—all synthetic data.
 >
-> Simulated cue or UI—same gate. Pulses choose among hold, return-to-base, Primary, Alternate already authored—intent for rehearsal, not IFF or battlefield C2.
->
-> Load a saved scout mission, show terrain and the waypoint queue—jump to a decision zone—we’re sizing up an ambiguous contact—four PPS selects Primary—zone, preview, rationale, warnings, audit. Scout-ahead route security—all synthetic data.
->
-> Same app judges can fly interactively; we only jumped time.
+> Same app judges can fly live; we compressed time only.
 
 ### Alternate trims (if long)
 
 Drop in this order:
 
-1. Full **D** sentence about edit lock → shorten to “**Run is rehearsal; Plan holds the editable mission.**”
-2. **E** second sentence (“not IFF…”) → one word: “**simulation.**”
-3. **F** phrase “scout-ahead continuity, not an ambush playbook” → cut
-4. **C** battery/distance clause → leave only “warnings track edits”
-5. **G** partner line → cut
+1. **C**: delete “distance and”—keep battery warnings only, or vice versa.
+2. **DE**: replace “Simulation for rehearsal—not IFF or battlefield C-two” → “Simulation only.”
+3. **F**: drop parentheses “**(Launch Package Simulation)**” → keep spoken “four PPS.”
+4. **AB**: shorten second sentence → “Briefings hide branches—we put Primary and Alternate in the plan.”
+5. **G**: optional partner clause—always cut first if over.
 
 ---
 
@@ -159,7 +153,7 @@ These are authoritative product postures captured in roundtable docs; VO should 
 | **Mission durability** | Exiting Run: discard rehearsal/sim clock/preview position only; **do not** say the plan snaps back—**authored mission stays**. |
 | **Edit rule** | “Change waypoints **in Plan**”—hard lock during Run unless you consciously show return-to-plan (usually skip in 60s). |
 | **Altitude** | Say **planning altitude** **120 m AGL** if altitude appears; caveat **planning assumption** if terrain clearance is visible. |
-| **Unknown observation** | One line max in VO if time; fuller unknown** in live judge slot per open question. |
+| **Unknown observation** | One line max in VO if time; fuller unknown-contact handling in live judge slot if needed. |
 | **Palantir / partner** | Mention only **if demonstrated**—otherwise closing “partner handoff” as **future**. |
 | **Validation** | If shown: incompleteness blocks Run starts in product—voice may skip unless you flash a validator. |
 

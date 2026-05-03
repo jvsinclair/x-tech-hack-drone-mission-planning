@@ -26,7 +26,7 @@ We uploaded these files into this folder as flat/base filenames. Match each laye
 - `synthetic_no_go_zones.geojson`: synthetic no-go/review zones.
 
 ## Primary Ask
-Create a Palantir-backed structured data layer that our local frontend can consume through an API, query, action, or function surface.
+Create a Palantir-backed structured data layer that our local frontend can consume through an API, query, action, or function surface in our app.
 
 Do not stop at storing files. Parse the uploaded files into usable structured datasets and Ontology objects, then expose a small application-facing contract that can return JSON/GeoJSON for the local app.
 
@@ -95,4 +95,4 @@ For each API/function/query, provide:
 ## Workflow Language
 Frame this as a human-reviewed ISR/recon planning workspace. Route branches and PPS cue zones are previews for preplanned options only.
 
-Explicitly exclude and do not create any workflow for strike, engage, kinetic action, target selection, weapon release, real drone control, MAVLINK/GCS export, hardware control, or autonomous operational command. RTB, hold, route preview, observation, scan, scout, and land/recover are allowed planning terms.
+Explicitly exclude and do not create any workflow for strike, engage, kinetic action, target selection, weapon release, real drone control, MAVLINK/GCS export, hardware control, or autonomous operational command. RTB, hold, route preview, observation, scan, scout, follow, and land/recover are allowed planning terms.

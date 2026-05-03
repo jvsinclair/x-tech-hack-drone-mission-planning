@@ -201,6 +201,18 @@ Provisional demo mapping (`docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`, goal **0005**)
 
 ---
 
+## Design Reference (Stitch Export)
+
+Approved reference render for **waypoint behavior cards** (grid of behaviors with schematic glyphs). Use alongside §8 for silhouette alignment; **written tables in this document take precedence** if copy or labels diverge.
+
+- **Raster:** `docs/assets/waypoint-behavior-atlas-stitch-reference.png`
+- **Interactive / code reference:** `docs/assets/waypoint-behavior-atlas-reference.html` — same atlas as an inspectable page (Tailwind CDN, SVG schematics, extended color tokens). Use for engineering handoff and pixel inspection; route strokes use amber `#fbbf24` (align with §6 yellow-route semantics when mapped into the app).
+- **Folder note:** `docs/assets/README.md`
+
+Treat fictional standard identifiers or extra dashboard chrome on the image as **presentation-only** unless promoted explicitly into project docs.
+
+---
+
 ## Related Documents
 
 - `docs/goals/0006-isr-map-symbology-waypoint-glyphs-and-legend.md` — Codex CLI goal implementing §6–§8 symbology in the app (after scaffold **0002**).

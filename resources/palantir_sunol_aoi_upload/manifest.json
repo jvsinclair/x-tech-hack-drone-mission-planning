@@ -1,7 +1,7 @@
 {
   "bundle_id": "palantir_sunol_aoi_upload_v1",
   "title": "Sunol Ridge Training Area Palantir Offline Upload Bundle",
-  "generated_at": "2026-05-03T02:52:20.212Z",
+  "generated_at": "2026-05-03T04:15:44.993Z",
   "validation_status": "provisional",
   "aoi": {
     "name": "Sunol Ridge Training Area",
@@ -25,6 +25,7 @@
     "osm/osm_roads_tracks_paths.geojson",
     "osm/osm_buildings.geojson",
     "osm/osm_natural_features.geojson",
+    "osm/osm_vegetation_landcover.geojson",
     "osm/osm_waterways_barriers.geojson",
     "official_power/cec_transmission_lines.geojson",
     "official_power/hifld_transmission_lines.geojson",
@@ -43,7 +44,7 @@
       "count": 1,
       "source_name": "synthetic_aoi",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "AOI bounding box from goal 0001.",
       "provisional": true
@@ -53,16 +54,21 @@
       "path": "osm/osm_power_lines.geojson",
       "count": 38,
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "OSM power line, minor line, and cable features intersecting the AOI.",
       "provisional": true,
       "source_health": {
-        "selected_endpoint": "https://overpass-api.de/api/interpreter",
+        "selected_endpoint": "https://overpass.private.coffee/api/interpreter",
         "attempts": [
           {
             "endpoint": "https://overpass-api.de/api/interpreter",
+            "status": "error",
+            "error": "fetch failed"
+          },
+          {
+            "endpoint": "https://overpass.private.coffee/api/interpreter",
             "status": "ok",
             "element_count": 38
           }
@@ -74,16 +80,21 @@
       "path": "osm/osm_power_towers_poles.geojson",
       "count": 268,
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "OSM power tower and pole point features intersecting the AOI.",
       "provisional": true,
       "source_health": {
-        "selected_endpoint": "https://overpass-api.de/api/interpreter",
+        "selected_endpoint": "https://overpass.private.coffee/api/interpreter",
         "attempts": [
           {
             "endpoint": "https://overpass-api.de/api/interpreter",
+            "status": "error",
+            "error": "fetch failed"
+          },
+          {
+            "endpoint": "https://overpass.private.coffee/api/interpreter",
             "status": "ok",
             "element_count": 268
           }
@@ -95,16 +106,21 @@
       "path": "osm/osm_roads_tracks_paths.geojson",
       "count": 727,
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "OSM roads, tracks, and paths for route-planning context.",
       "provisional": true,
       "source_health": {
-        "selected_endpoint": "https://overpass-api.de/api/interpreter",
+        "selected_endpoint": "https://overpass.private.coffee/api/interpreter",
         "attempts": [
           {
             "endpoint": "https://overpass-api.de/api/interpreter",
+            "status": "error",
+            "error": "fetch failed"
+          },
+          {
+            "endpoint": "https://overpass.private.coffee/api/interpreter",
             "status": "ok",
             "element_count": 727
           }
@@ -116,16 +132,21 @@
       "path": "osm/osm_buildings.geojson",
       "count": 312,
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "OSM building footprints intersecting the AOI.",
       "provisional": true,
       "source_health": {
-        "selected_endpoint": "https://overpass-api.de/api/interpreter",
+        "selected_endpoint": "https://overpass.private.coffee/api/interpreter",
         "attempts": [
           {
             "endpoint": "https://overpass-api.de/api/interpreter",
+            "status": "error",
+            "error": "fetch failed"
+          },
+          {
+            "endpoint": "https://overpass.private.coffee/api/interpreter",
             "status": "ok",
             "element_count": 312
           }
@@ -137,18 +158,49 @@
       "path": "osm/osm_natural_features.geojson",
       "count": 124,
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "OSM natural and vegetation-related features intersecting the AOI.",
       "provisional": true,
       "source_health": {
-        "selected_endpoint": "https://overpass-api.de/api/interpreter",
+        "selected_endpoint": "https://overpass.private.coffee/api/interpreter",
         "attempts": [
           {
             "endpoint": "https://overpass-api.de/api/interpreter",
+            "status": "error",
+            "error": "fetch failed"
+          },
+          {
+            "endpoint": "https://overpass.private.coffee/api/interpreter",
             "status": "ok",
             "element_count": 124
+          }
+        ]
+      }
+    },
+    "osm_vegetation_landcover": {
+      "id": "osm_vegetation_landcover",
+      "path": "osm/osm_vegetation_landcover.geojson",
+      "count": 61,
+      "source_name": "OpenStreetMap via Overpass API",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
+      "status": "generated",
+      "provenance": "OSM vegetation and landcover polygons for Cesium and Palantir context layers.",
+      "provisional": true,
+      "source_health": {
+        "selected_endpoint": "https://overpass.private.coffee/api/interpreter",
+        "attempts": [
+          {
+            "endpoint": "https://overpass-api.de/api/interpreter",
+            "status": "error",
+            "error": "fetch failed"
+          },
+          {
+            "endpoint": "https://overpass.private.coffee/api/interpreter",
+            "status": "ok",
+            "element_count": 61
           }
         ]
       }
@@ -158,16 +210,21 @@
       "path": "osm/osm_waterways_barriers.geojson",
       "count": 485,
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "OSM waterways and barriers for route-context review.",
       "provisional": true,
       "source_health": {
-        "selected_endpoint": "https://overpass-api.de/api/interpreter",
+        "selected_endpoint": "https://overpass.private.coffee/api/interpreter",
         "attempts": [
           {
             "endpoint": "https://overpass-api.de/api/interpreter",
+            "status": "error",
+            "error": "fetch failed"
+          },
+          {
+            "endpoint": "https://overpass.private.coffee/api/interpreter",
             "status": "ok",
             "element_count": 485
           }
@@ -180,7 +237,7 @@
       "count": 26,
       "source_name": "California Energy Commission ArcGIS FeatureServer",
       "source_url": "https://services3.arcgis.com/bWPjFyq029ChCGur/arcgis/rest/services/Transmission_Line/FeatureServer/2/query",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "California Energy Commission transmission line features intersecting the AOI.",
       "provisional": true,
@@ -202,7 +259,7 @@
       "count": 17,
       "source_name": "HIFLD ArcGIS FeatureServer",
       "source_url": "https://services2.arcgis.com/LYMgRMwHfrWWEg3s/ArcGIS/rest/services/HIFLD_US_Electric_Power_Transmission_Lines/FeatureServer/0/query",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "HIFLD transmission line features intersecting the AOI.",
       "provisional": true,
@@ -223,7 +280,7 @@
       "count": 783,
       "source_name": "USGS EPQS",
       "source_url": "https://epqs.nationalmap.gov/v1/json",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "500m AOI sample grid queried point-by-point from USGS EPQS where available.",
       "provisional": true
@@ -234,7 +291,7 @@
       "count": 1,
       "source_name": "Synthetic mission fixture",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "Synthetic friendly-unit movement route.",
       "provisional": true
@@ -245,7 +302,7 @@
       "count": 5,
       "source_name": "Synthetic mission fixture",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "Synthetic ordered drone waypoint queue.",
       "provisional": true
@@ -256,7 +313,7 @@
       "count": 3,
       "source_name": "Synthetic mission fixture",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "Synthetic Route A, Route B, and RTB branches.",
       "provisional": true
@@ -267,7 +324,7 @@
       "count": 3,
       "source_name": "Synthetic mission fixture",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "Synthetic PPS cue zones for demo command preview.",
       "provisional": true
@@ -278,7 +335,7 @@
       "count": 2,
       "source_name": "Synthetic mission fixture",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "Synthetic provisional no-go and review zones.",
       "provisional": true
@@ -289,7 +346,7 @@
       "count": 4,
       "source_name": "USGS EPQS + synthetic mission route review",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "provenance": "Provisional high-ground and coverage-review planning aids generated from available elevation samples.",
       "provisional": true
@@ -299,55 +356,63 @@
     {
       "source_name": "synthetic_aoi",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "sunol_training_area_aoi",
       "count": 1
     },
     {
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "osm_power_lines",
       "count": 38
     },
     {
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "osm_power_towers_poles",
       "count": 268
     },
     {
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "osm_roads_tracks_paths",
       "count": 727
     },
     {
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "osm_buildings",
       "count": 312
     },
     {
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "osm_natural_features",
       "count": 124
     },
     {
       "source_name": "OpenStreetMap via Overpass API",
-      "source_url": "https://overpass-api.de/api/interpreter",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
+      "status": "generated",
+      "layer_id": "osm_vegetation_landcover",
+      "count": 61
+    },
+    {
+      "source_name": "OpenStreetMap via Overpass API",
+      "source_url": "https://overpass.private.coffee/api/interpreter",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "osm_waterways_barriers",
       "count": 485
@@ -355,7 +420,7 @@
     {
       "source_name": "California Energy Commission ArcGIS FeatureServer",
       "source_url": "https://services3.arcgis.com/bWPjFyq029ChCGur/arcgis/rest/services/Transmission_Line/FeatureServer/2/query",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "cec_transmission_lines",
       "count": 26
@@ -363,7 +428,7 @@
     {
       "source_name": "HIFLD ArcGIS FeatureServer",
       "source_url": "https://services2.arcgis.com/LYMgRMwHfrWWEg3s/ArcGIS/rest/services/HIFLD_US_Electric_Power_Transmission_Lines/FeatureServer/0/query",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "hifld_transmission_lines",
       "count": 17
@@ -371,7 +436,7 @@
     {
       "source_name": "Synthetic mission fixture",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "synthetic_unit_route",
       "count": 1
@@ -379,7 +444,7 @@
     {
       "source_name": "Synthetic mission fixture",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "synthetic_drone_waypoints",
       "count": 5
@@ -387,7 +452,7 @@
     {
       "source_name": "Synthetic mission fixture",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "synthetic_route_branches",
       "count": 3
@@ -395,7 +460,7 @@
     {
       "source_name": "Synthetic mission fixture",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "synthetic_cue_zones",
       "count": 3
@@ -403,7 +468,7 @@
     {
       "source_name": "Synthetic mission fixture",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "synthetic_no_go_zones",
       "count": 2
@@ -411,7 +476,7 @@
     {
       "source_name": "USGS EPQS + synthetic mission route review",
       "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-      "retrieved_at": "2026-05-03T02:52:20.212Z",
+      "retrieved_at": "2026-05-03T04:15:44.993Z",
       "status": "generated",
       "layer_id": "terrain_attention_points",
       "count": 4

@@ -19,7 +19,7 @@
         "layer_id": "synthetic_drone_waypoints",
         "source_name": "Synthetic mission fixture",
         "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -41,7 +41,7 @@
         "layer_id": "synthetic_drone_waypoints",
         "source_name": "Synthetic mission fixture",
         "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -63,7 +63,7 @@
         "layer_id": "synthetic_drone_waypoints",
         "source_name": "Synthetic mission fixture",
         "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -85,7 +85,7 @@
         "layer_id": "synthetic_drone_waypoints",
         "source_name": "Synthetic mission fixture",
         "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -107,7 +107,7 @@
         "layer_id": "synthetic_drone_waypoints",
         "source_name": "Synthetic mission fixture",
         "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     }
@@ -115,7 +115,7 @@
   "metadata": {
     "layer_id": "synthetic_drone_waypoints",
     "description": "Synthetic ordered drone waypoint queue.",
-    "retrieved_at": "2026-05-03T02:52:20.212Z",
+    "retrieved_at": "2026-05-03T04:15:44.993Z",
     "source_name": "Synthetic mission fixture",
     "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
     "provisional": true,

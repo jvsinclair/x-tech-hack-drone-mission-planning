@@ -19,13 +19,15 @@ Implement **canonical map symbology** from `docs/ICONOGRAPHY_AND_CONTROLS_RESOLU
 2. `docs/PROJECT_CONTEXT.md`
 3. `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` — **authoritative** §6 (R1–R7), §7–§8 (behaviors), §12 (implementation notes)
 4. `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
-5. `docs/goals/0002-local-vite-cesium-planner-scaffold.md`
+5. `docs/assets/waypoint-behavior-atlas-stitch-reference.png` — optional visual alignment for waypoint glyph silhouettes (spec remains `ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md`).
+6. `docs/assets/waypoint-behavior-atlas-reference.html` — optional HTML/CSS token + SVG reference (same atlas; offline requires vendoring CDN deps).
+7. `docs/goals/0002-local-vite-cesium-planner-scaffold.md`
 
 ## Scope
 
 Do:
 
-- **Route semantics:** Apply **R1** (dotted yellow, ~50% opacity) for **unread / not-yet-executed** route segments and **R2** (solid yellow, ~50% opacity) for **tread / executed** segments wherever the app renders mission route polylines. Support toggling or demo fixtures that show both on one path.
+- **Route semantics:** Apply **R1** (dotted yellow, ~50% opacity) for **untread / not-yet-executed** route segments and **R2** (solid yellow, ~50% opacity) for **tread / executed** segments wherever the app renders mission route polylines. Support toggling or demo fixtures that show both on one path.
 - **Layer separation:** Implement **distinct Cesium primitives or style layers** for:
   - drone route (yellow, R1/R2),
   - **scan footprint / scan path** (non-yellow, §R5 — polygon, corridor, or ribbon),

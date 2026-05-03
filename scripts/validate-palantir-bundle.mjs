@@ -38,6 +38,7 @@ const REQUIRED_FILES = [
   "osm/osm_roads_tracks_paths.geojson",
   "osm/osm_buildings.geojson",
   "osm/osm_natural_features.geojson",
+  "osm/osm_vegetation_landcover.geojson",
   "osm/osm_waterways_barriers.geojson",
   "official_power/cec_transmission_lines.geojson",
   "official_power/hifld_transmission_lines.geojson",

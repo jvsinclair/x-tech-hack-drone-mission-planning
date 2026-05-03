@@ -44,8 +44,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -84,8 +84,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -129,8 +129,8 @@
         "osm_website": "http://www.ncry.org/",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -169,8 +169,8 @@
         "osm_building": "service",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -212,8 +212,8 @@
         "osm_name": "Sunol Wilderness Visitor Center",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -252,8 +252,8 @@
         "osm_building": "barn",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -308,8 +308,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -356,8 +356,8 @@
         "osm_building": "service",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -404,8 +404,8 @@
         "osm_building": "service",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -452,8 +452,8 @@
         "osm_building": "service",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -494,8 +494,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -550,8 +550,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -603,8 +603,8 @@
         "osm_name": "Sunol Super Stop Food Mart",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -646,8 +646,8 @@
         "osm_self_service": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -700,8 +700,8 @@
         "osm_operator:wikipedia": "en:United States Postal Service",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -743,8 +743,8 @@
         "osm_opening_hours": "Mo-Fr 06:00-14:00; Sa-Su 07:00-15:00",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -783,8 +783,8 @@
         "osm_building": "school",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -823,8 +823,8 @@
         "osm_building": "school",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -864,8 +864,8 @@
         "osm_name": "Library",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -905,8 +905,8 @@
         "osm_name": "Cafeteria",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -961,8 +961,8 @@
         "osm_building": "school",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1001,8 +1001,8 @@
         "osm_building": "school",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1041,8 +1041,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1083,8 +1083,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1123,8 +1123,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1169,8 +1169,8 @@
         "osm_unisex": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1218,8 +1218,8 @@
         "osm_name": "Park Residence",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1259,8 +1259,8 @@
         "osm_name": "Park Residence",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1345,8 +1345,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1395,8 +1395,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1437,8 +1437,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1479,8 +1479,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1521,8 +1521,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1563,8 +1563,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1605,8 +1605,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1669,8 +1669,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1709,8 +1709,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1751,8 +1751,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1791,8 +1791,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1831,8 +1831,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1871,8 +1871,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1911,8 +1911,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1985,8 +1985,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2025,8 +2025,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2083,8 +2083,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2123,8 +2123,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2163,8 +2163,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2203,8 +2203,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2245,8 +2245,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2287,8 +2287,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2335,8 +2335,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2447,8 +2447,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2487,8 +2487,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2535,8 +2535,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2575,8 +2575,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2615,8 +2615,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2671,8 +2671,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2711,8 +2711,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2751,8 +2751,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2791,8 +2791,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2841,8 +2841,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2883,8 +2883,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2923,8 +2923,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2963,8 +2963,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3019,8 +3019,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3069,8 +3069,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3109,8 +3109,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3149,8 +3149,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3189,8 +3189,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3229,8 +3229,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3269,8 +3269,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3309,8 +3309,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3349,8 +3349,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3389,8 +3389,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3503,8 +3503,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3543,8 +3543,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3583,8 +3583,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3623,8 +3623,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3663,8 +3663,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3703,8 +3703,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3743,8 +3743,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3783,8 +3783,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3823,8 +3823,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3863,8 +3863,8 @@
         "osm_building": "service",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3903,8 +3903,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3943,8 +3943,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3983,8 +3983,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4023,8 +4023,8 @@
         "osm_building": "barn",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4063,8 +4063,8 @@
         "osm_building": "barn",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4103,8 +4103,8 @@
         "osm_building": "barn",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4143,8 +4143,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4241,8 +4241,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4331,8 +4331,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4421,8 +4421,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4503,8 +4503,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4577,8 +4577,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4691,8 +4691,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4781,8 +4781,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4863,8 +4863,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4903,8 +4903,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5017,8 +5017,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5057,8 +5057,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5147,8 +5147,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5245,8 +5245,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5285,8 +5285,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5391,8 +5391,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5495,8 +5495,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5535,8 +5535,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5657,8 +5657,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5755,8 +5755,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5845,8 +5845,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5959,8 +5959,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6065,8 +6065,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6155,8 +6155,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6237,8 +6237,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6277,8 +6277,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6367,8 +6367,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6473,8 +6473,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6513,8 +6513,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6603,8 +6603,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6715,8 +6715,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6797,8 +6797,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6911,8 +6911,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6951,8 +6951,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7057,8 +7057,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7139,8 +7139,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7259,8 +7259,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7349,8 +7349,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7447,8 +7447,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7487,8 +7487,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7593,8 +7593,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7683,8 +7683,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7765,8 +7765,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7805,8 +7805,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7911,8 +7911,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8001,8 +8001,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8041,8 +8041,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8287,8 +8287,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8367,8 +8367,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8497,8 +8497,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8537,8 +8537,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8643,8 +8643,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8725,8 +8725,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8765,8 +8765,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8805,8 +8805,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8887,8 +8887,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8927,8 +8927,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9057,8 +9057,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9171,8 +9171,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9277,8 +9277,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9317,8 +9317,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9431,8 +9431,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9545,8 +9545,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9683,8 +9683,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9797,8 +9797,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9861,8 +9861,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9991,8 +9991,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10073,8 +10073,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10115,8 +10115,8 @@
         "osm_building": "industrial",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10155,8 +10155,8 @@
         "osm_building": "industrial",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10195,8 +10195,8 @@
         "osm_building": "industrial",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10249,8 +10249,8 @@
         "osm_operator": "San Francisco Public Utilities Commission",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10313,8 +10313,8 @@
         "osm_building": "industrial",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10414,8 +10414,8 @@
         "osm_name": "Intake shaft",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10454,8 +10454,8 @@
         "osm_building": "industrial",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10494,8 +10494,8 @@
         "osm_building": "industrial",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10544,8 +10544,8 @@
         "osm_building": "industrial",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10594,8 +10594,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10636,8 +10636,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10686,8 +10686,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10728,8 +10728,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10768,8 +10768,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10834,8 +10834,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10874,8 +10874,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10914,8 +10914,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10954,8 +10954,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11002,8 +11002,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11042,8 +11042,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11082,8 +11082,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11122,8 +11122,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11162,8 +11162,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11202,8 +11202,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11242,8 +11242,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11282,8 +11282,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11322,8 +11322,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11362,8 +11362,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11402,8 +11402,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11444,8 +11444,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11486,8 +11486,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11528,8 +11528,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11568,8 +11568,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11608,8 +11608,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11650,8 +11650,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11696,8 +11696,8 @@
         "osm_building": "retail",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11736,8 +11736,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11778,8 +11778,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11820,8 +11820,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -11970,8 +11970,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12018,8 +12018,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12100,8 +12100,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12140,8 +12140,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12180,8 +12180,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12261,8 +12261,8 @@
         "osm_wikidata": "Q7640959",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12301,8 +12301,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12341,8 +12341,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12381,8 +12381,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12421,8 +12421,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12461,8 +12461,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12501,8 +12501,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12541,8 +12541,8 @@
         "osm_building": "service",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12645,8 +12645,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12689,8 +12689,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12791,8 +12791,8 @@
         "osm_man_made": "storage_tank",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12831,8 +12831,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12871,8 +12871,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12919,8 +12919,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12959,8 +12959,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12999,8 +12999,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13039,8 +13039,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13079,8 +13079,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13119,8 +13119,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13159,8 +13159,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13199,8 +13199,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13239,8 +13239,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13279,8 +13279,8 @@
         "osm_building": "farm_auxiliary",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13319,8 +13319,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13421,8 +13421,8 @@
         "osm_man_made": "storage_tank",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13523,8 +13523,8 @@
         "osm_man_made": "storage_tank",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13563,8 +13563,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13603,8 +13603,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13705,8 +13705,8 @@
         "osm_man_made": "storage_tank",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13807,8 +13807,8 @@
         "osm_man_made": "storage_tank",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13909,8 +13909,8 @@
         "osm_man_made": "storage_tank",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13949,8 +13949,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14006,8 +14006,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14047,8 +14047,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14088,8 +14088,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14129,8 +14129,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14170,8 +14170,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14211,8 +14211,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14252,8 +14252,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14293,8 +14293,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14334,8 +14334,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14403,8 +14403,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14492,8 +14492,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14533,8 +14533,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14582,8 +14582,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14623,8 +14623,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14712,8 +14712,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14753,8 +14753,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14809,8 +14809,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14849,8 +14849,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14889,8 +14889,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14929,8 +14929,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14977,8 +14977,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15025,8 +15025,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15073,8 +15073,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15113,8 +15113,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15153,8 +15153,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15209,8 +15209,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15249,8 +15249,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15289,8 +15289,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15330,8 +15330,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15411,8 +15411,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15452,8 +15452,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15517,8 +15517,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15558,8 +15558,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15639,8 +15639,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15680,8 +15680,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15721,8 +15721,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15770,8 +15770,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15819,8 +15819,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15860,8 +15860,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15909,8 +15909,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15958,8 +15958,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15999,8 +15999,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16040,8 +16040,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16121,8 +16121,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16162,8 +16162,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16211,8 +16211,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16260,8 +16260,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16301,8 +16301,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16350,8 +16350,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16391,8 +16391,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16432,8 +16432,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16473,8 +16473,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16514,8 +16514,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16555,8 +16555,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16596,8 +16596,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16637,8 +16637,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16686,8 +16686,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16727,8 +16727,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16776,8 +16776,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16833,8 +16833,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16874,8 +16874,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16915,8 +16915,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16964,8 +16964,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17005,8 +17005,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17046,8 +17046,8 @@
         "osm_source": "microsoft/BuildingFootprints",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17087,8 +17087,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17127,8 +17127,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17167,8 +17167,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17208,8 +17208,8 @@
         "osm_tourism": "information",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17248,8 +17248,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17288,8 +17288,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17328,8 +17328,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17374,8 +17374,8 @@
         "osm_building": "fire_station",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17460,8 +17460,8 @@
         "osm_building": "fire_station",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17508,8 +17508,8 @@
         "osm_building": "fire_station",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17553,8 +17553,8 @@
         "osm_building": "house",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17593,8 +17593,8 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17633,20 +17633,25 @@
         "osm_building": "yes",
         "layer_id": "osm_buildings",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     }
   ],
   "metadata": {
     "source_name": "OpenStreetMap via Overpass API",
-    "source_url": "https://overpass-api.de/api/interpreter",
+    "source_url": "https://overpass.private.coffee/api/interpreter",
     "source_health": {
-      "selected_endpoint": "https://overpass-api.de/api/interpreter",
+      "selected_endpoint": "https://overpass.private.coffee/api/interpreter",
       "attempts": [
         {
           "endpoint": "https://overpass-api.de/api/interpreter",
+          "status": "error",
+          "error": "fetch failed"
+        },
+        {
+          "endpoint": "https://overpass.private.coffee/api/interpreter",
           "status": "ok",
           "element_count": 312
         }
@@ -17654,7 +17659,7 @@
     },
     "layer_id": "osm_buildings",
     "description": "OSM building footprints intersecting the AOI.",
-    "retrieved_at": "2026-05-03T02:52:20.212Z",
+    "retrieved_at": "2026-05-03T04:15:44.993Z",
     "provisional": true,
     "status": "generated"
   }

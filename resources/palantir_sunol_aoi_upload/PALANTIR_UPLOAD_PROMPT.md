@@ -15,6 +15,7 @@ We uploaded these files into this folder as flat/base filenames. Match each laye
 - `osm_roads_tracks_paths.geojson`: roads, tracks, and paths.
 - `osm_buildings.geojson`: building footprints.
 - `osm_natural_features.geojson`: natural and vegetation features.
+- `osm_vegetation_landcover.geojson`: vegetation and landcover polygons for Cesium/Palantir context.
 - `osm_waterways_barriers.geojson`: waterways and barriers.
 - `elevation_samples_500m.csv`: USGS EPQS elevation samples.
 - `terrain_attention_points.geojson`: provisional terrain planning aids.
@@ -68,7 +69,7 @@ Expose or define a Palantir-facing API/function/query contract with these capabi
 
 - `getMissionBundle()`: returns bundle metadata, generated time, safety scope, layer counts, and source statuses from `manifest.json`.
 - `getAoi()`: returns the AOI FeatureCollection.
-- `getMapContextLayers()`: returns available context layer names and object/dataset references for roads, buildings, natural features, waterways, barriers, and infrastructure.
+- `getMapContextLayers()`: returns available context layer names and object/dataset references for roads, buildings, natural features, vegetation/landcover, waterways, barriers, and infrastructure.
 - `getInfrastructureContext()`: returns OSM, CEC, and HIFLD power infrastructure features.
 - `getTerrainAttentionPoints()`: returns terrain attention points with rationale, confidence, and recommended drone task.
 - `getMissionRoute()`: returns the unit route and drone waypoints.

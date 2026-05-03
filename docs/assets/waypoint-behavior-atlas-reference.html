@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #10131a;
+            color: #e1e2ec;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .perspective-grid {
+            background-image:
+                linear-gradient(to right, rgba(51, 65, 85, 0.2) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(51, 65, 85, 0.2) 1px, transparent 1px);
+            background-size: 40px 40px;
+            transform: perspective(1000px) rotateX(60deg) translateY(-200px);
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: 0;
+            left: -50%;
+            z-index: 0;
+        }
+        .vertical-stem {
+            width: 1px;
+            background: #334155;
+            height: 64px;
+            position: relative;
+        }
+        .waypoint-head {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #adc6ff;
+            background: #10131a;
+            position: absolute;
+            top: -6px;
+            left: -5.5px;
+        }
+        .polyline-untread {
+            stroke-dasharray: 4 4;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d8e2ff",
+                        "on-surface": "#e1e2ec",
+                        "on-secondary-fixed": "#0b1c30",
+                        "error-container": "#93000a",
+                        "tertiary": "#ffb786",
+                        "surface-container-low": "#191b23",
+                        "tertiary-container": "#df7412",
+                        "surface-tint": "#adc6ff",
+                        "outline-variant": "#424754",
+                        "surface-container-highest": "#32353c",
+                        "on-tertiary-container": "#461f00",
+                        "surface-container-high": "#272a31",
+                        "on-tertiary-fixed": "#311400",
+                        "on-tertiary": "#502400",
+                        "surface-container": "#1d2027",
+                        "on-background": "#e1e2ec",
+                        "on-primary-fixed": "#001a42",
+                        "on-primary-container": "#00285d",
+                        "outline": "#8c909f",
+                        "surface-container-lowest": "#0b0e15",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "primary-container": "#4d8eff",
+                        "inverse-surface": "#e1e2ec",
+                        "primary": "#adc6ff",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "on-surface-variant": "#c2c6d6",
+                        "tertiary-fixed": "#ffdcc6",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-secondary": "#213145",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#004395",
+                        "surface-dim": "#10131a",
+                        "surface-bright": "#363941",
+                        "secondary-container": "#3a4a5f",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "inverse-on-surface": "#2e3038",
+                        "surface-variant": "#32353c",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-primary": "#002e6a",
+                        "secondary": "#b7c8e1",
+                        "background": "#10131a",
+                        "surface": "#10131a",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#a9bad3",
+                        "inverse-primary": "#005ac2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "element-gap": "4px",
+                        "unit": "4px",
+                        "panel-gap": "8px",
+                        "internal-component-padding": "6px 10px",
+                        "container-padding": "16px"
+                    },
+                    "fontFamily": {
+                        "display-mono": ["Inter"],
+                        "data-tabular": ["Inter"],
+                        "body-dense": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "header-section": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-mono": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "data-tabular": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-dense": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "label-caps": ["11px", {"lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                        "header-section": ["16px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="bg-slate-950 text-blue-500 font-inter tracking-tighter uppercase font-bold text-xs border-b border-slate-700 fixed top-0 w-full z-50 flex justify-between items-center px-4 h-14">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-500">radar</span>
+<span class="text-blue-500 font-black tracking-widest text-lg">ISR MISSION ATLAS</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-blue-400 border-b-2 border-blue-500 h-14 flex items-center px-2" href="#">MISSION ATLAS</a>
+<a class="text-slate-400 hover:bg-slate-900 hover:text-blue-300 transition-colors duration-150 h-14 flex items-center px-2" href="#">SENSORS</a>
+<a class="text-slate-400 hover:bg-slate-900 hover:text-blue-300 transition-colors duration-150 h-14 flex items-center px-2" href="#">LOGISTICS</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined hover:text-blue-300 cursor-pointer">settings</span>
+</div>
+</header>
+<!-- Navigation Drawer -->
+<aside class="bg-slate-900 fixed left-0 top-14 bottom-0 z-40 flex flex-col border-r border-slate-800 w-64 hidden md:flex">
+<div class="p-4 border-b border-slate-800">
+<h2 class="font-inter text-sm font-bold uppercase tracking-tight text-blue-500">MISSION CONTROL</h2>
+</div>
+<nav class="flex-1 py-4">
+<div class="flex items-center gap-3 px-4 py-3 bg-slate-800 text-blue-400 border-l-4 border-blue-500 font-inter text-sm font-medium uppercase tracking-tight">
+<span class="material-symbols-outlined">map</span>
+<span>Tactical Map</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-800/50 hover:text-blue-200 duration-200 font-inter text-sm font-medium uppercase tracking-tight">
+<span class="material-symbols-outlined">ads_click</span>
+<span>Waypoint Atlas</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-800/50 hover:text-blue-200 duration-200 font-inter text-sm font-medium uppercase tracking-tight">
+<span class="material-symbols-outlined">sensors</span>
+<span>Sensor Config</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-800/50 hover:text-blue-200 duration-200 font-inter text-sm font-medium uppercase tracking-tight">
+<span class="material-symbols-outlined">layers</span>
+<span>Mission Layers</span>
+</div>
+</nav>
+<div class="p-4 bg-slate-950 border-t border-slate-800">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-2 h-2 rounded-full bg-blue-500"></div>
+<span class="font-label-caps text-label-caps uppercase text-blue-500">Live Telemetry</span>
+</div>
+<div class="text-[10px] text-slate-500 font-mono">LAT: 34.0522° N<br/>LON: 118.2437° W</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-14 pb-16 min-h-screen relative overflow-hidden flex flex-col items-center bg-[#0f172a]">
+<!-- Perspective Background -->
+<div class="perspective-grid"></div>
+<!-- Section Header -->
+<div class="w-full max-w-5xl z-10 px-6 py-12 relative">
+<div class="border-l-4 border-blue-500 pl-4 mb-12">
+<h1 class="font-display-mono text-display-mono uppercase">Waypoint Behavior Atlas</h1>
+<p class="font-body-dense text-on-surface-variant max-w-2xl mt-2">Technical schematic defining standardized mission navigation and sensor engagement behaviors for autonomous ISR assets. Reference: MIL-STD-ISR-011.</p>
+</div>
+<!-- Behavior Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Behavior Item: Launch -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 001</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<line stroke="#334155" stroke-width="1" x1="100" x2="100" y1="100" y2="40"></line>
+<rect fill="none" height="12" stroke="#adc6ff" stroke-width="1.5" width="12" x="94" y="34"></rect>
+<path class="polyline-untread" d="M100 100 L120 40" opacity="0.6" stroke="#fbbf24" stroke-width="2"></path>
+<circle cx="100" cy="100" fill="#fbbf24" r="3"></circle>
+</svg>
+<div class="absolute bottom-4 left-4 bg-slate-900 border border-slate-700 px-2 py-0.5 font-label-caps text-label-caps text-slate-300">ST_VECTOR</div>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-blue-500/30 w-full mb-2">Launch</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">Ascent phase from ground station. Initiation of telemetry handoff and flight surface calibration.</p>
+</div>
+<!-- Behavior Item: Transit -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 002</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<line opacity="0.5" stroke="#fbbf24" stroke-width="3" x1="50" x2="150" y1="60" y2="60"></line>
+<line class="polyline-untread" stroke="#fbbf24" stroke-width="1" x1="50" x2="150" y1="60" y2="60"></line>
+<rect fill="none" height="12" stroke="#adc6ff" stroke-width="1.5" transform="rotate(45 100 60)" width="12" x="94" y="54"></rect>
+</svg>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-blue-500/30 w-full mb-2">Transit</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">High-speed movement between waypoints. Low sensor utility, prioritized efficiency.</p>
+</div>
+<!-- Behavior Item: Scout -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 003</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<path class="polyline-untread" d="M50 80 Q 100 20 150 80" fill="none" stroke="#fbbf24" stroke-width="1.5"></path>
+<path d="M80 50 L120 50 L100 80 Z" fill="rgba(147, 197, 253, 0.1)" stroke="#3b82f6" stroke-dasharray="2 2" stroke-width="0.5"></path>
+<rect fill="none" height="12" stroke="#adc6ff" stroke-width="1.5" width="12" x="94" y="44"></rect>
+</svg>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-blue-500/30 w-full mb-2">Scout</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">Area sweep with dynamic path adjustment based on initial visual indicators.</p>
+</div>
+<!-- Behavior Item: Scan -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 004</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<rect fill="rgba(168, 85, 247, 0.1)" height="20" stroke="#a855f7" stroke-width="1" width="80" x="60" y="80"></rect>
+<line stroke="#a855f7" stroke-dasharray="2 2" stroke-width="0.5" x1="100" x2="60" y1="40" y2="80"></line>
+<line stroke="#a855f7" stroke-dasharray="2 2" stroke-width="0.5" x1="100" x2="140" y1="40" y2="80"></line>
+<rect fill="none" height="12" stroke="#adc6ff" stroke-width="1.5" width="12" x="94" y="34"></rect>
+</svg>
+<div class="absolute bottom-4 right-4 text-[9px] font-mono text-purple-400">SCAN_WIDTH: 80m</div>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-blue-500/30 w-full mb-2">Scan</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">High-resolution sensor footprint capture. Grid-based raster movement patterns.</p>
+</div>
+<!-- Behavior Item: Fly-by -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 005</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<path d="M20 60 L180 60" opacity="0.5" stroke="#fbbf24" stroke-width="4"></path>
+<path d="M20 60 L180 60" stroke="#fbbf24" stroke-width="1"></path>
+<path d="M100 60 L100 100" stroke="#3b82f6" stroke-dasharray="4 2" stroke-width="0.5"></path>
+<circle cx="100" cy="54" fill="none" r="6" stroke="#adc6ff" stroke-width="1.5"></circle>
+</svg>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-blue-500/30 w-full mb-2">Fly-by</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">Non-stop movement over a target with active sensor tracking (look-at constraint).</p>
+</div>
+<!-- Behavior Item: Observe -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 006</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<circle class="polyline-untread" cx="100" cy="60" fill="none" r="20" stroke="#fbbf24" stroke-width="1"></circle>
+<circle cx="100" cy="60" fill="rgba(59, 130, 246, 0.4)" r="5"></circle>
+<rect fill="none" height="12" stroke="#adc6ff" stroke-width="1.5" width="12" x="94" y="34"></rect>
+<line stroke="#adc6ff" stroke-width="1" x1="100" x2="100" y1="46" y2="55"></line>
+</svg>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-blue-500/30 w-full mb-2">Observe</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">Orbiting a specific point of interest with 100% sensor uptime on target.</p>
+</div>
+<!-- Behavior Item: Hold -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 007</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<path d="M100 40 L110 50 L100 60 L90 50 Z" fill="#adc6ff"></path>
+<circle cx="100" cy="50" fill="none" r="15" stroke="#334155" stroke-dasharray="2 2" stroke-width="1"></circle>
+</svg>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-blue-500/30 w-full mb-2">Hold</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">Geosynchronous or loiter position. Used for relaying data or awaiting orders.</p>
+</div>
+<!-- Behavior Item: Decision -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 008</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<line stroke="#fbbf24" stroke-width="1.5" x1="60" x2="100" y1="60" y2="60"></line>
+<line stroke="#fbbf24" stroke-dasharray="4 4" stroke-width="1.5" x1="100" x2="140" y1="60" y2="30"></line>
+<line stroke="#fbbf24" stroke-dasharray="4 4" stroke-width="1.5" x1="100" x2="140" y1="60" y2="90"></line>
+<polygon fill="none" points="94,54 106,60 94,66" stroke="#adc6ff" stroke-width="1.5"></polygon>
+</svg>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-blue-500/30 w-full mb-2">Decision</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">Branch point in mission logic. Evaluates environment for next waypoint selection.</p>
+</div>
+<!-- Behavior Item: RTB -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 009</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<path d="M160 40 L40 40" stroke="#fbbf24" stroke-width="1.5"></path>
+<path d="M40 40 L30 40" stroke="#fbbf24" stroke-dasharray="2 2" stroke-width="1.5"></path>
+<rect fill="#adc6ff" height="12" width="12" x="94" y="34"></rect>
+<path d="M96 40 L104 40" stroke="#0f172a" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-blue-500/30 w-full mb-2">RTB</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">Return to Base. Direct flight path to launch coordinates or recovery zone.</p>
+</div>
+<!-- Behavior Item: Land -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 010</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<line stroke="#334155" stroke-width="2" x1="60" x2="140" y1="100" y2="100"></line>
+<path class="polyline-untread" d="M100 20 L100 100" stroke="#fbbf24" stroke-width="1"></path>
+<path d="M94 20 L106 20 L100 32 Z" fill="#adc6ff"></path>
+</svg>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-blue-500/30 w-full mb-2">Land</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">Descent and touchdown. Automatic engine shutdown and sensor stowage.</p>
+</div>
+<!-- Behavior Item: Abort -->
+<div class="bg-surface-container border border-slate-700 p-6 flex flex-col items-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-mono text-slate-600">BEH_ID: 011</div>
+<div class="h-48 w-full flex items-center justify-center relative mb-4">
+<svg class="w-full h-full" viewbox="0 0 200 120">
+<path d="M100 60 L140 100" stroke="#ef4444" stroke-dasharray="4 2" stroke-width="2"></path>
+<line stroke="#ef4444" stroke-width="3" x1="90" x2="110" y1="50" y2="70"></line>
+<line stroke="#ef4444" stroke-width="3" x1="110" x2="90" y1="50" y2="70"></line>
+</svg>
+<div class="absolute top-10 flex items-center gap-1 bg-red-950/40 border border-red-500 px-2 py-0.5">
+<span class="material-symbols-outlined text-red-500 text-xs">warning</span>
+<span class="text-[9px] text-red-500 font-bold">EMERGENCY_EXIT</span>
+</div>
+</div>
+<h3 class="font-header-section text-header-section uppercase border-b border-red-500/30 w-full mb-2 text-red-400">Abort</h3>
+<p class="font-body-dense text-on-surface-variant text-xs">Immediate cessation of mission parameters. Transition to nearest safety waypoint.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<footer class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center h-16 bg-slate-950 border-t border-slate-700">
+<div class="flex flex-col items-center justify-center text-blue-500 border-t-2 border-blue-500 bg-blue-500/10 px-6 py-1">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-inter text-[10px] font-bold uppercase">Overview</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 px-6 py-1 hover:bg-slate-900 active:opacity-80 transition-all">
+<span class="material-symbols-outlined">route</span>
+<span class="font-inter text-[10px] font-bold uppercase">Routes</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 px-6 py-1 hover:bg-slate-900 active:opacity-80 transition-all">
+<span class="material-symbols-outlined">troubleshoot</span>
+<span class="font-inter text-[10px] font-bold uppercase">Sensors</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 px-6 py-1 hover:bg-slate-900 active:opacity-80 transition-all">
+<span class="material-symbols-outlined">play_arrow</span>
+<span class="font-inter text-[10px] font-bold uppercase">Execute</span>
+</div>
+</footer>
+</body></html>

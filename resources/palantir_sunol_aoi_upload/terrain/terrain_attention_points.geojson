@@ -20,7 +20,7 @@
         "rationale": "Top available USGS EPQS elevation sample inside the AOI; use as provisional high-ground scout candidate.",
         "source_name": "USGS EPQS",
         "source_url": "https://epqs.nationalmap.gov/v1/json",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true,
         "evidence_refs": "demo_terrain_attention_points_v1"
       }
@@ -44,7 +44,7 @@
         "rationale": "Top available USGS EPQS elevation sample inside the AOI; use as provisional high-ground scout candidate.",
         "source_name": "USGS EPQS",
         "source_url": "https://epqs.nationalmap.gov/v1/json",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true,
         "evidence_refs": "demo_terrain_attention_points_v1"
       }
@@ -68,7 +68,7 @@
         "rationale": "Top available USGS EPQS elevation sample inside the AOI; use as provisional high-ground scout candidate.",
         "source_name": "USGS EPQS",
         "source_url": "https://epqs.nationalmap.gov/v1/json",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true,
         "evidence_refs": "demo_terrain_attention_points_v1"
       }
@@ -91,7 +91,7 @@
         "rationale": "Synthetic decision-point review marker where Route A and Route B split.",
         "source_name": "Synthetic mission fixture",
         "source_url": "docs/goals/0001-palantir-offline-upload-bundle.md",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true,
         "evidence_refs": "demo_terrain_attention_points_v1"
       }

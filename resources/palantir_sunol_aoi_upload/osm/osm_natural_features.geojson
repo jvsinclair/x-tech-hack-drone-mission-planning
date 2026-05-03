@@ -64,8 +64,8 @@
         "osm_natural": "water",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -379,8 +379,8 @@
         "osm_source": "http://www.consrv.ca.gov/dlrp/fmmp/products/Pages/DownloadGISdata.aspx",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2521,8 +2521,8 @@
         "osm_wikipedia": "en:San Antonio Reservoir",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2617,8 +2617,8 @@
         "osm_natural": "water",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2766,8 +2766,8 @@
         "osm_natural": "water",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2855,8 +2855,8 @@
         "osm_water": "reservoir",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2944,8 +2944,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3323,8 +3323,8 @@
         "osm_wikidata": "Q5018630",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3402,8 +3402,8 @@
         "osm_natural": "valley",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3461,8 +3461,8 @@
         "osm_natural": "ridge",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3557,8 +3557,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5881,8 +5881,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -6321,8 +6321,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7069,8 +7069,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7197,8 +7197,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7273,8 +7273,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7361,8 +7361,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7561,8 +7561,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7610,8 +7610,8 @@
         "osm_water": "reservoir",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7664,8 +7664,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7737,8 +7737,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7811,8 +7811,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7873,8 +7873,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7927,8 +7927,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -7988,8 +7988,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8042,8 +8042,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8068,8 +8068,8 @@
         "osm_natural": "cliff",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8094,8 +8094,8 @@
         "osm_natural": "cliff",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8362,8 +8362,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8554,8 +8554,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8623,8 +8623,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8764,8 +8764,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8825,8 +8825,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -8870,8 +8870,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9790,8 +9790,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -9958,8 +9958,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10502,8 +10502,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10550,8 +10550,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10682,8 +10682,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -10982,8 +10982,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12202,8 +12202,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12310,8 +12310,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12594,8 +12594,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12678,8 +12678,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12770,8 +12770,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12818,8 +12818,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -12990,8 +12990,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13054,8 +13054,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13127,8 +13127,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13255,8 +13255,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13379,8 +13379,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13535,8 +13535,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13631,8 +13631,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -13807,8 +13807,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14303,8 +14303,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14403,8 +14403,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14495,8 +14495,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14599,8 +14599,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14663,8 +14663,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -14967,8 +14967,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15123,8 +15123,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15219,8 +15219,8 @@
         "osm_natural": "scrub",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15479,8 +15479,8 @@
         "osm_natural": "grassland",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15583,8 +15583,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15651,8 +15651,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15723,8 +15723,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15803,8 +15803,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15891,8 +15891,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -15979,8 +15979,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16155,8 +16155,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16359,8 +16359,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16431,8 +16431,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -16907,8 +16907,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17035,8 +17035,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17315,8 +17315,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -17675,8 +17675,8 @@
         "osm_natural": "wood",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -19743,8 +19743,8 @@
         "osm_natural": "grassland",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21071,8 +21071,8 @@
         "osm_natural": "grassland",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21140,8 +21140,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21237,8 +21237,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21302,8 +21302,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21415,8 +21415,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21480,8 +21480,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21549,8 +21549,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21630,8 +21630,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21699,8 +21699,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21764,8 +21764,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21829,8 +21829,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21894,8 +21894,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -21971,8 +21971,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22040,8 +22040,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22097,8 +22097,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22150,8 +22150,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22271,8 +22271,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22340,8 +22340,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22393,8 +22393,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22446,8 +22446,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22503,8 +22503,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22552,8 +22552,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22657,8 +22657,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22742,8 +22742,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22790,8 +22790,8 @@
         "osm_natural": "grassland",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22855,8 +22855,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -22960,8 +22960,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23041,8 +23041,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23130,8 +23130,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23199,8 +23199,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23260,8 +23260,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23333,8 +23333,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23402,8 +23402,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23455,8 +23455,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23544,8 +23544,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23617,8 +23617,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23682,8 +23682,8 @@
         "osm_water": "pond",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23802,8 +23802,8 @@
         "osm_natural": "water",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -23940,8 +23940,8 @@
         "osm_water": "basin",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -24006,8 +24006,8 @@
         "osm_water": "basin",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -24104,8 +24104,8 @@
         "osm_water": "basin",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -24178,8 +24178,8 @@
         "osm_water": "basin",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -24252,8 +24252,8 @@
         "osm_water": "basin",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -24330,8 +24330,8 @@
         "osm_water": "basin",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -24420,8 +24420,8 @@
         "osm_water": "basin",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -24506,8 +24506,8 @@
         "osm_water": "basin",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -24591,20 +24591,25 @@
         "osm_water": "reservoir",
         "layer_id": "osm_natural_features",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     }
   ],
   "metadata": {
     "source_name": "OpenStreetMap via Overpass API",
-    "source_url": "https://overpass-api.de/api/interpreter",
+    "source_url": "https://overpass.private.coffee/api/interpreter",
     "source_health": {
-      "selected_endpoint": "https://overpass-api.de/api/interpreter",
+      "selected_endpoint": "https://overpass.private.coffee/api/interpreter",
       "attempts": [
         {
           "endpoint": "https://overpass-api.de/api/interpreter",
+          "status": "error",
+          "error": "fetch failed"
+        },
+        {
+          "endpoint": "https://overpass.private.coffee/api/interpreter",
           "status": "ok",
           "element_count": 124
         }
@@ -24612,7 +24617,7 @@
     },
     "layer_id": "osm_natural_features",
     "description": "OSM natural and vegetation-related features intersecting the AOI.",
-    "retrieved_at": "2026-05-03T02:52:20.212Z",
+    "retrieved_at": "2026-05-03T04:15:44.993Z",
     "provisional": true,
     "status": "generated"
   }

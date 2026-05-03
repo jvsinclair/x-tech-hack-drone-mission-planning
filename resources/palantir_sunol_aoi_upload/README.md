@@ -18,7 +18,7 @@ This bundle packages public geospatial context and synthetic mission fixtures fo
 
 1. `aoi/sunol_training_area_aoi.geojson`
 2. Official and OSM power layers.
-3. Roads, buildings, natural features, waterways, and barriers.
+3. Roads, buildings, natural features, vegetation/landcover, waterways, and barriers.
 4. `terrain/elevation_samples_500m.csv` and `terrain/terrain_attention_points.geojson`.
 5. Synthetic mission fixtures under `mission_fixture/`.
 6. Use `PALANTIR_UPLOAD_PROMPT.md` as the instruction prompt for Palantir/AIP setup.
@@ -33,6 +33,7 @@ This bundle packages public geospatial context and synthetic mission fixtures fo
 | osm_roads_tracks_paths | 727 | generated |
 | osm_buildings | 312 | generated |
 | osm_natural_features | 124 | generated |
+| osm_vegetation_landcover | 61 | generated |
 | osm_waterways_barriers | 485 | generated |
 | cec_transmission_lines | 26 | generated |
 | hifld_transmission_lines | 17 | generated |

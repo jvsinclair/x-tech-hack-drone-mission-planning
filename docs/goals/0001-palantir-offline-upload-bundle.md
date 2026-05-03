@@ -49,6 +49,7 @@ Do not:
   - `osm/osm_roads_tracks_paths.geojson`
   - `osm/osm_buildings.geojson`
   - `osm/osm_natural_features.geojson`
+  - `osm/osm_vegetation_landcover.geojson`
   - `osm/osm_waterways_barriers.geojson`
   - `official_power/cec_transmission_lines.geojson`
   - `official_power/hifld_transmission_lines.geojson`
@@ -60,7 +61,7 @@ Do not:
   - `mission_fixture/synthetic_cue_zones.geojson`
   - `mission_fixture/synthetic_no_go_zones.geojson`
 - Use live source APIs where available:
-  - OSM / Overpass for power, roads, buildings, natural features, waterways, and barriers.
+  - OSM / Overpass for power, roads, buildings, natural features, vegetation/landcover, waterways, and barriers.
   - California Energy Commission ArcGIS FeatureServer for transmission lines.
   - HIFLD ArcGIS FeatureServer for transmission lines.
   - USGS EPQS for reduced 500m elevation samples.
@@ -104,6 +105,7 @@ Return:
   - `osm_roads_tracks_paths`: 727
   - `osm_buildings`: 312
   - `osm_natural_features`: 124
+  - `osm_vegetation_landcover`: 61
   - `osm_waterways_barriers`: 485
   - `cec_transmission_lines`: 26
   - `hifld_transmission_lines`: 17

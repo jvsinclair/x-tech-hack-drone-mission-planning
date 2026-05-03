@@ -17,7 +17,8 @@ Scaffold a fast local web app for the ISR drone mission planner using Vite, Reac
 2. `docs/PROJECT_CONTEXT.md`
 3. `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
 4. `docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md` — layer/chroma contract (§6–§7); full R1–R7 + glyphs land in goal `0006` if not in this change set.
-5. `docs/goals/0001-palantir-offline-upload-bundle.md`
+5. `docs/research/cesium_context_layers_alternatives.md` — bundle paths and Cesium notes for **buildings** and **vegetation** layers.
+6. `docs/goals/0001-palantir-offline-upload-bundle.md`
 
 ## Scope
 Do:
@@ -52,6 +53,7 @@ Do not:
   - power infrastructure
   - roads/tracks/paths
   - buildings
+  - vegetation / landcover (`osm/osm_vegetation_landcover.geojson` when the bundle is generated)
   - terrain attention points
   - unit route
   - drone route branches

@@ -3,6 +3,171 @@
   "description": "Project-specific source registry for evidence and resources used by x-tech-hackathon.",
   "sources": [
     {
+      "id": "ais_hub",
+      "title": "AIS Hub shipping data",
+      "type": "dataset_or_api",
+      "location": "https://www.aishub.net",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate maritime track feed",
+        "entity and location correlation scenario"
+      ],
+      "limits": [
+        "Access, licensing, and API constraints not verified."
+      ],
+      "validation_status": "todo",
+      "notes": "Potential source for a maritime command dashboard demo."
+    },
+    {
+      "id": "atpial_public_manual_ir_pulse_rates",
+      "title": "Public ATPIAL manual page: IR illuminator pulse rates",
+      "type": "public_manual_page",
+      "location": "https://www.manualsdir.com/manuals/402173/eotech-atpial-an_peq-15-advanced-target-pointer-illuminator-aiming-light.html?page=48",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "Public evidence that ATPIAL IR illuminator pulse mode includes fixed pulse-rate options",
+        "demo_optical_cue_pps_route_mapping_v1"
+      ],
+      "limits": [
+        "Public manual mirror, not an official current operational source.",
+        "Does not establish authentication, IFF, drone integration, or operational command safety.",
+        "Use only to justify a simulated demo abstraction."
+      ],
+      "validation_status": "provisional",
+      "notes": "The project should avoid real hardware integration or operational signaling details."
+    },
+    {
+      "id": "barentswatch_historic_ais_api",
+      "title": "BarentsWatch historic AIS API",
+      "type": "dataset_or_api",
+      "location": "https://developer.barentswatch.no/docs/AIS/historic-ais-api/",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate historic maritime track data",
+        "fixture-backed replay"
+      ],
+      "limits": [
+        "Access, coverage, and usage terms not verified."
+      ],
+      "validation_status": "todo",
+      "notes": "Evaluate if PRD chooses maritime track replay."
+    },
+    {
+      "id": "cec_transmission_line_featureserver",
+      "title": "California Energy Commission Transmission_Line FeatureServer",
+      "type": "dataset_or_api",
+      "location": "https://services3.arcgis.com/bWPjFyq029ChCGur/arcgis/rest/services/Transmission_Line/FeatureServer/2",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "California electric transmission line context for the Sunol offline upload bundle",
+        "ArcGIS metadata, bbox count, and GeoJSON feature queries"
+      ],
+      "limits": [
+        "Planning context only; not legal, engineering, surveying, flight-safety, or utility-operation truth.",
+        "ArcGIS availability and supported output formats should be probed before use."
+      ],
+      "validation_status": "provisional",
+      "notes": "Current AOI probe returned CEC transmission features for the Sunol bbox. Goal 0001 generator records metadata/count/sample probes in manifest source_health."
+    },
+    {
+      "id": "cesium_ion_3d_content",
+      "title": "Cesium ion 3D Tiles (e.g. OSM Buildings, Photorealistic)",
+      "type": "visualization_service",
+      "location": "https://cesium.com/platform/cesium-ion/",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "global or regional 3D buildings and photorealistic tiles in CesiumJS"
+      ],
+      "limits": [
+        "Requires ion access token and acceptable use per Cesium terms.",
+        "Not offline-first for hackathon demos unless cached."
+      ],
+      "validation_status": "todo",
+      "notes": "Optional upgrade path when GeoJSON vectors are insufficient for visual polish."
+    },
+    {
+      "id": "danti_geospatial_platform",
+      "title": "Danti geospatial intelligence platform",
+      "type": "platform_resource",
+      "location": "https://danti.ai",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate geospatial enrichment",
+        "candidate OSINT-backed map context"
+      ],
+      "limits": [
+        "Account access not verified locally.",
+        "Available hackathon data and API surfaces are unknown."
+      ],
+      "validation_status": "todo",
+      "notes": "Evaluate after PRD selects a geospatial scenario."
+    },
+    {
+      "id": "deck_gl",
+      "title": "Deck.gl",
+      "type": "visualization_library",
+      "location": "https://deck.gl",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "web map visualization",
+        "track layers and spatial overlays"
+      ],
+      "limits": [
+        "Fit with chosen frontend stack not yet evaluated."
+      ],
+      "validation_status": "provisional",
+      "notes": "Candidate library for a custom map-first dashboard."
+    },
+    {
+      "id": "defcon_inspiration_scrape_2025",
+      "title": "Sample DEFCON projects scrape",
+      "type": "inspiration_dataset",
+      "location": "https://defcon-inspiration.cerebralvalley.ai/",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "project inspiration",
+        "possible implementation patterns"
+      ],
+      "limits": [
+        "Inspiration only; not a product requirement or evidence source by itself."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use for brainstorming, not validation."
+    },
+    {
+      "id": "exa_ai_search",
+      "title": "Exa AI search",
+      "type": "search_tool",
+      "location": "https://exa.ai",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "AI-assisted source discovery",
+        "OSINT search workflow"
+      ],
+      "limits": [
+        "Search outputs must be verified against primary sources.",
+        "API access and terms not verified."
+      ],
+      "validation_status": "provisional",
+      "notes": "Candidate discovery tool only."
+    },
+    {
+      "id": "flightradar24",
+      "title": "FlightRadar24",
+      "type": "data_platform",
+      "location": "https://www.flightradar24.com",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate flight tracking context",
+        "air track visualization inspiration"
+      ],
+      "limits": [
+        "API access, data rights, and hackathon suitability not verified."
+      ],
+      "validation_status": "todo",
+      "notes": "Use only after confirming data access and license constraints."
+    },
+    {
       "id": "hackathon_brief_problem_statement_3_2026_05_02",
       "title": "3rd Annual National Security Hackathon hacker resource brief excerpt",
       "type": "event_brief",
@@ -21,6 +186,328 @@
       ],
       "validation_status": "provisional",
       "notes": "Use for initial PRD alignment only; verify partner access and source availability before implementation depends on it."
+    },
+    {
+      "id": "hifld_infrastructure_pois",
+      "title": "HIFLD Open national infrastructure layers",
+      "type": "dataset_or_api",
+      "location": "https://hifld-geoplatform.opendata.arcgis.com/",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "schools, hospitals, and other facilities as infrastructure-style POIs",
+        "ArcGIS query by map extent overlapping the 20 km bbox"
+      ],
+      "limits": [
+        "Use current FeatureServer host (verify services2 ArcGIS pattern).",
+        "National datasets require bbox clip and attribution."
+      ],
+      "validation_status": "provisional",
+      "notes": "Optional follow-on to OSM POI layers; see poi_sources_20km_sunol_corridor.md section C."
+    },
+    {
+      "id": "hifld_us_electric_power_transmission_lines_featureserver",
+      "title": "HIFLD U.S. Electric Power Transmission Lines FeatureServer",
+      "type": "dataset_or_api",
+      "location": "https://services2.arcgis.com/LYMgRMwHfrWWEg3s/ArcGIS/rest/services/HIFLD_US_Electric_Power_Transmission_Lines/FeatureServer/0",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "national electric power transmission line context for the Sunol offline upload bundle",
+        "ArcGIS metadata, bbox count, and GeoJSON feature queries"
+      ],
+      "limits": [
+        "Informational infrastructure data only; not suitable as operational utility truth.",
+        "Coverage, attribution, and freshness are source-dependent."
+      ],
+      "validation_status": "provisional",
+      "notes": "Current AOI probe returned HIFLD transmission features for the Sunol bbox. Goal 0001 generator records metadata/count/sample probes in manifest source_health."
+    },
+    {
+      "id": "kaggle_ais_dataset",
+      "title": "Kaggle AIS dataset",
+      "type": "dataset",
+      "location": "https://www.kaggle.com/datasets/eminserkanerdonmez/ais-dataset/data",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate sample AIS dataset",
+        "offline fixture creation"
+      ],
+      "limits": [
+        "Kaggle access, licensing, and dataset quality not verified."
+      ],
+      "validation_status": "todo",
+      "notes": "Potential fallback if direct APIs are too slow to integrate."
+    },
+    {
+      "id": "kepler_gl",
+      "title": "Kepler.gl",
+      "type": "visualization_tool",
+      "location": "https://kepler.gl",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "geospatial visualization",
+        "map layer prototyping"
+      ],
+      "limits": [
+        "Fit with chosen app stack not yet evaluated."
+      ],
+      "validation_status": "provisional",
+      "notes": "Candidate visualization tool for rapid geospatial demos."
+    },
+    {
+      "id": "maplibre_gl_js",
+      "title": "MapLibre GL JS",
+      "type": "visualization_library",
+      "location": "https://maplibre.org/maplibre-gl-js/docs",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "open-source web map basemap",
+        "markers, popups, sources, and layers for the mission planning UI"
+      ],
+      "limits": [
+        "Map styles and tiles still need to be selected for the demo.",
+        "Offline or restricted-network behavior is not yet validated."
+      ],
+      "validation_status": "provisional",
+      "notes": "Recommended basemap layer for the custom drone route-planning UI."
+    },
+    {
+      "id": "marinecadastre_vessel_traffic",
+      "title": "MarineCadastre vessel traffic data",
+      "type": "dataset",
+      "location": "https://hub.marinecadastre.gov/pages/vesseltraffic",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate public vessel traffic dataset",
+        "fixture-backed geospatial track demo"
+      ],
+      "limits": [
+        "Dataset size, coverage, and processing requirements not verified."
+      ],
+      "validation_status": "todo",
+      "notes": "Likely useful if the PRD needs public maritime data."
+    },
+    {
+      "id": "microsoft_us_building_footprints",
+      "title": "Microsoft US Building Footprints",
+      "type": "dataset_or_api",
+      "location": "https://github.com/microsoft/USBuildingFootprints",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "fallback building footprints if OSM coverage is thin in the AOI",
+        "clip-to-bbox GeoJSON for Cesium extrusion"
+      ],
+      "limits": [
+        "State-scale downloads are large; clip before committing.",
+        "Verify Microsoft dataset license and attribution for your use."
+      ],
+      "validation_status": "provisional",
+      "notes": "Optional; use after visual QA of OSM buildings in the demo bbox."
+    },
+    {
+      "id": "moving_unit_drone_mission_planning",
+      "title": "Moving Unit Drone Mission Planning research note",
+      "type": "local_doc",
+      "location": "docs/research/moving_unit_drone_mission_planning.md",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "moving unit route corridor planning",
+        "terrain attention-point generation",
+        "drone route option generation",
+        "PPS cue integration with mission state machine"
+      ],
+      "limits": [
+        "Fixture-first demo plan, not operational doctrine.",
+        "Terrain heuristics are provisional and should be visibly labeled in the UI."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use as the immediate implementation map for the moving-unit demo."
+    },
+    {
+      "id": "openai_codex",
+      "title": "OpenAI Codex",
+      "type": "platform_resource",
+      "location": "https://developers.openai.com/codex",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "code generation and agent workflows",
+        "candidate natural-language query, extraction, summarization, and explanation support"
+      ],
+      "limits": [
+        "Hackathon access and API credits not verified locally.",
+        "Exact product/API use must be chosen after the PRD lands."
+      ],
+      "validation_status": "todo",
+      "notes": "Use official OpenAI documentation before implementing OpenAI-specific features."
+    },
+    {
+      "id": "openstreetmap_nominatim_policy",
+      "title": "OpenStreetMap Nominatim search API",
+      "type": "dataset_or_api",
+      "location": "https://nominatim.org/release-docs/develop/api/Overview/",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "reverse geocoding and place lookup for spot checks"
+      ],
+      "limits": [
+        "Usage policy prohibits bulk harvesting of POIs; use Overpass for bulk OSM pulls.",
+        "Strict rate limits; cache responsibly."
+      ],
+      "validation_status": "provisional",
+      "notes": "Documented in docs/research/poi_sources_20km_sunol_corridor.md; not called by fetch-pois-radius.mjs."
+    },
+    {
+      "id": "openstreetmap_overpass_api",
+      "title": "OpenStreetMap Overpass API public instances",
+      "type": "dataset_or_api",
+      "location": "https://wiki.openstreetmap.org/wiki/Overpass_API",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "OSM roads, tracks, paths, power features, buildings, natural features, waterways, and barriers for the Sunol offline upload bundle",
+        "bbox-limited public map context queries"
+      ],
+      "limits": [
+        "Public instances can rate-limit, throttle, or block poorly identified clients.",
+        "OSM data is community maintained and not authoritative terrain, utility, or safety truth.",
+        "Use a clear custom user agent, modest query counts, and mirror fallback."
+      ],
+      "validation_status": "provisional",
+      "notes": "Goal 0001 generator queries the main public endpoint first, then a mirror, and records selected endpoint plus source-health attempts in the manifest."
+    },
+    {
+      "id": "opentopography_developers",
+      "title": "OpenTopography for Developers",
+      "type": "dataset_or_api",
+      "location": "https://opentopography.org/developers",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate DEM API for clipped terrain data",
+        "global elevation fallback for terrain attention-point generation"
+      ],
+      "limits": [
+        "API access, key requirements, rate limits, and terms are not yet validated.",
+        "Use fixture data first for hackathon demo reliability."
+      ],
+      "validation_status": "provisional",
+      "notes": "OpenTopography documents REST APIs for DEM datasets; useful if the demo needs a simple AOI elevation pull."
+    },
+    {
+      "id": "osint_framework",
+      "title": "OSINT Framework",
+      "type": "osint_index",
+      "location": "https://osintframework.com/",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "source discovery",
+        "OSINT tooling inventory"
+      ],
+      "limits": [
+        "Index quality varies by linked source.",
+        "Specific sources must be separately cited before use."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use as a discovery index, not as evidence by itself."
+    },
+    {
+      "id": "overpass_private_coffee_mirror",
+      "title": "Private.coffee Overpass mirror",
+      "type": "dataset_or_api",
+      "location": "https://overpass.private.coffee/api/interpreter",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "fallback Overpass endpoint for OSM source layers when the main endpoint is blocked, slow, or rate-limited"
+      ],
+      "limits": [
+        "Mirror freshness and availability may differ from the main Overpass service.",
+        "Still depends on public OSM data and fair shared-resource use."
+      ],
+      "validation_status": "provisional",
+      "notes": "Used only as a public mirror fallback; can be overridden with PALANTIR_BUNDLE_OVERPASS_MIRROR_URL."
+    },
+    {
+      "id": "palantir_aip_features",
+      "title": "Palantir AIP features",
+      "type": "official_doc",
+      "location": "https://www.palantir.com/docs/foundry/aip/aip-features",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "AIP-backed workflows and applications",
+        "developer tools over Ontology data, logic, and actions"
+      ],
+      "limits": [
+        "Does not confirm model access, AIP configuration, or available Ontology in the hackathon instance.",
+        "Keep app-side deterministic route and PPS logic as fallback."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use for route rationale, mission object querying, and human-reviewed action workflows if available."
+    },
+    {
+      "id": "palantir_foundry_signup_natsec",
+      "title": "Palantir Foundry developer tier signup for NATSEC Hackathon",
+      "type": "platform_resource",
+      "location": "https://signup.palantirfoundry.com/signup?signupPermitCode=NAT_SEC_HACKATHON",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "candidate platform-backed data integration",
+        "candidate operational workflow or ontology layer"
+      ],
+      "limits": [
+        "Access not verified locally.",
+        "Available datasets, APIs, and export patterns are unknown."
+      ],
+      "validation_status": "todo",
+      "notes": "Only use after account access and implementation path are confirmed."
+    },
+    {
+      "id": "palantir_map_add_to_map",
+      "title": "Palantir Map add data to a map",
+      "type": "official_doc",
+      "location": "https://www.palantir.com/docs/foundry/map/add-to-map",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "adding geospatial Ontology objects to maps",
+        "adding map overlays to Palantir maps",
+        "searching around related geospatial objects"
+      ],
+      "limits": [
+        "Does not confirm which object types or overlays exist in the hackathon instance.",
+        "Use local fixtures if setup takes too long."
+      ],
+      "validation_status": "provisional",
+      "notes": "Useful for unit/drone/route/attention-point map workflows if Palantir access is ready."
+    },
+    {
+      "id": "palantir_map_core_concepts",
+      "title": "Palantir Map core concepts",
+      "type": "official_doc",
+      "location": "https://www.palantir.com/docs/foundry/map/core-concepts/",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "Palantir Map layer model",
+        "geospatial object, link, overlay, annotation, and time-aware map layers"
+      ],
+      "limits": [
+        "Does not confirm hackathon instance configuration or available datasets.",
+        "Does not replace fixture-backed local demo path."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use to decide whether Palantir Map can host or support mission planning overlays."
+    },
+    {
+      "id": "poi_radius_20km_bundles",
+      "title": "POI study area bundle (20 km radius)",
+      "type": "local_generated_dataset",
+      "location": "resources/pois_radius_20km/ and scripts/fetch-pois-radius.mjs",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "layered OSM POI GeoJSON for Sunol corridor demo center",
+        "manifest counts and study-area polygon for map overlays"
+      ],
+      "limits": [
+        "Regenerate with node scripts/fetch-pois-radius.mjs when network allows.",
+        "Empty layers indicate Overpass timeout, rate limit, or offline run."
+      ],
+      "validation_status": "provisional",
+      "notes": "Validated with scripts/validate-poi-bundle.mjs. See docs/research/poi_sources_20km_sunol_corridor.md."
     },
     {
       "id": "project_scaffold_docs_2026_05_02",
@@ -43,112 +530,6 @@
       "notes": "Read locally before creating the Problem Statement 3 resource map."
     },
     {
-      "id": "user_clarification_drone_mission_planning_2026_05_02",
-      "title": "User clarification: drone mission planning product direction",
-      "type": "project_direction",
-      "location": "User-provided chat context on 2026-05-02",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "drone mission planning as working product direction",
-        "PRD expected from teammate via repo push"
-      ],
-      "limits": [
-        "Detailed requirements, scope, and acceptance criteria are still pending the PRD."
-      ],
-      "validation_status": "validated",
-      "notes": "Use to orient pre-PRD scaffolding and partner-tool recommendations."
-    },
-    {
-      "id": "user_clarification_secure_army_unit_2026_05_02",
-      "title": "User clarification: simple maneuver to secure Army unit with drone coverage",
-      "type": "project_direction",
-      "location": "User-provided chat context on 2026-05-02",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "secure Army unit maneuver as working demo scenario",
-        "drone coverage as core mission planning input"
-      ],
-      "limits": [
-        "Detailed scenario requirements and acceptance criteria are still pending the PRD."
-      ],
-      "validation_status": "validated",
-      "notes": "Use to orient pre-PRD scenario scaffolding."
-    },
-    {
-      "id": "user_clarification_peq15_optical_cue_2026_05_02",
-      "title": "User clarification: PEQ-15-style optical cue for drone flight path selection",
-      "type": "project_direction",
-      "location": "User-provided chat context on 2026-05-02",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "simulated optical cue as a low/no-radio route selection input",
-        "prevalidated drone flight path selection workflow"
-      ],
-      "limits": [
-        "Treat as a simulation or fixture-backed demo abstraction.",
-        "Does not authorize real PEQ-15 hardware integration, covert signaling protocol design, autonomous targeting, or operational drone control.",
-        "Detailed requirements and acceptance criteria are still pending the PRD."
-      ],
-      "validation_status": "validated",
-      "notes": "Use for demo framing: optical cue selects among preplanned route options, then human operator confirms."
-    },
-    {
-      "id": "user_clarification_pps_route_mapping_2026_05_02",
-      "title": "User clarification: PPS route-selection grammar",
-      "type": "project_direction",
-      "location": "User-provided chat context on 2026-05-02",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "2 PPS selects Route A in the demo",
-        "4 PPS selects Route B in the demo",
-        "8 PPS requests return to base in the demo",
-        "demo_optical_cue_pps_route_mapping_v1"
-      ],
-      "limits": [
-        "Treat as simulation and fixture-backed demo logic only.",
-        "Pulse-rate cues are not authenticated friendly identification and may be spoofed or misread.",
-        "Detailed requirements and acceptance criteria are still pending the PRD."
-      ],
-      "validation_status": "validated",
-      "notes": "Registered as a provisional heuristic in docs/research/formula_registry.json."
-    },
-    {
-      "id": "user_clarification_pps_drone_commands_2026_05_02",
-      "title": "User clarification: map PPS observations to drone commands",
-      "type": "project_direction",
-      "location": "User-provided chat context on 2026-05-02",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "PPS observations should map to drone commands in the demo",
-        "demo_optical_cue_pps_command_mapping_v1",
-        "pps_drone_command_mapping_plan"
-      ],
-      "limits": [
-        "Treat as simulation and fixture-backed demo logic only.",
-        "Does not establish authenticated friendly identification, real PEQ-15 integration, or operational drone control."
-      ],
-      "validation_status": "validated",
-      "notes": "Use with docs/research/pps_drone_command_mapping_plan.md and formula registry rule demo_optical_cue_pps_command_mapping_v1."
-    },
-    {
-      "id": "atpial_public_manual_ir_pulse_rates",
-      "title": "Public ATPIAL manual page: IR illuminator pulse rates",
-      "type": "public_manual_page",
-      "location": "https://www.manualsdir.com/manuals/402173/eotech-atpial-an_peq-15-advanced-target-pointer-illuminator-aiming-light.html?page=48",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "Public evidence that ATPIAL IR illuminator pulse mode includes fixed pulse-rate options",
-        "demo_optical_cue_pps_route_mapping_v1"
-      ],
-      "limits": [
-        "Public manual mirror, not an official current operational source.",
-        "Does not establish authentication, IFF, drone integration, or operational command safety.",
-        "Use only to justify a simulated demo abstraction."
-      ],
-      "validation_status": "provisional",
-      "notes": "The project should avoid real hardware integration or operational signaling details."
-    },
-    {
       "id": "ruleset_and_state_machine_2026_05_02",
       "title": "RulesetAndStateMachine local planning note",
       "type": "local_doc",
@@ -168,6 +549,23 @@
       ],
       "validation_status": "provisional",
       "notes": "Use as product input for mission planning workflow; route rules, capabilities, and thresholds need formula/source registry backing before implementation depends on them."
+    },
+    {
+      "id": "shodan_search",
+      "title": "Shodan internet monitoring search",
+      "type": "search_tool",
+      "location": "https://shodan.io",
+      "accessed_or_created": "2026-05-02",
+      "supports": [
+        "network infrastructure context",
+        "candidate cyber-adjacent operational data"
+      ],
+      "limits": [
+        "May be more relevant to Problem Statement 4 than Problem Statement 3.",
+        "Account access, terms, and query limits not verified."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use only if PRD includes infrastructure or communications context."
     },
     {
       "id": "state_planning_for_flight_path_2026_05_02",
@@ -192,289 +590,92 @@
       "notes": "Use for ISR/recon planning, route safety, cue interpretation, overwatch, RTB, and human-reviewed state transitions."
     },
     {
-      "id": "moving_unit_drone_mission_planning",
-      "title": "Moving Unit Drone Mission Planning research note",
-      "type": "local_doc",
-      "location": "docs/research/moving_unit_drone_mission_planning.md",
+      "id": "user_clarification_drone_mission_planning_2026_05_02",
+      "title": "User clarification: drone mission planning product direction",
+      "type": "project_direction",
+      "location": "User-provided chat context on 2026-05-02",
       "accessed_or_created": "2026-05-02",
       "supports": [
-        "moving unit route corridor planning",
-        "terrain attention-point generation",
-        "drone route option generation",
-        "PPS cue integration with mission state machine"
+        "drone mission planning as working product direction",
+        "PRD expected from teammate via repo push"
       ],
       "limits": [
-        "Fixture-first demo plan, not operational doctrine.",
-        "Terrain heuristics are provisional and should be visibly labeled in the UI."
+        "Detailed requirements, scope, and acceptance criteria are still pending the PRD."
       ],
-      "validation_status": "provisional",
-      "notes": "Use as the immediate implementation map for the moving-unit demo."
+      "validation_status": "validated",
+      "notes": "Use to orient pre-PRD scaffolding and partner-tool recommendations."
     },
     {
-      "id": "palantir_foundry_signup_natsec",
-      "title": "Palantir Foundry developer tier signup for NATSEC Hackathon",
-      "type": "platform_resource",
-      "location": "https://signup.palantirfoundry.com/signup?signupPermitCode=NAT_SEC_HACKATHON",
+      "id": "user_clarification_peq15_optical_cue_2026_05_02",
+      "title": "User clarification: PEQ-15-style optical cue for drone flight path selection",
+      "type": "project_direction",
+      "location": "User-provided chat context on 2026-05-02",
       "accessed_or_created": "2026-05-02",
       "supports": [
-        "candidate platform-backed data integration",
-        "candidate operational workflow or ontology layer"
+        "simulated optical cue as a low/no-radio route selection input",
+        "prevalidated drone flight path selection workflow"
       ],
       "limits": [
-        "Access not verified locally.",
-        "Available datasets, APIs, and export patterns are unknown."
+        "Treat as a simulation or fixture-backed demo abstraction.",
+        "Does not authorize real PEQ-15 hardware integration, covert signaling protocol design, autonomous targeting, or operational drone control.",
+        "Detailed requirements and acceptance criteria are still pending the PRD."
       ],
-      "validation_status": "todo",
-      "notes": "Only use after account access and implementation path are confirmed."
+      "validation_status": "validated",
+      "notes": "Use for demo framing: optical cue selects among preplanned route options, then human operator confirms."
     },
     {
-      "id": "palantir_map_core_concepts",
-      "title": "Palantir Map core concepts",
-      "type": "official_doc",
-      "location": "https://www.palantir.com/docs/foundry/map/core-concepts/",
+      "id": "user_clarification_pps_drone_commands_2026_05_02",
+      "title": "User clarification: map PPS observations to drone commands",
+      "type": "project_direction",
+      "location": "User-provided chat context on 2026-05-02",
       "accessed_or_created": "2026-05-02",
       "supports": [
-        "Palantir Map layer model",
-        "geospatial object, link, overlay, annotation, and time-aware map layers"
+        "PPS observations should map to drone commands in the demo",
+        "demo_optical_cue_pps_command_mapping_v1",
+        "pps_drone_command_mapping_plan"
       ],
       "limits": [
-        "Does not confirm hackathon instance configuration or available datasets.",
-        "Does not replace fixture-backed local demo path."
+        "Treat as simulation and fixture-backed demo logic only.",
+        "Does not establish authenticated friendly identification, real PEQ-15 integration, or operational drone control."
       ],
-      "validation_status": "provisional",
-      "notes": "Use to decide whether Palantir Map can host or support mission planning overlays."
+      "validation_status": "validated",
+      "notes": "Use with docs/research/pps_drone_command_mapping_plan.md and formula registry rule demo_optical_cue_pps_command_mapping_v1."
     },
     {
-      "id": "palantir_map_add_to_map",
-      "title": "Palantir Map add data to a map",
-      "type": "official_doc",
-      "location": "https://www.palantir.com/docs/foundry/map/add-to-map",
+      "id": "user_clarification_pps_route_mapping_2026_05_02",
+      "title": "User clarification: PPS route-selection grammar",
+      "type": "project_direction",
+      "location": "User-provided chat context on 2026-05-02",
       "accessed_or_created": "2026-05-02",
       "supports": [
-        "adding geospatial Ontology objects to maps",
-        "adding map overlays to Palantir maps",
-        "searching around related geospatial objects"
+        "2 PPS selects Route A in the demo",
+        "4 PPS selects Route B in the demo",
+        "8 PPS requests return to base in the demo",
+        "demo_optical_cue_pps_route_mapping_v1"
       ],
       "limits": [
-        "Does not confirm which object types or overlays exist in the hackathon instance.",
-        "Use local fixtures if setup takes too long."
+        "Treat as simulation and fixture-backed demo logic only.",
+        "Pulse-rate cues are not authenticated friendly identification and may be spoofed or misread.",
+        "Detailed requirements and acceptance criteria are still pending the PRD."
       ],
-      "validation_status": "provisional",
-      "notes": "Useful for unit/drone/route/attention-point map workflows if Palantir access is ready."
+      "validation_status": "validated",
+      "notes": "Registered as a provisional heuristic in docs/research/formula_registry.json."
     },
     {
-      "id": "palantir_aip_features",
-      "title": "Palantir AIP features",
-      "type": "official_doc",
-      "location": "https://www.palantir.com/docs/foundry/aip/aip-features",
+      "id": "user_clarification_secure_army_unit_2026_05_02",
+      "title": "User clarification: simple maneuver to secure Army unit with drone coverage",
+      "type": "project_direction",
+      "location": "User-provided chat context on 2026-05-02",
       "accessed_or_created": "2026-05-02",
       "supports": [
-        "AIP-backed workflows and applications",
-        "developer tools over Ontology data, logic, and actions"
+        "secure Army unit maneuver as working demo scenario",
+        "drone coverage as core mission planning input"
       ],
       "limits": [
-        "Does not confirm model access, AIP configuration, or available Ontology in the hackathon instance.",
-        "Keep app-side deterministic route and PPS logic as fallback."
+        "Detailed scenario requirements and acceptance criteria are still pending the PRD."
       ],
-      "validation_status": "provisional",
-      "notes": "Use for route rationale, mission object querying, and human-reviewed action workflows if available."
-    },
-    {
-      "id": "danti_geospatial_platform",
-      "title": "Danti geospatial intelligence platform",
-      "type": "platform_resource",
-      "location": "https://danti.ai",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "candidate geospatial enrichment",
-        "candidate OSINT-backed map context"
-      ],
-      "limits": [
-        "Account access not verified locally.",
-        "Available hackathon data and API surfaces are unknown."
-      ],
-      "validation_status": "todo",
-      "notes": "Evaluate after PRD selects a geospatial scenario."
-    },
-    {
-      "id": "openai_codex",
-      "title": "OpenAI Codex",
-      "type": "platform_resource",
-      "location": "https://developers.openai.com/codex",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "code generation and agent workflows",
-        "candidate natural-language query, extraction, summarization, and explanation support"
-      ],
-      "limits": [
-        "Hackathon access and API credits not verified locally.",
-        "Exact product/API use must be chosen after the PRD lands."
-      ],
-      "validation_status": "todo",
-      "notes": "Use official OpenAI documentation before implementing OpenAI-specific features."
-    },
-    {
-      "id": "osint_framework",
-      "title": "OSINT Framework",
-      "type": "osint_index",
-      "location": "https://osintframework.com/",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "source discovery",
-        "OSINT tooling inventory"
-      ],
-      "limits": [
-        "Index quality varies by linked source.",
-        "Specific sources must be separately cited before use."
-      ],
-      "validation_status": "provisional",
-      "notes": "Use as a discovery index, not as evidence by itself."
-    },
-    {
-      "id": "exa_ai_search",
-      "title": "Exa AI search",
-      "type": "search_tool",
-      "location": "https://exa.ai",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "AI-assisted source discovery",
-        "OSINT search workflow"
-      ],
-      "limits": [
-        "Search outputs must be verified against primary sources.",
-        "API access and terms not verified."
-      ],
-      "validation_status": "provisional",
-      "notes": "Candidate discovery tool only."
-    },
-    {
-      "id": "shodan_search",
-      "title": "Shodan internet monitoring search",
-      "type": "search_tool",
-      "location": "https://shodan.io",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "network infrastructure context",
-        "candidate cyber-adjacent operational data"
-      ],
-      "limits": [
-        "May be more relevant to Problem Statement 4 than Problem Statement 3.",
-        "Account access, terms, and query limits not verified."
-      ],
-      "validation_status": "provisional",
-      "notes": "Use only if PRD includes infrastructure or communications context."
-    },
-    {
-      "id": "ais_hub",
-      "title": "AIS Hub shipping data",
-      "type": "dataset_or_api",
-      "location": "https://www.aishub.net",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "candidate maritime track feed",
-        "entity and location correlation scenario"
-      ],
-      "limits": [
-        "Access, licensing, and API constraints not verified."
-      ],
-      "validation_status": "todo",
-      "notes": "Potential source for a maritime command dashboard demo."
-    },
-    {
-      "id": "barentswatch_historic_ais_api",
-      "title": "BarentsWatch historic AIS API",
-      "type": "dataset_or_api",
-      "location": "https://developer.barentswatch.no/docs/AIS/historic-ais-api/",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "candidate historic maritime track data",
-        "fixture-backed replay"
-      ],
-      "limits": [
-        "Access, coverage, and usage terms not verified."
-      ],
-      "validation_status": "todo",
-      "notes": "Evaluate if PRD chooses maritime track replay."
-    },
-    {
-      "id": "marinecadastre_vessel_traffic",
-      "title": "MarineCadastre vessel traffic data",
-      "type": "dataset",
-      "location": "https://hub.marinecadastre.gov/pages/vesseltraffic",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "candidate public vessel traffic dataset",
-        "fixture-backed geospatial track demo"
-      ],
-      "limits": [
-        "Dataset size, coverage, and processing requirements not verified."
-      ],
-      "validation_status": "todo",
-      "notes": "Likely useful if the PRD needs public maritime data."
-    },
-    {
-      "id": "kaggle_ais_dataset",
-      "title": "Kaggle AIS dataset",
-      "type": "dataset",
-      "location": "https://www.kaggle.com/datasets/eminserkanerdonmez/ais-dataset/data",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "candidate sample AIS dataset",
-        "offline fixture creation"
-      ],
-      "limits": [
-        "Kaggle access, licensing, and dataset quality not verified."
-      ],
-      "validation_status": "todo",
-      "notes": "Potential fallback if direct APIs are too slow to integrate."
-    },
-    {
-      "id": "flightradar24",
-      "title": "FlightRadar24",
-      "type": "data_platform",
-      "location": "https://www.flightradar24.com",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "candidate flight tracking context",
-        "air track visualization inspiration"
-      ],
-      "limits": [
-        "API access, data rights, and hackathon suitability not verified."
-      ],
-      "validation_status": "todo",
-      "notes": "Use only after confirming data access and license constraints."
-    },
-    {
-      "id": "kepler_gl",
-      "title": "Kepler.gl",
-      "type": "visualization_tool",
-      "location": "https://kepler.gl",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "geospatial visualization",
-        "map layer prototyping"
-      ],
-      "limits": [
-        "Fit with chosen app stack not yet evaluated."
-      ],
-      "validation_status": "provisional",
-      "notes": "Candidate visualization tool for rapid geospatial demos."
-    },
-    {
-      "id": "deck_gl",
-      "title": "Deck.gl",
-      "type": "visualization_library",
-      "location": "https://deck.gl",
-      "accessed_or_created": "2026-05-02",
-      "supports": [
-        "web map visualization",
-        "track layers and spatial overlays"
-      ],
-      "limits": [
-        "Fit with chosen frontend stack not yet evaluated."
-      ],
-      "validation_status": "provisional",
-      "notes": "Candidate library for a custom map-first dashboard."
+      "validation_status": "validated",
+      "notes": "Use to orient pre-PRD scenario scaffolding."
     },
     {
       "id": "usgs_3dep",
@@ -494,55 +695,69 @@
       "notes": "USGS states 3DEP products are available free of charge and without use restrictions; verify specific service endpoint before implementation."
     },
     {
-      "id": "opentopography_developers",
-      "title": "OpenTopography for Developers",
+      "id": "usgs_epqs",
+      "title": "USGS Elevation Point Query Service",
       "type": "dataset_or_api",
-      "location": "https://opentopography.org/developers",
-      "accessed_or_created": "2026-05-02",
+      "location": "https://epqs.nationalmap.gov/v1/json",
+      "accessed_or_created": "2026-05-03",
       "supports": [
-        "candidate DEM API for clipped terrain data",
-        "global elevation fallback for terrain attention-point generation"
+        "500m reduced elevation sample grid for the Sunol offline upload bundle",
+        "provisional high-ground terrain attention points"
       ],
       "limits": [
-        "API access, key requirements, rate limits, and terms are not yet validated.",
-        "Use fixture data first for hackathon demo reliability."
+        "EPQS returns interpolated elevations from 3DEP and is not a surveyed-control source.",
+        "Large point grids should use limited concurrency and record partial failures."
       ],
       "validation_status": "provisional",
-      "notes": "OpenTopography documents REST APIs for DEM datasets; useful if the demo needs a simple AOI elevation pull."
+      "notes": "Goal 0001 generator queries EPQS with bounded concurrency and records partial failures in the manifest."
     },
     {
-      "id": "maplibre_gl_js",
-      "title": "MapLibre GL JS",
-      "type": "visualization_library",
-      "location": "https://maplibre.org/maplibre-gl-js/docs",
-      "accessed_or_created": "2026-05-02",
+      "id": "usgs_gnis_gazetteer",
+      "title": "USGS Geographic Names Information System (GNIS)",
+      "type": "dataset_or_api",
+      "location": "https://www.usgs.gov/tools/geographic-names-information-system-gnis",
+      "accessed_or_created": "2026-05-03",
       "supports": [
-        "open-source web map basemap",
-        "markers, popups, sources, and layers for the mission planning UI"
+        "named peaks, populated places, and geographic labels for U.S. context"
       ],
       "limits": [
-        "Map styles and tiles still need to be selected for the demo.",
-        "Offline or restricted-network behavior is not yet validated."
+        "Distribution endpoint and download format may change; verify before automation."
       ],
       "validation_status": "provisional",
-      "notes": "Recommended basemap layer for the custom drone route-planning UI."
+      "notes": "Candidate enrichment for labels; not wired into fetch-pois-radius.mjs."
     },
     {
-      "id": "xstate_state_machines",
-      "title": "XState",
-      "type": "state_machine_library",
-      "location": "https://stately.ai/docs",
-      "accessed_or_created": "2026-05-02",
+      "id": "usgs_naip_imagery",
+      "title": "National Agriculture Imagery Program (NAIP)",
+      "type": "dataset_or_api",
+      "location": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip",
+      "accessed_or_created": "2026-05-03",
       "supports": [
-        "mission state-machine modeling",
-        "explicit state transitions for route selection, hold, cue interpretation, and RTB"
+        "high-resolution aerial basemap context for vegetation and structures visually"
       ],
       "limits": [
-        "May be more library than needed for a tiny demo state graph.",
-        "Use a small typed reducer instead if the PRD requires only a few transitions."
+        "Does not provide selectable forest polygons without classification.",
+        "Access method depends on The National Map services or downloads."
       ],
       "validation_status": "provisional",
-      "notes": "Recommended only for mission logic, not general UI state."
+      "notes": "Complements vector layers; optional Cesium ImageryProvider once a tile endpoint is chosen."
+    },
+    {
+      "id": "usgs_nlcd_mrlc",
+      "title": "National Land Cover Database (NLCD) via MRLC / USGS",
+      "type": "dataset_or_api",
+      "location": "https://www.mrlc.gov/data",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "classified landcover imagery for foliage context in Cesium",
+        "WMS or GeoTIFF workflow for AOI clip"
+      ],
+      "limits": [
+        "Raster pipeline is heavier than OSM vectors.",
+        "Service URLs and versions change; validate before production use."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use if analyst-grade classes are needed or OSM vegetation is insufficient."
     },
     {
       "id": "wokwi_simulated_hardware",
@@ -560,105 +775,21 @@
       "notes": "Consider only if simulated feeds are part of the PRD."
     },
     {
-      "id": "defcon_inspiration_scrape_2025",
-      "title": "Sample DEFCON projects scrape",
-      "type": "inspiration_dataset",
-      "location": "https://defcon-inspiration.cerebralvalley.ai/",
+      "id": "xstate_state_machines",
+      "title": "XState",
+      "type": "state_machine_library",
+      "location": "https://stately.ai/docs",
       "accessed_or_created": "2026-05-02",
       "supports": [
-        "project inspiration",
-        "possible implementation patterns"
+        "mission state-machine modeling",
+        "explicit state transitions for route selection, hold, cue interpretation, and RTB"
       ],
       "limits": [
-        "Inspiration only; not a product requirement or evidence source by itself."
+        "May be more library than needed for a tiny demo state graph.",
+        "Use a small typed reducer instead if the PRD requires only a few transitions."
       ],
       "validation_status": "provisional",
-      "notes": "Use for brainstorming, not validation."
-    },
-    {
-      "id": "openstreetmap_overpass_api",
-      "title": "OpenStreetMap Overpass API public instances",
-      "type": "dataset_or_api",
-      "location": "https://wiki.openstreetmap.org/wiki/Overpass_API",
-      "accessed_or_created": "2026-05-03",
-      "supports": [
-        "OSM roads, tracks, paths, power features, buildings, natural features, waterways, and barriers for the Sunol offline upload bundle",
-        "bbox-limited public map context queries"
-      ],
-      "limits": [
-        "Public instances can rate-limit, throttle, or block poorly identified clients.",
-        "OSM data is community maintained and not authoritative terrain, utility, or safety truth.",
-        "Use a clear custom user agent, modest query counts, and mirror fallback."
-      ],
-      "validation_status": "provisional",
-      "notes": "Goal 0001 generator queries the main public endpoint first, then a mirror, and records selected endpoint plus source-health attempts in the manifest."
-    },
-    {
-      "id": "overpass_private_coffee_mirror",
-      "title": "Private.coffee Overpass mirror",
-      "type": "dataset_or_api",
-      "location": "https://overpass.private.coffee/api/interpreter",
-      "accessed_or_created": "2026-05-03",
-      "supports": [
-        "fallback Overpass endpoint for OSM source layers when the main endpoint is blocked, slow, or rate-limited"
-      ],
-      "limits": [
-        "Mirror freshness and availability may differ from the main Overpass service.",
-        "Still depends on public OSM data and fair shared-resource use."
-      ],
-      "validation_status": "provisional",
-      "notes": "Used only as a public mirror fallback; can be overridden with PALANTIR_BUNDLE_OVERPASS_MIRROR_URL."
-    },
-    {
-      "id": "cec_transmission_line_featureserver",
-      "title": "California Energy Commission Transmission_Line FeatureServer",
-      "type": "dataset_or_api",
-      "location": "https://services3.arcgis.com/bWPjFyq029ChCGur/arcgis/rest/services/Transmission_Line/FeatureServer/2",
-      "accessed_or_created": "2026-05-03",
-      "supports": [
-        "California electric transmission line context for the Sunol offline upload bundle",
-        "ArcGIS metadata, bbox count, and GeoJSON feature queries"
-      ],
-      "limits": [
-        "Planning context only; not legal, engineering, surveying, flight-safety, or utility-operation truth.",
-        "ArcGIS availability and supported output formats should be probed before use."
-      ],
-      "validation_status": "provisional",
-      "notes": "Current AOI probe returned CEC transmission features for the Sunol bbox. Goal 0001 generator records metadata/count/sample probes in manifest source_health."
-    },
-    {
-      "id": "hifld_us_electric_power_transmission_lines_featureserver",
-      "title": "HIFLD U.S. Electric Power Transmission Lines FeatureServer",
-      "type": "dataset_or_api",
-      "location": "https://services2.arcgis.com/LYMgRMwHfrWWEg3s/ArcGIS/rest/services/HIFLD_US_Electric_Power_Transmission_Lines/FeatureServer/0",
-      "accessed_or_created": "2026-05-03",
-      "supports": [
-        "national electric power transmission line context for the Sunol offline upload bundle",
-        "ArcGIS metadata, bbox count, and GeoJSON feature queries"
-      ],
-      "limits": [
-        "Informational infrastructure data only; not suitable as operational utility truth.",
-        "Coverage, attribution, and freshness are source-dependent."
-      ],
-      "validation_status": "provisional",
-      "notes": "Current AOI probe returned HIFLD transmission features for the Sunol bbox. Goal 0001 generator records metadata/count/sample probes in manifest source_health."
-    },
-    {
-      "id": "usgs_epqs",
-      "title": "USGS Elevation Point Query Service",
-      "type": "dataset_or_api",
-      "location": "https://epqs.nationalmap.gov/v1/json",
-      "accessed_or_created": "2026-05-03",
-      "supports": [
-        "500m reduced elevation sample grid for the Sunol offline upload bundle",
-        "provisional high-ground terrain attention points"
-      ],
-      "limits": [
-        "EPQS returns interpolated elevations from 3DEP and is not a surveyed-control source.",
-        "Large point grids should use limited concurrency and record partial failures."
-      ],
-      "validation_status": "provisional",
-      "notes": "Goal 0001 generator queries EPQS with bounded concurrency and records partial failures in the manifest."
+      "notes": "Recommended only for mission logic, not general UI state."
     }
   ]
 }

@@ -71,6 +71,7 @@ const REQUIRED_FILES = [
   "osm/osm_roads_tracks_paths.geojson",
   "osm/osm_buildings.geojson",
   "osm/osm_natural_features.geojson",
+  "osm/osm_vegetation_landcover.geojson",
   "osm/osm_waterways_barriers.geojson",
   "official_power/cec_transmission_lines.geojson",
   "official_power/hifld_transmission_lines.geojson",
@@ -118,6 +119,13 @@ const OSM_LAYERS = [
     query: osmQuery('way["natural"];way["landuse"~"^(forest|grass|meadow|scrub)$"]'),
     geometryPolicy: "mixed",
     description: "OSM natural and vegetation-related features intersecting the AOI.",
+  },
+  {
+    id: "osm_vegetation_landcover",
+    path: "osm/osm_vegetation_landcover.geojson",
+    query: osmQuery('way["landuse"~"^(forest|meadow|orchard|vineyard|recreation_ground|greenfield)$"];way["natural"~"^(wood|scrub|grassland|heath|fell|moor|shrub)$"]', 180),
+    geometryPolicy: "mixed",
+    description: "OSM vegetation and landcover polygons for Cesium and Palantir context layers.",
   },
   {
     id: "osm_waterways_barriers",
@@ -532,14 +540,14 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function osmQuery(selectorBlock) {
+function osmQuery(selectorBlock, timeoutSeconds = 90) {
   const selectors = selectorBlock
     .split(";")
     .map((selector) => selector.trim())
     .filter(Boolean)
     .map((selector) => `  ${selector}(${AOI.south},${AOI.west},${AOI.north},${AOI.east});`)
     .join("\n");
-  return `[out:json][timeout:90];\n(\n${selectors}\n);\nout tags geom;`;
+  return `[out:json][timeout:${timeoutSeconds}];\n(\n${selectors}\n);\nout tags geom;`;
 }
 
 function osmElementToFeature(element, geometryPolicy) {
@@ -893,7 +901,7 @@ async function writeReadme(manifest) {
     "",
     "1. `aoi/sunol_training_area_aoi.geojson`",
     "2. Official and OSM power layers.",
-    "3. Roads, buildings, natural features, waterways, and barriers.",
+    "3. Roads, buildings, natural features, vegetation/landcover, waterways, and barriers.",
     "4. `terrain/elevation_samples_500m.csv` and `terrain/terrain_attention_points.geojson`.",
     "5. Synthetic mission fixtures under `mission_fixture/`.",
     "6. Use `PALANTIR_UPLOAD_PROMPT.md` as the instruction prompt for Palantir/AIP setup.",
@@ -931,6 +939,7 @@ async function writeUploadPrompt() {
     "- `osm_roads_tracks_paths.geojson`: roads, tracks, and paths.",
     "- `osm_buildings.geojson`: building footprints.",
     "- `osm_natural_features.geojson`: natural and vegetation features.",
+    "- `osm_vegetation_landcover.geojson`: vegetation and landcover polygons for Cesium/Palantir context.",
     "- `osm_waterways_barriers.geojson`: waterways and barriers.",
     "- `elevation_samples_500m.csv`: USGS EPQS elevation samples.",
     "- `terrain_attention_points.geojson`: provisional terrain planning aids.",
@@ -984,7 +993,7 @@ async function writeUploadPrompt() {
     "",
     "- `getMissionBundle()`: returns bundle metadata, generated time, safety scope, layer counts, and source statuses from `manifest.json`.",
     "- `getAoi()`: returns the AOI FeatureCollection.",
-    "- `getMapContextLayers()`: returns available context layer names and object/dataset references for roads, buildings, natural features, waterways, barriers, and infrastructure.",
+    "- `getMapContextLayers()`: returns available context layer names and object/dataset references for roads, buildings, natural features, vegetation/landcover, waterways, barriers, and infrastructure.",
     "- `getInfrastructureContext()`: returns OSM, CEC, and HIFLD power infrastructure features.",
     "- `getTerrainAttentionPoints()`: returns terrain attention points with rationale, confidence, and recommended drone task.",
     "- `getMissionRoute()`: returns the unit route and drone waypoints.",

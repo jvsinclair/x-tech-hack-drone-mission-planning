@@ -1,0 +1,54 @@
+{
+  "bundle": "pois_radius_20km",
+  "created_at": "2026-05-03T03:13:46.301Z",
+  "study_area": {
+    "center_lat": 37.504646,
+    "center_lon": -121.832739,
+    "radius_m": 20000,
+    "bbox_approx_deg": {
+      "note": "Axis-aligned box approximating 20 km disk (for ArcGIS envelope queries)",
+      "west": -122.058739,
+      "south": 37.324646,
+      "east": -121.606739,
+      "north": 37.684646
+    }
+  },
+  "files": [
+    "README.md",
+    "manifest.json",
+    "study_area/study_area_20km.geojson",
+    "overpass/pois_amenity.geojson",
+    "overpass/pois_tourism_historic.geojson",
+    "overpass/pois_shop_leisure.geojson",
+    "overpass/pois_office_craft_man_made.geojson",
+    "overpass/pois_emergency_healthcare.geojson",
+    "overpass/pois_sport.geojson",
+    "overpass/pois_natural_peaks_pass_viewpoint.geojson",
+    "overpass/pois_transport.geojson"
+  ],
+  "counts": {
+    "overpass/pois_amenity.geojson": 0,
+    "overpass/pois_tourism_historic.geojson": 0,
+    "overpass/pois_shop_leisure.geojson": 0,
+    "overpass/pois_office_craft_man_made.geojson": 0,
+    "overpass/pois_emergency_healthcare.geojson": 0,
+    "overpass/pois_sport.geojson": 0,
+    "overpass/pois_natural_peaks_pass_viewpoint.geojson": 0,
+    "overpass/pois_transport.geojson": 0
+  },
+  "sources_fetched": [
+    "OpenStreetMap Overpass"
+  ],
+  "sources_documented_not_fetched": [
+    "OpenStreetMap Nominatim (policy: no bulk harvest)",
+    "USGS GNIS",
+    "USGS National Map layers",
+    "NPS / CA State Parks open data",
+    "USFS RIDB",
+    "California Geoportal / county hubs",
+    "HIFLD national layers",
+    "FEMA NFHL"
+  ],
+  "documentation": "docs/research/poi_sources_20km_sunol_corridor.md",
+  "safety_note": "Planning context only. Features marked provisional. Not for targeting or weaponization workflows."
+}

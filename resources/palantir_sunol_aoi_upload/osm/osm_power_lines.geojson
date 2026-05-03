@@ -821,8 +821,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -869,8 +869,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1495,8 +1495,8 @@
         "osm_wires": "double",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -1891,8 +1891,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2106,8 +2106,8 @@
         "osm_voltage": "115000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2138,8 +2138,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2327,8 +2327,8 @@
         "osm_voltage": "115000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2369,8 +2369,8 @@
         "osm_voltage": "230000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2403,8 +2403,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2445,8 +2445,8 @@
         "osm_wires": "double",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2654,8 +2654,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2690,8 +2690,8 @@
         "osm_voltage": "230000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2727,8 +2727,8 @@
         "osm_wires": "double",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2893,8 +2893,8 @@
         "osm_voltage": "230000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -2940,8 +2940,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3135,8 +3135,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3379,8 +3379,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3416,8 +3416,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -3896,8 +3896,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4046,8 +4046,8 @@
         "osm_voltage": "230000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4257,8 +4257,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4291,8 +4291,8 @@
         "osm_wires": "single",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4339,8 +4339,8 @@
         "osm_voltage": "60000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4391,8 +4391,8 @@
         "osm_voltage": "60000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4465,8 +4465,8 @@
         "osm_power": "line",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4535,8 +4535,8 @@
         "osm_power": "minor_line",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4564,8 +4564,8 @@
         "osm_voltage": "115000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4593,8 +4593,8 @@
         "osm_voltage": "115000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4637,8 +4637,8 @@
         "osm_voltage": "60000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4803,8 +4803,8 @@
         "osm_voltage": "230000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4845,8 +4845,8 @@
         "osm_voltage": "230000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4970,8 +4970,8 @@
         "osm_voltage": "230000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -4998,8 +4998,8 @@
         "osm_voltage": "115000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5030,8 +5030,8 @@
         "osm_voltage": "115000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5066,8 +5066,8 @@
         "osm_voltage": "115000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5097,8 +5097,8 @@
         "osm_voltage": "60000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5128,8 +5128,8 @@
         "osm_voltage": "60000",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     },
@@ -5156,20 +5156,25 @@
         "osm_power": "line",
         "layer_id": "osm_power_lines",
         "source_name": "OpenStreetMap via Overpass API",
-        "source_url": "https://overpass-api.de/api/interpreter",
-        "retrieved_at": "2026-05-03T02:52:20.212Z",
+        "source_url": "https://overpass.private.coffee/api/interpreter",
+        "retrieved_at": "2026-05-03T04:15:44.993Z",
         "provisional": true
       }
     }
   ],
   "metadata": {
     "source_name": "OpenStreetMap via Overpass API",
-    "source_url": "https://overpass-api.de/api/interpreter",
+    "source_url": "https://overpass.private.coffee/api/interpreter",
     "source_health": {
-      "selected_endpoint": "https://overpass-api.de/api/interpreter",
+      "selected_endpoint": "https://overpass.private.coffee/api/interpreter",
       "attempts": [
         {
           "endpoint": "https://overpass-api.de/api/interpreter",
+          "status": "error",
+          "error": "fetch failed"
+        },
+        {
+          "endpoint": "https://overpass.private.coffee/api/interpreter",
           "status": "ok",
           "element_count": 38
         }
@@ -5177,7 +5182,7 @@
     },
     "layer_id": "osm_power_lines",
     "description": "OSM power line, minor line, and cable features intersecting the AOI.",
-    "retrieved_at": "2026-05-03T02:52:20.212Z",
+    "retrieved_at": "2026-05-03T04:15:44.993Z",
     "provisional": true,
     "status": "generated"
   }

@@ -146,7 +146,7 @@ Current state: no implemented public tools, validator stages, workflow actions, 
 - Input type: Fixed goal-0001 AOI configuration plus public OSM Overpass, CEC ArcGIS, HIFLD ArcGIS, and USGS EPQS endpoints. Endpoint URLs may be overridden with local environment variables.
 - Output type: GeoJSON, CSV, Markdown, and `manifest.json` files under `resources/palantir_sunol_aoi_upload/`.
 - Supported use cases: Offline Palantir upload preparation; public-source map context generation; synthetic ISR/recon mission fixture generation.
-- Supported data or source families: OpenStreetMap Overpass; CEC transmission FeatureServer; HIFLD transmission FeatureServer; USGS EPQS; synthetic mission fixtures.
+- Supported data or source families: OpenStreetMap Overpass context layers including roads, structures, natural features, vegetation/landcover, waterways, barriers, and power; CEC transmission FeatureServer; HIFLD transmission FeatureServer; USGS EPQS; synthetic mission fixtures.
 - Status values: `generated | empty | source_error | partial_failure`
 - Hard-fail vs warning behavior: Script execution fails only on unhandled runtime errors; individual source failures write empty source-error layers with manifest evidence.
 - Formula or rule groups: `demo_terrain_attention_points_v1`

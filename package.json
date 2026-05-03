@@ -1,5 +1,5 @@
 {
-  "name": "x-tech-hack-drone-mission-planner",
+  "name": "x-tech-hack-drone-mission-planning",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -8,10 +8,12 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "typecheck": "tsc -b",
-    "test": "vitest run --pool=vmThreads --maxWorkers=2"
+    "test": "vitest run --pool=vmThreads --maxWorkers=2",
+    "generate:icons": "node scripts/generate-sidc-unit-svgs.mjs"
   },
   "dependencies": {
     "cesium": "^1.141.0",
+    "milsymbol": "^2.2.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },

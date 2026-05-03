@@ -34,3 +34,6 @@ artifacts/
 outputs/
 tmp/
 temp/
+
+# Local milsymbol tarball extraction (optional fallback for icon generation)
+.tmp-milsymbol/

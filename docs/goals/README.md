@@ -39,7 +39,8 @@ This folder is the durable task queue for Codex CLI. Each goal is a standalone M
 4. `0004-mgrs-latlon-coordinate-display.md`
 5. `0005-pps-cue-zones-and-route-preview.md`
 6. `0006-isr-map-symbology-waypoint-glyphs-and-legend.md`
-7. `0007-terrain-aware-drone-route-altitude.md`
+7. `0007-sidc-2525d-squad-land-units-svg-picker.md`
+8. `0008-terrain-aware-drone-route-altitude.md`
 
 ## Creating New Goals
 Use `GOAL_TEMPLATE.md`, assign the next zero-padded numeric ID, and keep the goal small enough to finish in one focused Codex CLI run. `GOAL_TEMPLATE.md` is not an executable goal and must not be selected by Codex CLI.

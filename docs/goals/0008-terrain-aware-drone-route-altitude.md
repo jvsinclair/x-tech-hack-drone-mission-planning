@@ -1,5 +1,5 @@
 ---
-goal_id: "0007"
+goal_id: "0008"
 title: "Terrain-Aware Drone Route Altitude"
 status: "todo"
 created_at: "2026-05-03T06:05:32Z"

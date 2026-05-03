@@ -24,12 +24,14 @@ import type { CSSProperties, MutableRefObject } from "react";
 import type { BranchType, BranchWaypointRecord, DecisionTargetZoneRecord, LaunchPackageRecord, MissionLayers, MissionSummary, WaypointRecord } from "@/lib/types";
 import { behaviorByType } from "@/lib/symbology/isr";
 import { WaypointGlyph } from "@/components/WaypointGlyph";
+import { formatLatLon, formatMgrs } from "@/lib/coordinates";
 
 type PlacementMode = "decision_zone" | WaypointRecord["behavior"] | null;
 type MapMode = "terrain3d" | "topo2d";
 type TerrainSample = { lon: number; lat: number; elevationM: number };
 type ActiveBranchContext = { decisionPointId: string; zoneId: string; branchType: BranchType } | null;
 const DEFAULT_ALTITUDE_M = 20;
+const DEFAULT_BOUNDS = { west: -121.9, south: 37.48, east: -121.74, north: 37.6 };
 
 type TacticalCesiumMapProps = {
   mission: MissionSummary | null;
@@ -91,7 +93,8 @@ export function TacticalCesiumMap({
   const [draggedBranchWaypoint, setDraggedBranchWaypoint] = useState<{ waypointId: string; lon: number; lat: number } | null>(null);
   const [cesiumReady, setCesiumReady] = useState(false);
   const [cesiumRevision, setCesiumRevision] = useState(0);
-  const bounds = mission?.bounds ?? { west: -121.9, south: 37.48, east: -121.74, north: 37.6 };
+  const bounds = mission?.bounds ?? DEFAULT_BOUNDS;
+  const [mapCenter, setMapCenter] = useState(() => centerFromBounds(bounds));
   const terrainSamples = useMemo(() => terrainSamplesFromLayer(layers?.terrain ?? null), [layers?.terrain]);
   const displayWaypoints = useMemo(() => {
     const waypoints = activePackage?.waypoints ?? [];
@@ -110,6 +113,8 @@ export function TacticalCesiumMap({
   }, [activePackage?.branchWaypoints, draggedBranchWaypoint]);
   const branchPaths = useMemo(() => branchSvgPaths(activePackage, displayBranchWaypoints, bounds, terrainSamples), [activePackage, bounds, displayBranchWaypoints, terrainSamples]);
   const mapPanStyle = useMemo(() => ({ transform: `translate3d(${mapPanOffset.x}px, ${mapPanOffset.y}px, 0)` }), [mapPanOffset.x, mapPanOffset.y]);
+  const centerGrid = useMemo(() => formatMgrs(mapCenter.lon, mapCenter.lat), [mapCenter.lat, mapCenter.lon]);
+  const centerLatLon = useMemo(() => formatLatLon(mapCenter.lon, mapCenter.lat), [mapCenter.lat, mapCenter.lon]);
 
   useEffect(() => {
     placementModeRef.current = placementMode;
@@ -122,6 +127,11 @@ export function TacticalCesiumMap({
   useEffect(() => {
     return () => clearWindowDragListeners();
   }, []);
+
+  useEffect(() => {
+    const rect = mapStageRef.current?.getBoundingClientRect() ?? null;
+    setMapCenter(centerFromPan(bounds, mapPanOffset, rect));
+  }, [bounds, mapPanOffset]);
 
   useEffect(() => {
     if (process.env.NODE_ENV === "test" || !cesiumContainerRef.current || !mission || !layers) return;
@@ -157,7 +167,12 @@ export function TacticalCesiumMap({
         viewerRef.current = viewer;
         viewer.scene.globe.depthTestAgainstTerrain = false;
         applyCesiumMapMode(viewer, Cesium, bounds, "terrain3d");
+        setMapCenter(cesiumViewportCenter(viewer, Cesium) ?? centerFromBounds(bounds));
         missionDataSourcesRef.current = await addMissionGeoJsonLayers(viewer, Cesium, layers);
+        const removeCameraChangedListener = viewer.camera.changed.addEventListener(() => {
+          const center = cesiumViewportCenter(viewer, Cesium);
+          if (center) setMapCenter(center);
+        });
 
         const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
         handler.setInputAction((movement: { position: unknown }) => {
@@ -228,6 +243,7 @@ export function TacticalCesiumMap({
         }, Cesium.ScreenSpaceEventType.LEFT_UP);
 
         cleanup = () => {
+          removeCameraChangedListener();
           handler.destroy();
           removePackageDataSource(viewer);
           removeMissionDataSources(viewer, missionDataSourcesRef.current);
@@ -254,6 +270,7 @@ export function TacticalCesiumMap({
   useEffect(() => {
     if (!cesiumReady || !viewerRef.current || !cesiumRef.current) return;
     applyCesiumMapMode(viewerRef.current, cesiumRef.current, bounds, mapMode);
+    setMapCenter(cesiumViewportCenter(viewerRef.current, cesiumRef.current) ?? centerFromBounds(bounds));
   }, [bounds, cesiumReady, mapMode]);
 
   useEffect(() => {
@@ -306,10 +323,12 @@ export function TacticalCesiumMap({
     }
 
     if (!mapDragRef.current) return;
-    setMapPanOffset({
+    const nextOffset = {
       x: mapDragRef.current.originX + clientX - mapDragRef.current.startX,
       y: mapDragRef.current.originY + clientY - mapDragRef.current.startY,
-    });
+    };
+    setMapPanOffset(nextOffset);
+    setMapCenter(centerFromPan(bounds, nextOffset, rect));
   }
 
   function handleMapMouseUp() {
@@ -361,12 +380,16 @@ export function TacticalCesiumMap({
     >
       <div ref={cesiumContainerRef} className="cesium-root" data-testid="cesium-root" />
       <div className="map-mode-controls" aria-label="Map view controls">
-        <button type="button" className={mapMode === "terrain3d" ? "is-active" : ""} aria-pressed={mapMode === "terrain3d"} onClick={() => onMapModeChange("terrain3d")}>
-          3D
-        </button>
-        <button type="button" className={mapMode === "topo2d" ? "is-active" : ""} aria-pressed={mapMode === "topo2d"} onClick={() => onMapModeChange("topo2d")}>
-          2D
-        </button>
+        <output className="map-center-coordinate map-center-grid" aria-label="Center map grid coordinate">{centerGrid}</output>
+        <div className="map-mode-toggle-group">
+          <button type="button" className={mapMode === "terrain3d" ? "is-active" : ""} aria-pressed={mapMode === "terrain3d"} onClick={() => onMapModeChange("terrain3d")}>
+            3D
+          </button>
+          <button type="button" className={mapMode === "topo2d" ? "is-active" : ""} aria-pressed={mapMode === "topo2d"} onClick={() => onMapModeChange("topo2d")}>
+            2D
+          </button>
+        </div>
+        <output className="map-center-coordinate map-center-latlon" aria-label="Center coordinate readout" title="Center lat/lon">{centerLatLon}</output>
       </div>
       <div className="map-grid" aria-hidden="true" />
       <svg className="map-svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" style={mapPanStyle} data-testid="route-overlay">
@@ -484,6 +507,27 @@ function pointStyle(lon: number, lat: number, bounds: MissionSummary["bounds"]):
   const left = ((lon - bounds.west) / (bounds.east - bounds.west)) * 100;
   const top = ((bounds.north - lat) / (bounds.north - bounds.south)) * 100;
   return { left: `${left}%`, top: `${top}%` };
+}
+
+function centerFromBounds(bounds: MissionSummary["bounds"]): { lon: number; lat: number } {
+  return {
+    lon: (bounds.west + bounds.east) / 2,
+    lat: (bounds.south + bounds.north) / 2,
+  };
+}
+
+function centerFromPan(
+  bounds: MissionSummary["bounds"],
+  mapPanOffset: { x: number; y: number },
+  rect: Pick<DOMRect, "width" | "height"> | null,
+): { lon: number; lat: number } {
+  if (!rect || rect.width <= 0 || rect.height <= 0) return centerFromBounds(bounds);
+  const xRatio = 0.5 - mapPanOffset.x / rect.width;
+  const yRatio = 0.5 - mapPanOffset.y / rect.height;
+  return {
+    lon: bounds.west + xRatio * (bounds.east - bounds.west),
+    lat: bounds.north - yRatio * (bounds.north - bounds.south),
+  };
 }
 
 function flightPointStyle(waypoint: Pick<WaypointRecord, "lon" | "lat" | "altitudeM">, bounds: MissionSummary["bounds"], terrainSamples: TerrainSample[]): CSSProperties {
@@ -739,6 +783,20 @@ function pickGlobeLonLat(viewer: any, Cesium: any, screenPosition: unknown): { l
   const cartesian = (ray ? viewer.scene.globe.pick(ray, viewer.scene) : null) ?? viewer.camera.pickEllipsoid(screenPosition as never, viewer.scene.globe.ellipsoid);
   if (!cartesian) return null;
   const cartographic = Cesium.Cartographic.fromCartesian(cartesian);
+  return {
+    lon: Cesium.Math.toDegrees(cartographic.longitude),
+    lat: Cesium.Math.toDegrees(cartographic.latitude),
+  };
+}
+
+function cesiumViewportCenter(viewer: any, Cesium: any): { lon: number; lat: number } | null {
+  const canvas = viewer.scene.canvas as HTMLCanvasElement;
+  if (canvas.clientWidth > 0 && canvas.clientHeight > 0) {
+    const point = pickGlobeLonLat(viewer, Cesium, new Cesium.Cartesian2(canvas.clientWidth / 2, canvas.clientHeight / 2));
+    if (point) return point;
+  }
+  const cartographic = viewer.camera.positionCartographic;
+  if (!cartographic) return null;
   return {
     lon: Cesium.Math.toDegrees(cartographic.longitude),
     lat: Cesium.Math.toDegrees(cartographic.latitude),

@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { PlannerShell } from "@/components/PlannerShell";
+import { formatLatLon, formatMgrs } from "@/lib/coordinates";
 import { fetchMock, resetMockState } from "./mock-api";
 
 beforeEach(() => {
@@ -61,5 +62,47 @@ describe("Visual correctness", () => {
 
     fireEvent.click(zoneButton);
     await waitFor(() => expect(zoneButton.className).toContain("decision-zone-selected"));
+  });
+
+  it("shows map-grid and lat/lon readouts keyed to the map center", async () => {
+    render(<PlannerShell />);
+    await screen.findByText("Mission Plans");
+
+    const centerLon = (-121.9 + -121.74) / 2;
+    const centerLat = (37.48 + 37.6) / 2;
+
+    expect(screen.getByLabelText("Center map grid coordinate")).toHaveTextContent(formatMgrs(centerLon, centerLat));
+    expect(screen.getByLabelText("Center coordinate readout")).toHaveTextContent(formatLatLon(centerLon, centerLat));
+  });
+
+  it("updates center coordinate readouts when the fallback map is panned", async () => {
+    render(<PlannerShell />);
+    await screen.findByText("Mission Plans");
+
+    const mapStage = screen.getByTestId("mission-map-stage");
+    mapStage.getBoundingClientRect = () =>
+      ({
+        left: 0,
+        top: 0,
+        right: 1000,
+        bottom: 1000,
+        width: 1000,
+        height: 1000,
+        x: 0,
+        y: 0,
+        toJSON: () => ({}),
+      }) as DOMRect;
+
+    fireEvent.mouseDown(mapStage, { button: 0, clientX: 500, clientY: 500 });
+    fireEvent.mouseMove(mapStage, { clientX: 600, clientY: 550 });
+    fireEvent.mouseUp(mapStage);
+
+    const expectedLon = -121.9 + 0.4 * (-121.74 - -121.9);
+    const expectedLat = 37.6 - 0.45 * (37.6 - 37.48);
+
+    await waitFor(() => {
+      expect(screen.getByLabelText("Center map grid coordinate")).toHaveTextContent(formatMgrs(expectedLon, expectedLat));
+      expect(screen.getByLabelText("Center coordinate readout")).toHaveTextContent(formatLatLon(expectedLon, expectedLat));
+    });
   });
 });

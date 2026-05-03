@@ -163,6 +163,7 @@ button {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  align-items: center;
   gap: 4px;
   border: 1px solid var(--panel-border);
   border-radius: 8px;
@@ -173,7 +174,37 @@ button {
   pointer-events: auto;
 }
 
-.map-mode-controls button {
+.map-mode-toggle-group {
+  display: flex;
+  gap: 4px;
+}
+
+.map-center-coordinate {
+  min-width: 156px;
+  overflow: hidden;
+  border: 1px solid rgba(238, 241, 235, 0.12);
+  border-radius: 6px;
+  background: rgba(7, 9, 8, 0.54);
+  padding: 7px 8px;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.map-center-grid {
+  color: var(--teal);
+  text-align: right;
+}
+
+.map-center-latlon {
+  color: var(--pale);
+  text-align: left;
+}
+
+.map-mode-toggle-group button {
   min-width: 42px;
   border: 1px solid transparent;
   border-radius: 6px;
@@ -185,7 +216,7 @@ button {
   cursor: pointer;
 }
 
-.map-mode-controls button.is-active {
+.map-mode-toggle-group button.is-active {
   border-color: rgba(255, 209, 102, 0.56);
   background: rgba(255, 209, 102, 0.16);
   color: var(--amber);
@@ -1100,5 +1131,14 @@ button {
 
   .mission-id {
     min-width: 180px;
+  }
+
+  .map-mode-controls {
+    top: 58px;
+  }
+
+  .map-center-coordinate {
+    max-width: 118px;
+    min-width: 0;
   }
 }

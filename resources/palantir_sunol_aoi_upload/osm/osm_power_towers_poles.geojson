@@ -1,4 +1,4584 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.85535,
+          37.5871818
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.846947,
+          37.5922283
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.844535,
+          37.5937449
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8376085,
+          37.4819574
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8415113,
+          37.5955714
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.853479,
+          37.5883584
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.850766,
+          37.5899907
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.855487,
+          37.587413
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.854165,
+          37.5882156
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.851041,
+          37.590086
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.847222,
+          37.5923847
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.845763,
+          37.593262
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.843016,
+          37.5949282
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.840982,
+          37.5961524
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.83887,
+          37.5974241
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.836639,
+          37.5987774
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8367359,
+          37.5989809
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8388989,
+          37.5976548
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8409239,
+          37.5964715
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8430439,
+          37.5951658
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8459199,
+          37.5934656
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8475249,
+          37.592459
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8511209,
+          37.5902759
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8543309,
+          37.5884123
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8557039,
+          37.5875486
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.855933,
+          37.5876783
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.854457,
+          37.5885557
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.85141,
+          37.5903512
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.847985,
+          37.5924459
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.846037,
+          37.5936361
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.843282,
+          37.5953023
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.84111,
+          37.596608
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.83905,
+          37.5978185
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.836896,
+          37.5991446
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.857633,
+          37.5846924
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.861778,
+          37.580142
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.85977,
+          37.5823866
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8998358,
+          37.5373173
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8961279,
+          37.5415029
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8946859,
+          37.5431226
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8922398,
+          37.5459128
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8899189,
+          37.5485255
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8873166,
+          37.5514363
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8853819,
+          37.5535274
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8823263,
+          37.5569909
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8803265,
+          37.5592158
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.877743,
+          37.5621551
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8749887,
+          37.5652989
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8742998,
+          37.5660587
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8711941,
+          37.5694959
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8684647,
+          37.5725845
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8662159,
+          37.5751014
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8640959,
+          37.5775503
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8950121,
+          37.5410741
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8932526,
+          37.5430341
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8908407,
+          37.5457358
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8885147,
+          37.548281
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8810389,
+          37.5567323
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8782322,
+          37.5598622
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876258,
+          37.5621551
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8741491,
+          37.5644451
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8718464,
+          37.569149
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8682501,
+          37.5731967
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8659498,
+          37.5757817
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8642332,
+          37.577666
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.861993,
+          37.5801828
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.860414,
+          37.5819989
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.858783,
+          37.583781
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.857126,
+          37.585563
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8574379,
+          37.5856782
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8590779,
+          37.5838009
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8608459,
+          37.5818556
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8625019,
+          37.5799918
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8644934,
+          37.5778015
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8661328,
+          37.5759104
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8684588,
+          37.5733187
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8720637,
+          37.5692845
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8748469,
+          37.5659338
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8722412,
+          37.5693939
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8686535,
+          37.5734144
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8663618,
+          37.576013
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8646366,
+          37.5779449
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8632462,
+          37.5795502
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.861221,
+          37.5818017
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.85965,
+          37.5835089
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.857727,
+          37.5856311
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874499,
+          37.5661147
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8751684,
+          37.5661267
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8990891,
+          37.5365618
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8935272,
+          37.5430886
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8951752,
+          37.541217
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8992436,
+          37.5366639
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8872702,
+          37.5507239
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8892958,
+          37.548383
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8914244,
+          37.5460761
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8925488,
+          37.5448375
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8940165,
+          37.5431158
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895364,
+          37.541639
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8994667,
+          37.5370383
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8887636,
+          37.548349
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8910725,
+          37.5458515
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8935444,
+          37.5458447
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8916464,
+          37.5479265
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8907362,
+          37.5490229
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8893816,
+          37.5504041
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8889466,
+          37.5504852
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8904953,
+          37.5489172
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8914384,
+          37.5478672
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.893324,
+          37.5457558
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8958216,
+          37.5431493
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8959562,
+          37.5431975
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.895055,
+          37.5440754
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8963722,
+          37.5415477
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8950035,
+          37.5431226
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8929093,
+          37.5454772
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8919136,
+          37.5466409
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8971312,
+          37.5410852
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8968832,
+          37.5419384
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8812449,
+          37.5568548
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8784382,
+          37.5600119
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876421,
+          37.5622707
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.883219,
+          37.5570589
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8813221,
+          37.5591818
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.878859,
+          37.561951
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.877528,
+          37.5634546
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8827496,
+          37.5572625
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8809129,
+          37.5592697
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8785269,
+          37.5619845
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8769559,
+          37.5637738
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876739,
+          37.5636519
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.878301,
+          37.5618625
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8806955,
+          37.5591409
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.882498,
+          37.5571405
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8818371,
+          37.5568548
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8798029,
+          37.5591409
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8787987,
+          37.5602704
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.877228,
+          37.5620122
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.875202,
+          37.5643186
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874224,
+          37.5647813
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8901026,
+          37.5486212
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8874889,
+          37.5515379
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8858111,
+          37.5533913
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8860295,
+          37.553607
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8861801,
+          37.553854
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8848412,
+          37.5527925
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8852703,
+          37.5529627
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8385452,
+          37.5993426
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.890923,
+          37.5699229
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8699645,
+          37.586279
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8652912,
+          37.5882072
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8887747,
+          37.5709004
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874512,
+          37.5654181
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.879057,
+          37.5763468
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8765728,
+          37.5642869
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8841952,
+          37.5688136
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.894278,
+          37.5680796
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8358509,
+          37.5989981
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8759126,
+          37.578786
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8749465,
+          37.5660275
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8665288,
+          37.5876998
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8957169,
+          37.5740736
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8759248,
+          37.5639037
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.877416,
+          37.5668079
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8750358,
+          37.5798584
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8386893,
+          37.5994472
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8878753,
+          37.5715738
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8631518,
+          37.5890938
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8731659,
+          37.5834069
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8754036,
+          37.565955
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8516586,
+          37.5938229
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8387073,
+          37.5972827
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8484674,
+          37.5951402
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8742197,
+          37.5813781
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8618899,
+          37.5896083
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8435552,
+          37.5971614
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8765519,
+          37.5640012
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8721331,
+          37.5853838
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8570706,
+          37.5915931
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.892525,
+          37.569034
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8855908,
+          37.572807
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8410993,
+          37.5981733
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8539707,
+          37.5928739
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8763847,
+          37.5638967
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.84601,
+          37.5961503
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8731628,
+          37.5666295
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8998033,
+          37.5759195
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.896559,
+          37.5668519
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8591726,
+          37.590731
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.876633,
+          37.5641233
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8304901,
+          37.5964198
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8551082,
+          37.5868915
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8437793,
+          37.5913262
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8407979,
+          37.5924367
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8273895,
+          37.5976004
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8336562,
+          37.5951855
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8490562,
+          37.5892467
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8576647,
+          37.5840071
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.852999,
+          37.5877412
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8376035,
+          37.593671
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8251774,
+          37.5984828
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8623482,
+          37.57877
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8692703,
+          37.5709944
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8592605,
+          37.5822569
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8661421,
+          37.5745093
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8644547,
+          37.5764134
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.871289,
+          37.5687278
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.860814,
+          37.5805159
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8677108,
+          37.5727726
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8968113,
+          37.5414675
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8954119,
+          37.5431712
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8988708,
+          37.5419247
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8931619,
+          37.5456807
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8806779,
+          37.567773
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source": "Yahoo",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.899995,
+          37.543744
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8750099,
+          37.5657304
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8713433,
+          37.5585887
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8751789,
+          37.5634938
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8740942,
+          37.5646944
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8750008,
+          37.566408
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.874577,
+          37.5661614
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8639313,
+          37.5420268
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8703616,
+          37.5564134
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8664901,
+          37.5478113
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8646877,
+          37.5437324
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8683999,
+          37.5521579
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8555992,
+          37.5228649
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8469077,
+          37.5030338
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8452019,
+          37.499195
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8494408,
+          37.5087809
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8402569,
+          37.4879947
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8534631,
+          37.5178422
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8589358,
+          37.5306844
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8415873,
+          37.4909828
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8508678,
+          37.5119809
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8610494,
+          37.5355084
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8434209,
+          37.4951688
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.856951,
+          37.5260898
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8999666,
+          37.5374778
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8391501,
+          37.5997455
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8392683,
+          37.5996292
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8387373,
+          37.5992339
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8383725,
+          37.5994358
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8809353,
+          37.5753286
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8832988,
+          37.574047
+        ]
+      },
+      "properties": {
+        "power": "tower",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8548859,
+          37.4904691
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8656261,
+          37.5743605
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8652382,
+          37.5748824
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8656438,
+          37.5747358
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8657819,
+          37.5752869
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8674763,
+          37.5757075
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866909,
+          37.5760138
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8668387,
+          37.57609
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866787,
+          37.5760326
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8665173,
+          37.575963
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.866042,
+          37.5755986
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8662352,
+          37.5756264
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8653325,
+          37.5750925
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8679751,
+          37.5754337
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8686713,
+          37.5751664
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.869184,
+          37.5755781
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8697048,
+          37.5759941
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8702378,
+          37.5764295
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8707967,
+          37.5768822
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8654938,
+          37.5740358
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8652159,
+          37.5733784
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8701336,
+          37.5861782
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8703743,
+          37.5865811
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8699143,
+          37.5862617
+        ]
+      },
+      "properties": {
+        "power": "pole",
+        "source_name": "OpenStreetMap Overpass",
+        "source_url": "https://overpass-api.de/api/interpreter",
+        "retrieved_at": "2026-05-03T02:57:59.023Z",
+        "provisional": true
+      }
+    }
+  ]
 }

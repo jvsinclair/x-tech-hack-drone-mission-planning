@@ -574,6 +574,157 @@
       ],
       "validation_status": "provisional",
       "notes": "Use for brainstorming, not validation."
+    },
+    {
+      "id": "openstreetmap_overpass_api",
+      "title": "OpenStreetMap Overpass API",
+      "type": "dataset_or_api",
+      "location": "https://overpass-api.de/api/interpreter",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "OSM building and vegetation queries for Sunol bundle GeoJSON",
+        "Cesium GeoJsonDataSource inputs",
+        "POI tag-family queries in scripts/fetch-pois-radius.mjs (20 km disk)"
+      ],
+      "limits": [
+        "Public instance rate limits and uptime vary.",
+        "Coverage and tagging completeness are regional.",
+        "Data © OpenStreetMap contributors; ODbL applies.",
+        "Node fetch may require a realistic User-Agent; script prefers curl with mirror fallbacks."
+      ],
+      "validation_status": "provisional",
+      "notes": "Primary vector source for Palantir bundle, Cesium context layers, and POI study area exports."
+    },
+    {
+      "id": "poi_radius_20km_bundles",
+      "title": "POI study area bundle (20 km radius)",
+      "type": "local_generated_dataset",
+      "location": "resources/pois_radius_20km/ and scripts/fetch-pois-radius.mjs",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "layered OSM POI GeoJSON for Sunol corridor demo center",
+        "manifest counts and study-area polygon for map overlays"
+      ],
+      "limits": [
+        "Regenerate with node scripts/fetch-pois-radius.mjs when network allows.",
+        "Empty layers indicate Overpass timeout, rate limit, or offline run."
+      ],
+      "validation_status": "provisional",
+      "notes": "Validated with scripts/validate-poi-bundle.mjs. See docs/research/poi_sources_20km_sunol_corridor.md."
+    },
+    {
+      "id": "openstreetmap_nominatim_policy",
+      "title": "OpenStreetMap Nominatim search API",
+      "type": "dataset_or_api",
+      "location": "https://nominatim.org/release-docs/develop/api/Overview/",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "reverse geocoding and place lookup for spot checks"
+      ],
+      "limits": [
+        "Usage policy prohibits bulk harvesting of POIs; use Overpass for bulk OSM pulls.",
+        "Strict rate limits; cache responsibly."
+      ],
+      "validation_status": "provisional",
+      "notes": "Documented in docs/research/poi_sources_20km_sunol_corridor.md; not called by fetch-pois-radius.mjs."
+    },
+    {
+      "id": "usgs_gnis_gazetteer",
+      "title": "USGS Geographic Names Information System (GNIS)",
+      "type": "dataset_or_api",
+      "location": "https://www.usgs.gov/tools/geographic-names-information-system-gnis",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "named peaks, populated places, and geographic labels for U.S. context"
+      ],
+      "limits": [
+        "Distribution endpoint and download format may change; verify before automation."
+      ],
+      "validation_status": "provisional",
+      "notes": "Candidate enrichment for labels; not wired into fetch-pois-radius.mjs."
+    },
+    {
+      "id": "hifld_infrastructure_pois",
+      "title": "HIFLD Open national infrastructure layers",
+      "type": "dataset_or_api",
+      "location": "https://hifld-geoplatform.opendata.arcgis.com/",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "schools, hospitals, and other facilities as infrastructure-style POIs",
+        "ArcGIS query by map extent overlapping the 20 km bbox"
+      ],
+      "limits": [
+        "Use current FeatureServer host (verify services2 ArcGIS pattern).",
+        "National datasets require bbox clip and attribution."
+      ],
+      "validation_status": "provisional",
+      "notes": "Optional follow-on to OSM POI layers; see poi_sources_20km_sunol_corridor.md section C."
+    },
+    {
+      "id": "microsoft_us_building_footprints",
+      "title": "Microsoft US Building Footprints",
+      "type": "dataset_or_api",
+      "location": "https://github.com/microsoft/USBuildingFootprints",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "fallback building footprints if OSM coverage is thin in the AOI",
+        "clip-to-bbox GeoJSON for Cesium extrusion"
+      ],
+      "limits": [
+        "State-scale downloads are large; clip before committing.",
+        "Verify Microsoft dataset license and attribution for your use."
+      ],
+      "validation_status": "provisional",
+      "notes": "Optional; use after visual QA of OSM buildings in the demo bbox."
+    },
+    {
+      "id": "usgs_nlcd_mrlc",
+      "title": "National Land Cover Database (NLCD) via MRLC / USGS",
+      "type": "dataset_or_api",
+      "location": "https://www.mrlc.gov/data",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "classified landcover imagery for foliage context in Cesium",
+        "WMS or GeoTIFF workflow for AOI clip"
+      ],
+      "limits": [
+        "Raster pipeline is heavier than OSM vectors.",
+        "Service URLs and versions change; validate before production use."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use if analyst-grade classes are needed or OSM vegetation is insufficient."
+    },
+    {
+      "id": "usgs_naip_imagery",
+      "title": "National Agriculture Imagery Program (NAIP)",
+      "type": "dataset_or_api",
+      "location": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "high-resolution aerial basemap context for vegetation and structures visually"
+      ],
+      "limits": [
+        "Does not provide selectable forest polygons without classification.",
+        "Access method depends on The National Map services or downloads."
+      ],
+      "validation_status": "provisional",
+      "notes": "Complements vector layers; optional Cesium ImageryProvider once a tile endpoint is chosen."
+    },
+    {
+      "id": "cesium_ion_3d_content",
+      "title": "Cesium ion 3D Tiles (e.g. OSM Buildings, Photorealistic)",
+      "type": "visualization_service",
+      "location": "https://cesium.com/platform/cesium-ion/",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "global or regional 3D buildings and photorealistic tiles in CesiumJS"
+      ],
+      "limits": [
+        "Requires ion access token and acceptable use per Cesium terms.",
+        "Not offline-first for hackathon demos unless cached."
+      ],
+      "validation_status": "todo",
+      "notes": "Optional upgrade path when GeoJSON vectors are insufficient for visual polish."
     }
   ]
 }

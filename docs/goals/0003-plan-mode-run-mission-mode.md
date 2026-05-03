@@ -1,12 +1,12 @@
 ---
 goal_id: "0003"
 title: "Plan Mode And Run Mission Mode"
-status: "todo"
+status: "done"
 created_at: "2026-05-03T00:18:56Z"
-started_at: null
-completed_at: null
+started_at: "2026-05-03T03:00:39Z"
+completed_at: "2026-05-03T03:10:51Z"
 owner: "codex-cli"
-commit_sha: null
+commit_sha: "c36b811e4f5141513dcf66b9b24506c3db56ec57"
 ---
 
 # Goal
@@ -53,11 +53,13 @@ Do not:
 ## Verification
 Run:
 - `git diff --check`
+- `npm run test`
 - `npm run typecheck`
 - `npm run build`
 
 Expected:
 - Mode switch works.
+- Unit tests pass.
 - Run Mission creates a snapshot and locks editing.
 - Returning to Plan Mode restores editing.
 - Timeline shell renders named demo beats.

@@ -36,17 +36,25 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `provisional`: `scripts/generate-palantir-bundle.mjs` generates the goal-0001 Sunol / Pleasanton Ridge offline Palantir upload bundle.
 - `provisional`: `scripts/validate-palantir-bundle.mjs` validates the generated Palantir upload bundle for required files, parseability, provenance fields, conflict markers, and obvious local-path leakage.
 - `provisional`: `resources/palantir_sunol_aoi_upload/` contains generated public-source and synthetic mission artifacts for manual Palantir import.
-- `todo`: PRD-specific app entrypoint
-- `todo`: mission plan, drone asset, optical cue, waypoint, route constraint, and observation schemas
+- `src/App.tsx`: Vite/React planner shell with Cesium map, layer controls, provider selector, status, and selected-object panel.
+- `src/components/MissionModePanel.tsx`: Plan Mission / Run Mission rehearsal panel with state-machine outline, named time jumps, and run log shell.
+- `src/components/CesiumMissionMap.tsx`: Cesium 3D map renderer for WGS84 mission layers centered on Sunol / Pleasanton Ridge.
+- `src/data/loadMissionData.ts`: Foundry-first/static-fallback provider selector for mission data.
+- `src/data/missionRun.ts`: Editable plan summary and immutable run snapshot model for app-side mission rehearsal.
+- `src/data/staticBundleProvider.ts`: Local loader for Goal 0001 Palantir upload bundle artifacts under `/resources/palantir_sunol_aoi_upload/`.
+- `src/data/foundryProvider.ts`: No-server Foundry-hosted adapter seam for generated OSDK data.
+- `src/data/missionTypes.ts`: Minimal mission layer, provider, and GeoJSON-facing contracts.
+- `todo`: full mission plan, drone asset, optical cue, waypoint, route constraint, and observation schemas
 - `todo`: ruleset-backed mission state machine and decision tree module
 - `todo`: feed and geospatial context normalization module
 - `todo`: entity/event/location extraction, optical cue interpretation, and route constraint correlation module
 - `todo`: validator pipeline for provenance, cue confidence, route safety, and workflow readiness
-- `todo`: drone mission planning dashboard or operational-picture interface
+- `provisional`: drone mission planning dashboard or operational-picture interface scaffold exists in `src/`.
 - `todo`: review artifact and registry loader modules
 
 ## What Is Validated Enough To Trust
-- `validated`: repo is currently a research-first scaffold with no application source code.
+- `provisional`: repo now includes a runnable Vite + React + TypeScript + Cesium planner scaffold for Goal 0002.
+- `provisional`: Plan Mission and Run Mission modes exist as an app-side rehearsal shell with named timeline jumps and run logs.
 - `validated`: project domain is Problem Statement 3, Mission Command and Control, based on user-provided hackathon context on 2026-05-02.
 - `validated`: working product direction is drone mission planning, based on user clarification on 2026-05-02.
 - `validated`: working scenario direction is a simple maneuver to secure an Army unit with drone coverage, based on user clarification on 2026-05-02.
@@ -66,10 +74,11 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `provisional`: `docs/StatePlanningForFlightPath.md` includes FPV/kinetic examples; implementation should narrow to ISR, route planning, cue interpretation, overwatch, RTB, and human-reviewed decisions unless the PRD explicitly defines safer non-kinetic scope.
 - `provisional`: candidate partner resources and OSINT sources are mapped in `docs/research/problem_statement_3_resource_map.md`, but account access and dataset/API availability are not yet verified.
 - `provisional`: the goal-0001 Palantir upload bundle is generated for manual import, but Palantir account import behavior is not yet validated.
-- `todo`: no runnable app or tests exist yet.
+- `provisional`: Foundry-hosted OSDK data access is represented by an adapter seam, not live Palantir calls.
+- `todo`: full mission state-machine execution, PPS cue preview, writeback actions, and generated Goal 0001 artifacts still need completion.
 
 ## Current Active Blockers
-- No application stack, runtime, source modules, or tests have been chosen.
+- Foundry Developer Console / OSDK application setup still needs the hackathon instance object types, permissions, and generated package.
 - Real hardware integration and operational low-probability-of-intercept signaling are out of scope for this repo unless the PRD explicitly reframes them as safe simulation-only requirements.
 - No partner platform accounts or Palantir import permissions have been verified locally.
 - No project-specific schemas, runtime app tests, or workflow actions have been implemented beyond the provisional goal-0001 bundle scripts.
@@ -89,6 +98,10 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
   `docs/ROUNDTABLE_DEMO_REQUIREMENTS.md`
 - Tool catalog:
   `docs/TOOL_INTERFACE_CATALOG.md`
+- Foundry-hosted app setup:
+  `docs/FOUNDRY_HOSTED_APP_SETUP.md`
+- Covered module registry:
+  `docs/COVERED_MODULE_REGISTRY.md`
 - Formula and threshold governance:
   `docs/FORMULA_REGISTRY_POLICY.md`
 - Validation vocabulary:

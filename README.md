@@ -1,35 +1,57 @@
-# x-tech-hackathon Scaffold
+# x-tech-hackathon
 
-This folder is a lightweight starter structure for a research-first, validator-guided hackathon project for Problem Statement 3: Mission Command and Control.
-It currently contains documentation, resource mapping, rule templates, and registry shapes only. It does not include runnable product code, generated artifacts, secrets, caches, or private event details.
+This repo contains a hackathon prototype for Problem Statement 3: Mission Command and Control. The current product direction is a non-kinetic ISR drone mission planner for the synthetic Sunol Ridge Training Area, with Palantir/Foundry as the preferred scoped-data backend and a local Vite/Cesium fallback.
 
 ## What This Gives You
+- A Vite + React + TypeScript + Cesium planner shell.
+- A Foundry-hosted app adapter boundary for future OSDK-backed AOI-scoped data.
+- A static bundle fallback that loads Goal 0001 resources when available.
+- Plan Mission and Run Mission rehearsal modes with named judge-demo timeline jumps.
 - A first-stop `AGENTS.md` for future agents and contributors.
-- A project homepage in `docs/PROJECT_CONTEXT.md`.
-- A Problem Statement 3 resource map in `docs/research/problem_statement_3_resource_map.md`.
-- A tool and stage catalog template in `docs/TOOL_INTERFACE_CATALOG.md`.
-- A governance policy for formulas, thresholds, scoring rules, and heuristics.
-- Machine-readable registry templates under `docs/research/`.
-- A project-specific source registry in `docs/research/source_registry.json`.
-- Copyable context headers and checklists under `templates/`.
+- Project context, research registries, formula governance, and tool catalog docs under `docs/`.
 
 ## Quick Start
-1. Read `docs/PROJECT_CONTEXT.md`.
-2. Read `docs/research/problem_statement_3_resource_map.md`.
-3. Ingest the PRD when it arrives and update the project context before adding implementation details.
-4. Add each public tool, validator stage, workflow step, or runtime-backed action to `docs/TOOL_INTERFACE_CATALOG.md`.
-5. Put formulas, thresholds, scoring rules, and heuristics in the formula registry path before using them in implementation.
-6. Add concrete datasets, APIs, partner exports, and evidence sources to `docs/research/source_registry.json`.
-7. When code exists, copy the relevant module context header template into covered modules and keep it updated with any behavior change.
+```bash
+npm install
+npm run dev
+```
+
+For Cesium ion world imagery and 3D terrain, set a local token before starting the app:
+
+```bash
+cp .env.example .env
+# edit .env and set VITE_CESIUM_ION_TOKEN
+npm run dev
+```
+
+Without `VITE_CESIUM_ION_TOKEN`, the app uses OpenStreetMap imagery and ellipsoid terrain as a no-key fallback.
+
+Useful checks:
+
+```bash
+npm run test
+npm run typecheck
+npm run build
+```
+
+The app runs without Palantir access. If `resources/palantir_sunol_aoi_upload/` exists, Vite serves it at `/resources/palantir_sunol_aoi_upload/`. If it does not exist, the planner loads built-in synthetic Sunol geometry.
+
+For the Foundry-hosted path, read `docs/FOUNDRY_HOSTED_APP_SETUP.md`.
 
 ## Folder Map
 ```text
 x-tech-hackathon/
 ├── README.md
 ├── AGENTS.md
+├── package.json
+├── src/
+│   ├── App.tsx
+│   ├── components/
+│   └── data/
 ├── docs/
 │   ├── PROJECT_CONTEXT.md
 │   ├── TOOL_INTERFACE_CATALOG.md
+│   ├── FOUNDRY_HOSTED_APP_SETUP.md
 │   ├── FORMULA_REGISTRY_POLICY.md
 │   ├── VALIDATION_STATUS_VOCABULARY.md
 │   ├── HANDOFF_TEMPLATE.md

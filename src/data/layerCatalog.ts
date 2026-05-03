@@ -3,7 +3,7 @@ Module Context
 Purpose:
 - Define the planner layer contract and initial visual styling.
 Why This Exists:
-- Goal 0002 needs stable toggles that match the Goal 0001 bundle and the map symbology doc.
+- Goals 0002 and 0005 need stable toggles that match the Goal 0001 bundle, Foundry Functions data, and the map symbology doc.
 Primary Inputs/Outputs:
 - Inputs: Goal 0001 artifact layer ids and operator symbology requirements.
 - Outputs: Ordered layer definitions consumed by loaders and UI controls.
@@ -14,7 +14,7 @@ Research / Source Links:
 Validated:
 - provisional: Covered by layer catalog tests.
 Current Limits / TODO:
-- Detailed waypoint glyphs and full legend behavior are deferred to goal 0006.
+- Detailed waypoint glyphs and full legend behavior are deferred to goal 0006; route previews use provisional R7 styling here.
 Agent Maintenance Rule:
 - If this module changes in any way, or a finding affects its contracts, update this header in the same change.
 */
@@ -121,11 +121,11 @@ export const layerCatalog: LayerDefinition[] = [
     defaultEnabled: true,
     artifactLayerIds: ["synthetic_cue_zones"],
     style: {
-      stroke: "#7aa2ff",
-      fill: "#7aa2ff",
+      stroke: "#ffd166",
+      fill: "#ffd166",
       strokeWidth: 2,
-      strokeAlpha: 0.78,
-      fillAlpha: 0.13,
+      strokeAlpha: 0.86,
+      fillAlpha: 0.16,
       dashed: true,
     },
   },

@@ -3,7 +3,7 @@
 This is the review guide for the current `x-tech-hackathon` tool, validator, and workflow surface.
 Every public stage should be documented here before agents depend on it.
 
-Current state: Goal 0002 adds a provisional frontend runtime data-provider boundary, `mission_data_provider_runtime`, for choosing a Foundry-hosted adapter when available and falling back to static scoped bundle data. Goal 0003 adds `mission_run_rehearsal_runtime` for app-side Plan Mission / Run Mission rehearsal. `optical_cue_interpreter_demo`, `terrain_attention_point_generator_demo`, and `terrain_aware_route_altitude_profile_demo` remain planned provisional stages for upcoming implementation slices.
+Current state: Goal 0002 adds a provisional frontend runtime data-provider boundary, `mission_data_provider_runtime`, for choosing a Foundry-hosted adapter/Functions path when available and falling back to static scoped bundle data. Goal 0003 adds `mission_run_rehearsal_runtime` for app-side Plan Mission / Run Mission rehearsal. Goal 0005 implements the provisional `optical_cue_interpreter_demo` as a local pure preview interpreter. `terrain_attention_point_generator_demo` and `terrain_aware_route_altitude_profile_demo` remain planned provisional stages for upcoming implementation slices.
 
 ## Field Glossary
 - `[field_name]`: `[description]` Units: `[units or enum or not_applicable]`.
@@ -30,7 +30,7 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
 - Required binaries or services: `none`
 - Headless expectations: Pure interpreter should run headlessly against fixtures.
 - Degraded modes: If cue confidence is unavailable, require human review.
-- Source module: `todo`
+- Source module: `src/data/ppsCuePreview.ts`
 - Kernel id: `optical_cue_interpreter_kernel`
 - Kernel boundary: Deterministic mapping and validation of cue observation to command preview.
 - Pure function expected: `yes`
@@ -67,8 +67,8 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
 }
 ```
 - Current gaps / TODO notes:
-  - PRD must confirm RTB confirmation behavior and continuous/no-pulse handling.
-  - No source module or tests exist yet.
+  - PRD must confirm continuous/no-pulse behavior beyond the current warning/ignored-event path.
+  - Context gates are shallow until full mission state validators exist.
 
 ## `terrain_attention_point_generator_demo`
 - Display name: Terrain Attention Point Generator Demo
@@ -307,18 +307,18 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
 - Purpose: Load AOI-scoped mission layers for the planner from Foundry when available, otherwise from the static Goal 0001 bundle or built-in placeholder geometry.
 - When to call: At planner startup and when the operator changes the provider selector.
 - When not to call: Do not use for writeback, Palantir Actions, real drone control, MAVLINK/GCS, or hardware-control workflows.
-- Input type: Preferred provider mode plus optional Foundry adapter or static bundle path.
-- Output type: `MissionData` containing grouped WGS84 GeoJSON mission layers and provider status.
+- Input type: Preferred provider mode plus optional Foundry adapter, bearer token, or static bundle path.
+- Output type: `MissionData` containing grouped WGS84 GeoJSON mission layers, provider status, safety scope, and source manifest entries.
 - Supported use cases: Foundry-hosted app data access; local fallback; Cesium layer rendering.
-- Supported data or source families: Foundry OSDK adapter; Goal 0001 static GeoJSON/CSV bundle; built-in synthetic placeholder geometry.
+- Supported data or source families: Foundry Functions REST; Foundry OSDK adapter; Goal 0001 static GeoJSON/CSV bundle; built-in synthetic placeholder geometry.
 - Status values: `ready | partial | missing | unavailable`
 - Hard-fail vs warning behavior: Missing Foundry adapter or static bundle degrades to placeholder geometry with a visible notice; malformed loaded data should surface as a warning or error.
 - Formula or rule groups: `none`
 - Support level: `provisional`
-- Platform support: `Foundry-hosted adapter optional; local Vite fallback supported`
-- Required binaries or services: `node`, `npm`; Foundry auth only when using the adapter path.
+- Platform support: `Foundry-hosted adapter optional; local Vite fallback supported; read-only Functions REST supported with runtime bearer token`
+- Required binaries or services: `node`, `npm`; Foundry auth only when using the Foundry path.
 - Headless expectations: Provider selection and static fallback are unit-testable without a browser.
-- Degraded modes: Built-in placeholder Sunol mission geometry.
+- Degraded modes: Static bundle fallback; built-in placeholder Sunol mission geometry; missing direct Foundry neutral context layers until OSDK/direct functions are added.
 - Source module: `src/data/loadMissionData.ts`
 - Kernel id: `mission_data_provider_runtime`
 - Kernel boundary: Provider selection and mission layer grouping; Cesium rendering is separate.
@@ -329,7 +329,8 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
   - `basePath` (`string`): Static bundle root. Units: `path`.
   - `fetcher` (`function`): Fetch implementation for tests or runtime. Units: `function`.
   - `window.__FOUNDRY_MISSION_PROVIDER__` (`object`): Foundry-hosted adapter injected by generated OSDK setup. Units: `object`.
-- Derived fields: `provider`, `status`, `notices`, `layers`
+  - `window.__FOUNDRY_BEARER_TOKEN__` / `localStorage.foundryBearerToken` / `VITE_FOUNDRY_BEARER_TOKEN` (`string`): Runtime bearer token for read-only Functions REST. Units: `secret_token`.
+- Derived fields: `provider`, `status`, `notices`, `layers`, `safetyScope`, `sources`
 - Minimal valid example input:
 ```json
 {
@@ -345,23 +346,23 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
 }
 ```
 - Current gaps / TODO notes:
-  - Generated OSDK package and Foundry object mappings are not configured yet.
-  - Writeback/actions are intentionally deferred.
+  - Neutral context object geometries from `RoadOrPath`, `Building`, and `NaturalFeature` need OSDK/direct-query support or additional Functions wrappers.
+  - Writeback/actions are intentionally deferred; the current UI logs previews locally only.
 
 ## `mission_run_rehearsal_runtime`
 - Display name: Mission Run Rehearsal Runtime
 - Category: `runtime`
 - Stage order: `4`
-- Purpose: Separate editable Plan Mission state from immutable Run Mission rehearsal snapshots, named time jumps, and audit-style run logs.
-- When to call: When the operator switches into Run Mission mode, refreshes a run snapshot, or jumps to a named demo beat.
+- Purpose: Separate editable Plan Mission state from immutable Run Mission rehearsal snapshots, named time jumps, PPS cue previews, operator confirmations, and audit-style run logs.
+- When to call: When the operator switches into Run Mission mode, refreshes a run snapshot, jumps to a named demo beat, simulates a PPS cue, or confirms/clears a preview.
 - When not to call: Do not call for real drone execution, hardware command, MAVLINK/GCS export, autonomous operational command, strike, engage, or target-selection workflows.
-- Input type: Current `MissionData` plus operator-selected timeline beat.
-- Output type: `EditablePlanState`, `RunMissionSnapshot`, and `RunLogEntry` records for UI display.
-- Supported use cases: Judge demo rehearsal, timeline fast-forward, state-machine outline preview, run-log shell.
+- Input type: Current `MissionData`, operator-selected timeline beat, and optional `PpsCuePreviewResult`.
+- Output type: `EditablePlanState`, `RunMissionSnapshot`, `RunLogEntry`, and local cue decision state records for UI display.
+- Supported use cases: Judge demo rehearsal, timeline fast-forward, state-machine outline preview, PPS route preview, local operator confirmation log.
 - Supported data or source families: Foundry/static/placeholder `MissionData` from `mission_data_provider_runtime`.
 - Status values: `plan | run`
 - Hard-fail vs warning behavior: Missing mission data degrades to placeholder plan state; run mode remains simulation-only.
-- Formula or rule groups: `none`
+- Formula or rule groups: `demo_optical_cue_pps_command_mapping_v1` when cue previews are logged.
 - Support level: `provisional`
 - Platform support: `local Vite; Foundry-hosted UI compatible`
 - Required binaries or services: `node`, `npm`
@@ -376,7 +377,7 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
   - `mode` (`enum(plan, run)`): Active planner mode. Units: `enum`.
 - Optional input fields:
   - `beatId` (`string`): Named timeline beat to jump to. Units: `id`.
-- Derived fields: `runSnapshot`, `currentBeatId`, `log`, `warningCount`, `outline`
+- Derived fields: `runSnapshot`, `currentBeatId`, `log`, `warningCount`, `outline`, `cueDecision`
 - Minimal valid example input:
 ```json
 {
@@ -393,7 +394,7 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
 ```
 - Current gaps / TODO notes:
   - Timeline jumps do not yet drive Cesium animation.
-  - PPS cue behavior and confirmation preview are deferred to goal 0005.
+  - Cue confirmations are local rehearsal log entries only; no server-side state mutation exists.
 
 ## Entry Template
 

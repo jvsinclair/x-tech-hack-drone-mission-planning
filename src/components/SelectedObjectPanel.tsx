@@ -3,13 +3,14 @@ Module Context
 Purpose:
 - Display the currently selected mission object.
 Why This Exists:
-- The operator shell needs a compact inspection surface for map entities without leaving the planner.
+- The operator shell needs a compact inspection surface for map entities, provenance, and cue/branch preview fields without leaving the planner.
 Primary Inputs/Outputs:
 - Inputs: SelectedMissionObject from Cesium selection events and editing lock state.
-- Outputs: Human-readable object id, layer, name, coordinates, properties, and future-edit readiness.
+- Outputs: Human-readable object id, layer, name, coordinates, provenance, properties, and future-edit readiness.
 Research / Source Links:
 - docs/goals/0002-local-vite-cesium-planner-scaffold.md
 - docs/goals/0004-mgrs-latlon-coordinate-display.md
+- docs/goals/0005-pps-cue-zones-and-route-preview.md
 - docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md
 Validated:
 - provisional: Rendered through App shell tests.
@@ -21,6 +22,8 @@ Agent Maintenance Rule:
 
 import type { SelectedMissionObject } from "../data/missionTypes";
 import { formatCoordinatePair } from "../data/coordinateFormat";
+import { commandPreviewFromProperties, propertyString } from "../data/missionGeojson";
+import { formatPpsCueCommand } from "../data/ppsCuePreview";
 
 interface SelectedObjectPanelProps {
   selectedObject: SelectedMissionObject | null;
@@ -28,8 +31,13 @@ interface SelectedObjectPanelProps {
 }
 
 export function SelectedObjectPanel({ selectedObject, editingLocked }: SelectedObjectPanelProps) {
-  const properties = Object.entries(selectedObject?.properties || {}).slice(0, 8);
+  const properties = Object.entries(selectedObject?.properties || {}).filter(([key]) => !hiddenPropertyKeys.has(key)).slice(0, 8);
   const coordinateDisplay = selectedObject?.coordinate ? formatCoordinatePair(selectedObject.coordinate) : null;
+  const sourceName = propertyString(selectedObject?.properties, "sourceName", "source_name");
+  const sourceUrl = propertyString(selectedObject?.properties, "sourceUrl", "source_url");
+  const retrievedAt = propertyString(selectedObject?.properties, "retrievedAt", "retrieved_at");
+  const commandPreview = commandPreviewFromProperties(selectedObject?.properties);
+  const isProvisional = selectedObject?.properties.provisional === true || selectedObject?.properties.provisional === "true";
 
   return (
     <section className="panel-section object-panel">
@@ -46,6 +54,10 @@ export function SelectedObjectPanel({ selectedObject, editingLocked }: SelectedO
         <>
           <h2>{selectedObject.name}</h2>
           <p className="object-id">{selectedObject.objectId}</p>
+          <div className="object-badges">
+            {isProvisional ? <span>provisional</span> : null}
+            {commandPreview ? <span>{formatPpsCueCommand(commandPreview)}</span> : null}
+          </div>
           <dl className="property-list">
             {coordinateDisplay ? (
               <>
@@ -65,6 +77,18 @@ export function SelectedObjectPanel({ selectedObject, editingLocked }: SelectedO
                 ) : null}
               </>
             ) : null}
+            {sourceName ? (
+              <div>
+                <dt>source</dt>
+                <dd>{sourceUrl ? <a href={sourceUrl} rel="noreferrer" target="_blank">{sourceName}</a> : sourceName}</dd>
+              </div>
+            ) : null}
+            {retrievedAt ? (
+              <div>
+                <dt>retrieved</dt>
+                <dd>{retrievedAt}</dd>
+              </div>
+            ) : null}
             {properties.map(([key, value]) => (
               <div key={key}>
                 <dt>{key}</dt>
@@ -79,6 +103,17 @@ export function SelectedObjectPanel({ selectedObject, editingLocked }: SelectedO
     </section>
   );
 }
+
+const hiddenPropertyKeys = new Set([
+  "planner_layer_id",
+  "planner_layer_label",
+  "sourceName",
+  "source_name",
+  "sourceUrl",
+  "source_url",
+  "retrievedAt",
+  "retrieved_at",
+]);
 
 function formatPropertyValue(value: unknown): string {
   if (value === null || value === undefined) return "none";

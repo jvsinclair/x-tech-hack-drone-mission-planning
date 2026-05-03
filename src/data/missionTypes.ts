@@ -3,10 +3,10 @@ Module Context
 Purpose:
 - Define shared mission data and GeoJSON-facing types for the planner.
 Why This Exists:
-- The UI, static bundle loader, and future Foundry OSDK adapter need a stable boundary.
+- The UI, static bundle loader, Foundry Functions REST provider, and future OSDK adapter need a stable boundary.
 Primary Inputs/Outputs:
-- Inputs: WGS84 GeoJSON-like features, manifest metadata, provider status.
-- Outputs: Typed MissionData and MissionLayer objects consumed by React and Cesium.
+- Inputs: WGS84 GeoJSON-like features, mission safety scope, source manifest metadata, provider status.
+- Outputs: Typed MissionData, MissionLayer, and source provenance objects consumed by React and Cesium.
 Research / Source Links:
 - docs/PROJECT_CONTEXT.md
 - docs/goals/0002-local-vite-cesium-planner-scaffold.md
@@ -14,7 +14,7 @@ Research / Source Links:
 Validated:
 - provisional: Type contracts are exercised by loader and shell tests.
 Current Limits / TODO:
-- This is intentionally minimal; full mission state schemas land in later goals.
+- This is still read-only; full mission state schemas and writeback actions land in later goals.
 Agent Maintenance Rule:
 - If this module changes in any way, or a finding affects its contracts, update this header in the same change.
 */
@@ -80,7 +80,18 @@ export interface MissionLayer {
   count: number;
   source: string;
   status: MissionLoadStatus;
+  provisional?: boolean;
   geojson: GeoJsonFeatureCollection;
+}
+
+export interface MissionSourceEntry {
+  layerId?: string;
+  sourceName: string;
+  sourceUrl?: string;
+  retrievedAt?: string;
+  status?: string;
+  count?: number;
+  provisional?: boolean;
 }
 
 export interface MissionData {
@@ -88,6 +99,8 @@ export interface MissionData {
   status: MissionLoadStatus;
   missionName: string;
   loadedAt: string;
+  safetyScope: string[];
+  sources: MissionSourceEntry[];
   layers: MissionLayer[];
   notices: string[];
 }
@@ -123,5 +136,15 @@ export interface BundleManifestLayer {
 export interface BundleManifest {
   title?: string;
   generated_at?: string;
+  safety_scope?: string[];
   layers?: Record<string, BundleManifestLayer>;
+  sources?: Array<{
+    layer_id?: string;
+    source_name?: string;
+    source_url?: string;
+    retrieved_at?: string;
+    status?: string;
+    count?: number;
+    provisional?: boolean;
+  }>;
 }

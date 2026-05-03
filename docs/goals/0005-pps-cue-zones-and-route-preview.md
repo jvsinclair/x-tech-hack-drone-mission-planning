@@ -1,9 +1,9 @@
 ---
 goal_id: "0005"
 title: "PPS Cue Zones And Route Preview"
-status: "todo"
+status: "in_progress"
 created_at: "2026-05-03T00:18:56Z"
-started_at: null
+started_at: "2026-05-03T07:47:48Z"
 completed_at: null
 owner: "codex-cli"
 commit_sha: null

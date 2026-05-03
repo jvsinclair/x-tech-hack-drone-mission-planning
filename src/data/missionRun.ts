@@ -5,21 +5,23 @@ Purpose:
 Why This Exists:
 - Goal 0003 needs editable plan state, immutable run snapshots, named demo jumps, and an operator decision log without real drone execution.
 Primary Inputs/Outputs:
-- Inputs: MissionData and selected timeline beat ids.
+- Inputs: MissionData, selected timeline beat ids, and simulated cue preview results.
 - Outputs: EditablePlanState, RunMissionSnapshot, and RunLogEntry objects used by the UI.
 Research / Source Links:
 - docs/goals/0003-plan-mode-run-mission-mode.md
+- docs/goals/0005-pps-cue-zones-and-route-preview.md
 - docs/STATE_DECISION_GRAPH.md
 - docs/ROUNDTABLE_DEMO_REQUIREMENTS.md
 Validated:
 - provisional: Snapshot and timeline helpers are covered by unit tests.
 Current Limits / TODO:
-- This is an app-side simulation model only; real state-machine execution, PPS behavior, and persistence land in later goals.
+- This is an app-side simulation model only; cue previews and confirmations never mutate server-side mission state.
 Agent Maintenance Rule:
 - If this module changes in any way, or a finding affects its contracts, update this header in the same change.
 */
 
 import type { MissionData } from "./missionTypes";
+import type { PpsCuePreviewResult } from "./ppsCuePreview";
 
 export type PlannerMode = "plan" | "run";
 
@@ -53,6 +55,7 @@ export interface RunLogEntry {
   beatId: string;
   label: string;
   message: string;
+  eventType?: "snapshot" | "timeline_jump" | "cue_event" | "route_preview" | "operator_confirmation" | "warning";
 }
 
 export interface RunMissionSnapshot {
@@ -154,6 +157,7 @@ export function createRunMissionSnapshot(plan: EditablePlanState, now = new Date
         beatId: demoTimelineBeats[0].id,
         label: "Snapshot",
         message: "Created immutable run rehearsal snapshot from the current plan.",
+        eventType: "snapshot",
       },
     ],
   };
@@ -172,6 +176,53 @@ export function jumpRunSnapshot(snapshot: RunMissionSnapshot, beatId: string, no
         beatId: beat.id,
         label: beat.label,
         message: `Jumped rehearsal timeline to ${beat.label}: ${beat.description}`,
+        eventType: "timeline_jump",
+      },
+      ...snapshot.log,
+    ],
+  };
+}
+
+export function logCuePreview(snapshot: RunMissionSnapshot, preview: PpsCuePreviewResult, now = new Date()): RunMissionSnapshot {
+  const at = now.toISOString();
+  const isWarning = preview.status !== "passed";
+  return {
+    ...snapshot,
+    log: [
+      {
+        id: `log-${at}-${preview.id}`,
+        at,
+        beatId: snapshot.currentBeatId,
+        label: isWarning ? "Cue Ignored" : "Cue Preview",
+        message: isWarning
+          ? `Observed ${formatObservedPps(preview)}. ${preview.rationale}`
+          : `Observed ${formatObservedPps(preview)} and previewed ${preview.matchedCommandLabel}. Operator confirmation required before route state advances.`,
+        eventType: isWarning ? "warning" : "cue_event",
+      },
+      ...snapshot.log,
+    ],
+  };
+}
+
+export function confirmCuePreview(snapshot: RunMissionSnapshot, preview: PpsCuePreviewResult, now = new Date()): RunMissionSnapshot {
+  const at = now.toISOString();
+  const nextBeatId =
+    preview.matchedCommand === "preview_return_to_base"
+      ? "rtb"
+      : preview.matchedCommand === "preview_hold_or_loiter"
+        ? "pps-cue"
+        : "route-branch-preview";
+  return {
+    ...snapshot,
+    currentBeatId: nextBeatId,
+    log: [
+      {
+        id: `log-${at}-${preview.id}-confirmed`,
+        at,
+        beatId: nextBeatId,
+        label: "Operator Confirmed",
+        message: `Operator confirmed ${preview.matchedCommandLabel}. This is a local rehearsal log entry only; no backend action or drone command was sent.`,
+        eventType: "operator_confirmation",
       },
       ...snapshot.log,
     ],
@@ -194,4 +245,8 @@ function estimateRouteDistanceKm(missionData: MissionData | null): number {
   const unitRouteCount = missionData?.layers.find((layer) => layer.id === "unitRoute")?.count || 0;
   const branchCount = missionData?.layers.find((layer) => layer.id === "droneBranches")?.count || 0;
   return Number((3.4 + unitRouteCount * 0.8 + branchCount * 0.35).toFixed(1));
+}
+
+function formatObservedPps(preview: PpsCuePreviewResult): string {
+  return preview.observedPulseRatePps === null ? "no pulse" : `${preview.observedPulseRatePps} PPS`;
 }

@@ -3,7 +3,7 @@ Module Context
 Purpose:
 - Render planner layer toggles and counts.
 Why This Exists:
-- Operators need fast control over AOI, terrain, infrastructure, route, and cue overlays.
+- Operators need fast control over AOI, terrain, infrastructure, route, cue overlays, and provisional-source status.
 Primary Inputs/Outputs:
 - Inputs: MissionLayer list and enabled layer state.
 - Outputs: Checkbox controls that update map visibility.
@@ -50,7 +50,7 @@ export function LayerPanel({ layers, enabledLayers, onToggleLayer }: LayerPanelP
                 <span>{layer.label}</span>
                 <small>{layer.count} objects</small>
               </span>
-              <span className={`layer-status layer-status-${layer.status}`}>{layer.status}</span>
+              <span className={`layer-status layer-status-${layer.status}`}>{layer.provisional ? "provisional" : layer.status}</span>
             </label>
           ))
         )}

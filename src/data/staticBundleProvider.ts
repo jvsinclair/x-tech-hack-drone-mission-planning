@@ -6,7 +6,7 @@ Why This Exists:
 - The Vite/Cesium fallback must work without Palantir access and consume the same scoped AOI data prepared for Foundry.
 Primary Inputs/Outputs:
 - Inputs: resources/palantir_sunol_aoi_upload manifest and GeoJSON artifacts served by Vite.
-- Outputs: MissionData layers grouped for the planner layer toggles.
+- Outputs: MissionData layers, source manifest entries, safety scope, and provider status.
 Research / Source Links:
 - docs/goals/0001-palantir-offline-upload-bundle.md
 - docs/goals/0002-local-vite-cesium-planner-scaffold.md
@@ -28,7 +28,9 @@ import type {
   LayerDefinition,
   MissionData,
   MissionLayer,
+  MissionSourceEntry,
 } from "./missionTypes";
+import { featureCollectionHasProvisional, normalizeFeatureCollection } from "./missionGeojson";
 import { createPlaceholderMissionData } from "./placeholderMission";
 
 export interface StaticBundleProviderOptions {
@@ -59,6 +61,8 @@ export async function loadStaticBundle(options: StaticBundleProviderOptions = {}
     status: missingCount > 0 ? "partial" : "ready",
     missionName: manifest.title || "Sunol Ridge Training Area",
     loadedAt: manifest.generated_at || new Date().toISOString(),
+    safetyScope: manifest.safety_scope || defaultSafetyScope(),
+    sources: sourcesFromManifest(manifest),
     layers: loadedLayers,
     notices: missingCount > 0 ? [`${missingCount} layer groups are missing or empty in the static bundle.`] : [],
   };
@@ -85,15 +89,18 @@ async function loadGroupedLayer(
   const features: GeoJsonFeature[] = [];
   const sources = new Set<string>();
   let failed = false;
+  let provisional = false;
 
   for (const [index, result] of featureCollections.entries()) {
     if (!result.ok) {
       failed = true;
       continue;
     }
-    features.push(...(result.value.features || []));
+    const normalized = normalizeFeatureCollection(result.value);
+    features.push(...(normalized.features || []));
     const artifact = artifacts[index];
     if (artifact.source_name) sources.add(artifact.source_name);
+    if (artifact.provisional || featureCollectionHasProvisional(normalized)) provisional = true;
   }
 
   const count = features.length;
@@ -108,6 +115,7 @@ async function loadGroupedLayer(
     count,
     source: sources.size > 0 ? Array.from(sources).join("; ") : "Static bundle",
     status,
+    provisional,
     geojson: {
       type: "FeatureCollection",
       features,
@@ -117,6 +125,26 @@ async function loadGroupedLayer(
       },
     },
   };
+}
+
+function sourcesFromManifest(manifest: BundleManifest): MissionSourceEntry[] {
+  return (manifest.sources || []).map((source) => ({
+    layerId: source.layer_id,
+    sourceName: source.source_name || "Unknown source",
+    sourceUrl: source.source_url,
+    retrievedAt: source.retrieved_at,
+    status: source.status,
+    count: source.count,
+    provisional: source.provisional,
+  }));
+}
+
+function defaultSafetyScope(): string[] {
+  return [
+    "Synthetic ISR/recon route-planning demo only.",
+    "No real drone control, MAVLINK/GCS, hardware-control, strike, engage, target-selection, or weapon-release workflows.",
+    "Public-source geospatial layers are planning context only.",
+  ];
 }
 
 async function fetchJson<T>(url: string, fetcher: typeof fetch): Promise<{ ok: true; value: T } | { ok: false; reason: string }> {

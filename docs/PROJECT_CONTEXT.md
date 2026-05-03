@@ -42,7 +42,9 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `src/data/loadMissionData.ts`: Foundry-first/static-fallback provider selector for mission data.
 - `src/data/missionRun.ts`: Editable plan summary and immutable run snapshot model for app-side mission rehearsal.
 - `src/data/staticBundleProvider.ts`: Local loader for Goal 0001 Palantir upload bundle artifacts under `/resources/palantir_sunol_aoi_upload/`.
-- `src/data/foundryProvider.ts`: No-server Foundry-hosted adapter seam for generated OSDK data.
+- `src/data/foundryProvider.ts`: Read-only Foundry Functions REST provider plus no-server generated OSDK adapter seam.
+- `src/data/ppsCuePreview.ts`: Pure simulated PPS cue interpreter for preview-only Route A/B, hold, and RTB commands.
+- `src/data/missionGeojson.ts`: Provider-normalization helpers for static and Foundry GeoJSON/provenance fields.
 - `src/data/missionTypes.ts`: Minimal mission layer, provider, and GeoJSON-facing contracts.
 - `todo`: full mission plan, drone asset, optical cue, waypoint, route constraint, and observation schemas
 - `todo`: ruleset-backed mission state machine and decision tree module
@@ -69,6 +71,8 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `provisional`: moving-unit mission planning approach is mapped in `docs/research/moving_unit_drone_mission_planning.md`.
 - `validated`: default drone route altitude for the demo is `120 m AGL`, with editable per-waypoint altitude deferred as a stretch item, based on user clarification on 2026-05-03.
 - `provisional`: public OSM Overpass, CEC transmission, HIFLD transmission, and USGS EPQS sources are registered and can produce the goal-0001 Sunol upload bundle with manifest source-health evidence.
+- `validated`: Team-provided Palantir Foundry backend context exists for Team 3: ontology RID `ri.ontology.main.ontology.41fccd0c-2180-4c1d-841d-8a488d1abb46`, Foundry Functions REST route on `nshackathon.palantirfoundry.com`, and published read functions for mission bundle, AOI, route, branches, cue zones, no-go zones, terrain attention points, infrastructure context, and source manifest.
+- `provisional`: the local app can call those Foundry Functions when a bearer token is supplied at runtime; no credentials are committed, no server-side writeback is implemented, and neutral context object geometries still need OSDK/direct-query support or additional functions.
 
 ## What Is Still Provisional
 - `provisional`: exact drone mission planning product scope, maneuver details, data sources, constraints, and demo path still need final acceptance criteria.
@@ -82,9 +86,9 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `todo`: full mission state-machine execution, PPS cue preview, writeback actions, and generated Goal 0001 artifacts still need completion.
 
 ## Current Active Blockers
-- Foundry Developer Console / OSDK application setup still needs the hackathon instance object types, permissions, and generated package.
+- Foundry Developer Console / OSDK application setup is still optional for direct object queries; the current app uses published read-only Functions REST when a bearer token is supplied.
 - Real hardware integration and operational low-probability-of-intercept signaling are out of scope for this repo unless the PRD explicitly reframes them as safe simulation-only requirements.
-- No partner platform accounts or Palantir import permissions have been verified locally.
+- Local Palantir authentication is not committed; create/use a runtime bearer token with Ontology read and Execute functions permissions.
 - No project-specific schemas, runtime app tests, or workflow actions have been implemented beyond the provisional goal-0001 bundle scripts.
 
 ## Current Debug Track

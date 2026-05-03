@@ -3,19 +3,20 @@ Module Context
 Purpose:
 - Compose the ISR mission planner shell.
 Why This Exists:
-- Goals 0002 and 0003 need the usable planner surface plus explicit Plan Mission and Run Mission rehearsal modes.
+- Goals 0002, 0003, and 0005 need the usable planner surface, explicit Plan/Run modes, and cue-driven route previews.
 Primary Inputs/Outputs:
-- Inputs: MissionData from Foundry or static bundle provider, layer toggle state, mode state, Cesium selection and cursor events.
-- Outputs: Operator-style React UI for Sunol ISR route planning, coordinate readouts, and app-side run rehearsal.
+- Inputs: MissionData from Foundry or static bundle provider, layer toggle state, mode state, PPS cue preview events, Cesium selection and cursor events.
+- Outputs: Operator-style React UI for Sunol ISR route planning, coordinate readouts, local cue previews, and app-side run rehearsal.
 Research / Source Links:
 - docs/PROJECT_CONTEXT.md
 - docs/goals/0002-local-vite-cesium-planner-scaffold.md
 - docs/goals/0003-plan-mode-run-mission-mode.md
+- docs/goals/0005-pps-cue-zones-and-route-preview.md
 - docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md
 Validated:
 - provisional: Shell render is covered by tests; map rendering is verified by build/dev server.
 Current Limits / TODO:
-- Cue preview interactions are deferred to goal 0005; Run Mission is simulation/rehearsal only.
+- Cue preview interactions are local and read-only; backend writeback remains out of scope until a writeback function is published.
 Agent Maintenance Rule:
 - If this module changes in any way, or a finding affects its contracts, update this header in the same change.
 */
@@ -26,10 +27,22 @@ import { LayerPanel } from "./components/LayerPanel";
 import { MissionModePanel } from "./components/MissionModePanel";
 import { ModeSwitch } from "./components/ModeSwitch";
 import { SelectedObjectPanel } from "./components/SelectedObjectPanel";
+import { SourcesPanel } from "./components/SourcesPanel";
 import { StatusBar } from "./components/StatusBar";
+import { buildCueDecisionContext } from "./data/cuePreviewContext";
 import { defaultEnabledLayerIds } from "./data/layerCatalog";
 import { loadMissionData } from "./data/loadMissionData";
-import { activeTimelineBeat, createEditablePlanState, createRunMissionSnapshot, jumpRunSnapshot, type PlannerMode, type RunMissionSnapshot } from "./data/missionRun";
+import {
+  activeTimelineBeat,
+  confirmCuePreview,
+  createEditablePlanState,
+  createRunMissionSnapshot,
+  jumpRunSnapshot,
+  logCuePreview,
+  type PlannerMode,
+  type RunMissionSnapshot,
+} from "./data/missionRun";
+import { interpretPpsCueObservation, type PpsCuePreviewResult } from "./data/ppsCuePreview";
 import type { LayerId, MissionData, MissionProviderId, SelectedMissionObject } from "./data/missionTypes";
 import type { Wgs84DisplayCoordinate } from "./data/coordinateFormat";
 
@@ -45,6 +58,11 @@ const initialLayerState: Record<LayerId, boolean> = {
   noGoZones: defaultEnabledLayerIds.has("noGoZones"),
 };
 
+interface CueDecisionState {
+  preview: PpsCuePreviewResult;
+  confirmedAt?: string;
+}
+
 export default function App() {
   const [preferredProvider, setPreferredProvider] = useState<MissionProviderId>("auto");
   const [missionData, setMissionData] = useState<MissionData | null>(null);
@@ -55,6 +73,7 @@ export default function App() {
   const [cursorCoordinate, setCursorCoordinate] = useState<Wgs84DisplayCoordinate | null>(null);
   const [mode, setMode] = useState<PlannerMode>("plan");
   const [runSnapshot, setRunSnapshot] = useState<RunMissionSnapshot | null>(null);
+  const [cueDecision, setCueDecision] = useState<CueDecisionState | null>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -92,6 +111,10 @@ export default function App() {
   );
   const planState = useMemo(() => createEditablePlanState(missionData), [missionData]);
   const activeBeat = useMemo(() => activeTimelineBeat(runSnapshot), [runSnapshot]);
+  const cueDecisionContext = useMemo(
+    () => buildCueDecisionContext(missionData, cueDecision?.preview || null),
+    [cueDecision?.preview, missionData],
+  );
 
   function toggleLayer(layerId: LayerId) {
     setEnabledLayers((current) => ({ ...current, [layerId]: !current[layerId] }));
@@ -112,6 +135,29 @@ export default function App() {
   function jumpToBeat(beatId: string) {
     setRunSnapshot((current) => jumpRunSnapshot(current || createRunMissionSnapshot(planState), beatId));
     setMode("run");
+  }
+
+  function simulateCue(observedPulseRatePps: number | null) {
+    const preview = interpretPpsCueObservation({
+      observedPulseRatePps,
+      missionState: activeBeat.state,
+      sourceRef: "local_ui_simulated_pps",
+    });
+    setCueDecision({ preview });
+    setRunSnapshot((current) => logCuePreview(current || createRunMissionSnapshot(planState), preview));
+    setMode("run");
+  }
+
+  function confirmActiveCuePreview() {
+    if (!cueDecision?.preview || cueDecision.preview.status !== "passed" || !cueDecision.preview.requiresConfirmation) return;
+    const confirmedAt = new Date().toISOString();
+    setCueDecision({ ...cueDecision, confirmedAt });
+    setRunSnapshot((current) => confirmCuePreview(current || createRunMissionSnapshot(planState), cueDecision.preview, new Date(confirmedAt)));
+    setMode("run");
+  }
+
+  function clearCuePreview() {
+    setCueDecision(null);
   }
 
   return (
@@ -139,6 +185,7 @@ export default function App() {
           </div>
         </div>
         <CesiumMissionMap
+          activeCommandPreview={cueDecision?.preview.status === "passed" ? cueDecision.preview.matchedCommand : undefined}
           enabledLayerIds={enabledLayerIds}
           layers={missionData?.layers || []}
           onPointerCoordinate={setCursorCoordinate}
@@ -156,8 +203,13 @@ export default function App() {
       <aside className="planner-side-panel" aria-label="Mission controls">
         <MissionModePanel
           activeBeat={activeBeat}
+          cueDecision={cueDecision}
+          cueDecisionContext={cueDecisionContext}
           mode={mode}
+          onClearCuePreview={clearCuePreview}
+          onConfirmCuePreview={confirmActiveCuePreview}
           onJumpToBeat={jumpToBeat}
+          onSimulateCue={simulateCue}
           onStartRun={startRunSnapshot}
           planState={planState}
           runSnapshot={runSnapshot}
@@ -167,6 +219,7 @@ export default function App() {
           layers={missionData?.layers || []}
           onToggleLayer={toggleLayer}
         />
+        <SourcesPanel missionData={missionData} />
         <SelectedObjectPanel editingLocked={mode === "run"} selectedObject={selectedObject} />
       </aside>
     </main>

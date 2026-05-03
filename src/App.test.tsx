@@ -49,4 +49,24 @@ describe("App", () => {
     expect(screen.getByText("Editable plan state")).toBeInTheDocument();
     expect(screen.getByText(/Editing unlocked/i)).toBeInTheDocument();
   });
+
+  it("simulates a PPS cue as preview-only until operator confirmation", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response("not found", { status: 404 })));
+
+    render(<App />);
+
+    await waitFor(() => expect(screen.getByText(/Provider:/i)).toHaveTextContent("placeholder"));
+
+    fireEvent.click(screen.getByRole("button", { name: "Run Mission" }));
+    fireEvent.click(screen.getByRole("button", { name: "4 PPS" }));
+
+    expect(screen.getAllByText("Route B preview").length).toBeGreaterThan(0);
+    expect(screen.getByText(/Operator confirmation required/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Confirm Preview" })).toBeEnabled();
+
+    fireEvent.click(screen.getByRole("button", { name: "Confirm Preview" }));
+
+    expect(screen.getByRole("button", { name: "Confirmed" })).toBeDisabled();
+    expect(screen.getByText(/no backend action or drone command was sent/i)).toBeInTheDocument();
+  });
 });

@@ -458,6 +458,26 @@
       "notes": "Only use after account access and implementation path are confirmed."
     },
     {
+      "id": "palantir_team3_foundry_backend_2026_05_03",
+      "title": "Team 3 Palantir Foundry Ontology and published TypeScript Functions handoff",
+      "type": "team_backend_handoff",
+      "location": "User-provided Palantir backend prompt in chat on 2026-05-03",
+      "accessed_or_created": "2026-05-03",
+      "supports": [
+        "Foundry hostname and ontology RID for the read-only local app integration",
+        "published Functions REST API names and response shape",
+        "Ontology object type field expectations for mission routes, branches, cue zones, terrain attention points, and source manifests",
+        "safety and workflow rules for preview-only PPS cue behavior"
+      ],
+      "limits": [
+        "Bearer tokens, OAuth client credentials, and permissions are not stored in the repo.",
+        "Backend live behavior has not been locally authenticated from this workspace.",
+        "The current function set does not expose all neutral context object geometries needed for full direct-Foundry rendering."
+      ],
+      "validation_status": "provisional",
+      "notes": "Use for Goal 0005 Foundry Functions REST wiring. Preserve read-only behavior and local-only logs until a writeback function is intentionally published."
+    },
+    {
       "id": "palantir_map_add_to_map",
       "title": "Palantir Map add data to a map",
       "type": "official_doc",

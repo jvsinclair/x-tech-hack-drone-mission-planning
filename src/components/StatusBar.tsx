@@ -5,7 +5,7 @@ Purpose:
 Why This Exists:
 - The demo must make Foundry/static fallback state visible without blocking map use.
 Primary Inputs/Outputs:
-- Inputs: MissionData, load state, enabled layer count, load errors.
+- Inputs: MissionData, load state, enabled layer count, mission mode, and load errors.
 - Outputs: Compact status strip.
 Research / Source Links:
 - docs/goals/0002-local-vite-cesium-planner-scaffold.md
@@ -19,19 +19,22 @@ Agent Maintenance Rule:
 */
 
 import type { MissionData } from "../data/missionTypes";
+import type { PlannerMode } from "../data/missionRun";
 
 interface StatusBarProps {
   enabledCount: number;
   isLoading: boolean;
   loadError: string | null;
   missionData: MissionData | null;
+  mode: PlannerMode;
 }
 
-export function StatusBar({ enabledCount, isLoading, loadError, missionData }: StatusBarProps) {
+export function StatusBar({ enabledCount, isLoading, loadError, missionData, mode }: StatusBarProps) {
   const notices = missionData?.notices || [];
   return (
     <footer className="status-bar">
       <span>{isLoading ? "Loading" : missionData?.status || "idle"}</span>
+      <span>Mode: {mode === "run" ? "Run Mission" : "Plan Mission"}</span>
       <span>Provider: {missionData?.provider || "pending"}</span>
       <span>{enabledCount} layers enabled</span>
       {loadError ? <strong>{loadError}</strong> : null}

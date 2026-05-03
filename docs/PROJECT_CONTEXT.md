@@ -34,8 +34,10 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 
 ## Current Critical Modules
 - `src/App.tsx`: Vite/React planner shell with Cesium map, layer controls, provider selector, status, and selected-object panel.
+- `src/components/MissionModePanel.tsx`: Plan Mission / Run Mission rehearsal panel with state-machine outline, named time jumps, and run log shell.
 - `src/components/CesiumMissionMap.tsx`: Cesium 3D map renderer for WGS84 mission layers centered on Sunol / Pleasanton Ridge.
 - `src/data/loadMissionData.ts`: Foundry-first/static-fallback provider selector for mission data.
+- `src/data/missionRun.ts`: Editable plan summary and immutable run snapshot model for app-side mission rehearsal.
 - `src/data/staticBundleProvider.ts`: Local loader for Goal 0001 Palantir upload bundle artifacts under `/resources/palantir_sunol_aoi_upload/`.
 - `src/data/foundryProvider.ts`: No-server Foundry-hosted adapter seam for generated OSDK data.
 - `src/data/missionTypes.ts`: Minimal mission layer, provider, and GeoJSON-facing contracts.
@@ -49,6 +51,7 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 
 ## What Is Validated Enough To Trust
 - `provisional`: repo now includes a runnable Vite + React + TypeScript + Cesium planner scaffold for Goal 0002.
+- `provisional`: Plan Mission and Run Mission modes exist as an app-side rehearsal shell with named timeline jumps and run logs.
 - `validated`: project domain is Problem Statement 3, Mission Command and Control, based on user-provided hackathon context on 2026-05-02.
 - `validated`: working product direction is drone mission planning, based on user clarification on 2026-05-02.
 - `validated`: working scenario direction is a simple maneuver to secure an Army unit with drone coverage, based on user clarification on 2026-05-02.
@@ -67,7 +70,7 @@ The initial PRD-like planning note is `docs/StatePlanningForFlightPath.md`. Prep
 - `provisional`: `docs/StatePlanningForFlightPath.md` includes FPV/kinetic examples; implementation should narrow to ISR, route planning, cue interpretation, overwatch, RTB, and human-reviewed decisions unless the PRD explicitly defines safer non-kinetic scope.
 - `provisional`: candidate partner resources and OSINT sources are mapped in `docs/research/problem_statement_3_resource_map.md`, but account access and dataset/API availability are not yet verified.
 - `provisional`: Foundry-hosted OSDK data access is represented by an adapter seam, not live Palantir calls.
-- `todo`: full mission state machine, run mode, PPS cue preview, writeback actions, and generated Goal 0001 artifacts still need completion.
+- `todo`: full mission state-machine execution, PPS cue preview, writeback actions, and generated Goal 0001 artifacts still need completion.
 
 ## Current Active Blockers
 - Foundry Developer Console / OSDK application setup still needs the hackathon instance object types, permissions, and generated package.

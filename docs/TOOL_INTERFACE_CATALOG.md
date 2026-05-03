@@ -3,7 +3,7 @@
 This is the review guide for the current `x-tech-hackathon` tool, validator, and workflow surface.
 Every public stage should be documented here before agents depend on it.
 
-Current state: Goal 0002 adds a provisional frontend runtime data-provider boundary, `mission_data_provider_runtime`, for choosing a Foundry-hosted adapter when available and falling back to static scoped bundle data. `optical_cue_interpreter_demo` and `terrain_attention_point_generator_demo` remain planned provisional stages for upcoming implementation slices.
+Current state: Goal 0002 adds a provisional frontend runtime data-provider boundary, `mission_data_provider_runtime`, for choosing a Foundry-hosted adapter when available and falling back to static scoped bundle data. Goal 0003 adds `mission_run_rehearsal_runtime` for app-side Plan Mission / Run Mission rehearsal. `optical_cue_interpreter_demo` and `terrain_attention_point_generator_demo` remain planned provisional stages for upcoming implementation slices.
 
 ## Field Glossary
 - `[field_name]`: `[description]` Units: `[units or enum or not_applicable]`.
@@ -183,6 +183,53 @@ Current state: Goal 0002 adds a provisional frontend runtime data-provider bound
 - Current gaps / TODO notes:
   - Generated OSDK package and Foundry object mappings are not configured yet.
   - Writeback/actions are intentionally deferred.
+
+## `mission_run_rehearsal_runtime`
+- Display name: Mission Run Rehearsal Runtime
+- Category: `runtime`
+- Stage order: `3`
+- Purpose: Separate editable Plan Mission state from immutable Run Mission rehearsal snapshots, named time jumps, and audit-style run logs.
+- When to call: When the operator switches into Run Mission mode, refreshes a run snapshot, or jumps to a named demo beat.
+- When not to call: Do not call for real drone execution, hardware command, MAVLINK/GCS export, autonomous operational command, strike, engage, or target-selection workflows.
+- Input type: Current `MissionData` plus operator-selected timeline beat.
+- Output type: `EditablePlanState`, `RunMissionSnapshot`, and `RunLogEntry` records for UI display.
+- Supported use cases: Judge demo rehearsal, timeline fast-forward, state-machine outline preview, run-log shell.
+- Supported data or source families: Foundry/static/placeholder `MissionData` from `mission_data_provider_runtime`.
+- Status values: `plan | run`
+- Hard-fail vs warning behavior: Missing mission data degrades to placeholder plan state; run mode remains simulation-only.
+- Formula or rule groups: `none`
+- Support level: `provisional`
+- Platform support: `local Vite; Foundry-hosted UI compatible`
+- Required binaries or services: `node`, `npm`
+- Headless expectations: Snapshot and timeline helpers are unit-testable without Cesium or Palantir.
+- Degraded modes: Built-in placeholder plan and timeline.
+- Source module: `src/data/missionRun.ts`
+- Kernel id: `mission_run_rehearsal_runtime`
+- Kernel boundary: Deterministic creation of plan summaries, run snapshots, named timeline jumps, and log entries.
+- Pure function expected: `yes` for data helpers; `mixed` in React UI.
+- Required input fields:
+  - `missionData` (`MissionData | null`): Current loaded mission layers and provider status. Units: `object`.
+  - `mode` (`enum(plan, run)`): Active planner mode. Units: `enum`.
+- Optional input fields:
+  - `beatId` (`string`): Named timeline beat to jump to. Units: `id`.
+- Derived fields: `runSnapshot`, `currentBeatId`, `log`, `warningCount`, `outline`
+- Minimal valid example input:
+```json
+{
+  "mode": "run",
+  "beatId": "pps-cue"
+}
+```
+- Example output summary:
+```json
+{
+  "currentBeatId": "pps-cue",
+  "logEntry": "Jumped rehearsal timeline to PPS Cue"
+}
+```
+- Current gaps / TODO notes:
+  - Timeline jumps do not yet drive Cesium animation.
+  - PPS cue behavior and confirmation preview are deferred to goal 0005.
 
 ## Entry Template
 

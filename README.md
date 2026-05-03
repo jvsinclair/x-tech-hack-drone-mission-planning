@@ -6,6 +6,7 @@ This repo contains a hackathon prototype for Problem Statement 3: Mission Comman
 - A Vite + React + TypeScript + Cesium planner shell.
 - A Foundry-hosted app adapter boundary for future OSDK-backed AOI-scoped data.
 - A static bundle fallback that loads Goal 0001 resources when available.
+- Plan Mission and Run Mission rehearsal modes with named judge-demo timeline jumps.
 - A first-stop `AGENTS.md` for future agents and contributors.
 - Project context, research registries, formula governance, and tool catalog docs under `docs/`.
 

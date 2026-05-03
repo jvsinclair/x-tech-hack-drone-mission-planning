@@ -3,18 +3,19 @@ Module Context
 Purpose:
 - Compose the ISR mission planner shell.
 Why This Exists:
-- Goal 0002 needs the first usable planner surface: map, layers, selected object, and status.
+- Goals 0002 and 0003 need the usable planner surface plus explicit Plan Mission and Run Mission rehearsal modes.
 Primary Inputs/Outputs:
-- Inputs: MissionData from Foundry or static bundle provider, layer toggle state, Cesium selection events.
-- Outputs: Operator-style React UI for Sunol ISR route planning.
+- Inputs: MissionData from Foundry or static bundle provider, layer toggle state, mode state, Cesium selection events.
+- Outputs: Operator-style React UI for Sunol ISR route planning and app-side run rehearsal.
 Research / Source Links:
 - docs/PROJECT_CONTEXT.md
 - docs/goals/0002-local-vite-cesium-planner-scaffold.md
+- docs/goals/0003-plan-mode-run-mission-mode.md
 - docs/ICONOGRAPHY_AND_CONTROLS_RESOLUTIONS.md
 Validated:
 - provisional: Shell render is covered by tests; map rendering is verified by build/dev server.
 Current Limits / TODO:
-- Plan/run mission mode and cue preview interactions are deferred to goals 0003 and 0005.
+- Cue preview interactions are deferred to goal 0005; Run Mission is simulation/rehearsal only.
 Agent Maintenance Rule:
 - If this module changes in any way, or a finding affects its contracts, update this header in the same change.
 */
@@ -22,10 +23,13 @@ Agent Maintenance Rule:
 import { useEffect, useMemo, useState } from "react";
 import { CesiumMissionMap } from "./components/CesiumMissionMap";
 import { LayerPanel } from "./components/LayerPanel";
+import { MissionModePanel } from "./components/MissionModePanel";
+import { ModeSwitch } from "./components/ModeSwitch";
 import { SelectedObjectPanel } from "./components/SelectedObjectPanel";
 import { StatusBar } from "./components/StatusBar";
 import { defaultEnabledLayerIds } from "./data/layerCatalog";
 import { loadMissionData } from "./data/loadMissionData";
+import { activeTimelineBeat, createEditablePlanState, createRunMissionSnapshot, jumpRunSnapshot, type PlannerMode, type RunMissionSnapshot } from "./data/missionRun";
 import type { LayerId, MissionData, MissionProviderId, SelectedMissionObject } from "./data/missionTypes";
 
 const initialLayerState: Record<LayerId, boolean> = {
@@ -47,6 +51,8 @@ export default function App() {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [enabledLayers, setEnabledLayers] = useState<Record<LayerId, boolean>>(initialLayerState);
   const [selectedObject, setSelectedObject] = useState<SelectedMissionObject | null>(null);
+  const [mode, setMode] = useState<PlannerMode>("plan");
+  const [runSnapshot, setRunSnapshot] = useState<RunMissionSnapshot | null>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -82,9 +88,28 @@ export default function App() {
     () => new Set(Object.entries(enabledLayers).filter(([, enabled]) => enabled).map(([layerId]) => layerId as LayerId)),
     [enabledLayers],
   );
+  const planState = useMemo(() => createEditablePlanState(missionData), [missionData]);
+  const activeBeat = useMemo(() => activeTimelineBeat(runSnapshot), [runSnapshot]);
 
   function toggleLayer(layerId: LayerId) {
     setEnabledLayers((current) => ({ ...current, [layerId]: !current[layerId] }));
+  }
+
+  function changeMode(nextMode: PlannerMode) {
+    setMode(nextMode);
+    if (nextMode === "run" && !runSnapshot) {
+      setRunSnapshot(createRunMissionSnapshot(planState));
+    }
+  }
+
+  function startRunSnapshot() {
+    setRunSnapshot(createRunMissionSnapshot(planState));
+    setMode("run");
+  }
+
+  function jumpToBeat(beatId: string) {
+    setRunSnapshot((current) => jumpRunSnapshot(current || createRunMissionSnapshot(planState), beatId));
+    setMode("run");
   }
 
   return (
@@ -95,17 +120,20 @@ export default function App() {
             <p className="eyebrow">Sunol Ridge Training Area</p>
             <h1>ISR Mission Planner</h1>
           </div>
-          <div className="provider-switch" aria-label="Data provider">
-            {(["auto", "foundry", "static"] as MissionProviderId[]).map((provider) => (
-              <button
-                className={preferredProvider === provider ? "is-active" : ""}
-                key={provider}
-                onClick={() => setPreferredProvider(provider)}
-                type="button"
-              >
-                {provider}
-              </button>
-            ))}
+          <div className="toolbar-controls">
+            <ModeSwitch mode={mode} onModeChange={changeMode} />
+            <div className="provider-switch" aria-label="Data provider">
+              {(["auto", "foundry", "static"] as MissionProviderId[]).map((provider) => (
+                <button
+                  className={preferredProvider === provider ? "is-active" : ""}
+                  key={provider}
+                  onClick={() => setPreferredProvider(provider)}
+                  type="button"
+                >
+                  {provider}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
         <CesiumMissionMap
@@ -118,15 +146,24 @@ export default function App() {
           isLoading={isLoading}
           loadError={loadError}
           missionData={missionData}
+          mode={mode}
         />
       </section>
       <aside className="planner-side-panel" aria-label="Mission controls">
+        <MissionModePanel
+          activeBeat={activeBeat}
+          mode={mode}
+          onJumpToBeat={jumpToBeat}
+          onStartRun={startRunSnapshot}
+          planState={planState}
+          runSnapshot={runSnapshot}
+        />
         <LayerPanel
           enabledLayers={enabledLayers}
           layers={missionData?.layers || []}
           onToggleLayer={toggleLayer}
         />
-        <SelectedObjectPanel selectedObject={selectedObject} />
+        <SelectedObjectPanel editingLocked={mode === "run"} selectedObject={selectedObject} />
       </aside>
     </main>
   );
